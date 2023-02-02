@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour
+public class SimHex
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    /*
+        INTERNAL representation of a hex.
+        Has Processes that, when their Inputs are satisfied, carry out.
+    */
+
+    //One simulation tick.
+    void Tick() {
+
     }
 }
