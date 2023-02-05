@@ -6,12 +6,8 @@ public class SimHex
 {
 
     /*
-        INTERNAL representation of a hex.
+        INTERNAL representation of a single hex.
         Has Processes that, when their Inputs are satisfied, carry out.
     */
 
-    //One simulation tick.
-    void Tick() {
-
-    }
 }

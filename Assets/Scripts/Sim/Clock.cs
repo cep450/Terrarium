@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,14 +19,18 @@ public class Clock : MonoBehaviour
     static float timeElapsed = 0f;    //a counter 
     static bool paused = true;
     static float speedMultMax = 3f;
+    static int tickCounter = 0;
+
+    public static event EventHandler<TickArgs> Tick;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         tickBaseSeconds = _tickBaseSeconds;
         timeElapsed = 0f;
         paused = true;
+        tickCounter = 0;
     }
 
     // Update is called once per frame
@@ -38,8 +43,9 @@ public class Clock : MonoBehaviour
         timeElapsed += Time.deltaTime;
 
         if(timeElapsed >= tickSeconds) {
-            timeElapsed = timeElapsed % tickSeconds;
-            Tick();
+            timeElapsed = timeElapsed % tickSeconds; //this will skip ticks if lag. use subtraction if want to catch up
+            Tick?.Invoke(this, new TickArgs { tickNum = tickCounter } );
+            tickCounter++; //will start on 0th tick 
         }
     }
 
@@ -88,13 +94,6 @@ public class Clock : MonoBehaviour
 
     static void UnPause() {
         paused = false;
-    }
-
-    //Carry out a step of the simulation. 
-    static void Tick() {
-
-        //TODO 
-
     }
 
 }
