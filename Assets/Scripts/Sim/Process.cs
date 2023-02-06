@@ -8,8 +8,6 @@ public class Process
     //probably do a custom window display here 
     //or read stuff from a json file or something 
 
-    
-
 
     //inputs/prerequisites 
     //expose to editor 
@@ -20,20 +18,22 @@ public class Process
 
 
 
-    void TryProcess() {
-
-        
-    }
-
-    bool InputsSatisfied() {
+    //Check if inputs are satisfied. 
+    bool CheckInputs() {
 
         //TODO 
         return true;
+        
     }
 
+    //consume/destroy
+    void ConsumeInputs() {
+
+    }
+
+    //create/produce
     void DoProcess() {
 
     }
-
 
 }
