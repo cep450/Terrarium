@@ -14,7 +14,10 @@ public class SimHex
     //TODO probably has a reference to the coordinate map representation of where the hex is
 
     //is it a plant, a house, ect 
-    SimHexType type;
+    public SimHexType type { get; private set; }
+
+    public Cube cube { get; private set; }
+    public VisualHex visualHex { get; private set; }
 
     //resource amounts. index of array corresponds to resource id. get by resource id.
     //every SimHex takes up a const amount of memory.
@@ -27,13 +30,14 @@ public class SimHex
     int currentTick = -1;
     bool inputsSatisfied = false;
 
-    public SimHex(SimHexType t) {
+    public SimHex(SimHexType t, Cube c) {
+        cube = c;
+
+        //TODO move this 
+        visualHex = GameObject.Instantiate(Sim.visualHexPrefab);
+        visualHex.AssignSimHex(this);
+
         ChangeType(t);
-    }
-
-    public void Init() {
-        
-
     }
 
     //Called when this type changes type.
@@ -45,6 +49,8 @@ public class SimHex
         foreach(Res.ResStarting rs in type.resourcesStarting) {
             resourcesHas[rs.id] += rs.amount;
         }
+
+        visualHex.VisualUpdate();
 
     }
 
@@ -111,6 +117,8 @@ public class SimHex
 
             }
         }
+
+        visualHex.VisualUpdate();
     }
 
     public void CreateOutputs() {
@@ -125,5 +133,7 @@ public class SimHex
 
         Debug.Log("resources now: 0:" + resourcesHas[0] + " 1:" + resourcesHas[1] + 
                     " 2:" + resourcesHas[2] + " 3:" + resourcesHas[3]);
+        
+        visualHex.VisualUpdate();
     }
 }

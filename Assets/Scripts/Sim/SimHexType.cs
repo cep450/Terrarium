@@ -13,12 +13,12 @@ public class SimHexType {
         It won't reflect the data for an instance of a hex. 
         Follows the flyweight pattern iirc. 
     */
-    static byte idCounter = 0;              //each will be assigned an id not already taken
+    static int idCounter = 0;              //each will be assigned an id not already taken
     static string jsonPath = "SimHexes";    //folder we will look for json files TODO 
 
 
     public string name = "default";         //this will also be the name of the json file it loads from
-    public byte id = 0;                     //its calling card for equals and lookup
+    public int id = 0;                     //its calling card for equals and lookup
     public bool passable = true;            //can gnomes pathfind/walk through this hex?
 
     //defines behavior 
@@ -26,6 +26,10 @@ public class SimHexType {
     public Res.ResProduced [] resourcesProduced = new Res.ResProduced[2];
     public Res.ResStarting [] resourcesStarting = new Res.ResStarting[2];
     
+    //visual display
+    public Color color;
+    public Sprite sprite;
+
 
     //load a type from json
     public SimHexType(string jsonFileName) {
@@ -74,6 +78,6 @@ public class SimHexType {
     }
     public override int GetHashCode()
     {
-        return (int)id;
+        return id;
     }
 }

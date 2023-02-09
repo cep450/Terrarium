@@ -11,6 +11,8 @@ public class Cube
 		new Vector3(+1, 0, -1), new Vector3(+1, -1, 0), new Vector3(0, -1, +1), new Vector3(-1, 0, +1), new Vector3(-1, +1, 0), new Vector3(0, +1, -1),
 	};
 
+	public SimHex simHex = null;
+
 	public enum landscape
 	{
 		

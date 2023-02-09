@@ -11,16 +11,20 @@ public class SimGrid
         half haven't and now the calculation is wrong" problem.
     */
 
-    //TODO temp for prototype
-    static List<SimHex> hexes = new List<SimHex>();
-
+    //Parallel list with the list of Cubes in the HexGrid in the HexMap. 
+    static SimHex [] hexes;
+    
     public static void Init() {
 
-        //TODO prototype temp 
-        hexes.Add(new SimHex(HexTypes.plant));
+        Debug.Log("count is " + Sim.hexMap.grid.Hexes.Count);
 
-        foreach(SimHex hex in hexes) {
-            hex.Init();
+        hexes = new SimHex[Sim.hexMap.grid.Hexes.Count];
+
+        //TODO prototype temp- randomized types 
+        for(int i = 0; i < hexes.Length; i++) {
+            int rand = Random.Range(0, HexTypes.types.Count);
+            hexes[i] = new SimHex(HexTypes.types[rand], Sim.hexMap.grid.Hexes[i]);
+            Sim.hexMap.grid.Hexes[i].simHex = hexes[i];
         }
 
     }
