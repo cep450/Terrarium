@@ -7,21 +7,50 @@ public class Sim : MonoBehaviour
 
     /*
         MonoBehavior singleton that controls the internal sim.
+
+        Recieves tick events and controls the order of sub-tick events in the sim.
     */
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] HexMap _hexMap;
+    public static HexMap hexMap;
+    [SerializeField] VisualHex _visualHexPrefab;
+    public static VisualHex visualHexPrefab;
+
+    void Awake() {
+        hexMap = _hexMap;
+        visualHexPrefab = _visualHexPrefab;
+
+        Clock.Tick += HandleTick;
         Init();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Start() {
+        SimGrid.Init(); //needs to happen after HexGrid initializes
+        AgentDirector.Init();
     }
 
     void Init() {
-        SimGrid.Init();
+
+        //TODO remove this replace this 
+        HexTypes.PrototypeCreateObjs();
+
+    }
+
+    //Manage the order of sub ticks.
+    public static void HandleTick(object obj, TickArgs tickArgs) {
+
+        int tickOrder = tickArgs.tickNum % 3;
+
+        Debug.Log("tick number: " + tickArgs.tickNum + " tick order: " + tickOrder);
+
+        if(tickOrder == 0) {
+            Debug.Log("doing input tick");
+            SimGrid.TickInputs(tickArgs.tickNum);
+        } else if(tickOrder == 1) {
+            Debug.Log("doing output tick ");
+            SimGrid.TickOutputs(tickArgs.tickNum);
+        } else if(tickOrder == 2) {
+            Debug.Log("doing agent tick");
+            AgentDirector.AgentTick(tickArgs.tickNum);
+        }
     }
 }

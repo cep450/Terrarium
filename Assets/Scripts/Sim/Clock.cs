@@ -12,8 +12,8 @@ public class Clock : MonoBehaviour
         Singleton.
     */
 
-    [SerializeField] float _tickBaseSeconds = 1f;
-    static float tickBaseSeconds = 1f; //constant 
+    [SerializeField] float _tickBaseSeconds = 0.5f;
+    static float tickBaseSeconds = 0.5f; //constant 
     static float tickSpeedMult = 1f;  //changed by player
     static float tickSeconds = 1f;    //updates based on mult
     static float timeElapsed = 0f;    //a counter 

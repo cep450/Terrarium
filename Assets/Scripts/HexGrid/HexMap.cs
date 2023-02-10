@@ -14,7 +14,7 @@ public class HexMap : MonoBehaviour, IInitialize
 	public GridShape shape = GridShape.Hexagonal;
 
 	// Use this for initialization
-	void Start()
+	void Awake() //changed from Start to Awake -J 
 	{
 		Init();
 	}

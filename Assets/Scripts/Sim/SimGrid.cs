@@ -11,32 +11,20 @@ public class SimGrid
         half haven't and now the calculation is wrong" problem.
     */
 
-    //TODO temp for prototype
-    static List<SimHex> hexes = new List<SimHex>();
-
+    //Parallel list with the list of Cubes in the HexGrid in the HexMap. 
+    static SimHex [] hexes;
+    
     public static void Init() {
 
-        //TODO prototype temp 
-        hexes.Add(new Plant());
+        Debug.Log("count is " + Sim.hexMap.grid.Hexes.Count);
 
+        hexes = new SimHex[Sim.hexMap.grid.Hexes.Count];
 
-        foreach(SimHex hex in hexes) {
-            hex.Init();
-        }
-
-        Clock.Tick += HandleTick;
-
-    }
-
-    public static void HandleTick(object obj, TickArgs tickArgs) {
-        Debug.Log("tick recieved! tick number: " + tickArgs.tickNum);
-
-        if(tickArgs.tickNum % 2 == 0) {
-            Debug.Log("tick was even");
-            TickInputs(tickArgs.tickNum);
-        } else {
-            Debug.Log("tick was odd");
-            TickOutputs(tickArgs.tickNum);
+        //TODO prototype temp- randomized types 
+        for(int i = 0; i < hexes.Length; i++) {
+            int rand = Random.Range(0, HexTypes.types.Count);
+            hexes[i] = new SimHex(HexTypes.types[rand], Sim.hexMap.grid.Hexes[i]);
+            Sim.hexMap.grid.Hexes[i].simHex = hexes[i];
         }
 
     }
@@ -45,7 +33,7 @@ public class SimGrid
     //this step is where resources are consumed/removed. 
     //Don't make changes beyond consumption, which is there to make sure something is only consumed once.
     //TODO: what if we want certain things to have consumption priority over other things?
-    static void TickInputs(int tickNum) {
+    public static void TickInputs(int tickNum) {
         foreach(SimHex h in hexes) {
             h.InputTick(tickNum);
         }
@@ -53,9 +41,10 @@ public class SimGrid
 
     //Step 2: do outputs if requirements met.
     //this step is where resources are created. 
-    static void TickOutputs(int tickNum) {
+    public static void TickOutputs(int tickNum) {
         foreach(SimHex h in hexes) {
             h.OutputTick(tickNum);
         }
     }
+
 }

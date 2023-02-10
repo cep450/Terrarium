@@ -9,10 +9,12 @@ public class Controls : MonoBehaviour
         KeyCodes go here so they're not hardcoded.
     */
 
+    /*
     KeyCode up = KeyCode.W;
     KeyCode down = KeyCode.S;
     KeyCode left = KeyCode.A;
     KeyCode right = KeyCode.D;
+    */
     KeyCode togglePause = KeyCode.Space;
     KeyCode [] incrementSimSpeed = { KeyCode.RightArrow, KeyCode.UpArrow };
     KeyCode [] decrementSimSpeed = { KeyCode.LeftArrow, KeyCode.DownArrow };

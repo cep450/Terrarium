@@ -2,77 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class SimHex
+public class SimHex
 {
 
-    public enum HexType {
-        NOTYPE, EMPTY, PLANT, CRAZYVINE
-    }
+    /*
+        Internal representation of a hex instance.
+        Stores the data particular to an instance that can change.
+        Checks if inputs are satisfied, if they are, consumes what it consumes and produces what it produces
+    */
 
-    //its calling card
-    public static HexType type = HexType.NOTYPE;
+    //TODO probably has a reference to the coordinate map representation of where the hex is
 
-    //so we can refer to resources by name, but they're packed tightly in memory,
-    //and every simhex takes up a constant amount of memory
-    //these will also inform graphical rendering, sprite blending and making sprites appear
-    //goes up to 255
-    public struct ResourceCount {
-        public byte water, nutrients, plantmatter, path;
-    }
-    //TODO make another data structure thats specifically for inputs and outputs
-    //with additional info like bools for if a required resource is consumed or not 
+    //is it a plant, a house, ect 
+    public SimHexType type { get; private set; }
 
-    public  ResourceCount resourcesHas = new ResourceCount(); //this changes 
-    protected static ResourceCount resourcesRequired = new ResourceCount();
-    protected static ResourceCount resourcesCreated = new ResourceCount();
+    public Cube cube { get; private set; }
+    public VisualHex visualHex { get; private set; }
+
+    //resource amounts. index of array corresponds to resource id. get by resource id.
+    //every SimHex takes up a const amount of memory.
+    //these inform graphical rendering, sprite blending, making sprites appear
+    //go up to 255
+    public byte [] resourcesHas = new byte[Res.resources.Length]; //this changes 
+
 
     //for tracking if stuff was satisfied the last tick 
     int currentTick = -1;
     bool inputsSatisfied = false;
 
+    public SimHex(SimHexType t, Cube c) {
+        cube = c;
 
-    //TODO 
-    /*
-        better organize functions ect 
-        just getting stuff up for the prototype 
-        cause itll change what game we're making 
-    */
+        //TODO move this 
+        visualHex = GameObject.Instantiate(Sim.visualHexPrefab);
+        visualHex.AssignSimHex(this);
 
-    /*
-        INTERNAL representation of a single hex.
-        Has Processes that, when their Inputs are satisfied, carry out.
+        ChangeType(t);
+    }
 
-        (Numerical) Resources 
-        what the tile Has
-        things that can be measured by an amount
-        examples: 'nutrients' 'water' 'path' 'pollution' 
-        may be consumed or produced by other things 
-        identified by numbers 
+    //Called when this type changes type.
+    public void ChangeType(SimHexType newType) {
 
-        Process resources
-        what the tile Is
-        a single thing that can consume/produce resources or otherwise 'do soemthing' 
-        examples: 'plant' 'tree' 'house' 'crop' 'structure' 
-        has properties about itself
+        type = newType;
+        
+        //add each starting resource to this tile
+        foreach(Res.ResStarting rs in type.resourcesStarting) {
+            resourcesHas[rs.id] += rs.amount;
+        }
 
-        a Plant takes in nutrients, water and can grow 
+        visualHex.VisualUpdate();
 
-        hmm is this too flexible? idk 
-        cause there is that thing about all the tiles being the same size 
-        vs the uhh flyweight
-
-        to implement behavior could inherit from SimHex- but how does this work out w objects being the same size?
-        should keep them the same size for efficiency 
-        but they necesarily need diff stuff based on class 
-        TODO tackle this later, just getting a prototype up. 
-
-    */
-
-    public abstract void Init();
+    }
 
 
     //TODO be checking the tick number for safety 
-
     public void InputTick(int tickNum) {
         if(CheckInputs()) {
             ConsumeInputs();
@@ -82,45 +65,75 @@ public abstract class SimHex
     }
 
     public void OutputTick(int tickNum) {
-        if(inputsSatisfied && tickNum == currentTick) {
-            ConsumeInputs();
+
+        Debug.Log("doing output tick in this hex");
+
+        if(tickNum != currentTick + 1) {
+            Debug.LogError("ERR: skipped a tick somewhere! fix this/account for this!");
+            return;
+        }
+
+        if(inputsSatisfied) {
+            CreateOutputs();
             inputsSatisfied = false;
         }
     }
 
     public bool CheckInputs() {
 
-        //TODO: compare structs in a better way, custom operator or function or something
-        //this sucks and is for this prototype 
-        if(resourcesHas.water >= resourcesRequired.water) {
-            if(resourcesHas.nutrients >= resourcesRequired.nutrients) {
-                Debug.Log("resource requirements met");
-                return true;
+        Debug.Log("type is " + type.name);
+        Debug.Log("resources requires length is " + type.resourcesRequired.Length);
+
+        foreach(Res.ResRequired rr in type.resourcesRequired) {
+
+            Debug.Log("resource was " + Res.NameById(rr.id) + " amount " + rr.amount + " has " + resourcesHas[rr.id]);
+
+            if(rr.id == (int)Res.Resource.NULL) {
+                Debug.Log("no resource stored");
+                continue;
+            }
+
+            //TODO factor in radius
+
+            if(!(resourcesHas[rr.id] >= rr.amount)) {
+                Debug.Log("resource requirements not met");
+                return false;
             }
         }
-        Debug.Log("resource requiremnts not met");
-        return false;
+        Debug.Log("Resource requirements met!");
+        return true;
+
     }
 
     public void ConsumeInputs() {
 
-        //TODO another struct thing 
+        foreach(Res.ResRequired rr in type.resourcesRequired) {
 
-        resourcesHas.water -= resourcesRequired.water;
-        resourcesHas.nutrients -= resourcesRequired.nutrients;
+            if(rr.isConsumed) {
 
-        Debug.Log("water is now " + resourcesHas.water + " nutrients is now " + resourcesHas.nutrients);
+                //TODO factor in radius 
 
+                resourcesHas[rr.id] -= rr.amount;
+
+            }
+        }
+
+        visualHex.VisualUpdate();
     }
 
     public void CreateOutputs() {
 
-        //TODO another struct thing 
+        foreach(Res.ResProduced rp in type.resourcesProduced) {
 
-        resourcesHas.plantmatter += resourcesCreated.plantmatter;
+            //TODO factor in if is hex 
 
-        Debug.Log("plant matter is now " + resourcesHas.plantmatter);
+            resourcesHas[rp.id] += rp.amount;
 
+        }
+
+        Debug.Log("resources now: 0:" + resourcesHas[0] + " 1:" + resourcesHas[1] + 
+                    " 2:" + resourcesHas[2] + " 3:" + resourcesHas[3]);
+        
+        visualHex.VisualUpdate();
     }
-
 }
