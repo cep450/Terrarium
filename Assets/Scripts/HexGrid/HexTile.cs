@@ -21,10 +21,10 @@ public class HexTile : MonoBehaviour
 	void Start()
 	{
 		timer = movementSpeed;
-		Vector2 startingPos = new Vector2(Random.Range(-map.size, map.size), Random.Range(-map.size, map.size));
+		Vector2 startingPos = new Vector2(Random.Range(0, map.size/2), Random.Range(0, map.size/2));
 		position = startingPos;
 		myCube = HexGrid.HexToCube(new HexField(position.x, position.y));
-		goal = new Cube(new Vector3(Random.Range(-map.size, map.size), Random.Range(-map.size, map.size), Random.Range(-map.size, map.size)));
+		//goal = new Cube(new Vector3(Random.Range(-map.size, map.size), Random.Range(-map.size, map.size), Random.Range(-map.size, map.size)));
 
 
 		
@@ -50,7 +50,6 @@ public class HexTile : MonoBehaviour
 			//Debug.Log("Cube c's index is " + map.grid.Hexes.IndexOf(c) + " and its position is " + c.position);
 			if (c.position == myCube.position)
 			{
-				c.myLandscape = Cube.landscape.concrete;
 				myCubeIndex = map.grid.Hexes.IndexOf(c);
 				Debug.Log("my cube in the list is number " + myCubeIndex);
 				break;
@@ -80,10 +79,20 @@ public class HexTile : MonoBehaviour
 			}
 
 		}
-		if (Input.GetKeyDown(KeyCode.Space) && !isMoving)
+		if (Input.GetKeyDown(KeyCode.Alpha1) && !isMoving)
 		{
 			isMoving = true;
-			currentPath = new Queue<Cube>(Search(myCube, HexGrid.HexToCube(new HexField(0, 0))));
+			currentPath = new Queue<Cube>(Search(myCube, Cube.landscape.concrete));
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha2) && !isMoving)
+		{
+			isMoving = true;
+			currentPath = new Queue<Cube>(Search(myCube, Cube.landscape.water));
+		}
+		if (Input.GetKeyDown(KeyCode.Alpha3) && !isMoving)
+		{
+			isMoving = true;
+			currentPath = new Queue<Cube>(Search(myCube, Cube.landscape.fertile));
 		}
 
 		if (isMoving)
@@ -98,6 +107,8 @@ public class HexTile : MonoBehaviour
 				else
 				{
 					Debug.Log("I have reached " + myCube.position);
+					myCube.myLandscape = Cube.landscape.acquired;
+					isMoving = false;
 				}
 				
 			}
@@ -106,7 +117,7 @@ public class HexTile : MonoBehaviour
 		
 	}
 
-	List<Cube> Search(Cube start, Cube goal)
+	List<Cube> Search(Cube start, Cube.landscape goalLandscape)
 	{
 		Queue<Cube> frontier = new Queue<Cube>();
 		frontier.Enqueue(start);
@@ -117,10 +128,11 @@ public class HexTile : MonoBehaviour
 		{
 			current = frontier.Dequeue();
 
-			if (current.Equals(goal))
+			if (current.myLandscape == goalLandscape)
 			{
 				// do something!
-				Debug.Log("found goal at " + current.position);
+				goal = current;
+				Debug.Log("found goal at " + current.position + " and it's a " + goalLandscape);
 				break;
 			}
 
@@ -147,7 +159,7 @@ public class HexTile : MonoBehaviour
 		path.Reverse();
 		return path;
 	}
-
+	/*
 	private void OnDrawGizmos()
 	{
 		for (int i = 0; i < 6; i++)
@@ -159,7 +171,7 @@ public class HexTile : MonoBehaviour
 			}
 
 		}
-	}
+	}*/
 	
 	
 }

@@ -13,12 +13,12 @@ public class Cube
 
 	public enum landscape
 	{
-		
-		
-		fertile,
+
 		concrete,
+		fertile,
 		water,
-		impassable
+		impassable,
+		acquired
 
 	}
 	public landscape myLandscape = landscape.concrete;
@@ -28,7 +28,6 @@ public class Cube
 	public Cube(Vector3 position)
 	{
 		this.position = position;
-		this.myLandscape = landscape.concrete;
 	}
 
 	public Cube(float x, float y, float z)

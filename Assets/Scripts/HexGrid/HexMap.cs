@@ -70,6 +70,7 @@ public class HexMap : MonoBehaviour, IInitialize
 					continue;
 				}
 				ScreenCoordinate next = coord + pos;
+				Gizmos.color = Color.black;
 				Gizmos.DrawLine(new Vector3(last.position.x, last.position.y), new Vector3(next.position.x, next.position.y));
 				last = next;
 			}
@@ -78,6 +79,9 @@ public class HexMap : MonoBehaviour, IInitialize
 			//zeru's code
 			switch (cube.myLandscape)
 			{
+				case Cube.landscape.water:
+					Gizmos.color = Color.blue;
+					break;
 				case Cube.landscape.concrete:
 					Gizmos.color = Color.gray;
 					break;
@@ -86,6 +90,9 @@ public class HexMap : MonoBehaviour, IInitialize
 					break;
 				case Cube.landscape.impassable:
 					Gizmos.color = Color.red;
+					break;
+				case Cube.landscape.acquired:
+					Gizmos.color = Color.yellow;
 					break;
 				default:
 					Gizmos.color = Color.white;

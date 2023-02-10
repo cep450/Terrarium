@@ -194,7 +194,8 @@ public class HexGrid
 					Cube cube = new Cube(x, y, z);
 					Array values = Enum.GetValues(typeof(Cube.landscape));
 					Random random = new Random();
-					Cube.landscape randomLandscape = (Cube.landscape)values.GetValue(random.Next(values.Length));
+					int[] landscapeRandom= new int[] { 0, 3, 3,0, 1,0,3, 3 ,0, 0, 0, 2, 0, 0, 0, 3, 0, 0,3, 3, 0, 0,3, 3, 0, 0, 0, 0, 0, 0, 3 };
+					Cube.landscape randomLandscape = (Cube.landscape)values.GetValue(landscapeRandom[random.Next(landscapeRandom.Length)]);
 					cube.myLandscape = randomLandscape;
 					hexes.Add(cube);
 				}
