@@ -61,6 +61,7 @@ public class HexTypes {
         plant.resourcesStarting[1].id = (int)Res.Resource.NUTRIENTS;
         plant.resourcesStarting[1].amount = 100;
         plant.color = Color.green;
+        plant.name = "plant";
 
 
         //TODO this should just have an array of objects, read in from the array 

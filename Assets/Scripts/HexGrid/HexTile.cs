@@ -79,6 +79,7 @@ public class HexTile : MonoBehaviour
 			}
 
 		}
+		/*
 		if (Input.GetKeyDown(KeyCode.Alpha1) && !isMoving)
 		{
 			isMoving = true;
@@ -94,6 +95,7 @@ public class HexTile : MonoBehaviour
 			isMoving = true;
 			currentPath = new Queue<Cube>(Search(myCube, Cube.landscape.fertile));
 		}
+		*/
 
 		if (isMoving)
 		{
@@ -107,7 +109,7 @@ public class HexTile : MonoBehaviour
 				else
 				{
 					Debug.Log("I have reached " + myCube.position);
-					myCube.myLandscape = Cube.landscape.acquired;
+					//myCube.myLandscape = Cube.landscape.acquired;
 					isMoving = false;
 				}
 				
@@ -116,7 +118,7 @@ public class HexTile : MonoBehaviour
 		}
 		
 	}
-
+	/*
 	List<Cube> Search(Cube start, Cube.landscape goalLandscape)
 	{
 		Queue<Cube> frontier = new Queue<Cube>();
@@ -158,7 +160,7 @@ public class HexTile : MonoBehaviour
 		path.Add(start);
 		path.Reverse();
 		return path;
-	}
+	}*/
 	/*
 	private void OnDrawGizmos()
 	{

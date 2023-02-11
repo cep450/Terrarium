@@ -13,17 +13,7 @@ public class Cube
 
 	public SimHex simHex = null;
 
-	public enum landscape
-	{
 
-		concrete,
-		fertile,
-		water,
-		impassable,
-		acquired
-
-	}
-	public landscape myLandscape = landscape.concrete;
 	public Vector3 position;
 
 

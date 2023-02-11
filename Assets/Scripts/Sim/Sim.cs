@@ -26,12 +26,16 @@ public class Sim : MonoBehaviour
     void Start() {
         SimGrid.Init(); //needs to happen after HexGrid initializes
         AgentDirector.Init();
+
+        AgentDirector.SpawnAgents();
+        AgentDirector.CreateTaskListForAgents();
     }
 
     void Init() {
 
         //TODO remove this replace this 
         HexTypes.PrototypeCreateObjs();
+
 
     }
 

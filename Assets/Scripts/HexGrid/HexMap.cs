@@ -77,6 +77,7 @@ public class HexMap : MonoBehaviour, IInitialize
 
 			Gizmos.DrawLine(new Vector3(last.position.x, last.position.y), new Vector3(first.position.x, first.position.y));
 			//zeru's code
+			/*
 			switch (cube.myLandscape)
 			{
 				case Cube.landscape.water:
@@ -97,9 +98,10 @@ public class HexMap : MonoBehaviour, IInitialize
 				default:
 					Gizmos.color = Color.white;
 					break;
+			
 
 			}
-			Gizmos.DrawWireSphere(pos.position, 0.2f);
+			Gizmos.DrawWireSphere(pos.position, 0.2f);*/
 		}
 	}
 }
