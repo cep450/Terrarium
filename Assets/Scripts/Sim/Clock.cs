@@ -13,11 +13,11 @@ public class Clock : MonoBehaviour
     */
 
     [SerializeField] float _tickBaseSeconds = 0.5f;
-    static float tickBaseSeconds = 0.5f; //constant 
-    static float tickSpeedMult = 1f;  //changed by player
-    static float tickSeconds = 1f;    //updates based on mult
-    static float timeElapsed = 0f;    //a counter 
-    static bool paused = true;
+    static float tickBaseSeconds;       //constant. how many seconds in a level.
+    public static float tickSpeedLevel {get; private set;} //number of levels from 0.
+    static float tickSeconds = 1f;      //updates based on mult
+    static float timeElapsed = 0f;      //a counter 
+    public static bool paused {get; private set;}
     static float speedMultMax = 3f;
     static int tickCounter = 0;
 
@@ -31,6 +31,7 @@ public class Clock : MonoBehaviour
         timeElapsed = 0f;
         paused = true;
         tickCounter = 0;
+        tickSpeedLevel = 1f;
     }
 
     // Update is called once per frame
@@ -56,23 +57,23 @@ public class Clock : MonoBehaviour
             return;
         }
 
-        if(tickSpeedMult + 1f > speedMultMax) {
+        if(tickSpeedLevel + 1f > speedMultMax) {
             //can't go any faster
             return;
         }
 
-        SetSpeed(++tickSpeedMult);
+        SetSpeed(++tickSpeedLevel);
 
     }
 
     public static void DecrementSpeed() {
         
-        if(tickSpeedMult - 1f <= 0f) {
+        if(tickSpeedLevel - 1f <= 0f) {
             Pause();
             return;
         }
 
-        SetSpeed(--tickSpeedMult);
+        SetSpeed(--tickSpeedLevel);
 
     }
 

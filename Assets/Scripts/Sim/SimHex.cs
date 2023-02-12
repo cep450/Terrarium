@@ -77,8 +77,6 @@ public class SimHex
 	public void OutputTick(int tickNum)
 	{
 
-		Debug.Log("doing output tick in this hex");
-
 		if (tickNum != currentTick + 1)
 		{
 			Debug.LogError("ERR: skipped a tick somewhere! fix this/account for this!");
@@ -95,17 +93,11 @@ public class SimHex
 	public bool CheckInputs()
 	{
 
-		Debug.Log("type is " + type.name);
-		Debug.Log("resources requires length is " + type.resourcesRequired.Length);
-
 		foreach (Res.ResRequired rr in type.resourcesRequired)
 		{
 
-			Debug.Log("resource was " + Res.NameById(rr.id) + " amount " + rr.amount + " has " + resourcesHas[rr.id]);
-
 			if (rr.id == (int)Res.Resource.NULL)
 			{
-				Debug.Log("no resource stored");
 				continue;
 			}
 
@@ -113,11 +105,9 @@ public class SimHex
 
 			if (!(resourcesHas[rr.id] >= rr.amount))
 			{
-				Debug.Log("resource requirements not met");
 				return false;
 			}
 		}
-		Debug.Log("Resource requirements met!");
 		return true;
 
 	}
@@ -153,9 +143,10 @@ public class SimHex
 
 		}
 
-		Debug.Log("resources now: 0:" + resourcesHas[0] + " 1:" + resourcesHas[1] +
-					" 2:" + resourcesHas[2] + " 3:" + resourcesHas[3]);
-
 		visualHex.VisualUpdate();
 	}
+
+	//List<SimHex> NeighborSimHexes() {
+		
+	//}
 }

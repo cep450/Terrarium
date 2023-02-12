@@ -14,8 +14,8 @@ public class AgentDirector : MonoBehaviour
 
 	static List<Agent> agents = new List<Agent>();
 	public static List<SimHexType> simHexTypes;
-	public int destinationTypeIndex;
-	public int desiredTypeIndex;
+	public static int destinationTypeIndex;
+	public static int desiredTypeIndex;
 
 	public static void Init()
 	{
@@ -57,26 +57,26 @@ public class AgentDirector : MonoBehaviour
 			a.CreateTaskList();
 		}
 	}
-	public void AddTask()
+	public static void AddTask()
 	{
 		foreach (Agent a in agents)
 		{
 			a.AddTask(destinationTypeIndex, desiredTypeIndex);
 		}
 	}
-	public void PlantsToCrops()
+	public static void PlantsToCrops()
 	{
 		destinationTypeIndex = 0;
 		desiredTypeIndex = 2;
 		AddTask();
 	}
-	public void WaterToPlants()
+	public static void WaterToPlants()
 	{
 		destinationTypeIndex = 1;
 		desiredTypeIndex = 0;
 		AddTask();
 	}
-	public void CropsToWater()
+	public static void CropsToWater()
 	{
 		destinationTypeIndex = 2;
 		desiredTypeIndex = 1;
