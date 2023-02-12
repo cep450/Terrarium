@@ -63,4 +63,7 @@ crashlytics-build.properties
 
 #ignore user settings 
 UserSettings/
+UserSettings
+UserSettings/*
+
 
