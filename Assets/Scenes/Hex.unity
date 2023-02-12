@@ -170,7 +170,7 @@ MonoBehaviour:
   grid:
     orientation: 0
     scale: 1
-  size: 5
+  size: 10
   shape: 2
 --- !u!1 &675420877
 GameObject:
@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.639388
+  orthographic size: 8.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -339,16 +339,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 208736991}
-  position: {x: -2, y: -5}
+  position: {x: 1, y: 0}
   myCube:
-    myLandscape: 1
-    position: {x: -2, y: 7, z: -5}
-  myCubeIndex: 32
-  myNeighbors: []
-  myNeighborsIndices: 
+    myLandscape: 0
+    position: {x: 1, y: -1, z: 0}
+  myCubeIndex: 185
+  myNeighbors:
+  - myLandscape: 3
+    position: {x: 2, y: -1, z: -1}
+  - myLandscape: 0
+    position: {x: 2, y: -2, z: 0}
+  - myLandscape: 0
+    position: {x: 1, y: -2, z: 1}
+  - myLandscape: 0
+    position: {x: 0, y: -1, z: 1}
+  - myLandscape: 0
+    position: {x: 0, y: 0, z: 0}
+  - myLandscape: 0
+    position: {x: 1, y: 0, z: -1}
+  myNeighborsIndices: cd000000cc000000b8000000a4000000a5000000ba000000
   goal:
     myLandscape: 1
-    position: {x: -3, y: -1, z: -2}
+    position: {x: 0, y: -3, z: -2}
   movementSpeed: 0.5
 --- !u!4 &2107694387
 Transform:
@@ -358,7 +370,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2107694384}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8971143, y: -3.75, z: 0}
+  m_LocalPosition: {x: 0.8660254, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
