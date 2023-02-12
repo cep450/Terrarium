@@ -207,7 +207,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1790722057
+--- !u!1001 &803150327
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -218,10 +218,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sim
       objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexMap
-      value: 
-      objectReference: {fileID: 1964428124}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -266,31 +262,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2960459222456423339, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
---- !u!1 &1964428121 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4278522896934547365, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-  m_PrefabInstance: {fileID: 1790722057}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1964428124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1964428121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e431149db25ffd447bd180c9b4011656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid:
-    orientation: 0
-    scale: 1
-  size: 10
-  shape: 2
 --- !u!1001 &8225153601237267047
 PrefabInstance:
   m_ObjectHideFlags: 0

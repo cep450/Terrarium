@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgentDirector : MonoBehaviour
+public class AgentDirector //: MonoBehaviour
 {
 
 	/*
@@ -11,24 +11,12 @@ public class AgentDirector : MonoBehaviour
 
         Handles stuff like re-using objects and ticking Agents. 
     */
-	//HexMap hexMap;
-	static public GameObject gnome;
+
 	static List<Agent> agents = new List<Agent>();
 	public static List<SimHexType> simHexTypes;
 	public int destinationTypeIndex;
 	public int desiredTypeIndex;
-	[SerializeField]
-	public GameObject _gnome;
-	//public HexMap _hexMap;
-	private void Awake()
-	{
-		//hexMap = _hexMap;
-		gnome = _gnome;
-	}
-	private void Start()
-	{
-		
-	}
+
 	public static void Init()
 	{
 		//TODO 
@@ -53,7 +41,7 @@ public class AgentDirector : MonoBehaviour
 	{
 		Cube spawnCube = Sim.hexMap.grid.Hexes[0]; // TODO: where to spawn
 		SimHex simHex = spawnCube.simHex;
-		GameObject _gnome = Instantiate(gnome, simHex.visualHex.transform.position,new Quaternion());
+		GameObject _gnome = GameObject.Instantiate(Sim.gnomePrefab, simHex.visualHex.transform.position,new Quaternion());
 		Debug.Log("gnome spawned at " + spawnCube.position);
 		Agent gnomeAgent = _gnome.GetComponent<Agent>();
 		gnomeAgent.simHex = simHex;
