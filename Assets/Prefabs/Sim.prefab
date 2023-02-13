@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 3041502345685942833}
+  _hexMap: {fileID: 8522406073608363184}
   _visualHexPrefab: {fileID: 2479060019227721132, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275709212617185261}
-  - component: {fileID: 3041502345685942833}
+  - component: {fileID: 8522406073608363184}
   m_Layer: 0
   m_Name: HexMap
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_Father: {fileID: 1922028117923064798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3041502345685942833
+--- !u!114 &8522406073608363184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,11 +115,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4278522896934547365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
+  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid:
     orientation: 0
     scale: 1
-  size: 10
+  size: 8
   shape: 2

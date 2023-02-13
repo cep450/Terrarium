@@ -67,18 +67,36 @@ public class SimHex
 			}
 
 			Debug.Log("type changed at " + cube + "from " + type.name + " to " + newType.name);
+			Tracker.AddedHex(newType.id, 1);
+			Tracker.RemovedHex(type.id, 1);
 		}
+
+		//TODO inform tracker //////////////
 		
 		type = newType;
 
 		//add each starting resource to this tile
 		foreach (ResStarting rs in type.resourcesStarting)
 		{
-			resourcesHas[rs.id] += rs.amount;
+			AddResource(rs.id, rs.amount);
 		}
 
 		visualHex.VisualUpdate();
 
+	}
+
+	//add a resource to this hex
+	public void AddResource(int id, byte amount) {
+		resourcesHas[id] += amount;
+		Tracker.AddedRes(id, amount);
+	}
+	public bool CanConsume(int id, byte amount) {
+		return resourcesHas[id] >= amount;
+	}
+	//consume a resource from this hex
+	public void ConsumeResource(int id, byte amount) {
+		resourcesHas[id] -= amount;
+		Tracker.UsedRes(id, amount);
 	}
 
 
@@ -171,7 +189,7 @@ public class SimHex
 
 				//TODO factor in radius 
 
-				resourcesHas[rr.id] -= rr.amount;
+				ConsumeResource(rr.id, rr.amount);
 
 			}
 		}
@@ -235,12 +253,12 @@ public class SimHex
 				//chekcing the type might work?
 			} else {
 				//producing resources 
-				resourcesHas[rp.id] += rp.amount;
-
+				AddResource(rp.id, rp.amount);
+				
 				//TODO account for higher radius and falloff 
 				if(rp.radius > 0) {
 					foreach(SimHex neighbor in neighbors) {
-						neighbor.resourcesHas[rp.id] += rp.amount;
+						neighbor.AddResource(rp.id, rp.amount);
 					}
 				}
 
