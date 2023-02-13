@@ -18,6 +18,7 @@ public class Agent : MonoBehaviour
 	public List<Task> taskList;
 	public List<SimHexType> simHexTypes;
 	public bool isTaskInProgress = false;
+	int consumptionRate;
 	Task currentTask;
 	Queue<SimHex> pathQueue;
 	private void Start()
@@ -25,6 +26,7 @@ public class Agent : MonoBehaviour
 
 		cube = simHex.cube;
 		map = Sim.hexMap;
+		consumptionRate = 10;
 
 	}
 	public void CreateTaskList()
@@ -52,11 +54,22 @@ public class Agent : MonoBehaviour
 	}
 	public void Tick(int tickNum)
 	{
-		Debug.Log("agent ticking");
+		//Debug.Log("agent ticking");
 		if (map != null)
 		{
 			transform.position = map.grid.HexToCenter(cube).position;
 		}
+		ExecuteTask();
+		// consume a crops tile every X ticks
+		if (tickNum % consumptionRate == 0)
+		{
+			AddTask(2, 0); // convert crops to plants
+		}
+
+	}
+
+	void ExecuteTask()
+	{
 		if (isTaskInProgress)
 		{
 			if (currentTask != null)
@@ -72,7 +85,7 @@ public class Agent : MonoBehaviour
 				else // upon arrival
 				{
 					simHex.ChangeType(currentTask.desiredType);
-					currentTask.isComplete = true;
+					currentTask.isComplete = true; // doesnt do anything 
 					isTaskInProgress = false;
 				}
 			}
@@ -86,8 +99,8 @@ public class Agent : MonoBehaviour
 			currentTask.destination = pathList[pathList.Count - 1];
 			pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
 		}
-
 	}
+
 	Task FindTask()
 	{
 		if (taskList.Count <= 0)
