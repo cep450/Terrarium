@@ -21,4 +21,16 @@ public class UI : MonoBehaviour
     public void CropsToWater() {
         AgentDirector.CropsToWater();
     }
+
+    public void VineToDirt() {
+        AgentDirector.XToYByName("vine", "dirt");
+    }
+
+    public void DirtToCrop() {
+        AgentDirector.XToYByName("dirt", "crop");
+    }
+
+    public void DirtToWater() {
+        AgentDirector.XToYByName("dirt", "water");
+    }
 }

@@ -57,6 +57,7 @@ public class Resource {
         public bool isHex;      //does this represent a hex or a resource?
         public byte tickMod;    //fires when tickNum % tickMod == 0
         public float falloff;   //multiply this by distance for amount changed. 0 is no falloff
+        public string [] changes; //if a hex, hexes it can spread to. if a resource, tiles it can be added to
     }
 
     //when a hex changes to this type, it starts with this resource

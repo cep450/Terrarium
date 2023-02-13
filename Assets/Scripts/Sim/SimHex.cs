@@ -192,10 +192,27 @@ public class SimHex
 
 				//TODO we'll need rules about priority. maybe use their order in the hextype []
 				//TODO also factor in larger radiuses
-				int rand = Random.Range(0, neighbors.Length);
-				neighbors[rand].ChangeType(HexTypes.TypeByName(rp.name));
-				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
 
+				//look for a tile we can affect, starting from a random index
+				int rand = Random.Range(0, neighbors.Length);
+				int changeIndex = -1;
+				for(int i = 0; i < neighbors.Length; i++) {
+					int index = (rand + i) % neighbors.Length;
+					SimHex neighbor = neighbors[index]; //wrap
+
+					//if we can change it
+					if(System.Array.IndexOf<string>(rp.changes, neighbor.type.name) >= 0) {
+						changeIndex = index;
+						break;
+					}
+				}
+				if(changeIndex == -1) {
+					//no valid tile to flip 
+					continue;
+				}
+				neighbors[changeIndex].ChangeType(HexTypes.TypeByName(rp.name));
+				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
+				//chekcing the type might work?
 			} else {
 				//producing resources 
 				resourcesHas[rp.id] += rp.amount;

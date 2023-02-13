@@ -77,4 +77,9 @@ public class AgentDirector : MonoBehaviour
 		desiredTypeIndex = HexTypes.IdByName("water");
 		AddTask();
 	}
+	public static void XToYByName(string xTypeName, string yTypeName) {
+		destinationTypeIndex = HexTypes.IdByName(xTypeName);
+		desiredTypeIndex = HexTypes.IdByName(yTypeName);
+		AddTask();
+	}
 }
