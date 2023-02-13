@@ -18,6 +18,9 @@ public class VisualHex : MonoBehaviour {
 
     public void VisualUpdate() {
         spriteRenderer.color = simHex.type.color;
+        if(simHex.type.sprite != null) {
+            spriteRenderer.sprite = simHex.type.sprite;
+        }
     }
 
 }

@@ -22,8 +22,8 @@ public class SimGrid
 
         //TODO prototype temp- randomized types 
         for(int i = 0; i < hexes.Length; i++) {
-            int rand = Random.Range(0, HexTypes.types.Count);
-            hexes[i] = new SimHex(HexTypes.types[rand], Sim.hexMap.grid.Hexes[i]);
+            int rand = Random.Range(0, Sim.hexTypes.Length);
+            hexes[i] = new SimHex(Sim.hexTypes[rand], Sim.hexMap.grid.Hexes[i]);
             Sim.hexMap.grid.Hexes[i].simHex = hexes[i];
         }
 

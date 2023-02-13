@@ -16,7 +16,6 @@ public class Agent : MonoBehaviour
 	public Cube goal;
 	public HexMap map;
 	public List<Task> taskList;
-	public List<SimHexType> simHexTypes;
 	public bool isTaskInProgress = false;
 	Task currentTask;
 	Queue<SimHex> pathQueue;
@@ -37,7 +36,7 @@ public class Agent : MonoBehaviour
 	}
 	public void AddTask(int destinationTypeIndex, int desiredTypeIndex)
 	{
-		Task sampleTask0 = new Task(simHexTypes[destinationTypeIndex], simHexTypes[desiredTypeIndex]);
+		Task sampleTask0 = new Task(Sim.hexTypes[destinationTypeIndex], Sim.hexTypes[desiredTypeIndex]);
 		taskList.Add(sampleTask0);
 	}
 	public enum agentType

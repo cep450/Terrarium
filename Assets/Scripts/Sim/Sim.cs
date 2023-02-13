@@ -20,28 +20,28 @@ public class Sim : MonoBehaviour
     [SerializeField] GameObject _gnomePrefab; //TODO specify this as a Gnome or Agent 
     public static GameObject gnomePrefab;
 
+    //list of hex type scriptable objects
+    [SerializeField] public SimHexType [] _hexTypes;
+    public static SimHexType [] hexTypes;
+
+    
     void Awake() {
         hexMap = _hexMap;
 
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;
 
+        hexTypes = _hexTypes;
+
+        HexTypes.InitializeLookup(hexTypes);
+
         Clock.Tick += HandleTick;
-        Init();
+        
     }
     void Start() {
+
         SimGrid.Init(); //needs to happen after HexGrid initializes
         AgentDirector.Init();
-
-        AgentDirector.SpawnAgents();
-        AgentDirector.CreateTaskListForAgents();
-    }
-
-    void Init() {
-
-        //TODO remove this replace this 
-        HexTypes.PrototypeCreateObjs();
-
 
     }
 

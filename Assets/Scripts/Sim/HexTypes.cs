@@ -2,32 +2,111 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.IO;
 
 public class HexTypes {
 
     /*
         Hex type dictionary. 
-        Hex types are defined here. 
-        To add a type, define an object, add it to the array, and create its json file with the same name.
+        Helper functions for lookup.
+        To add a type, create a ScriptableObject and add it to the Sim's list. 
     */
 
-    //TODO do like an enum to use where matches file names and creates from there automatically
+    //parallel list with id for lookup
+    static string [] names;
+
+
+    //Autofills ids on startup.
+    public static void InitializeLookup(SimHexType[] types) {
+
+        names = new string[types.Length];
+
+        for(int i = 0; i < types.Length; i++) {
+            types[i].id = i;
+            names[i] = types[i].name;
+        }
+    }
+
+    public static SimHexType TypeByName(string name) {
+        return Sim.hexTypes[Array.IndexOf<string>(names, name)];
+    }
+    public static SimHexType TypeById(int id) {
+        return Sim.hexTypes[id];
+    }
+    public static int IdByName(string name) {
+        return Array.IndexOf<string>(names, name);
+    }
+    public static int IdByType(SimHexType type) {
+        return type.id;
+    }
+    public static string NameById(int id) {
+        return names[id];
+    }
+    public static string NameByType(SimHexType type) {
+        return names[Array.IndexOf<SimHexType>(Sim.hexTypes, type)];
+    }
+
+
+/*
+    public enum HexType {
+        DIRT,
+        PLANT,
+        WATER,
+        CROPS,
+        VINE
+    }
+
+    public static List<SimHexType> types { get; private set; }
+
+    public SimHexType TypeById(int id) {
+        return types[id];
+    }
+    public SimHexType TypeByEnum(HexType type) {
+        return types[(int)type];
+    }
+    public HexType EnumById(int id) {
+        return (HexType)id;
+    }
+    public int IdByEnum(HexType type) {
+        return (int)type;
+    }
+    public int IdByType(SimHexType simType) {
+        return types.IndexOf(simType);
+    }
+    public HexType EnumByType(SimHexType simType) {
+        return (HexType)types.IndexOf(simType);
+    }
+
+    public static void LoadTypes() {
+
+        HexType[] listOfEnumVals = (HexType[])Enum.GetValues(typeof(HexType));
+
+        types = new List<SimHexType>(listOfEnumVals.Length);
+
+        for(int i = 0; i < listOfEnumVals.Length; i++) {
+
+            string name = Enum.GetName(typeof(HexType), listOfEnumVals[i]);
+
+            SimHexType newType = new SimHexType(name);
+
+            types[i] = newType;
+
+        }
+    }
+
+ */
+
+    //below this is prototype stuff
+    /*
 
     public static SimHexType plant = new SimHexType("plant");
     public static SimHexType water = new SimHexType("water");
     public static SimHexType crops = new SimHexType("crops");
     //ect 
-
-    public static List<SimHexType> types = new List<SimHexType>(3);
-    //TODO sync up the array and types properly, shouldnt have to specify number
-
-
-    //TODO make something to be able to look up/get a type by id. 
-    //maybe make it only by id/enum like resources with conversion to ints and strings from the enum name even for the file name
-
-
-
     public static void PrototypeCreateObjs() {
+
+        types = new List<SimHexType>(3);
+
 
         //TODO for the purposes of this prototype doing manually, but would actually use json later 
 
@@ -73,6 +152,8 @@ public class HexTypes {
         types.Add(water);
         types.Add(crops);
 
-    }
 
+
+    }
+*/
 }

@@ -13,18 +13,14 @@ public class AgentDirector : MonoBehaviour
     */
 
 	static List<Agent> agents = new List<Agent>();
-	public static List<SimHexType> simHexTypes;
 	public static int destinationTypeIndex;
 	public static int desiredTypeIndex;
 
 	public static void Init()
 	{
-		//TODO 
-		simHexTypes = HexTypes.types;
-		foreach (SimHexType s in simHexTypes)
-		{
-			Debug.Log(s.name + "is a type");
-		}
+
+		SpawnAgents();
+        CreateTaskListForAgents();
 
 	}
 
@@ -45,7 +41,6 @@ public class AgentDirector : MonoBehaviour
 		Debug.Log("gnome spawned at " + spawnCube.position);
 		Agent gnomeAgent = _gnome.GetComponent<Agent>();
 		gnomeAgent.simHex = simHex;
-		gnomeAgent.simHexTypes = simHexTypes;
 
 		agents.Add(gnomeAgent);
 		
@@ -66,20 +61,20 @@ public class AgentDirector : MonoBehaviour
 	}
 	public static void PlantsToCrops()
 	{
-		destinationTypeIndex = 0;
-		desiredTypeIndex = 2;
+		destinationTypeIndex = HexTypes.IdByName("plant");
+		desiredTypeIndex = HexTypes.IdByName("crops");
 		AddTask();
 	}
 	public static void WaterToPlants()
 	{
-		destinationTypeIndex = 1;
-		desiredTypeIndex = 0;
+		destinationTypeIndex = HexTypes.IdByName("water");
+		desiredTypeIndex = HexTypes.IdByName("plant");
 		AddTask();
 	}
 	public static void CropsToWater()
 	{
-		destinationTypeIndex = 2;
-		desiredTypeIndex = 1;
+		destinationTypeIndex = HexTypes.IdByName("crops");
+		desiredTypeIndex = HexTypes.IdByName("water");
 		AddTask();
 	}
 }

@@ -62,6 +62,12 @@ MonoBehaviour:
   _hexMap: {fileID: 2960459222456423339}
   _visualHexPrefab: {fileID: 2479060019227721132, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
+  _hexTypes:
+  - {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
+  - {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
+  - {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
+  - {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
+  - {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0
