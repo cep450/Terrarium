@@ -23,13 +23,15 @@ public class Agent : MonoBehaviour
 	Task currentTask;
 	Queue<SimHex> pathQueue;
 
-	private void Start() {
+	private void Start()
+	{
 		cube = simHex.cube;
 		map = Sim.hexMap;
 		consumptionRate = 10;
 	}
 
-	public void CreateTaskList() {
+	public void CreateTaskList()
+	{
 
 		taskList = new List<Task>();
 		Task sampleTask0 = new Task(simHex.type, simHex.type);
@@ -37,9 +39,9 @@ public class Agent : MonoBehaviour
 		taskList.Add(sampleTask0);
 	}
 
-	public void AddTask(int destinationTypeIndex, int desiredTypeIndex)
+	public void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{
-		Task sampleTask0 = new Task(Sim.hexTypes[destinationTypeIndex], Sim.hexTypes[desiredTypeIndex]);
+		Task sampleTask0 = new Task(destinationType, desiredType);
 		taskList.Add(sampleTask0);
 	}
 
@@ -54,66 +56,42 @@ public class Agent : MonoBehaviour
 
 	void ExecuteTask()
 	{
-
 		if (isTaskInProgress)
 		{
-
 			if (currentTask != null)
 			{
-
 				if (currentTask.destination != simHex)
 				{
-
 					if (pathQueue.Count > 0)
 					{
-
 						simHex = pathQueue.Dequeue();
-
 						cube = simHex.cube;
-
 					}
-
 				}
-
 				else // upon arrival
-
 				{
-
 					simHex.ChangeType(currentTask.desiredType);
-
 					currentTask.isComplete = true; // doesnt do anything 
-
 					isTaskInProgress = false;
-
 				}
-
 			}
-
 		}
-
 		else
-
 		{
-
 			Debug.Log("task sequence begins");
-
 			currentTask = FindTask();
-
 			isTaskInProgress = true;
-
 			List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
-
 			currentTask.destination = pathList[pathList.Count - 1];
-
 			pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
-
 		}
 
 	}
 
 	Task FindTask()
 	{
-		if (taskList.Count <= 0) {
+		if (taskList.Count <= 0)
+		{
 			CreateTaskList();
 		}
 
@@ -123,7 +101,7 @@ public class Agent : MonoBehaviour
 		return task;
 	}
 
-		public void Tick(int tickNum)
+	public void Tick(int tickNum)
 	{
 		if (map != null)
 		{
@@ -136,10 +114,10 @@ public class Agent : MonoBehaviour
 
 		if (tickNum % consumptionRate == 0)
 		{
-			AddTask(HexTypes.IdByName("crops"), HexTypes.IdByName("plant")); // convert crops to plants
+			AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
 		}
 	}
-	
+
 	/* //old commit?
 	public void Tick(int tickNum)
 	{

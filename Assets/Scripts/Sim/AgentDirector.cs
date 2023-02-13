@@ -14,15 +14,16 @@ public class AgentDirector : MonoBehaviour
     */
 
 	static List<Agent> agents = new List<Agent>();
-	public static int destinationTypeIndex;
-	public static int desiredTypeIndex;
+	//public static int destinationTypeIndex;
+	//public static int desiredTypeIndex;
 
 	public static void Init()
 	{
-		for (int i = 0; i < Sim.gnomesToSpawn; i++) {
-            SpawnAgents();
-        }
-        CreateTaskListForAgents();
+		for (int i = 0; i < Sim.gnomesToSpawn; i++)
+		{
+			SpawnAgents();
+		}
+		CreateTaskListForAgents();
 	}
 
 	public static void AgentTick(int tickNum)
@@ -42,6 +43,7 @@ public class AgentDirector : MonoBehaviour
 		Debug.Log("gnome spawned at " + spawnCube.position);
 		Agent gnomeAgent = _gnome.GetComponent<Agent>();
 		gnomeAgent.simHex = simHex;
+		agents.Add(gnomeAgent);
 
 	}
 	public static void CreateTaskListForAgents()
@@ -51,38 +53,30 @@ public class AgentDirector : MonoBehaviour
 			a.CreateTaskList();
 		}
 	}
-	public static void AddTask()
+	public static void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{
 		int[] taskListLengths = new int[agents.Count];
 		for (int i = 0; i < agents.Count; i++)
 		{
 			taskListLengths[i] = agents[i].taskList.Count;
 		}
-		int minIndex = Array.IndexOf(taskListLengths, taskListLengths.Min());
-		agents[minIndex].AddTask(destinationTypeIndex, desiredTypeIndex);
+		int minIndex = 0;
+		try
+		{
+			minIndex = Array.IndexOf(taskListLengths, taskListLengths.Min());
+		}
+		catch
+		{
+
+		}
+
+		agents[minIndex].AddTask(destinationType, desiredType);
 	}
-	public static void PlantsToCrops()
+
+	public static void XToYByName(string xTypeName, string yTypeName)
 	{
-		destinationTypeIndex = HexTypes.IdByName("plant");
-		desiredTypeIndex = HexTypes.IdByName("crops");
-		AddTask();
-	}
-	public static void WaterToPlants()
-	{
-		destinationTypeIndex = HexTypes.IdByName("water");
-		desiredTypeIndex = HexTypes.IdByName("plant");
-		AddTask();
-	}
-	public static void CropsToWater()
-	{
-		destinationTypeIndex = HexTypes.IdByName("crops");
-		desiredTypeIndex = HexTypes.IdByName("water");
-		AddTask();
-	}
-	public static void XToYByName(string xTypeName, string yTypeName) {
-		destinationTypeIndex = HexTypes.IdByName(xTypeName);
-		desiredTypeIndex = HexTypes.IdByName(yTypeName);
-		AddTask();
+
+		AddTask(HexTypes.TypeByName(xTypeName), HexTypes.TypeByName(yTypeName));
 	}
 
 	public static string AllTaskLists()
@@ -100,11 +94,11 @@ public class AgentDirector : MonoBehaviour
 			count += a.taskList.Count;
 		}
 
-		for (int i = 0;i<count;i++)
+		for (int i = 0; i < count; i++)
 		{
-			for (int j = 0; j < listOfLists.Count;j++)
+			for (int j = 0; j < listOfLists.Count; j++)
 			{
-				if (listOfLists[j].Count>0)
+				if (listOfLists[j].Count > 0)
 				{
 					list.Add(listOfLists[j][0]);
 					listOfLists[j].RemoveAt(0);

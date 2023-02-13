@@ -11,15 +11,15 @@ public class UI : MonoBehaviour
     */
 
     public void PlantsToCrops() {
-        AgentDirector.PlantsToCrops();
+        AgentDirector.XToYByName("plant", "crops");
     }
 
     public void WaterToPlants() {
-        AgentDirector.WaterToPlants();
+        AgentDirector.XToYByName("water", "plant");
     }
 
     public void CropsToWater() {
-        AgentDirector.CropsToWater();
+        AgentDirector.XToYByName("crops", "water");
     }
 
     public void VineToDirt() {
