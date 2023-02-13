@@ -24,6 +24,10 @@ public class SimGrid
             hexes[i] = new SimHex(Sim.hexTypes[rand], Sim.hexMap.grid.Hexes[i]);
             Sim.hexMap.grid.Hexes[i].simHex = hexes[i];
         }
+        //done after all initialized to avoid null neighbors
+        foreach(SimHex hex in hexes) {
+            hex.LoadNeighbors();
+        }
 
     }
 

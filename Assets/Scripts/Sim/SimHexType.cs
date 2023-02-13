@@ -18,6 +18,7 @@ public class SimHexType : ScriptableObject {
     public string name = "default";         //this will also be the name of the json file it loads from
     public int id = -1;                     //its calling card for equals and lookup. its index in the array
     public bool passable = true;            //can gnomes pathfind/walk through this hex?
+    public string deathHexName = "dirt";        //hex it flips to if it dies 
 
     //defines behavior 
     public ResRequired [] resourcesRequired = new ResRequired[2];
@@ -32,11 +33,19 @@ public class SimHexType : ScriptableObject {
     //Loads associated ids by name 
     public void Init() {
 
+        id = HexTypes.IdByName(name);
+
+        Debug.Log("initializing hex type " + name);
+
         for(int i = 0; i < resourcesRequired.Length; i++) {
             resourcesRequired[i].id = Resource.IdByName(resourcesRequired[i].name);
         }
         for(int i = 0; i < resourcesProduced.Length; i++) {
-            resourcesProduced[i].id = Resource.IdByName(resourcesProduced[i].name);
+            if(resourcesProduced[i].isHex) {
+                resourcesProduced[i].id = HexTypes.IdByName(resourcesProduced[i].name);
+            } else {
+                resourcesProduced[i].id = Resource.IdByName(resourcesProduced[i].name);
+            }    
         }
         for(int i = 0; i < resourcesStarting.Length; i++) {
             resourcesStarting[i].id = Resource.IdByName(resourcesStarting[i].name);

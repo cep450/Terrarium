@@ -26,6 +26,7 @@ public class SimHex
 	//go up to 255
 	public byte[] resourcesHas = new byte[Sim.resources.Length]; //this changes 
 
+	SimHex [] neighbors;
 
 	//for tracking if stuff was satisfied the last tick 
 	int currentTick = -1;
@@ -43,11 +44,28 @@ public class SimHex
 		ChangeType(t);
 	}
 
+	public void LoadNeighbors() {
+		List<Cube> neighborCubes = Sim.hexMap.grid.Neighbors(this.cube);
+		neighbors = new SimHex[neighborCubes.Count];
+		for(int i = 0; i < neighborCubes.Count; i++) {
+			neighbors[i] = neighborCubes[i].simHex;
+		}
+	}
+
 	//Called when this type changes type.
 	public void ChangeType(SimHexType newType)
 	{
-		if (type!=null)
-		{
+		if(newType == null) {
+			Debug.LogError("ERR: tried to change type to null");
+			return;
+		}
+
+		if(type != null) {
+			if(type.Equals(newType)) {
+				Debug.LogError("tried to change a " + type.name + " tile to its own type");
+				return; //also prevents adding starting resources
+			}
+
 			Debug.Log("type changed at " + cube + "from " + type.name + " to " + newType.name);
 		}
 		
@@ -67,22 +85,25 @@ public class SimHex
 	//TODO be checking the tick number for safety 
 	public void InputTick(int tickNum)
 	{
-		if (CheckInputs())
-		{
+		InputStatus result = CheckInputs();
+		if(result == InputStatus.Satisfied) {
 			ConsumeInputs();
 			currentTick = tickNum;
 			inputsSatisfied = true;
+		} else if(result == InputStatus.NotSatisfiedDies) {
+			Die();
 		}
 	}
 
 	public void OutputTick(int tickNum)
 	{
 
-		if (tickNum != currentTick + 1)
+		//TODO get tick checking correct
+		/*if (tickNum != currentTick + 1)
 		{
 			Debug.LogError("ERR: skipped a tick somewhere! fix this/account for this!");
 			return;
-		}
+		}*/
 
 		if (inputsSatisfied)
 		{
@@ -91,7 +112,10 @@ public class SimHex
 		}
 	}
 
-	public bool CheckInputs()
+	public enum InputStatus {
+		NotSatisfiedDies, NotSatisfied, Satisfied
+	}
+	public InputStatus CheckInputs()
 	{
 
 		foreach (ResRequired rr in type.resourcesRequired)
@@ -102,15 +126,29 @@ public class SimHex
 				continue;
 			}
 
-			//TODO factor in radius
+			int sum = 0;
 
-			if (!(resourcesHas[rr.id] >= rr.amount))
+			//factor in self 
+			sum += resourcesHas[rr.id];
+
+			//factor in neighbors, if applicable 
+			//TODO for now, only possible to check immediate neighbors, radius needs more
+			if(rr.radius > 0) {
+				foreach(SimHex neighbor in neighbors) {
+					sum += neighbor.resourcesHas[rr.id];
+				}
+			}
+			
+			if (!(sum >= rr.amount))
 			{
-				return false;
+				if(rr.diesIfNotNet) {
+					return InputStatus.NotSatisfiedDies;
+				} else {
+					return InputStatus.NotSatisfied;
+				}
 			}
 		}
-		return true;
-
+		return InputStatus.Satisfied;
 	}
 
 	public void ConsumeInputs()
@@ -121,6 +159,15 @@ public class SimHex
 
 			if (rr.isConsumed)
 			{
+
+				int amount = rr.amount;
+
+
+
+				//tries self first 
+
+				//then checks neighbors if applicable 
+
 
 				//TODO factor in radius 
 
@@ -135,19 +182,41 @@ public class SimHex
 	public void CreateOutputs()
 	{
 
+		//TODO factor in modulo
+
 		foreach (ResProduced rp in type.resourcesProduced)
 		{
 
-			//TODO factor in if is hex 
+			if(rp.isHex) {
+				//flipping a hex
 
-			resourcesHas[rp.id] += rp.amount;
+				//TODO we'll need rules about priority. maybe use their order in the hextype []
+				//TODO also factor in larger radiuses
+				int rand = Random.Range(0, neighbors.Length);
+				neighbors[rand].ChangeType(HexTypes.TypeByName(rp.name));
+				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
 
+			} else {
+				//producing resources 
+				resourcesHas[rp.id] += rp.amount;
+
+				//TODO account for higher radius and falloff 
+				if(rp.radius > 0) {
+					foreach(SimHex neighbor in neighbors) {
+						neighbor.resourcesHas[rp.id] += rp.amount;
+					}
+				}
+
+				//visualHex.VisualUpdate(); //TODO when adding sprite effects
+
+			}
 		}
-
-		visualHex.VisualUpdate();
 	}
 
-	//List<SimHex> NeighborSimHexes() {
-		
-	//}
+	public void Die() {
+
+		//todo it could also leave behind resources on death?
+
+		ChangeType(HexTypes.TypeByName(type.deathHexName));
+	}
 }

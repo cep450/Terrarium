@@ -39,15 +39,15 @@ public class Sim : MonoBehaviour
         hexTypes = _hexTypes;
         resources = _resources;
 
+        HexTypes.InitializeLookup(hexTypes);
         foreach(SimHexType type in hexTypes) {
             type.Init();
         }
-        HexTypes.InitializeLookup(hexTypes);
 
         Clock.Tick += HandleTick;
         
     }
-    
+
     void Start() {
 
         SimGrid.Init(); //needs to happen after HexGrid initializes
@@ -63,14 +63,14 @@ public class Sim : MonoBehaviour
         Debug.Log("tick number: " + tickArgs.tickNum + " tick order: " + tickOrder);
 
         if(tickOrder == 0) {
-            Debug.Log("doing input tick");
-            SimGrid.TickInputs(tickArgs.tickNum);
+            Debug.Log("doing input tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            SimGrid.TickInputs(tickArgs.tickNum / 3);
         } else if(tickOrder == 1) {
-            Debug.Log("doing output tick ");
-            SimGrid.TickOutputs(tickArgs.tickNum);
+            Debug.Log("doing output tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            SimGrid.TickOutputs(tickArgs.tickNum / 3);
         } else if(tickOrder == 2) {
-            Debug.Log("doing agent tick");
-            AgentDirector.AgentTick(tickArgs.tickNum);
+            Debug.Log("doing agent tick" + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            AgentDirector.AgentTick(tickArgs.tickNum / 3);
         }
     }
 }

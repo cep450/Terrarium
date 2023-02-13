@@ -24,7 +24,10 @@ public class Resource {
     public static int IdByName(string name) {
         int index = Array.IndexOf<string>(Sim.resources, name);
         if(index < 0) {
-            Debug.LogError("ERR: asked for id of Resource " + name + " which was not found");
+            Debug.LogError("ERR: asked for id of Resource \"" + name + "\" which was not found");
+            if(name == null) {
+                Debug.LogError("the resource name string was empty");
+            }
         }
         return index;
     }
@@ -39,6 +42,7 @@ public class Resource {
         public byte radius;
         public byte tickMod;    //fires when tickNum % tickMod == 0
         public bool isConsumed; //does this tile consume this resource or just need it to exist?
+        public bool diesIfNotNet; //if this requirement isn't met, will it flip to its death hex
         public float falloff;   //multiply this by distance for amount changed. 0 is no falloff
     }
 
@@ -61,6 +65,11 @@ public class Resource {
         public string name;     //for the inspector
         public int id;
         public byte amount;
+    }
+
+    //resources it leaves behind on death
+    public struct ResDeath {
+
     }
 
 }
