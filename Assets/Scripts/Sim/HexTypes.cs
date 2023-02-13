@@ -28,7 +28,12 @@ public class HexTypes {
     }
 
     public static SimHexType TypeByName(string name) {
-        return Sim.hexTypes[Array.IndexOf<string>(names, name)];
+        int index = Array.IndexOf<string>(names, name);
+        if(index == -1) {
+            Debug.LogError("couldn't find type \'" + name + "\" by name");
+            return null;
+        }
+        return Sim.hexTypes[index];
     }
     public static SimHexType TypeById(int id) {
         return Sim.hexTypes[id];

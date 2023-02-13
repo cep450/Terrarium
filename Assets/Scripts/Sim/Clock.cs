@@ -47,7 +47,6 @@ public class Clock : MonoBehaviour
             timeElapsed = timeElapsed % tickSeconds; //this will skip ticks if lag. use subtraction if want to catch up
             Tick?.Invoke(this, new TickArgs { tickNum = tickCounter } );
             tickCounter++; //will start on 0th tick 
-            Debug.Log("clock says tick " + tickCounter);
             //todo account for int overflow lol
         }
     }

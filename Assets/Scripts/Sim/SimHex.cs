@@ -107,7 +107,7 @@ public class SimHex
 
 		if (inputsSatisfied)
 		{
-			CreateOutputs();
+			CreateOutputs(tickNum);
 			inputsSatisfied = false;
 		}
 	}
@@ -179,7 +179,7 @@ public class SimHex
 		visualHex.VisualUpdate();
 	}
 
-	public void CreateOutputs()
+	public void CreateOutputs(int tickNum)
 	{
 
 		//TODO factor in modulo
@@ -192,6 +192,14 @@ public class SimHex
 
 				//TODO we'll need rules about priority. maybe use their order in the hextype []
 				//TODO also factor in larger radiuses
+
+				//if we only do this every x ticks
+				if(rp.tickMod > 0) {
+					if(tickNum % rp.tickMod != 0) {
+						//doesn't produce this tick
+						continue;
+					}
+				}
 
 				//look for a tile we can affect, starting from a random index
 				int rand = Random.Range(0, neighbors.Length);

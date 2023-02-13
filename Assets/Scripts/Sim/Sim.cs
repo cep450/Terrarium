@@ -66,8 +66,6 @@ public class Sim : MonoBehaviour
 
         int tickOrder = tickArgs.tickNum % 3;
 
-        Debug.Log("tick number: " + tickArgs.tickNum + " tick order: " + tickOrder);
-
         if(tickOrder == 0) {
             Debug.Log("doing input tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
             SimGrid.TickInputs(tickArgs.tickNum / 3);
