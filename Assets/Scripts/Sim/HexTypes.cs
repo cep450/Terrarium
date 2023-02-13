@@ -13,7 +13,7 @@ public class HexTypes {
     */
 
     //parallel list with id for lookup
-    static string [] names;
+    public static string [] names {get; private set;}
 
 
     //Autofills ids on startup.
