@@ -40,7 +40,7 @@ MonoBehaviour:
     radius: 1
     limit: 6
     isHex: 1
-    tickMod: 10
+    tickMod: 20
     falloff: 0
     changes:
     - dirt

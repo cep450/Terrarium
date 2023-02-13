@@ -27,7 +27,7 @@ public class UI : MonoBehaviour
     }
 
     public void DirtToCrop() {
-        AgentDirector.XToYByName("dirt", "crop");
+        AgentDirector.XToYByName("dirt", "crops");
     }
 
     public void DirtToWater() {

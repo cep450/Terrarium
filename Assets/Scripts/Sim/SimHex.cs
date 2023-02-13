@@ -107,7 +107,7 @@ public class SimHex
 
 		if (inputsSatisfied)
 		{
-			CreateOutputs();
+			CreateOutputs(tickNum);
 			inputsSatisfied = false;
 		}
 	}
@@ -179,7 +179,7 @@ public class SimHex
 		visualHex.VisualUpdate();
 	}
 
-	public void CreateOutputs()
+	public void CreateOutputs(int tickNum)
 	{
 
 		//TODO factor in modulo
@@ -193,24 +193,44 @@ public class SimHex
 				//TODO we'll need rules about priority. maybe use their order in the hextype []
 				//TODO also factor in larger radiuses
 
-				//look for a tile we can affect, starting from a random index
-				int rand = Random.Range(0, neighbors.Length);
-				int changeIndex = -1;
-				for(int i = 0; i < neighbors.Length; i++) {
-					int index = (rand + i) % neighbors.Length;
-					SimHex neighbor = neighbors[index]; //wrap
-
-					//if we can change it
-					if(System.Array.IndexOf<string>(rp.changes, neighbor.type.name) >= 0) {
-						changeIndex = index;
-						break;
+				//if we only do this every x ticks
+				if(rp.tickMod > 0) {
+					if(tickNum % rp.tickMod != 0) {
+						//doesn't produce this tick
+						continue;
 					}
 				}
-				if(changeIndex == -1) {
-					//no valid tile to flip 
-					continue;
+
+				//look for a tile we can affect, starting from a random index
+				int rand = Random.Range(0, neighbors.Length);
+
+				//if we try every neighbor
+				if(rp.tryAll) {
+					int changeIndex = -1;
+					for(int i = 0; i < neighbors.Length; i++) {
+						int index = (rand + i) % neighbors.Length;
+						SimHex neighbor = neighbors[index]; //wrap
+
+						//if we can change it
+						if(System.Array.IndexOf<string>(rp.changes, neighbor.type.name) >= 0) {
+							changeIndex = index;
+							break;
+						}
+					}
+					if(changeIndex == -1) {
+						//no valid hex to flip 
+						continue;
+					}
+					rand = changeIndex;
+				} else {
+					//just the one 
+					if(!(System.Array.IndexOf<string>(rp.changes, neighbors[rand].type.name) >= 0)) {
+						//no valid hex to flip here 
+						continue;
+					}
 				}
-				neighbors[changeIndex].ChangeType(HexTypes.TypeByName(rp.name));
+				//ok, flip this 
+				neighbors[rand].ChangeType(HexTypes.TypeByName(rp.name));
 				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
 				//chekcing the type might work?
 			} else {
