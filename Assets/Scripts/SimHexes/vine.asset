@@ -10,33 +10,46 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: dirt
+  m_Name: vine
   m_EditorClassIdentifier: 
-  name: dirt
+  name: vine
   id: -1
   passable: 1
   resourcesRequired:
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
+  - name: water
+    id: 0
+    amount: 1
+    radius: 1
+    tickMod: 0
+    isConsumed: 1
+    falloff: 0
+  - name: nutrients
+    id: 1
+    amount: 1
+    radius: 1
+    tickMod: 0
+    isConsumed: 1
+    falloff: 0
   resourcesProduced:
-  - id: 0
+  - name: vine
+    id: 0
+    amount: 1
+    radius: 1
+    limit: 6
+    isHex: 1
+    tickMod: 10
+    falloff: 0
+  - name: 
+    id: 0
     amount: 0
     radius: 0
+    limit: 0
     isHex: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isHex: 0
+    tickMod: 0
+    falloff: 0
   resourcesStarting:
-  - id: 0
-    amount: 0
-  - id: 0
-    amount: 0
-  color: {r: 0.2924528, g: 0.17228352, b: 0.18516827, a: 1}
+  - name: nutrients
+    id: 0
+    amount: 100
+  color: {r: 0.053993106, g: 0.3962264, b: 0.26774034, a: 1}
   sprite: {fileID: 0}

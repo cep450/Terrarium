@@ -16,8 +16,6 @@ public class SimGrid
     
     public static void Init() {
 
-        Debug.Log("count is " + Sim.hexMap.grid.Hexes.Count);
-
         hexes = new SimHex[Sim.hexMap.grid.Hexes.Count];
 
         //TODO prototype temp- randomized types 

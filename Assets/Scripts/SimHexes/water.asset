@@ -15,28 +15,19 @@ MonoBehaviour:
   name: water
   id: -1
   passable: 1
-  resourcesRequired:
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
+  resourcesRequired: []
   resourcesProduced:
-  - id: 0
-    amount: 0
-    radius: 0
+  - name: water
+    id: 0
+    amount: 2
+    radius: 2
+    limit: 0
     isHex: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isHex: 0
+    tickMod: 0
+    falloff: 0.5
   resourcesStarting:
-  - id: 0
-    amount: 0
-  - id: 0
-    amount: 0
+  - name: water
+    id: 0
+    amount: 255
   color: {r: 0.3480875, g: 0.6481256, b: 0.8301887, a: 1}
   sprite: {fileID: 0}

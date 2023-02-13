@@ -3,5 +3,5 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GlobalPool {
-    public static byte[] resourcesHas = new byte[Res.resources.Length];
+    public static byte[] resourcesHas = new byte[Sim.resources.Length];
 }

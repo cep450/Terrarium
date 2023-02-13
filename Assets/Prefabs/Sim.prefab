@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e654ac5fa8f516946a1a4aba792bf025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tickBaseSeconds: 1
+  _tickBaseSeconds: 0.25
 --- !u!114 &1922028117923064797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +68,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
   - {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
   - {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
+  _resources:
+  - null
+  - water
+  - nutrients
+  - food
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0

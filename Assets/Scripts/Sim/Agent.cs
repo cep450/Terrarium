@@ -51,7 +51,6 @@ public class Agent : MonoBehaviour
 	}
 	public void Tick(int tickNum)
 	{
-		Debug.Log("agent ticking");
 		if (map != null)
 		{
 			transform.position = map.grid.HexToCenter(cube).position;

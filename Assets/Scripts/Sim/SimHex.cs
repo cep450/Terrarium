@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Resource;
 
 public class SimHex
 {
@@ -23,7 +24,7 @@ public class SimHex
 	//every SimHex takes up a const amount of memory.
 	//these inform graphical rendering, sprite blending, making sprites appear
 	//go up to 255
-	public byte[] resourcesHas = new byte[Res.resources.Length]; //this changes 
+	public byte[] resourcesHas = new byte[Sim.resources.Length]; //this changes 
 
 
 	//for tracking if stuff was satisfied the last tick 
@@ -53,7 +54,7 @@ public class SimHex
 		type = newType;
 
 		//add each starting resource to this tile
-		foreach (Res.ResStarting rs in type.resourcesStarting)
+		foreach (ResStarting rs in type.resourcesStarting)
 		{
 			resourcesHas[rs.id] += rs.amount;
 		}
@@ -93,10 +94,10 @@ public class SimHex
 	public bool CheckInputs()
 	{
 
-		foreach (Res.ResRequired rr in type.resourcesRequired)
+		foreach (ResRequired rr in type.resourcesRequired)
 		{
 
-			if (rr.id == (int)Res.Resource.NULL)
+			if (rr.id == Resource.nullResId)
 			{
 				continue;
 			}
@@ -115,7 +116,7 @@ public class SimHex
 	public void ConsumeInputs()
 	{
 
-		foreach (Res.ResRequired rr in type.resourcesRequired)
+		foreach (ResRequired rr in type.resourcesRequired)
 		{
 
 			if (rr.isConsumed)
@@ -134,7 +135,7 @@ public class SimHex
 	public void CreateOutputs()
 	{
 
-		foreach (Res.ResProduced rp in type.resourcesProduced)
+		foreach (ResProduced rp in type.resourcesProduced)
 		{
 
 			//TODO factor in if is hex 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using static Resource; //allows ResourceRequires rather than Res.ResourceRequired
 
 [CreateAssetMenu]
 public class SimHexType : ScriptableObject {
@@ -19,13 +20,28 @@ public class SimHexType : ScriptableObject {
     public bool passable = true;            //can gnomes pathfind/walk through this hex?
 
     //defines behavior 
-    public Res.ResRequired [] resourcesRequired = new Res.ResRequired[2];
-    public Res.ResProduced [] resourcesProduced = new Res.ResProduced[2];
-    public Res.ResStarting [] resourcesStarting = new Res.ResStarting[2];
+    public ResRequired [] resourcesRequired = new ResRequired[2];
+    public ResProduced [] resourcesProduced = new ResProduced[2];
+    public ResStarting [] resourcesStarting = new ResStarting[2];
     
     //visual display
     public Color color;
     public Sprite sprite;
+
+
+    //Loads associated ids by name 
+    public void Init() {
+
+        for(int i = 0; i < resourcesRequired.Length; i++) {
+            resourcesRequired[i].id = Resource.IdByName(resourcesRequired[i].name);
+        }
+        for(int i = 0; i < resourcesProduced.Length; i++) {
+            resourcesProduced[i].id = Resource.IdByName(resourcesProduced[i].name);
+        }
+        for(int i = 0; i < resourcesStarting.Length; i++) {
+            resourcesStarting[i].id = Resource.IdByName(resourcesStarting[i].name);
+        }
+    }
 
 
     public override bool Equals(object other) {

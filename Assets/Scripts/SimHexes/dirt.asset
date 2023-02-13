@@ -10,33 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: plant
+  m_Name: dirt
   m_EditorClassIdentifier: 
-  name: plant
+  name: dirt
   id: -1
   passable: 1
-  resourcesRequired:
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isConsumed: 0
-  resourcesProduced:
-  - id: 0
-    amount: 0
-    radius: 0
-    isHex: 0
-  - id: 0
-    amount: 0
-    radius: 0
-    isHex: 0
+  resourcesRequired: []
+  resourcesProduced: []
   resourcesStarting:
-  - id: 0
+  - name: nutrients
+    id: 0
+    amount: 100
+  - name: 
+    id: 0
     amount: 0
-  - id: 0
-    amount: 0
-  color: {r: 0.20758672, g: 0.6037736, b: 0.21667022, a: 1}
+  color: {r: 0.2924528, g: 0.17228352, b: 0.18516827, a: 1}
   sprite: {fileID: 0}

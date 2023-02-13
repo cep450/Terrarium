@@ -24,20 +24,30 @@ public class Sim : MonoBehaviour
     [SerializeField] public SimHexType [] _hexTypes;
     public static SimHexType [] hexTypes;
 
+    //list of resource names 
+    [SerializeField] public string [] _resources;
+    public static string [] resources;
+
     
     void Awake() {
+
         hexMap = _hexMap;
 
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;
 
         hexTypes = _hexTypes;
+        resources = _resources;
 
+        foreach(SimHexType type in hexTypes) {
+            type.Init();
+        }
         HexTypes.InitializeLookup(hexTypes);
 
         Clock.Tick += HandleTick;
         
     }
+    
     void Start() {
 
         SimGrid.Init(); //needs to happen after HexGrid initializes
