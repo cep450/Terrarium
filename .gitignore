@@ -63,4 +63,7 @@ crashlytics-build.properties
 
 #ignore user settings 
 UserSettings/
+UserSettings
+UserSettings/EditorUserSettings.asset
+UserSettings/Layouts/default-2021.dwlt
 

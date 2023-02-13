@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hexMap: {fileID: 2960459222456423339}
   _visualHexPrefab: {fileID: 2479060019227721132, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+  _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0

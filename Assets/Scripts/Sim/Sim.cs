@@ -13,12 +13,18 @@ public class Sim : MonoBehaviour
 
     [SerializeField] HexMap _hexMap;
     public static HexMap hexMap;
+
+    //prefabs
     [SerializeField] VisualHex _visualHexPrefab;
     public static VisualHex visualHexPrefab;
+    [SerializeField] GameObject _gnomePrefab; //TODO specify this as a Gnome or Agent 
+    public static GameObject gnomePrefab;
 
     void Awake() {
         hexMap = _hexMap;
+
         visualHexPrefab = _visualHexPrefab;
+        gnomePrefab = _gnomePrefab;
 
         Clock.Tick += HandleTick;
         Init();

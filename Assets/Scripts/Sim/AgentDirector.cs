@@ -11,24 +11,12 @@ public class AgentDirector : MonoBehaviour
 
         Handles stuff like re-using objects and ticking Agents. 
     */
-	//HexMap hexMap;
-	static public GameObject gnome;
+
 	static List<Agent> agents = new List<Agent>();
 	public static List<SimHexType> simHexTypes;
-	public int destinationTypeIndex;
-	public int desiredTypeIndex;
-	[SerializeField]
-	public GameObject _gnome;
-	//public HexMap _hexMap;
-	private void Awake()
-	{
-		//hexMap = _hexMap;
-		gnome = _gnome;
-	}
-	private void Start()
-	{
-		
-	}
+	public static int destinationTypeIndex;
+	public static int desiredTypeIndex;
+
 	public static void Init()
 	{
 		//TODO 
@@ -53,7 +41,7 @@ public class AgentDirector : MonoBehaviour
 	{
 		Cube spawnCube = Sim.hexMap.grid.Hexes[0]; // TODO: where to spawn
 		SimHex simHex = spawnCube.simHex;
-		GameObject _gnome = Instantiate(gnome, simHex.visualHex.transform.position,new Quaternion());
+		GameObject _gnome = GameObject.Instantiate(Sim.gnomePrefab, simHex.visualHex.transform.position,new Quaternion());
 		Debug.Log("gnome spawned at " + spawnCube.position);
 		Agent gnomeAgent = _gnome.GetComponent<Agent>();
 		gnomeAgent.simHex = simHex;
@@ -69,26 +57,26 @@ public class AgentDirector : MonoBehaviour
 			a.CreateTaskList();
 		}
 	}
-	public void AddTask()
+	public static void AddTask()
 	{
 		foreach (Agent a in agents)
 		{
 			a.AddTask(destinationTypeIndex, desiredTypeIndex);
 		}
 	}
-	public void PlantsToCrops()
+	public static void PlantsToCrops()
 	{
 		destinationTypeIndex = 0;
 		desiredTypeIndex = 2;
 		AddTask();
 	}
-	public void WaterToPlants()
+	public static void WaterToPlants()
 	{
 		destinationTypeIndex = 1;
 		desiredTypeIndex = 0;
 		AddTask();
 	}
-	public void CropsToWater()
+	public static void CropsToWater()
 	{
 		destinationTypeIndex = 2;
 		desiredTypeIndex = 1;
