@@ -19,10 +19,10 @@ public class AgentDirector : MonoBehaviour
 
 	public static void Init()
 	{
-
-		SpawnAgents();
+		for (int i = 0; i < Sim.gnomesToSpawn; i++) {
+            SpawnAgents();
+        }
         CreateTaskListForAgents();
-
 	}
 
 	public static void AgentTick(int tickNum)

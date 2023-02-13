@@ -13,12 +13,16 @@ public class Sim : MonoBehaviour
 
     [SerializeField] HexMap _hexMap;
     public static HexMap hexMap;
-    [SerializeField] int gnomesToSpawn;
+    
     //prefabs
     [SerializeField] VisualHex _visualHexPrefab;
     public static VisualHex visualHexPrefab;
     [SerializeField] GameObject _gnomePrefab; //TODO specify this as a Gnome or Agent 
     public static GameObject gnomePrefab;
+
+    //numbers
+    [SerializeField] public int _gnomesToSpawn;
+    public static int gnomesToSpawn;
 
     //list of hex type scriptable objects
     [SerializeField] public SimHexType [] _hexTypes;
@@ -36,6 +40,8 @@ public class Sim : MonoBehaviour
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;
 
+        gnomesToSpawn = _gnomesToSpawn;
+
         hexTypes = _hexTypes;
         resources = _resources;
 
@@ -52,12 +58,7 @@ public class Sim : MonoBehaviour
 
         SimGrid.Init(); //needs to happen after HexGrid initializes
         AgentDirector.Init();
-        for (int i = 0;i<gnomesToSpawn;i++)
-		{
-            AgentDirector.SpawnAgents();
-        }
         
-        AgentDirector.CreateTaskListForAgents();
     }
 
     //Manage the order of sub ticks.

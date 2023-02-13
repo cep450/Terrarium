@@ -13,43 +13,42 @@ MonoBehaviour:
   m_Name: vine
   m_EditorClassIdentifier: 
   name: vine
-  id: -1
+  id: 4
   passable: 1
+  deathHexName: dirt
   resourcesRequired:
   - name: water
-    id: 0
-    amount: 1
-    radius: 1
-    tickMod: 0
-    isConsumed: 1
-    falloff: 0
-  - name: nutrients
     id: 1
     amount: 1
     radius: 1
     tickMod: 0
     isConsumed: 1
+    diesIfNotNet: 1
+    falloff: 0
+  - name: nutrients
+    id: 2
+    amount: 1
+    radius: 1
+    tickMod: 0
+    isConsumed: 1
+    diesIfNotNet: 0
     falloff: 0
   resourcesProduced:
   - name: vine
-    id: 0
+    id: 4
     amount: 1
     radius: 1
     limit: 6
     isHex: 1
     tickMod: 10
     falloff: 0
-  - name: 
-    id: 0
-    amount: 0
-    radius: 0
-    limit: 0
-    isHex: 0
-    tickMod: 0
-    falloff: 0
+    changes:
+    - dirt
+    - plant
+    - crops
   resourcesStarting:
   - name: nutrients
-    id: 0
+    id: 2
     amount: 100
   color: {r: 0.053993106, g: 0.3962264, b: 0.26774034, a: 1}
   sprite: {fileID: 0}
