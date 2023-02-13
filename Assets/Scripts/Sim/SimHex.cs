@@ -203,22 +203,34 @@ public class SimHex
 
 				//look for a tile we can affect, starting from a random index
 				int rand = Random.Range(0, neighbors.Length);
-				int changeIndex = -1;
-				for(int i = 0; i < neighbors.Length; i++) {
-					int index = (rand + i) % neighbors.Length;
-					SimHex neighbor = neighbors[index]; //wrap
 
-					//if we can change it
-					if(System.Array.IndexOf<string>(rp.changes, neighbor.type.name) >= 0) {
-						changeIndex = index;
-						break;
+				//if we try every neighbor
+				if(rp.tryAll) {
+					int changeIndex = -1;
+					for(int i = 0; i < neighbors.Length; i++) {
+						int index = (rand + i) % neighbors.Length;
+						SimHex neighbor = neighbors[index]; //wrap
+
+						//if we can change it
+						if(System.Array.IndexOf<string>(rp.changes, neighbor.type.name) >= 0) {
+							changeIndex = index;
+							break;
+						}
+					}
+					if(changeIndex == -1) {
+						//no valid hex to flip 
+						continue;
+					}
+					rand = changeIndex;
+				} else {
+					//just the one 
+					if(!(System.Array.IndexOf<string>(rp.changes, neighbors[rand].type.name) >= 0)) {
+						//no valid hex to flip here 
+						continue;
 					}
 				}
-				if(changeIndex == -1) {
-					//no valid tile to flip 
-					continue;
-				}
-				neighbors[changeIndex].ChangeType(HexTypes.TypeByName(rp.name));
+				//ok, flip this 
+				neighbors[rand].ChangeType(HexTypes.TypeByName(rp.name));
 				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
 				//chekcing the type might work?
 			} else {
