@@ -28,12 +28,19 @@ public class Sim : MonoBehaviour
     [SerializeField] public SimHexType [] _hexTypes;
     public static SimHexType [] hexTypes;
 
+    //parallel with hexTypes, ranjit range for % generated
+    [SerializeField] public float [] _hexGenRanjit;
+    public static float [] hexGenRanjit;
+
     //list of resource names 
     [SerializeField] public string [] _resources;
     public static string [] resources;
 
     
     void Awake() {
+
+
+        //TODO theres got to be a better way to do this.
 
         hexMap = _hexMap;
 
@@ -43,6 +50,7 @@ public class Sim : MonoBehaviour
         gnomesToSpawn = _gnomesToSpawn;
 
         hexTypes = _hexTypes;
+        hexGenRanjit = _hexGenRanjit;
         resources = _resources;
 
         HexTypes.InitializeLookup(hexTypes);

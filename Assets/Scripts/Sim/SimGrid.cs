@@ -18,9 +18,48 @@ public class SimGrid
 
         hexes = new SimHex[Sim.hexMap.grid.Hexes.Count];
 
+        Generate(RanjitToPercent(Sim.hexGenRanjit));
+
+    }
+
+    //returns CUMULATIVE percent thresholds so the last one should be 100%
+    //cumulative probability spread 
+    static float [] RanjitToPercent(float [] ranjit) {
+        float [] percents = new float[ranjit.Length];
+        float total = 0;
+        for(int i = 0; i < ranjit.Length; i++) {
+            total += ranjit[i];
+        }
+        for(int i = 0; i < ranjit.Length; i++) {
+            percents[i] = ranjit[i] / total;
+            if(i > 0) {
+                percents[i] = percents[i - 1] + percents[i];
+            }
+        }
+        return percents;
+    }
+
+    static int IndexFromPercent(float percent, float [] percentArr) {
+
+        for(int i = 0; i < percentArr.Length; i++) {
+            if(percentArr[i] > percent) {
+                return i;
+            }
+        }
+        return percentArr.Length - 1;
+    }
+
+    //Generate a map.
+    static void Generate(float [] typePercents) {
+
+        if(typePercents.Length != Sim.hexTypes.Length) {
+            Debug.LogError("ERR: ranjit range proportions arr did not match length of hex types arr. did you forget to add a value to this parallel array?");
+            return;
+        }
+
         //TODO prototype temp- randomized types 
         for(int i = 0; i < hexes.Length; i++) {
-            int rand = Random.Range(0, Sim.hexTypes.Length);
+            int rand = IndexFromPercent(Random.Range(0f, 1f), typePercents);
             hexes[i] = new SimHex(Sim.hexTypes[rand], Sim.hexMap.grid.Hexes[i]);
             Sim.hexMap.grid.Hexes[i].simHex = hexes[i];
         }
@@ -28,7 +67,7 @@ public class SimGrid
         foreach(SimHex hex in hexes) {
             hex.LoadNeighbors();
         }
-
+        
     }
 
     //Step 1: try to do inputs, check for and consume resources. 

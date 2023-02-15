@@ -315,6 +315,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sim
       objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[2]
+      value: food
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[3]
+      value: nutrient A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[4]
+      value: nutrient B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[5]
+      value: nutrient C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[6]
+      value: insect A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[7]
+      value: insect B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[8]
+      value: insect C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[9]
+      value: seed A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[10]
+      value: seed B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resources.Array.data[11]
+      value: seed C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.data[1]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.data[2]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.data[3]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexGenRanjit.Array.data[4]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
       value: 3

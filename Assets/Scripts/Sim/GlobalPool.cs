@@ -5,8 +5,6 @@ using UnityEngine;
 public class GlobalPool {
     public static int[] resources = new int[Sim.resources.Length];
 
-    //TODO trakc these changes with the tracker 
-
     public void Add(int id, int amount) {
         resources[id] += amount;
         Tracker.AddedRes(id, amount);
