@@ -64,17 +64,20 @@ public class Sim : MonoBehaviour
     //Manage the order of sub ticks.
     public static void HandleTick(object obj, TickArgs tickArgs) {
 
-        int tickOrder = tickArgs.tickNum % 3;
+        int tickOrder = tickArgs.tickNum % 4;
 
         if(tickOrder == 0) {
-            Debug.Log("doing input tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            //Debug.Log("doing input tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
             SimGrid.TickInputs(tickArgs.tickNum / 3);
         } else if(tickOrder == 1) {
-            Debug.Log("doing output tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            //Debug.Log("doing output tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
             SimGrid.TickOutputs(tickArgs.tickNum / 3);
         } else if(tickOrder == 2) {
-            Debug.Log("doing agent tick" + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
+            //Debug.Log("doing agent tick" + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
             AgentDirector.AgentTick(tickArgs.tickNum / 3);
+        } else if(tickOrder == 3) {
+            //end of tick
+            Tracker.CalculateEndOfTick();
         }
     }
 }

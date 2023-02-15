@@ -41,6 +41,7 @@ public class Resource {
         public byte amount;
         public byte radius;
         public byte tickMod;    //fires when tickNum % tickMod == 0
+        public bool global;     //consume from global pool or local?
         public bool isConsumed; //does this tile consume this resource or just need it to exist?
         public bool diesIfNotNet; //if this requirement isn't met, will it flip to its death hex
         public float falloff;   //multiply this by distance for amount changed. 0 is no falloff
@@ -54,9 +55,10 @@ public class Resource {
         public byte amount;     //if hex, the number of hexes. the hex will know what resources
         public byte radius;
         public byte limit;      //stops producing if hex is already at this amount
+        public byte tickMod;    //fires when tickNum % tickMod == 0
+        public bool global;     //consume from global pool or local?
         public bool isHex;      //does this represent a hex or a resource?
         public bool tryAll;     //when changing neighbor, check once and bounce or check all?
-        public byte tickMod;    //fires when tickNum % tickMod == 0
         public float falloff;   //multiply this by distance for amount changed. 0 is no falloff
         public string [] changes; //if a hex, hexes it can spread to. if a resource, tiles it can be added to
     }

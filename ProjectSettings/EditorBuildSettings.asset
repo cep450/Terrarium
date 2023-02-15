@@ -9,6 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/TwoWeekPrototype.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/proto copy.unity
     guid: 88f24b6c115509b4e8e9cc52b4b97af1
+=======
+    path: Assets/Scenes/Proto_InputOutput - Copy.unity
+    guid: 00838913576b91042b9eee262141f6f6
+>>>>>>> Jaden
   m_configObjects: {}
