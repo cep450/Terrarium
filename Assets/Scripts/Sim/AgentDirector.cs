@@ -33,6 +33,10 @@ public class AgentDirector : MonoBehaviour
 			a.Tick(tickNum);
 		}
 	}
+	public static List<Agent> GetAgents()
+	{
+		return agents;
+	}
 
 
 	public static void SpawnAgents()

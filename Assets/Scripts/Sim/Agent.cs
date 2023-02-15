@@ -22,12 +22,13 @@ public class Agent : MonoBehaviour
 	int consumptionRate;
 	Task currentTask;
 	Queue<SimHex> pathQueue;
-
+	public Cube lockedTarget;
 	private void Start()
 	{
 		cube = simHex.cube;
 		map = Sim.hexMap;
 		consumptionRate = 10;
+		lockedTarget = cube;
 	}
 
 	public void CreateTaskList()
@@ -71,7 +72,8 @@ public class Agent : MonoBehaviour
 				else // upon arrival
 				{
 					simHex.ChangeType(currentTask.desiredType);
-					currentTask.isComplete = true; // doesnt do anything 
+					currentTask.isComplete = true; // doesnt do anything
+					lockedTarget = cube;
 					isTaskInProgress = false;
 				}
 			}
@@ -118,48 +120,10 @@ public class Agent : MonoBehaviour
 		}
 	}
 
-	/* //old commit?
-	public void Tick(int tickNum)
-	{
-		if (map != null)
-		{
-			transform.position = map.grid.HexToCenter(cube).position;
-		}
-		if (isTaskInProgress)
-		{
-			if (currentTask != null)
-			{
-				if (currentTask.destination != simHex)
-				{
-					if (pathQueue.Count > 0)
-					{
-						simHex = pathQueue.Dequeue();
-						cube = simHex.cube;
-					}
-				}
-				else // upon arrival
-				{
-					simHex.ChangeType(currentTask.desiredType);
-					currentTask.isComplete = true;
-					isTaskInProgress = false;
-				}
-			}
-		}
-		else
-		{
-			Debug.Log("task sequence begins");
-			currentTask = FindTask();
-			isTaskInProgress = true;
-			List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
-			currentTask.destination = pathList[pathList.Count - 1];
-			pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
-		}
-
-	}
-	*/
 
 	List<SimHex> FindPathToType(SimHex start, SimHexType destinationType)
 	{
+		bool goalFound = false;
 		Queue<Cube> frontier = new Queue<Cube>();
 		frontier.Enqueue(start.cube);
 		Dictionary<Cube, Cube> came_from = new Dictionary<Cube, Cube>();
@@ -169,16 +133,15 @@ public class Agent : MonoBehaviour
 		{
 			current = frontier.Dequeue();
 
-			if (current.simHex.type == destinationType)
+			if (current.simHex.type == destinationType && !IsOccupied(current) && !IsLocked(current))
 			{
+				
 				// do something!
 				goal = current;
 				Debug.Log("found goal at " + current.position + " and it's a " + current.simHex.type.name);
+				lockedTarget = current;
+				goalFound = true;
 				break;
-			}
-			else
-			{
-				Debug.Log("goal not found. destinationType is " + destinationType);
 			}
 
 			foreach (Cube next in map.grid.Neighbors(current))
@@ -190,19 +153,65 @@ public class Agent : MonoBehaviour
 				}
 			}
 		}
-
-		//Retrace
-		current = goal;
-		List<SimHex> path = new List<SimHex>();
-		while (current != start.cube)
+		if (goalFound)
 		{
-			path.Add(current.simHex);
-			current = came_from[current];
-		}
+			//Retrace
+			current = goal;
+			List<SimHex> path = new List<SimHex>();
+			while (current != start.cube)
+			{
+				path.Add(current.simHex);
+				current = came_from[current];
+			}
 
-		path.Add(start);
-		path.Reverse();
-		return path;
+			path.Add(start);
+			path.Reverse();
+			return path;
+		}
+		else
+		{
+			Debug.Log("Goal not found, destination type is " + destinationType.name);
+			List<SimHex> path = new List<SimHex>();
+			isTaskInProgress = false;
+			return path;
+		}
+			
+
+	}
+
+	bool IsOccupied(Cube targetCube)
+	{
+		bool isOccupied = false;
+		foreach(Agent a in AgentDirector.GetAgents())
+		{
+			if (a != this)
+			{
+				if (targetCube == a.cube)
+				{
+					isOccupied = true;
+					break;
+				}
+			}
+
+		}
+		return isOccupied;
+	}
+	bool IsLocked(Cube targetCube)
+	{
+		bool isLocked = false;
+		foreach (Agent a in AgentDirector.GetAgents())
+		{
+			if (a != this)
+			{
+				if (targetCube == a.lockedTarget)
+				{
+					isLocked = true;
+					break;
+				}
+			}
+
+		}
+			return isLocked;
 	}
 
 }
