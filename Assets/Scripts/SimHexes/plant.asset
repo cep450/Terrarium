@@ -17,30 +17,34 @@ MonoBehaviour:
   passable: 1
   deathHexName: dirt
   resourcesRequired:
-  - name: water
-    id: 1
+  - name: Water
+    id: -1
     amount: 0
     radius: 0
     tickMod: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: nutrients
+  - name: Nutrient A
     id: 2
     amount: 0
     radius: 0
     tickMod: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
   resourcesProduced:
-  - name: plant
+  - name: Food
     id: 2
     amount: 1
     radius: 1
     limit: 0
-    isHex: 1
     tickMod: 10
+    global: 0
+    isHex: 1
+    tryAll: 0
     falloff: 0
     changes:
     - dirt

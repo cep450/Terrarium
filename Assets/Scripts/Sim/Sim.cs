@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class _Resource
+{
+    public string name;
+    public int initialValue;
+}
 public class Sim : MonoBehaviour
 {
 
@@ -29,10 +35,12 @@ public class Sim : MonoBehaviour
     public static SimHexType [] hexTypes;
 
     //list of resource names 
-    [SerializeField] public string [] _resources;
+    [SerializeField] public _Resource [] _resources;
+    public static _Resource[] myResources;
     public static string [] resources;
+    public static int[] resourceInitialValues;
 
-    
+
     void Awake() {
 
         hexMap = _hexMap;
@@ -43,7 +51,14 @@ public class Sim : MonoBehaviour
         gnomesToSpawn = _gnomesToSpawn;
 
         hexTypes = _hexTypes;
-        resources = _resources;
+        myResources = _resources;
+        resources = new string[myResources.Length];
+        resourceInitialValues = new int[myResources.Length];
+        for (int i = 0; i< myResources.Length;i++)
+		{
+            resources[i] = myResources[i].name;
+            resourceInitialValues[i] = myResources[i].initialValue;
+		}
 
         HexTypes.InitializeLookup(hexTypes);
         foreach(SimHexType type in hexTypes) {
@@ -81,3 +96,4 @@ public class Sim : MonoBehaviour
         }
     }
 }
+
