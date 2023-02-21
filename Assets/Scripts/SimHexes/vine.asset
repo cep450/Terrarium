@@ -17,8 +17,8 @@ MonoBehaviour:
   passable: 1
   deathHexName: dirt
   resourcesRequired:
-  - name: water
-    id: 1
+  - name: Water
+    id: -1
     amount: 1
     radius: 1
     tickMod: 0
@@ -26,8 +26,8 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: nutrient C
-    id: 5
+  - name: Nutrient A
+    id: 2
     amount: 1
     radius: 1
     tickMod: 0
@@ -51,8 +51,8 @@ MonoBehaviour:
     - plant
     - crops
   resourcesStarting:
-  - name: nutrient C
-    id: 5
+  - name: Nutrient A
+    id: -1
     amount: 100
   color: {r: 0.053993106, g: 0.3962264, b: 0.26774034, a: 1}
   sprite: {fileID: 0}

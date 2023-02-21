@@ -29,4 +29,23 @@ public class GlobalPool {
         Consume(Resource.IdByName(name), amount);
     }
 
+
+
+    string ResourceText(string name)
+	{
+        string text = string.Format("{0}: {1} Units", name, resources[Resource.IdByName(name)]);
+        return text;
+	}
+    public static string ResourceTextFullText()
+	{
+        string text = new string("Resource List: ");
+        for (int i = 0; i<resources.Length;i++)
+		{
+            string name = Resource.NameById(i);
+            int value = resources[i];
+            text += "\n" + name + ": " + value + " Units";
+		}
+
+        return text;
+	}
 }
