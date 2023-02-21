@@ -5,6 +5,13 @@ using UnityEngine;
 public class GlobalPool {
     public static int[] resources = new int[Sim.resources.Length];
 
+    public static void Init() { //load initial values
+        resources = new int[Sim.resources.Length];
+        for(int i = 0; i < Sim.resources.Length; i++) {
+            resources[i] = Sim.resourceInitialValues[i];
+        }
+    }
+
     public static void Add(int id, int amount) {
         resources[id] += amount;
         Tracker.AddedRes(id, amount);

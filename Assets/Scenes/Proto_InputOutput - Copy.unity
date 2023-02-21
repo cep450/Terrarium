@@ -316,52 +316,20 @@ PrefabInstance:
       value: Sim
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.size
-      value: 12
+      propertyPath: _hexMap
+      value: 
+      objectReference: {fileID: 1404904202}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.size
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _hexGenRanjit.Array.size
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[2]
-      value: food
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[3]
-      value: nutrient A
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[4]
-      value: nutrient B
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[5]
-      value: nutrient C
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[6]
-      value: insect A
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[7]
-      value: insect B
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[8]
-      value: insect C
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[9]
-      value: seed A
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[10]
-      value: seed B
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resources.Array.data[11]
-      value: seed C
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _hexGenRanjit.Array.data[0]
@@ -382,6 +350,118 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _hexGenRanjit.Array.data[4]
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[0].type
+      value: 
+      objectReference: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[1].type
+      value: 
+      objectReference: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[2].type
+      value: 
+      objectReference: {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[3].type
+      value: 
+      objectReference: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[4].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[5].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[0].name
+      value: NULL
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[1].name
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[2].name
+      value: Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[3].name
+      value: Nutrient A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[4].name
+      value: Nutrient B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[5].name
+      value: Nutrient C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[6].name
+      value: Seed A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[7].name
+      value: Seed B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[8].name
+      value: Seed C
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[1].ranjit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[2].ranjit
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[3].ranjit
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[4].ranjit
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[5].ranjit
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[1].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[2].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[3].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[4].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[5].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[6].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[7].initialGlobalAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[8].initialGlobalAmount
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
@@ -431,8 +511,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -36.936
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4234667237379344862, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+--- !u!1 &1404904199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4278522896934547365, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+  m_PrefabInstance: {fileID: 1368154495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1404904202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404904199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid:
+    orientation: 0
+    scale: 1
+  size: 10
+  shape: 2
 --- !u!1001 &8225153601237267047
 PrefabInstance:
   m_ObjectHideFlags: 0
