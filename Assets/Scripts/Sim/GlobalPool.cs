@@ -5,27 +5,27 @@ using UnityEngine;
 public class GlobalPool {
     public static int[] resources = new int[Sim.resources.Length];
 
-    public void Add(int id, int amount) {
+    public static void Add(int id, int amount) {
         resources[id] += amount;
         Tracker.AddedRes(id, amount);
     }
-    public void Add(string name, int amount) {
+    public static void Add(string name, int amount) {
         Add(Resource.IdByName(name), amount);
     }
 
-    public bool CanConsume(int id, int amount) {
+    public static bool CanConsume(int id, int amount) {
         return resources[id] >= amount;
     }
-    public bool CanConsume(string name, int amount) {
+    public static bool CanConsume(string name, int amount) {
         return CanConsume(Resource.IdByName(name), amount);
     }
 
-    public void Consume(int id, int amount) {
+    public static void Consume(int id, int amount) {
         resources[id] -= amount;
         Tracker.UsedRes(id, amount);
         //TODO make sure not go into negatives
     }
-    public void Consume(string name, int amount) {
+    public static void Consume(string name, int amount) {
         Consume(Resource.IdByName(name), amount);
     }
 

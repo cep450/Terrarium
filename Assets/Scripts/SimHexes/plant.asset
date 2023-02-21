@@ -22,14 +22,16 @@ MonoBehaviour:
     amount: 0
     radius: 0
     tickMod: 0
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: nutrients
-    id: 2
+  - name: nutrient B
+    id: 4
     amount: 0
     radius: 0
     tickMod: 0
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
@@ -39,8 +41,10 @@ MonoBehaviour:
     amount: 1
     radius: 1
     limit: 0
-    isHex: 1
     tickMod: 10
+    global: 0
+    isHex: 1
+    tryAll: 0
     falloff: 0
     changes:
     - dirt

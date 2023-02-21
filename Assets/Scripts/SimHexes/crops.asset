@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
   m_Name: crops
   m_EditorClassIdentifier: 
-  name: crops
+  name: crop A
   id: 3
   passable: 1
   deathHexName: dirt
@@ -26,8 +26,8 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: nutrients
-    id: 2
+  - name: nutrient A
+    id: 3
     amount: 2
     radius: 1
     tickMod: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: food
-    id: 3
+    id: 2
     amount: 10
     radius: 0
     limit: 0
@@ -48,8 +48,8 @@ MonoBehaviour:
     falloff: 0
     changes: []
   resourcesStarting:
-  - name: nutrients
-    id: 2
+  - name: nutrient A
+    id: 3
     amount: 255
   color: {r: 0.8490566, g: 0.7428721, b: 0.2919188, a: 1}
   sprite: {fileID: 0}

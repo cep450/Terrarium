@@ -19,8 +19,8 @@ MonoBehaviour:
   resourcesRequired: []
   resourcesProduced: []
   resourcesStarting:
-  - name: nutrients
-    id: 2
+  - name: nutrient A
+    id: 3
     amount: 100
   color: {r: 0.2924528, g: 0.17228352, b: 0.18516827, a: 1}
   sprite: {fileID: 0}
