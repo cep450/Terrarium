@@ -300,14 +300,11 @@ public class SimHex
 				//TODO maybe put this in AddResource and Consume so it auto updates?
 				//visual update should check its hex's resources if it meets threshes for showing variuos stuff 
 				
-
 			}
 		}
 	}
 
 	public void Die() {
-
-		Debug.Log("a " + this.type.name + " tile died");
 
 		//todo it could also leave behind resources on death?
 

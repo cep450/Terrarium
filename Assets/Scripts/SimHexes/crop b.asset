@@ -10,17 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: dirt
+  m_Name: crop b
   m_EditorClassIdentifier: 
-  name: Dirt
-  id: 1
+  name: Crop B
+  id: -1
   passable: 1
   deathHexName: dirt
-  resourcesRequired: []
-  resourcesProduced: []
-  resourcesStarting:
-  - name: Nutrient A
-    id: 3
-    amount: 100
-  color: {r: 0.2924528, g: 0.17228352, b: 0.18516827, a: 1}
+  resourcesRequired:
+  - name: Water
+    id: 0
+    amount: 1
+    radius: 1
+    tickMod: 0
+    global: 0
+    isConsumed: 1
+    diesIfNotNet: 1
+    falloff: 0
+  resourcesProduced:
+  - name: Food
+    id: 0
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 10
+    global: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+  resourcesStarting: []
+  color: {r: 0, g: 0, b: 0, a: 0}
   sprite: {fileID: 0}

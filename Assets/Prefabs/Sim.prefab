@@ -76,6 +76,8 @@ MonoBehaviour:
     ranjit: 3
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
     ranjit: 8
+  - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
+    ranjit: 0.5
   resourceInfo:
   - name: NULL
     initialGlobalAmount: 0
@@ -88,6 +90,10 @@ MonoBehaviour:
   - name: Nutrient B
     initialGlobalAmount: 0
   - name: Nutrient C
+    initialGlobalAmount: 0
+  - name: Nectar
+    initialGlobalAmount: 0
+  - name: Honey
     initialGlobalAmount: 0
 --- !u!1 &4278522896934547365
 GameObject:

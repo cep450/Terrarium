@@ -13,26 +13,34 @@ public class UI : MonoBehaviour
     //TODO allow players to pick from a dropdown or something
 
     public void PlantsToCrops() {
-        AgentDirector.XToYByName("plant", "crop A");
+        AgentDirector.XToYByName("Plant", "Crop A");
     }
 
     public void WaterToPlants() {
-        AgentDirector.XToYByName("water", "plant");
+        AgentDirector.XToYByName("Water", "Plant");
     }
 
     public void CropsToWater() {
-        AgentDirector.XToYByName("crop A", "water");
+        AgentDirector.XToYByName("Crop A", "Water");
     }
 
-    public void VineToDirt() {
-        AgentDirector.XToYByName("vine", "dirt");
+    public void PlantsToDirt() {
+        AgentDirector.XToYByName("Plant", "Dirt");
     }
 
     public void DirtToCrop() {
-        AgentDirector.XToYByName("dirt", "crop A");
+        AgentDirector.XToYByName("Dirt", "Crop A");
     }
 
     public void DirtToWater() {
-        AgentDirector.XToYByName("dirt", "water");
+        AgentDirector.XToYByName("Dirt", "Water");
+    }
+
+    public void BuildWell() {
+        AgentDirector.XToYByName("Water", "Well");
+    }
+
+    public void BuildHouse() {
+        AgentDirector.XToYByName("Dirt", "House");
     }
 }

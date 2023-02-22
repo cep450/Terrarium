@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
   m_Name: water
   m_EditorClassIdentifier: 
-  name: water
-  id: 1
+  name: Water
+  id: 2
   passable: 1
   deathHexName: dirt
   resourcesRequired: []
   resourcesProduced:
   - name: Water
-    id: -1
+    id: 1
     amount: 2
     radius: 2
     limit: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     changes: []
   resourcesStarting:
   - name: Water
-    id: -1
+    id: 1
     amount: 255
   color: {r: 0.3480875, g: 0.6481256, b: 0.8301887, a: 1}
   sprite: {fileID: 0}
