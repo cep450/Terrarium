@@ -91,6 +91,10 @@ MonoBehaviour:
     initialGlobalAmount: 0
   - name: Nutrient C
     initialGlobalAmount: 0
+  - name: Nectar
+    initialGlobalAmount: 0
+  - name: Honey
+    initialGlobalAmount: 0
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0

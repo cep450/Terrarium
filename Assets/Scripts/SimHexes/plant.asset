@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
   m_Name: plant
   m_EditorClassIdentifier: 
-  name: plant
+  name: Plant
   id: 3
   passable: 1
   deathHexName: dirt
@@ -37,7 +37,7 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: plant
-    id: -1
+    id: 3
     amount: 1
     radius: 1
     limit: 0
