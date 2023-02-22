@@ -82,10 +82,15 @@ public class Agent : MonoBehaviour
 		{
 			Debug.Log("task sequence begins");
 			currentTask = FindTask();
-			isTaskInProgress = true;
+			
 			List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
-			currentTask.destination = pathList[pathList.Count - 1];
-			pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
+			if (pathList.Count>0)
+			{
+				currentTask.destination = pathList[pathList.Count - 1];
+				pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
+				isTaskInProgress = true;
+			}
+
 		}
 
 	}
