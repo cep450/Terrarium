@@ -13,34 +13,38 @@ MonoBehaviour:
   m_Name: plant
   m_EditorClassIdentifier: 
   name: plant
-  id: 2
+  id: 3
   passable: 1
   deathHexName: dirt
   resourcesRequired:
-  - name: water
+  - name: Water
     id: 1
     amount: 0
     radius: 0
     tickMod: 0
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: nutrients
-    id: 2
+  - name: Nutrient A
+    id: 3
     amount: 0
     radius: 0
     tickMod: 0
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
   resourcesProduced:
   - name: plant
-    id: 2
+    id: -1
     amount: 1
     radius: 1
     limit: 0
-    isHex: 1
     tickMod: 10
+    global: 0
+    isHex: 1
+    tryAll: 0
     falloff: 0
     changes:
     - dirt

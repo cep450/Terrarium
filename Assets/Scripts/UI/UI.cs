@@ -10,8 +10,10 @@ public class UI : MonoBehaviour
         Attached to the canvas.
     */
 
+    //TODO allow players to pick from a dropdown or something
+
     public void PlantsToCrops() {
-        AgentDirector.XToYByName("plant", "crops");
+        AgentDirector.XToYByName("plant", "crop A");
     }
 
     public void WaterToPlants() {
@@ -19,7 +21,7 @@ public class UI : MonoBehaviour
     }
 
     public void CropsToWater() {
-        AgentDirector.XToYByName("crops", "water");
+        AgentDirector.XToYByName("crop A", "water");
     }
 
     public void VineToDirt() {
@@ -27,7 +29,7 @@ public class UI : MonoBehaviour
     }
 
     public void DirtToCrop() {
-        AgentDirector.XToYByName("dirt", "crops");
+        AgentDirector.XToYByName("dirt", "crop A");
     }
 
     public void DirtToWater() {

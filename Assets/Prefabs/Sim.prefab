@@ -59,21 +59,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 8522406073608363184}
+  _hexMap: {fileID: 8589432796807831008}
   _visualHexPrefab: {fileID: 2479060019227721132, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
-  _hexTypes:
-  - {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
-  - {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
-  - {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
-  - {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
-  - {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
-  _resources:
-  - null
-  - water
-  - nutrients
-  - food
+  hexTypeInfo:
+  - type: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
+    ranjit: 5
+  - type: {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
+    ranjit: 8
+  - type: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
+    ranjit: 20
+  - type: {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
+    ranjit: 3
+  - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
+    ranjit: 8
+  - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
+    ranjit: 0.5
+  resourceInfo:
+  - name: NULL
+    initialGlobalAmount: 0
+  - name: Water
+    initialGlobalAmount: 0
+  - name: Food
+    initialGlobalAmount: 0
+  - name: Nutrient A
+    initialGlobalAmount: 0
+  - name: Nutrient B
+    initialGlobalAmount: 0
+  - name: Nutrient C
+    initialGlobalAmount: 0
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +100,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4275709212617185261}
-  - component: {fileID: 8522406073608363184}
+  - component: {fileID: 8589432796807831008}
   m_Layer: 0
   m_Name: HexMap
   m_TagString: Untagged
@@ -106,7 +123,7 @@ Transform:
   m_Father: {fileID: 1922028117923064798}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8522406073608363184
+--- !u!114 &8589432796807831008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,5 +138,5 @@ MonoBehaviour:
   grid:
     orientation: 0
     scale: 1
-  size: 8
+  size: 10
   shape: 2
