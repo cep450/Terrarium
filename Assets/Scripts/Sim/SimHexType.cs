@@ -35,8 +35,6 @@ public class SimHexType : ScriptableObject {
 
         id = HexTypes.IdByName(name);
 
-        Debug.Log("initializing hex type " + name);
-
         for(int i = 0; i < resourcesRequired.Length; i++) {
             resourcesRequired[i].id = Resource.IdByName(resourcesRequired[i].name);
         }

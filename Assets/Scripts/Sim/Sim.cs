@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class _Resource
-{
+public struct ResourceInfo {
     public string name;
-    public int initialValue;
+    public int initialGlobalAmount;
 }
+
+[System.Serializable]
+public struct HexTypeInfo {
+    public SimHexType type;
+    public float ranjit;
+}
+
 public class Sim : MonoBehaviour
 {
 
@@ -30,18 +36,18 @@ public class Sim : MonoBehaviour
     [SerializeField] public int _gnomesToSpawn;
     public static int gnomesToSpawn;
 
-    //list of hex type scriptable objects
-    [SerializeField] public SimHexType [] _hexTypes;
-    public static SimHexType [] hexTypes;
+    [SerializeField] public HexTypeInfo [] hexTypeInfo;
+    public static SimHexType [] hexTypes;       //list of hex type scriptable objects
+    public static float [] hexGenRanjit;        //parallel with hexTypes, ranjit range for % generated
 
-    //list of resource names 
-    [SerializeField] public _Resource [] _resources;
-    public static _Resource[] myResources;
-    public static string [] resources;
+    
+    [SerializeField] public ResourceInfo [] resourceInfo;
+    public static string [] resources;          //list of resource names 
     public static int[] resourceInitialValues;
 
-
     void Awake() {
+
+        //fill in information provided in inspector
 
         hexMap = _hexMap;
 
@@ -50,15 +56,20 @@ public class Sim : MonoBehaviour
 
         gnomesToSpawn = _gnomesToSpawn;
 
-        hexTypes = _hexTypes;
-        myResources = _resources;
-        resources = new string[myResources.Length];
-        resourceInitialValues = new int[myResources.Length];
-        for (int i = 0; i< myResources.Length;i++)
-		{
-            resources[i] = myResources[i].name;
-            resourceInitialValues[i] = myResources[i].initialValue;
-		}
+        hexTypes = new SimHexType[hexTypeInfo.Length];
+        hexGenRanjit = new float[hexTypeInfo.Length];
+        for(int i = 0; i < hexTypeInfo.Length; i++) {
+            hexTypes[i] = hexTypeInfo[i].type;
+            hexGenRanjit[i] = hexTypeInfo[i].ranjit;
+        }
+
+        resources = new string[resourceInfo.Length];
+        resourceInitialValues = new int[resourceInfo.Length];
+        for(int i = 0; i < resourceInfo.Length; i++) {
+            resources[i] = resourceInfo[i].name;
+            resourceInitialValues[i] = resourceInfo[i].initialGlobalAmount;
+        }
+        GlobalPool.Init();
 
         HexTypes.InitializeLookup(hexTypes);
         foreach(SimHexType type in hexTypes) {
@@ -74,6 +85,11 @@ public class Sim : MonoBehaviour
         SimGrid.Init(); //needs to happen after HexGrid initializes
         AgentDirector.Init();
         
+    }
+
+    //Initialize values for a new game. Ex. set initial global values.
+    static void Init() {
+
     }
 
     //Manage the order of sub ticks.

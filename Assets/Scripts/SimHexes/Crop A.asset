@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: crops
+  m_Name: Crop A
   m_EditorClassIdentifier: 
-  name: crops
+  name: crop A
   id: 3
   passable: 1
   deathHexName: dirt
@@ -22,7 +22,7 @@ MonoBehaviour:
     amount: 1
     radius: 1
     tickMod: 0
-    global: 1
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     amount: 2
     radius: 1
     tickMod: 0
-    global: 1
+    global: 0
     isConsumed: 0
     diesIfNotNet: 1
     falloff: 0

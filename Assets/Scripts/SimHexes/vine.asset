@@ -22,7 +22,7 @@ MonoBehaviour:
     amount: 1
     radius: 1
     tickMod: 0
-    global: 1
+    global: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     amount: 1
     radius: 1
     tickMod: 0
-    global: 1
+    global: 0
     isConsumed: 1
     diesIfNotNet: 0
     falloff: 0

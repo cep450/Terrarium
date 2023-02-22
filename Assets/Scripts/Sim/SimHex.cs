@@ -71,8 +71,6 @@ public class SimHex
 			Tracker.RemovedHex(type.id, 1);
 		}
 
-		//TODO inform tracker //////////////
-		
 		type = newType;
 
 		//add each starting resource to this tile
@@ -90,7 +88,7 @@ public class SimHex
 		resourcesHas[id] += amount;
 		Tracker.AddedRes(id, amount);
 	}
-	public bool CanConsume(int id, byte amount) {
+	public bool HasResource(int id, byte amount) {
 		return resourcesHas[id] >= amount;
 	}
 	//consume a resource from this hex
@@ -135,6 +133,7 @@ public class SimHex
 	}
 	public InputStatus CheckInputs()
 	{
+		InputStatus status = InputStatus.Satisfied;
 
 		foreach (ResRequired rr in type.resourcesRequired)
 		{
@@ -146,27 +145,33 @@ public class SimHex
 
 			int sum = 0;
 
-			//factor in self 
-			sum += resourcesHas[rr.id];
+			if(rr.global) { //drawing from global 
 
-			//factor in neighbors, if applicable 
-			//TODO for now, only possible to check immediate neighbors, radius needs more
-			if(rr.radius > 0) {
-				foreach(SimHex neighbor in neighbors) {
-					sum += neighbor.resourcesHas[rr.id];
+				sum = GlobalPool.resources[rr.id];
+
+			} else { //drawing from local- self and neighbors 
+
+				//factor in self 
+				sum += resourcesHas[rr.id];
+
+				//factor in neighbors, if applicable 
+				//TODO for now, only possible to check immediate neighbors, radius needs more
+				if(rr.radius > 0) {
+					foreach(SimHex neighbor in neighbors) {
+						sum += neighbor.resourcesHas[rr.id];
+					}
 				}
 			}
 			
-			if (!(sum >= rr.amount))
-			{
+			if (sum < rr.amount) {
 				if(rr.diesIfNotNet) {
-					return InputStatus.NotSatisfiedDies;
+					return InputStatus.NotSatisfiedDies; //dies, end 
 				} else {
-					return InputStatus.NotSatisfied;
+					status = InputStatus.NotSatisfied; //continue checking if it might die
 				}
 			}
 		}
-		return InputStatus.Satisfied;
+		return status;
 	}
 
 	public void ConsumeInputs()
@@ -178,19 +183,35 @@ public class SimHex
 			if (rr.isConsumed)
 			{
 
-				int amount = rr.amount;
+				if(rr.global) { //consumes from global pool
 
+					GlobalPool.Consume(rr.id, rr.amount);
 
+				} else if(rr.radius > 0) { //consumes from self and neighbors
 
-				//tries self first 
+					int amount = rr.amount;
 
-				//then checks neighbors if applicable 
+					//TODO factor in radius 
 
+					//cycle thru self and neighbors consuming resources til satisfied
+					//TODO start i at a random neighbor index?
+					for(int i = 0; amount > 0; i++) {
+						if(i == 0) {
+							this.ConsumeResource(rr.id, 1);
+						} else {
+							neighbors[i - 1].ConsumeResource(rr.id, 1);
+						}
+						amount--;
+						if(i > neighbors.Length) {
+							i = 0;
+						}
+					}
+					
+				} else { //just consumes from self
 
-				//TODO factor in radius 
+					ConsumeResource(rr.id, rr.amount);
 
-				ConsumeResource(rr.id, rr.amount);
-
+				}
 			}
 		}
 
@@ -251,24 +272,42 @@ public class SimHex
 				neighbors[rand].ChangeType(HexTypes.TypeByName(rp.name));
 				//TODO probably have to factor in if multiple change types affect the same tile in the same frame
 				//chekcing the type might work?
+
 			} else {
 				//producing resources 
-				AddResource(rp.id, rp.amount);
+
+				if(rp.global) { //producing to global pool 
+
+					GlobalPool.Add(rp.id, rp.amount);
+
+				} else { //producing to self and neighbors 
+
+					AddResource(rp.id, rp.amount);
+
+					//TODO what if a tile is full up?
+					//TODO is the amount per tile or does it get spread between them?
 				
-				//TODO account for higher radius and falloff 
-				if(rp.radius > 0) {
-					foreach(SimHex neighbor in neighbors) {
-						neighbor.AddResource(rp.id, rp.amount);
+					//TODO account for higher radius and falloff 
+					if(rp.radius > 0) {
+						foreach(SimHex neighbor in neighbors) {
+							neighbor.AddResource(rp.id, rp.amount);
+						}
 					}
+
 				}
 
 				//visualHex.VisualUpdate(); //TODO when adding sprite effects
+				//TODO maybe put this in AddResource and Consume so it auto updates?
+				//visual update should check its hex's resources if it meets threshes for showing variuos stuff 
+				
 
 			}
 		}
 	}
 
 	public void Die() {
+
+		Debug.Log("a " + this.type.name + " tile died");
 
 		//todo it could also leave behind resources on death?
 

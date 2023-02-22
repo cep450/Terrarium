@@ -30,7 +30,7 @@ public class HexTypes {
     public static SimHexType TypeByName(string name) {
         int index = Array.IndexOf<string>(names, name);
         if(index == -1) {
-            Debug.LogError("couldn't find type \'" + name + "\" by name");
+            Debug.LogError("couldn't find type \'" + name + "\' by name");
             return null;
         }
         return Sim.hexTypes[index];
