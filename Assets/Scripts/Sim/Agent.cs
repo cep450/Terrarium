@@ -48,11 +48,11 @@ public class Agent : MonoBehaviour
 			if(GlobalPool.CanConsume(n.needName,n.consumptionPerTick))
 			{
 				GlobalPool.Consume(n.needName, n.consumptionPerTick);
-				n.value += 1; // need satisfaction goes up if met, numbers arbitrary
+				n.value += 10; // need satisfaction goes up if met, numbers arbitrary
 			}
 			else
 			{
-				n.value -= 1; // need satisfaction goes down if not met, numbers arbitrary
+				n.value -= 10; // need satisfaction goes down if not met, numbers arbitrary
 			}
 			
 		}
@@ -156,14 +156,14 @@ public class Agent : MonoBehaviour
 		}
 
 		ExecuteTask();
-
+		Consume();
 		// consume a crops tile every X ticks
 
-		if (tickNum % consumptionRate == 0)
-		{
+		//if (tickNum % consumptionRate == 0)
+		//{
 			//AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
-			GlobalPool.Consume("Food", 100);
-		}
+			
+		//}
 	}
 
 
