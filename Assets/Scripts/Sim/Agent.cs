@@ -23,6 +23,7 @@ public class Agent : MonoBehaviour
 	Task currentTask;
 	Queue<SimHex> pathQueue;
 	public Cube lockedTarget;
+	public List<Need> needs;
 	private void Start()
 	{
 		cube = simHex.cube;
@@ -30,7 +31,45 @@ public class Agent : MonoBehaviour
 		consumptionRate = 10;
 		lockedTarget = cube;
 	}
-
+	public void CreateNeedList()
+	{
+		needs = new List<Need>();
+		Need food = new Need("Food", 50, 100, 3);
+		Need honey = new Need("Honey", 50, 100, 1);
+		Need housing = new Need("Housing", 50, 100, 2);
+		needs.Add(food);
+		needs.Add(honey);
+		needs.Add(housing);
+	}
+	public void Consume()
+	{
+		foreach(Need n in needs)
+		{
+			if(GlobalPool.CanConsume(n.needName,n.consumptionPerTick))
+			{
+				GlobalPool.Consume(n.needName, n.consumptionPerTick);
+				n.value += 1; // need satisfaction goes up if met, numbers arbitrary
+			}
+			else
+			{
+				n.value -= 1; // need satisfaction goes down if not met, numbers arbitrary
+			}
+			
+		}
+	}
+	public int WeightedSatisfaction()
+	{
+		
+		int weightedValueSum = 0;
+		int weights = 0;
+		foreach(Need n in needs)
+		{
+			weightedValueSum += n.value * n.weight;
+			weights += n.weight;
+		}
+		int weightedSatisfaction = weightedValueSum / weights;
+		return weightedSatisfaction;
+	}
 	public void CreateTaskList()
 	{
 
@@ -39,6 +78,7 @@ public class Agent : MonoBehaviour
 		Debug.Log("sampletask0: destinationType is " + sampleTask0.destinationType.name + " and desiredType is " + sampleTask0.desiredType.name);
 		taskList.Add(sampleTask0);
 	}
+	
 
 	public void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{
@@ -121,7 +161,8 @@ public class Agent : MonoBehaviour
 
 		if (tickNum % consumptionRate == 0)
 		{
-			AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
+			//AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
+			GlobalPool.Consume("Food", 100);
 		}
 	}
 

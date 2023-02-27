@@ -24,6 +24,7 @@ public class AgentDirector : MonoBehaviour
 			SpawnAgents();
 		}
 		CreateTaskListForAgents();
+		CreateNeedListForAgents();
 	}
 
 	public static void AgentTick(int tickNum)
@@ -56,6 +57,24 @@ public class AgentDirector : MonoBehaviour
 		{
 			a.CreateTaskList();
 		}
+	}
+	public static void CreateNeedListForAgents()
+	{
+		foreach (Agent a in agents)
+		{
+			a.CreateNeedList();
+		}
+	}
+	public static int AverageWeightedSatisfaction()
+	{
+		
+		int totalSatisfaction = 0;
+		foreach (Agent a in agents)
+		{
+			totalSatisfaction += a.WeightedSatisfaction();
+		}
+		int aws = totalSatisfaction / agents.Count;
+		return aws;
 	}
 	public static void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{

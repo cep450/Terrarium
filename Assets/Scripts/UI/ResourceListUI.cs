@@ -6,6 +6,7 @@ using UnityEngine;
 public class ResourceListUI : MonoBehaviour
 {
     public string ResourceListText;
+    public string SatisfactionText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class ResourceListUI : MonoBehaviour
     void Update()
     {
         ResourceListText = GlobalPool.ResourceTextFullText();
-        
-        gameObject.GetComponent<TextMeshProUGUI>().text = ResourceListText;
+        SatisfactionText = "Needs Satisfaction: " + AgentDirector.AverageWeightedSatisfaction();
+        gameObject.GetComponent<TextMeshProUGUI>().text = ResourceListText + '\n' + SatisfactionText;
     }
 }

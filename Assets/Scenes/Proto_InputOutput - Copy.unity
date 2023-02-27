@@ -234,7 +234,7 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _hexMap
       value: 
-      objectReference: {fileID: 1404904202}
+      objectReference: {fileID: 1404904205}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _hexGenRanjit.Array.size
       value: 5
@@ -309,13 +309,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4234667237379344862, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+    - {fileID: 8589432796807831008, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
 --- !u!1 &1404904199 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4278522896934547365, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
   m_PrefabInstance: {fileID: 1368154495}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1404904202
+--- !u!114 &1404904205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,7 +325,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1404904199}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid:
