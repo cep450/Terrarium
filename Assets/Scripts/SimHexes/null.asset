@@ -15,6 +15,7 @@ MonoBehaviour:
   name: null
   id: 0
   passable: 1
+  deathHexName: Dirt
   resourcesRequired: []
   resourcesProduced: []
   resourcesStarting: []

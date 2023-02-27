@@ -18,7 +18,7 @@ public class SimHexType : ScriptableObject {
     public string name = "default";         //this will also be the name of the json file it loads from
     public int id = -1;                     //its calling card for equals and lookup. its index in the array
     public bool passable = true;            //can gnomes pathfind/walk through this hex?
-    public string deathHexName = "dirt";        //hex it flips to if it dies 
+    public string deathHexName = "Dirt";        //hex it flips to if it dies 
 
     //defines behavior 
     public ResRequired [] resourcesRequired = new ResRequired[2];

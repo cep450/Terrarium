@@ -36,6 +36,13 @@ public class GlobalPool {
         Consume(Resource.IdByName(name), amount);
     }
 
+    public static int Amount(string name) {
+        return Amount(Resource.IdByName(name));
+    }
+    public static int Amount(int id) {
+        return resources[id];
+    }
+
 
 
     string ResourceText(string name)

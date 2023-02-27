@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Water
   id: 2
   passable: 1
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired: []
   resourcesProduced:
   - name: Water

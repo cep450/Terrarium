@@ -15,7 +15,7 @@ MonoBehaviour:
   name: House
   id: 6
   passable: 0
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired: []
   resourcesProduced: []
   resourcesStarting: []

@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Crop B
   id: -1
   passable: 1
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired:
   - name: Water
     id: 0
@@ -26,6 +26,15 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
+  - name: Nutrient B
+    id: 0
+    amount: 1
+    radius: 1
+    tickMod: 2
+    global: 1
+    isConsumed: 1
+    diesIfNotNet: 1
+    falloff: 0
   resourcesProduced:
   - name: Food
     id: 0
@@ -33,11 +42,33 @@ MonoBehaviour:
     radius: 0
     limit: 0
     tickMod: 10
-    global: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+  - name: Nutrient A
+    id: 0
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 10
+    global: 1
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+  - name: Water
+    id: 0
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 0
+    global: 1
     isHex: 0
     tryAll: 0
     falloff: 0
     changes: []
   resourcesStarting: []
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 1, g: 0.7171949, b: 0, a: 1}
   sprite: {fileID: 0}

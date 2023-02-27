@@ -15,11 +15,11 @@ MonoBehaviour:
   name: Crop A
   id: 5
   passable: 1
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired:
   - name: Water
     id: 1
-    amount: 1
+    amount: 0
     radius: 1
     tickMod: 0
     global: 0
@@ -31,8 +31,8 @@ MonoBehaviour:
     amount: 2
     radius: 1
     tickMod: 0
-    global: 0
-    isConsumed: 0
+    global: 1
+    isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
   resourcesProduced:
@@ -42,6 +42,17 @@ MonoBehaviour:
     radius: 0
     limit: 0
     tickMod: 10
+    global: 1
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+  - name: Water
+    id: 2
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 0
     global: 1
     isHex: 0
     tryAll: 0
