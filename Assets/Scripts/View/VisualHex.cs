@@ -7,11 +7,8 @@ public class VisualHex : MonoBehaviour {
 
     float verticalWiggle = 0.15f;
 
-    SpriteRenderer spriteRenderer;
-
-    void Awake() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer billboardedSprite;
 
     public void AssignSimHex(SimHex sHex) {
         simHex = sHex;
@@ -25,6 +22,9 @@ public class VisualHex : MonoBehaviour {
         spriteRenderer.color = simHex.type.color;
         if(simHex.type.sprite != null) {
             spriteRenderer.sprite = simHex.type.sprite;
+        }
+        if(simHex.type.billboardSprite != null) {
+            billboardedSprite.sprite = simHex.type.billboardSprite;
         }
     }
 

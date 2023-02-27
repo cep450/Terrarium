@@ -28,6 +28,7 @@ public class SimHexType : ScriptableObject {
     //visual display
     public Color color;
     public Sprite sprite;
+    public Sprite billboardSprite;
 
 
     //Loads associated ids by name 
