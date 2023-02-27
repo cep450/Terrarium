@@ -98,16 +98,13 @@ public class Sim : MonoBehaviour
         int tickOrder = tickArgs.tickNum % 4;
 
         if(tickOrder == 0) {
-            //Debug.Log("doing input tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
-            SimGrid.TickInputs(tickArgs.tickNum / 3);
+            SimGrid.TickInputs(tickArgs.tickNum / 4);
         } else if(tickOrder == 1) {
-            //Debug.Log("doing output tick " + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
-            SimGrid.TickOutputs(tickArgs.tickNum / 3);
+            SimGrid.TickOutputs(tickArgs.tickNum / 4);
         } else if(tickOrder == 2) {
-            //Debug.Log("doing agent tick" + tickArgs.tickNum + " " + tickArgs.tickNum / 3);
-            AgentDirector.AgentTick(tickArgs.tickNum / 3);
+            AgentDirector.AgentTick(tickArgs.tickNum / 4);
         } else if(tickOrder == 3) {
-            //end of tick
+            GlobalProcesses.Tick(tickArgs.tickNum / 4);
             Tracker.CalculateEndOfTick();
         }
     }

@@ -44,7 +44,7 @@ public class AgentDirector : MonoBehaviour
 		Cube spawnCube = Sim.hexMap.grid.Hexes[UnityEngine.Random.Range(0, Sim.hexMap.grid.Hexes.Count)]; // TODO: where to spawn
 		SimHex simHex = spawnCube.simHex;
 		GameObject _gnome = GameObject.Instantiate(Sim.gnomePrefab, simHex.visualHex.transform.position, new Quaternion());
-		Debug.Log("gnome spawned at " + spawnCube.position);
+		//Debug.Log("gnome spawned at " + spawnCube.position);
 		Agent gnomeAgent = _gnome.GetComponent<Agent>();
 		gnomeAgent.simHex = simHex;
 		agents.Add(gnomeAgent);

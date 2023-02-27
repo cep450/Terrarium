@@ -121,7 +121,7 @@ public class Agent : MonoBehaviour
 
 		if (tickNum % consumptionRate == 0)
 		{
-			AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
+			AddTask(HexTypes.TypeByName("Vine"), HexTypes.TypeByName("Dirt")); // convert crops to plants
 		}
 	}
 

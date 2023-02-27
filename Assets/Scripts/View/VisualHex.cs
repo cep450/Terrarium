@@ -18,7 +18,7 @@ public class VisualHex : MonoBehaviour {
         transform.position = Sim.hexMap.grid.HexToCenter(simHex.cube).position;
 
         //a bit of vertical wiggle 
-        transform.Translate(new Vector3(0, 0, Random.Range(-verticalWiggle, verticalWiggle)));
+        //transform.Translate(new Vector3(0, 0, Random.Range(-verticalWiggle, verticalWiggle)));
     }
 
     public void VisualUpdate() {

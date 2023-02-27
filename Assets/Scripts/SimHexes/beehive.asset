@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Beehive
   id: -1
   passable: 0
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired:
   - name: Nectar
     id: 0

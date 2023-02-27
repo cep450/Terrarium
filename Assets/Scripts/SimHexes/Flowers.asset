@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Flowers
   id: -1
   passable: 1
-  deathHexName: dirt
+  deathHexName: Dirt
   resourcesRequired:
   - name: Water
     id: 0

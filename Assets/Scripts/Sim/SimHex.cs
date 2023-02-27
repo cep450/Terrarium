@@ -24,7 +24,7 @@ public class SimHex
 	//every SimHex takes up a const amount of memory.
 	//these inform graphical rendering, sprite blending, making sprites appear
 	//go up to 255
-	public byte[] resourcesHas = new byte[Sim.resources.Length]; //this changes 
+	public int[] resourcesHas = new int[Sim.resources.Length]; //this changes 
 
 	SimHex [] neighbors;
 
@@ -84,15 +84,24 @@ public class SimHex
 	}
 
 	//add a resource to this hex
-	public void AddResource(int id, byte amount) {
+	public void AddResource(int id, int amount) {
 		resourcesHas[id] += amount;
 		Tracker.AddedRes(id, amount);
 	}
-	public bool HasResource(int id, byte amount) {
+	public void AddResource(string name, int amount) {
+		AddResource(Resource.IdByName(name), amount);
+	}
+	public bool HasResource(int id, int amount) {
 		return resourcesHas[id] >= amount;
 	}
+	public void HasResource(string name, int amount) {
+		HasResource(Resource.IdByName(name), amount);
+	}
 	//consume a resource from this hex
-	public void ConsumeResource(int id, byte amount) {
+	public void ConsumeResource(string name, int amount) {
+		ConsumeResource(Resource.IdByName(name), amount);
+	}
+	public void ConsumeResource(int id, int amount) {
 		resourcesHas[id] -= amount;
 		Tracker.UsedRes(id, amount);
 	}
