@@ -14,8 +14,7 @@ public class AgentDirector : MonoBehaviour
     */
 
 	static List<Agent> agents = new List<Agent>();
-	//public static int destinationTypeIndex;
-	//public static int desiredTypeIndex;
+	static List<Need> needs = new List<Need>();
 
 	public static void Init()
 	{
@@ -60,14 +59,25 @@ public class AgentDirector : MonoBehaviour
 	}
 	public static void CreateNeedListForAgents()
 	{
+		NeedList();
 		foreach (Agent a in agents)
 		{
-			a.CreateNeedList();
+			a.CreateNeedList(needs);
 		}
+	}
+	static List<Need> NeedList()
+	{
+		Need food = new Need("Food", 50, 100, 3);
+		Need honey = new Need("Honey", 50, 100, 1);
+		Need housing = new Need("Housing", 50, 100, 2);
+		needs.Add(food);
+		needs.Add(honey);
+		needs.Add(housing);
+		return needs;
 	}
 	public static int AverageWeightedSatisfaction()
 	{
-		
+
 		int totalSatisfaction = 0;
 		foreach (Agent a in agents)
 		{
@@ -75,6 +85,32 @@ public class AgentDirector : MonoBehaviour
 		}
 		int aws = totalSatisfaction / agents.Count;
 		return aws;
+	}
+	public static string SatisfactionsList()
+	{
+		string satisfactions = "Satisfactions: ";
+
+		for (int i = 0; i < needs.Count; i++)
+		{
+			satisfactions += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
+		}
+		satisfactions += "\n" + "Overall: " + AverageWeightedSatisfaction() + "%";
+		return satisfactions;
+	}
+	static int AverageSatisfactionOfOneNeed(int needIndex)
+	{
+		int averageSatisfaction = 0;
+		foreach (Agent a in agents)
+		{
+			if (a.needs != null && a.needs.ElementAtOrDefault(needIndex) != null)
+			{
+				averageSatisfaction += a.needs[needIndex].value;
+
+			}
+
+		}
+		averageSatisfaction = averageSatisfaction / agents.Count;
+		return averageSatisfaction;
 	}
 	public static void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{
