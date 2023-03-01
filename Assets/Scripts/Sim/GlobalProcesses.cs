@@ -8,14 +8,10 @@ public class GlobalProcesses : MonoBehaviour
     static GlobalProcesses instance;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         instance = this;
     }
 
-
-
-    
 
 
     [SerializeField] int rainfallPerHex = 15;
@@ -23,8 +19,6 @@ public class GlobalProcesses : MonoBehaviour
     [SerializeField] int rainfallTryModulo = 15;
     [SerializeField] VisualRain visualRain;
     void Rainfall() {
-
-        
 
         int numHexes = Sim.hexMap.grid.Hexes.Count;
 
@@ -42,8 +36,11 @@ public class GlobalProcesses : MonoBehaviour
     }
 
 
-    void WaterSpreads() {
 
+    static void WaterSpreads() {
+        foreach(SimHex hex in SimGrid.hexes) {
+            //TODO 
+        }
     }
   
 
@@ -55,8 +52,10 @@ public class GlobalProcesses : MonoBehaviour
 
         if(tickNum % instance.rainfallTryModulo == 0) {
             instance.Rainfall();
+        } else {
+            WaterSpreads();
         }
-        
+       
     }
 
 }

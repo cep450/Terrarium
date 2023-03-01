@@ -20,6 +20,9 @@ public class SimHex
 	public Cube cube { get; private set; }
 	public VisualHex visualHex { get; private set; }
 
+	public float elevation = 0f;
+	bool flooded = false;
+
 	//resource amounts. index of array corresponds to resource id. get by resource id.
 	//every SimHex takes up a const amount of memory.
 	//these inform graphical rendering, sprite blending, making sprites appear

@@ -12,7 +12,7 @@ public class SimGrid
     */
 
     //Parallel list with the list of Cubes in the HexGrid in the HexMap. 
-    static SimHex [] hexes;
+    public static SimHex [] hexes;
     
     public static void Init() {
 
@@ -67,7 +67,32 @@ public class SimGrid
         foreach(SimHex hex in hexes) {
             hex.LoadNeighbors();
         }
+
+        GenElevation();
+        GenWaterInLowElevations();
+
+        foreach(SimHex hex in hexes) {
+            hex.visualHex.VisualUpdate();
+        }
         
+    }
+ 
+    static void GenElevation() {
+
+        foreach(SimHex hex in SimGrid.hexes) {
+            hex.elevation = Mathf.PerlinNoise((float)hex.cube.position.x, (float)hex.cube.position.y);
+            Debug.Log(hex.elevation);
+            Debug.Log("x" + hex.cube.position.x + " y" + hex.cube.position.y + " z" + hex.cube.position.z);
+        }
+    }
+
+    static float waterThreshold = 0.1f;
+    static void GenWaterInLowElevations() {
+        foreach (SimHex hex in hexes) {
+            if(hex.elevation <= waterThreshold) {
+                hex.ChangeType(HexTypes.TypeByName("Water"));
+            }
+        }
     }
 
     //Step 1: try to do inputs, check for and consume resources. 

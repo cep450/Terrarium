@@ -5,13 +5,10 @@ public class VisualHex : MonoBehaviour {
 
     public SimHex simHex { get; private set; }
 
-    float verticalWiggle = 0.15f;
+    float elevationScale = 1f; //visual scale of internal elevation value
 
-    SpriteRenderer spriteRenderer;
-
-    void Awake() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
+    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer billboardedSprite;
 
     public void AssignSimHex(SimHex sHex) {
         simHex = sHex;
@@ -19,12 +16,18 @@ public class VisualHex : MonoBehaviour {
 
         //a bit of vertical wiggle 
         //transform.Translate(new Vector3(0, 0, Random.Range(-verticalWiggle, verticalWiggle)));
+    
+        //elevation 
+        transform.Translate(new Vector3(0, 0, simHex.elevation * elevationScale));
     }
 
     public void VisualUpdate() {
         spriteRenderer.color = simHex.type.color;
         if(simHex.type.sprite != null) {
             spriteRenderer.sprite = simHex.type.sprite;
+        }
+        if(simHex.type.billboardSprite != null) {
+            billboardedSprite.sprite = simHex.type.billboardSprite;
         }
     }
 
