@@ -10,49 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: Vine
+  m_Name: Lawn
   m_EditorClassIdentifier: 
-  name: Vine
-  id: 4
+  name: Lawn
+  id: -1
   passable: 1
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 1
+    id: 0
     amount: 1
-    radius: 1
+    radius: 0
     tickMod: 0
     global: 0
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
-  - name: Nutrient A
-    id: 3
-    amount: 1
-    radius: 1
-    tickMod: 0
-    global: 0
-    isConsumed: 1
-    diesIfNotNet: 0
-    falloff: 0
-  resourcesProduced:
-  - name: vine
-    id: -1
-    amount: 1
-    radius: 1
-    limit: 6
-    tickMod: 20
-    global: 0
-    isHex: 1
-    tryAll: 0
-    falloff: 0
-    changes:
-    - dirt
-    - plant
-    - crops
+  resourcesProduced: []
   resourcesStarting:
-  - name: Nutrient A
-    id: 3
+  - name: Water
+    id: 0
     amount: 100
-  color: {r: 0.053993106, g: 0.3962264, b: 0.26774034, a: 1}
+  color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}

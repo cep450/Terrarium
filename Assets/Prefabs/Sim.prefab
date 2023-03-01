@@ -69,31 +69,43 @@ MonoBehaviour:
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
     ranjit: 5
   - type: {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
-    ranjit: 8
+    ranjit: 0
   - type: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
     ranjit: 20
-  - type: {fileID: 11400000, guid: 4a3503e52e3cc014880f375dfc9cc75d, type: 2}
-    ranjit: 3
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
     ranjit: 8
+  - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
+    ranjit: 0
   - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
     ranjit: 1
+  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
+    ranjit: 10
   resourceInfo:
   - name: NULL
     initialGlobalAmount: 0
   - name: Water
-    initialGlobalAmount: 0
+    initialGlobalAmount: 100
   - name: Food
-    initialGlobalAmount: 0
+    initialGlobalAmount: 100
   - name: Nutrient A
-    initialGlobalAmount: 0
+    initialGlobalAmount: 10
   - name: Nutrient B
-    initialGlobalAmount: 0
+    initialGlobalAmount: 10
   - name: Nutrient C
-    initialGlobalAmount: 0
+    initialGlobalAmount: 10
   - name: Nectar
     initialGlobalAmount: 0
   - name: Honey
+    initialGlobalAmount: 0
+  - name: Crop A
+    initialGlobalAmount: 0
+  - name: Crop B
+    initialGlobalAmount: 0
+  - name: Crop C
+    initialGlobalAmount: 0
+  - name: Mosquitos
     initialGlobalAmount: 0
 --- !u!1 &4278522896934547365
 GameObject:
@@ -142,5 +154,5 @@ MonoBehaviour:
   grid:
     orientation: 0
     scale: 1
-  size: 10
+  size: 5
   shape: 2

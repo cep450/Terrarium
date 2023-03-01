@@ -10,17 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: Dirt
+  m_Name: Swamp
   m_EditorClassIdentifier: 
-  name: Dirt
-  id: 1
+  name: Swamp
+  id: -1
   passable: 1
   deathHexName: Dirt
   resourcesRequired: []
-  resourcesProduced: []
+  resourcesProduced:
+  - name: Mosquitos
+    id: 0
+    amount: 1
+    radius: 1
+    limit: 100
+    tickMod: 2
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
   resourcesStarting:
-  - name: Nutrient A
-    id: 3
+  - name: Water
+    id: 0
     amount: 100
-  color: {r: 0.2924528, g: 0.17228352, b: 0.18516827, a: 1}
+  color: {r: 0.10703691, g: 0.31132078, b: 0.2737555, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}

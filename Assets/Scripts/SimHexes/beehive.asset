@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: beehive
+  m_Name: Beehive
   m_EditorClassIdentifier: 
   name: Beehive
   id: -1
@@ -41,3 +41,4 @@ MonoBehaviour:
   resourcesStarting: []
   color: {r: 0.990566, g: 0.79127884, b: 0.022843244, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 21300000, guid: 0706ecd6093a1d74886f181314fbcd95, type: 3}

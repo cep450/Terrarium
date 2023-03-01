@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: Flowers
+  m_Name: Wildflowers
   m_EditorClassIdentifier: 
-  name: Flowers
+  name: Wildflowers
   id: -1
   passable: 1
   deathHexName: Dirt
@@ -25,6 +25,8 @@ MonoBehaviour:
     global: 0
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Nectar
@@ -36,8 +38,11 @@ MonoBehaviour:
     global: 1
     isHex: 0
     tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
     changes: []
   resourcesStarting: []
   color: {r: 0.8962264, g: 0.15594715, b: 0.492131, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}
