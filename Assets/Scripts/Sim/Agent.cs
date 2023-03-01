@@ -23,6 +23,7 @@ public class Agent : MonoBehaviour
 	Task currentTask;
 	Queue<SimHex> pathQueue;
 	public Cube lockedTarget;
+	public List<Need> needs;
 	private void Start()
 	{
 		cube = simHex.cube;
@@ -30,7 +31,47 @@ public class Agent : MonoBehaviour
 		consumptionRate = 10;
 		lockedTarget = cube;
 	}
+	public void CreateNeedList(List<Need> needs)
+	{
+		this.needs = new List<Need>(needs); // create a shallow copy 
+	}
+	public void Consume()
+	{
+		foreach (Need n in needs)
+		{
+			if (GlobalPool.CanConsume(n.needName, n.consumptionPerTick))
+			{
+				GlobalPool.Consume(n.needName, n.consumptionPerTick);
+				n.value += 1; // need satisfaction goes up if met, numbers arbitrary
+				if (n.value >= 100)
+				{
+					n.value = 100; // maximum 100
+				}
+			}
+			else
+			{
+				n.value -= 1; // need satisfaction goes down if not met, numbers arbitrary
+				if (n.value <= 0)
+				{
+					n.value = 0; // minimum 0
+				}
+			}
 
+		}
+	}
+	public int WeightedSatisfaction()
+	{
+
+		int weightedValueSum = 0;
+		int weights = 0;
+		foreach (Need n in needs)
+		{
+			weightedValueSum += n.value * n.weight;
+			weights += n.weight;
+		}
+		int weightedSatisfaction = weightedValueSum / weights;
+		return weightedSatisfaction;
+	}
 	public void CreateTaskList()
 	{
 
@@ -39,6 +80,7 @@ public class Agent : MonoBehaviour
 		Debug.Log("sampletask0: destinationType is " + sampleTask0.destinationType.name + " and desiredType is " + sampleTask0.desiredType.name);
 		taskList.Add(sampleTask0);
 	}
+
 
 	public void AddTask(SimHexType destinationType, SimHexType desiredType)
 	{
@@ -82,9 +124,9 @@ public class Agent : MonoBehaviour
 		{
 			Debug.Log("task sequence begins");
 			currentTask = FindTask();
-			
+
 			List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
-			if (pathList.Count>0)
+			if (pathList.Count > 0)
 			{
 				currentTask.destination = pathList[pathList.Count - 1];
 				pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
@@ -116,13 +158,14 @@ public class Agent : MonoBehaviour
 		}
 
 		ExecuteTask();
-
+		Consume();
 		// consume a crops tile every X ticks
 
-		if (tickNum % consumptionRate == 0)
-		{
-			AddTask(HexTypes.TypeByName("Vine"), HexTypes.TypeByName("Dirt")); // convert crops to plants
-		}
+		//if (tickNum % consumptionRate == 0)
+		//{
+		//AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
+
+		//}
 	}
 
 
@@ -140,7 +183,7 @@ public class Agent : MonoBehaviour
 
 			if (current.simHex.type == destinationType && !IsOccupied(current) && !IsLocked(current))
 			{
-				
+
 				// do something!
 				goal = current;
 				Debug.Log("found goal at " + current.position + " and it's a " + current.simHex.type.name);
@@ -180,14 +223,14 @@ public class Agent : MonoBehaviour
 			isTaskInProgress = false;
 			return path;
 		}
-			
+
 
 	}
 
 	bool IsOccupied(Cube targetCube)
 	{
 		bool isOccupied = false;
-		foreach(Agent a in AgentDirector.GetAgents())
+		foreach (Agent a in AgentDirector.GetAgents())
 		{
 			if (a != this)
 			{
@@ -216,7 +259,7 @@ public class Agent : MonoBehaviour
 			}
 
 		}
-			return isLocked;
+		return isLocked;
 	}
 
 }
