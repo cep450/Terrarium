@@ -49,7 +49,13 @@ public class Sim : MonoBehaviour
 
         //fill in information provided in inspector
 
-        hexMap = _hexMap;
+        if(_hexMap != null) {
+            hexMap = _hexMap;
+        } else {
+            hexMap = GetComponentInChildren<HexMap>();
+        }
+
+        
 
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;

@@ -232,6 +232,10 @@ PrefabInstance:
       value: Sim
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _hexMap
+      value: 
+      objectReference: {fileID: 1718082433}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -301,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[8].ranjit
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[9].ranjit
@@ -377,6 +381,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+--- !u!1 &1718082429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4278522896934547365, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+  m_PrefabInstance: {fileID: 1368154495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1718082433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718082429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid:
+    orientation: 0
+    scale: 1
+  size: 3
+  shape: 2
 --- !u!1001 &3030899129160160280
 PrefabInstance:
   m_ObjectHideFlags: 0
