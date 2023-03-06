@@ -13,11 +13,26 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   name: House
-  id: 6
+  id: 8
   passable: 0
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired: []
-  resourcesProduced: []
+  resourcesProduced:
+  - name: Housing
+    id: 8
+    amount: 100
+    radius: 0
+    limit: 0
+    tickMod: 10
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
   resourcesStarting: []
   color: {r: 0.8962264, g: 0.28277162, b: 0.28277162, a: 1}
   sprite: {fileID: 0}

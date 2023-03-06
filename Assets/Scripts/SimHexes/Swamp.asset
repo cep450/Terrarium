@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Swamp
   m_EditorClassIdentifier: 
   name: Swamp
-  id: -1
+  id: 11
   passable: 1
   beauty: 1
   ugliness: 1
@@ -21,7 +21,7 @@ MonoBehaviour:
   resourcesRequired: []
   resourcesProduced:
   - name: Mosquitos
-    id: 0
+    id: 9
     amount: 1
     radius: 1
     limit: 100
@@ -33,9 +33,48 @@ MonoBehaviour:
     floodingDisables: 0
     falloff: 0
     changes: []
+  - name: Water
+    id: 1
+    amount: 10
+    radius: 0
+    limit: 0
+    tickMod: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
+  - name: Nutrient A
+    id: 3
+    amount: 10
+    radius: 0
+    limit: 0
+    tickMod: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
+  - name: Nutrient B
+    id: 4
+    amount: 10
+    radius: 0
+    limit: 0
+    tickMod: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
   resourcesStarting:
   - name: Water
-    id: 0
+    id: 1
     amount: 100
   color: {r: 0.10703691, g: 0.31132078, b: 0.2737555, a: 1}
   sprite: {fileID: 0}

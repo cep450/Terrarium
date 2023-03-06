@@ -13,31 +13,37 @@ MonoBehaviour:
   m_Name: Crop C
   m_EditorClassIdentifier: 
   name: Crop C
-  id: -1
+  id: 6
   passable: 1
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 0
+    id: 1
     amount: 1
     radius: 0
     tickMod: 0
-    global: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   - name: Nutrient C
-    id: 0
+    id: 5
     amount: 1
     radius: 1
     tickMod: 3
-    global: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Water
-    id: 0
+    id: 1
     amount: 1
     radius: 0
     limit: 0
@@ -45,10 +51,12 @@ MonoBehaviour:
     global: 1
     isHex: 0
     tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
     changes: []
   - name: Nutrient B
-    id: 0
+    id: 4
     amount: 0
     radius: 0
     limit: 0
@@ -56,11 +64,14 @@ MonoBehaviour:
     global: 0
     isHex: 0
     tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
     changes: []
   resourcesStarting:
   - name: Water
-    id: 0
+    id: 1
     amount: 100
   color: {r: 0.9150943, g: 0.46672508, b: 0.28872472, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}
