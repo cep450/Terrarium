@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Wildflowers
   m_EditorClassIdentifier: 
   name: Wildflowers
-  id: -1
+  id: 7
   passable: 1
   beauty: 1
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 0
+    id: 1
     amount: 1
     radius: 1
     tickMod: 0
@@ -32,8 +32,8 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: Nectar
-    id: 0
-    amount: 1
+    id: 6
+    amount: 10
     radius: 0
     limit: 0
     tickMod: 0

@@ -13,25 +13,40 @@ MonoBehaviour:
   m_Name: Lawn
   m_EditorClassIdentifier: 
   name: Lawn
-  id: -1
+  id: 9
   passable: 1
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 0
-    amount: 1
+    id: 1
+    amount: 20
     radius: 0
     tickMod: 0
-    global: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
     floodingEnables: 0
     floodingDisables: 0
     falloff: 0
-  resourcesProduced: []
+  resourcesProduced:
+  - name: Housing
+    id: 8
+    amount: 200
+    radius: 0
+    limit: 0
+    tickMod: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes: []
   resourcesStarting:
   - name: Water
-    id: 0
+    id: 1
     amount: 100
   color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}

@@ -15,6 +15,8 @@ MonoBehaviour:
   name: Plant
   id: 3
   passable: 1
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
@@ -22,32 +24,39 @@ MonoBehaviour:
     amount: 0
     radius: 0
     tickMod: 0
-    global: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   - name: Nutrient A
     id: 3
     amount: 0
     radius: 0
     tickMod: 0
-    global: 0
+    global: 1
     isConsumed: 1
     diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Plant
-    id: -1
+    id: 3
     amount: 1
     radius: 1
     limit: 0
     tickMod: 10
-    global: 0
+    global: 1
     isHex: 1
     tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
     changes:
     - dirt
   resourcesStarting: []
   color: {r: 0.20758672, g: 0.6037736, b: 0.21667022, a: 1}
   sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}

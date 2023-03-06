@@ -13,29 +13,35 @@ MonoBehaviour:
   m_Name: Beehive
   m_EditorClassIdentifier: 
   name: Beehive
-  id: -1
+  id: 10
   passable: 0
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Nectar
-    id: 0
-    amount: 3
+    id: 6
+    amount: 10
     radius: 0
     tickMod: 0
     global: 1
-    isConsumed: 0
-    diesIfNotNet: 0
+    isConsumed: 1
+    diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Honey
-    id: 0
-    amount: 1
+    id: 7
+    amount: 200
     radius: 0
     limit: 0
     tickMod: 0
-    global: 0
+    global: 1
     isHex: 0
     tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
     falloff: 0
     changes: []
   resourcesStarting: []
