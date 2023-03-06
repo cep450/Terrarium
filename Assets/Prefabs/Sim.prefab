@@ -78,6 +78,8 @@ MonoBehaviour:
     ranjit: 0
   - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     ranjit: 0
+  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
+    ranjit: 0
   - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
     ranjit: 1
   - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
@@ -90,7 +92,7 @@ MonoBehaviour:
   - name: Food
     initialGlobalAmount: 100
   - name: Nutrient A
-    initialGlobalAmount: 10
+    initialGlobalAmount: 10000
   - name: Nutrient B
     initialGlobalAmount: 10
   - name: Nutrient C
@@ -99,15 +101,9 @@ MonoBehaviour:
     initialGlobalAmount: 0
   - name: Honey
     initialGlobalAmount: 0
-  - name: Crop A
-    initialGlobalAmount: 0
-  - name: Crop B
-    initialGlobalAmount: 0
-  - name: Crop C
-    initialGlobalAmount: 0
-  - name: Mosquitos
-    initialGlobalAmount: 0
   - name: Housing
+    initialGlobalAmount: 0
+  - name: Mosquitoes
     initialGlobalAmount: 0
 --- !u!1 &4278522896934547365
 GameObject:
