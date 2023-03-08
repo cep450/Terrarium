@@ -67,25 +67,25 @@ MonoBehaviour:
   - type: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
-    ranjit: 5
+    ranjit: 1
   - type: {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
-    ranjit: 20
+    ranjit: 0
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
-    ranjit: 8
+    ranjit: 50
   - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
-    ranjit: 0
+    ranjit: 3
   - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
-    ranjit: 1
+    ranjit: 20
   - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
-    ranjit: 10
+    ranjit: 5
   - type: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
-    ranjit: 10
+    ranjit: 1
   - type: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
     ranjit: 10
   resourceInfo:

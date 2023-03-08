@@ -76,9 +76,9 @@ public class Agent : MonoBehaviour
 	{
 
 		taskList = new List<Task>();
-		Task sampleTask0 = new Task(simHex.type, simHex.type);
-		Debug.Log("sampletask0: destinationType is " + sampleTask0.destinationType.name + " and desiredType is " + sampleTask0.desiredType.name);
-		taskList.Add(sampleTask0);
+		//Task sampleTask0 = new Task(simHex.type, simHex.type);
+		//Debug.Log("sampletask0: destinationType is " + sampleTask0.destinationType.name + " and desiredType is " + sampleTask0.desiredType.name);
+		//taskList.Add(sampleTask0);
 	}
 
 
@@ -124,14 +124,22 @@ public class Agent : MonoBehaviour
 		{
 			Debug.Log("task sequence begins");
 			currentTask = FindTask();
-
-			List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
-			if (pathList.Count > 0)
+			if (currentTask != null)
 			{
-				currentTask.destination = pathList[pathList.Count - 1];
-				pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
-				isTaskInProgress = true;
+				List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
+				if (pathList.Count > 0)
+				{
+					currentTask.destination = pathList[pathList.Count - 1];
+					pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
+					isTaskInProgress = true;
+				}
 			}
+			else
+			{
+				Debug.Log("No task");
+			}
+
+
 
 		}
 
@@ -139,15 +147,19 @@ public class Agent : MonoBehaviour
 
 	Task FindTask()
 	{
-		if (taskList.Count <= 0)
+		if (taskList.Count > 0)
 		{
-			CreateTaskList();
+			Task task = taskList[0];
+			taskList.Remove(task);
+			Debug.Log("current task is " + task.destinationType.name);
+			return task;
+		}
+		else
+		{
+			return null;
 		}
 
-		Task task = taskList[0];
-		taskList.Remove(task);
-		Debug.Log("current task is " + task.destinationType.name);
-		return task;
+
 	}
 
 	public void Tick(int tickNum)
