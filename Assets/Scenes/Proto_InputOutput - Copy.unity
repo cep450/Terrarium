@@ -622,7 +622,7 @@ PrefabInstance:
       objectReference: {fileID: 1718082433}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.size
@@ -655,11 +655,11 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[6].type
       value: 
-      objectReference: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
+      objectReference: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[7].type
       value: 
-      objectReference: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
+      objectReference: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[8].type
       value: 
@@ -668,6 +668,10 @@ PrefabInstance:
       propertyPath: hexTypeInfo.Array.data[9].type
       value: 
       objectReference: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[10].type
+      value: 
+      objectReference: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[8].name
       value: Crop A
@@ -703,6 +707,10 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[11].name
       value: Mosquitos
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[10].ranjit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[1].initialGlobalAmount
@@ -764,7 +772,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1922028117923064799, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _tickBaseSeconds
+      value: 0.2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5863320509935107699, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+    - {fileID: 1404904205, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
 --- !u!1 &1718082429 stripped
 GameObject:
@@ -786,7 +800,7 @@ MonoBehaviour:
   grid:
     orientation: 0
     scale: 1
-  size: 3
+  size: 5
   shape: 2
 --- !u!1 &2037042333
 GameObject:

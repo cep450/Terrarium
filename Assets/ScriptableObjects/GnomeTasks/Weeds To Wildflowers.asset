@@ -19,4 +19,13 @@ MonoBehaviour:
   - Weeds
   hexTypeIdsToAffect: 
   newHexType: Wildflowers
-  resourceChanges: []
+  resourceChanges:
+  - name: Seeds
+    id: 0
+    amount: 1
+    removeFromTile: 0
+    addToTile: 0
+    removeFromGnome: 0
+    addToGnome: 0
+    removeFromGlobal: 1
+    addToGlobal: 0
