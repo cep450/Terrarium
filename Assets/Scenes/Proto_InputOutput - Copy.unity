@@ -616,118 +616,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sim
       objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexMap
-      value: 
-      objectReference: {fileID: 1718082433}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.size
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.data[0]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.data[1]
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.data[2]
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.data[3]
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _hexGenRanjit.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[6].type
-      value: 
-      objectReference: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[7].type
-      value: 
-      objectReference: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[8].type
-      value: 
-      objectReference: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[9].type
-      value: 
-      objectReference: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[10].type
-      value: 
-      objectReference: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[8].name
-      value: Crop A
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[9].name
-      value: Crop B
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[2].ranjit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[6].ranjit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[7].ranjit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[8].ranjit
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[9].ranjit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[10].name
-      value: Crop C
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[11].name
-      value: Mosquitos
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[10].ranjit
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[1].initialGlobalAmount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[2].initialGlobalAmount
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[3].initialGlobalAmount
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: resourceInfo.Array.data[8].initialGlobalAmount
-      value: 100000
-      objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -772,36 +660,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064799, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _tickBaseSeconds
-      value: 0.2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5863320509935107699, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-    - {fileID: 1404904205, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
---- !u!1 &1718082429 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4278522896934547365, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-  m_PrefabInstance: {fileID: 1368154495}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1718082433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1718082429}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid:
-    orientation: 0
-    scale: 1
-  size: 5
-  shape: 2
 --- !u!1 &2037042333
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,14 +804,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3030899129095745254, guid: f005801236c1bb747bedd5a60f0584c6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3030899129095745254, guid: f005801236c1bb747bedd5a60f0584c6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -8.4
-      objectReference: {fileID: 0}
     - target: {fileID: 6613332794337005719, guid: f005801236c1bb747bedd5a60f0584c6, type: 3}
       propertyPath: m_RootOrder
       value: 0
