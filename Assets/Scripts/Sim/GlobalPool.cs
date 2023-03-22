@@ -13,6 +13,12 @@ public class GlobalPool {
     }
 
     public static void Add(int id, int amount) {
+
+        //won't go over cap 
+        if(Sim.resourceGlobalCaps[id] > 0) {
+            int diff = Sim.resourceGlobalCaps[id] - resources[id];
+            amount = Mathf.Min(amount, diff);
+        }
         resources[id] += amount;
         Tracker.AddedRes(id, amount);
     }

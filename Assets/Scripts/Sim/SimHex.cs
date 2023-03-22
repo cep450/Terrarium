@@ -21,7 +21,6 @@ public class SimHex
 	public VisualHex visualHex { get; private set; }
 
 	public float elevation = 0f;
-	bool flooded = false;
 
 	//resource amounts. index of array corresponds to resource id. get by resource id.
 	//every SimHex takes up a const amount of memory.
@@ -157,7 +156,7 @@ public class SimHex
 
 			int sum = 0;
 
-			if(rr.global) { //drawing from global 
+			if(!rr.local) { //drawing from global 
 
 				sum = GlobalPool.resources[rr.id];
 
@@ -195,7 +194,7 @@ public class SimHex
 			if (rr.isConsumed)
 			{
 
-				if(rr.global) { //consumes from global pool
+				if(!rr.local) { //consumes from global pool
 
 					GlobalPool.Consume(rr.id, rr.amount);
 
@@ -288,13 +287,23 @@ public class SimHex
 			} else {
 				//producing resources 
 
-				if(rp.global) { //producing to global pool 
+				if(!rp.local) { //producing to global pool 
 
-					GlobalPool.Add(rp.id, rp.amount);
+					if(rp.cap > 0) { //don't produce over cap 
+						int diff = rp.cap - GlobalPool.resources[rp.id];
+						GlobalPool.Add(rp.id, Mathf.Min(rp.amount, diff));
+					} else {
+						GlobalPool.Add(rp.id, rp.amount);
+					}
 
 				} else { //producing to self and neighbors 
 
-					AddResource(rp.id, rp.amount);
+					if(rp.cap > 0) { //don't produce over cap 
+						int diff = rp.cap - resourcesHas[rp.id];
+						AddResource(rp.id, Mathf.Min(rp.amount, diff));
+					} else {
+						AddResource(rp.id, rp.amount);
+					}
 
 					//TODO what if a tile is full up?
 					//TODO is the amount per tile or does it get spread between them?
@@ -302,7 +311,13 @@ public class SimHex
 					//TODO account for higher radius and falloff 
 					if(rp.radius > 0) {
 						foreach(SimHex neighbor in neighbors) {
-							neighbor.AddResource(rp.id, rp.amount);
+
+							if(rp.cap > 0) { //don't produce over cap 
+								int diff = rp.cap - neighbor.resourcesHas[rp.id];
+								neighbor.AddResource(rp.id, Mathf.Min(rp.amount, diff));
+							} else {
+								neighbor.AddResource(rp.id, rp.amount);
+							}
 						}
 					}
 
