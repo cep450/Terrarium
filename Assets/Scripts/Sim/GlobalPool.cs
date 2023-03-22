@@ -15,15 +15,19 @@ public class GlobalPool
 		}
 	}
 
-	public static void Add(int id, int amount)
-	{
-		resources[id] += amount;
-		Tracker.AddedRes(id, amount);
-	}
-	public static void Add(string name, int amount)
-	{
-		Add(Resource.IdByName(name), amount);
-	}
+    public static void Add(int id, int amount) {
+
+        //won't go over cap 
+        if(Sim.resourceGlobalCaps[id] > 0) {
+            int diff = Sim.resourceGlobalCaps[id] - resources[id];
+            amount = Mathf.Min(amount, diff);
+        }
+        resources[id] += amount;
+        Tracker.AddedRes(id, amount);
+    }
+    public static void Add(string name, int amount) {
+        Add(Resource.IdByName(name), amount);
+    }
 
 	public static bool CanConsume(int id, int amount)
 	{

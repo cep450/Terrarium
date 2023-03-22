@@ -6,6 +6,7 @@ using UnityEngine;
 public struct ResourceInfo {
     public string name;
     public int initialGlobalAmount;
+    public int globalCap;
 }
 
 [System.Serializable]
@@ -44,6 +45,7 @@ public class Sim : MonoBehaviour
     [SerializeField] public ResourceInfo [] resourceInfo;
     public static string [] resources;          //list of resource names 
     public static int[] resourceInitialValues;
+    public static int[] resourceGlobalCaps;
 
     void Awake() {
 
@@ -71,9 +73,11 @@ public class Sim : MonoBehaviour
 
         resources = new string[resourceInfo.Length];
         resourceInitialValues = new int[resourceInfo.Length];
+        resourceGlobalCaps = new int[resourceInfo.Length];
         for(int i = 0; i < resourceInfo.Length; i++) {
             resources[i] = resourceInfo[i].name;
             resourceInitialValues[i] = resourceInfo[i].initialGlobalAmount;
+            resourceGlobalCaps[i] = resourceInfo[i].globalCap;
         }
         GlobalPool.Init();
 
