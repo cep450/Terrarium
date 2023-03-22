@@ -275,6 +275,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 76198877}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resources.Array.data[0].name
       value: Food
       objectReference: {fileID: 0}
@@ -289,6 +293,10 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resources.Array.data[3].name
       value: Nutrient B
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: resourceInfo.Array.data[8].name
+      value: Beauty
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[5].ranjit
@@ -320,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[8].globalCap
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[9].globalCap

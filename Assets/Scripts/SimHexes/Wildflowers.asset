@@ -13,38 +13,41 @@ MonoBehaviour:
   m_Name: Wildflowers
   m_EditorClassIdentifier: 
   name: Wildflowers
-  id: 7
+  id: 10
   passable: 1
   beauty: 1
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 1
+    id: 0
     amount: 1
     radius: 1
     tickMod: 0
-    global: 0
+    local: 0
     isConsumed: 1
     diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Nectar
-    id: 6
+    id: 4
     amount: 10
     radius: 0
     limit: 0
     tickMod: 0
-    global: 1
+    local: 0
     isHex: 0
     tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
     changes: []
-  resourcesStarting: []
+    cap: 0
+  resourcesStarting:
+  - name: Beauty
+    id: 0
+    amount: 1
+    overrides: 1
+    local: 0
+  visualHexPrefab: {fileID: 0}
   color: {r: 0.8962264, g: 0.15594715, b: 0.492131, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}

@@ -34,6 +34,13 @@ MonoBehaviour:
     id: 0
     amount: 100
     overrides: 0
+    local: 0
+  - name: Beauty
+    id: 0
+    amount: 1
+    overrides: 1
+    local: 0
+  visualHexPrefab: {fileID: 0}
   color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}

@@ -241,7 +241,7 @@ public class SimHex
 			}
 		}
 
-		visualHex.VisualUpdate();
+		//visualHex.VisualUpdate();
 	}
 
 	public void CreateOutputs(int tickNum)
