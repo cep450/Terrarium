@@ -71,15 +71,30 @@ public class SimHex
 			Debug.Log("type changed at " + cube + "from " + type.name + " to " + newType.name);
 			Tracker.AddedHex(newType.id, 1);
 			Tracker.RemovedHex(type.id, 1);
+
+			//override old starting res if needed 
+			foreach(ResStarting rs in type.resourcesStarting) {
+				if(rs.overrides && !rs.local) {
+					GlobalPool.Consume(rs.id, rs.amount);
+				}
+			}
+		}
+
+		//add each starting resource to this tile
+		foreach (ResStarting rs in newType.resourcesStarting)
+		{
+			if(rs.local) {
+				if(rs.overrides) {
+					ConsumeResource(rs.id, resourcesHas[rs.id]);
+				}
+				AddResource(rs.id, rs.amount);
+			} else {
+				GlobalPool.Add(rs.id, rs.amount);
+			}
+			
 		}
 
 		type = newType;
-
-		//add each starting resource to this tile
-		foreach (ResStarting rs in type.resourcesStarting)
-		{
-			AddResource(rs.id, rs.amount);
-		}
 
 		visualHex.VisualUpdate();
 

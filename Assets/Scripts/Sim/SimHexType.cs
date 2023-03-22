@@ -26,8 +26,10 @@ public class SimHexType : ScriptableObject {
     public ResRequired [] resourcesRequired = new ResRequired[2];
     public ResProduced [] resourcesProduced = new ResProduced[2];
     public ResStarting [] resourcesStarting = new ResStarting[2];
+
+    public GameObject visualHexPrefab;
     
-    //visual display
+    //visual display- old
     public Color color;
     public Sprite sprite;
     public Sprite billboardSprite;

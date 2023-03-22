@@ -70,6 +70,8 @@ public class Resource {
         public string name;     //for the inspector
         public int id;
         public byte amount;
+        public bool overrides;  //if true, will replace the amount already on that tile 
+        public bool local;
     }
 
     //resources it leaves behind on death

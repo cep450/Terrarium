@@ -24,30 +24,16 @@ MonoBehaviour:
     amount: 20
     radius: 0
     tickMod: 0
-    global: 1
+    local: 0
     isConsumed: 1
     diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
-  resourcesProduced:
-  - name: Housing
-    id: 6
-    amount: 2
-    radius: 0
-    limit: 0
-    tickMod: 0
-    global: 1
-    isHex: 0
-    tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
-    falloff: 0
-    changes: []
+  resourcesProduced: []
   resourcesStarting:
   - name: Water
     id: 0
     amount: 100
+    overrides: 0
   color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
