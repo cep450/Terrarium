@@ -32,6 +32,7 @@ public class AgentDirector : MonoBehaviour
 		{
 			a.Tick(tickNum);
 		}
+		FailureState.UpdateCounter();
 	}
 	public static List<Agent> GetAgents()
 	{

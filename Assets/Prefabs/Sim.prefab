@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e654ac5fa8f516946a1a4aba792bf025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tickBaseSeconds: 0.25
+  _tickBaseSeconds: 0.2
 --- !u!114 &1922028117923064797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 1404904205}
+  _hexMap: {fileID: 5863320509935107699}
   _visualHexPrefab: {fileID: 2479060019227721132, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
@@ -73,33 +73,27 @@ MonoBehaviour:
   - type: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
-    ranjit: 50
+    ranjit: 20
   - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     ranjit: 0
-  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
-    ranjit: 3
-  - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
-    ranjit: 20
-  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
-    ranjit: 5
-  - type: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
-    ranjit: 1
   - type: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
+    ranjit: 1
+  - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
+    ranjit: 3
+  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
+    ranjit: 10
+  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
     ranjit: 10
   resourceInfo:
-  - name: NULL
-    initialGlobalAmount: 0
   - name: Water
-    initialGlobalAmount: 10000
+    initialGlobalAmount: 100
   - name: Food
     initialGlobalAmount: 100
   - name: Nutrient A
     initialGlobalAmount: 10000
   - name: Nutrient B
-    initialGlobalAmount: 10000
-  - name: Nutrient C
     initialGlobalAmount: 10000
   - name: Nectar
     initialGlobalAmount: 0
@@ -119,7 +113,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4275709212617185261}
   - component: {fileID: 5863320509935107699}
-  - component: {fileID: 1404904205}
   m_Layer: 0
   m_Name: HexMap
   m_TagString: Untagged
@@ -143,23 +136,6 @@ Transform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -36.936, y: 0, z: 0}
 --- !u!114 &5863320509935107699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4278522896934547365}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid:
-    orientation: 0
-    scale: 5
-  size: 10
-  shape: 2
---- !u!114 &1404904205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

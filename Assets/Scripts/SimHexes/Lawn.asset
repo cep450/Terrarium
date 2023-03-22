@@ -20,7 +20,7 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 1
+    id: 0
     amount: 20
     radius: 0
     tickMod: 0
@@ -32,8 +32,8 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: Housing
-    id: 8
-    amount: 200
+    id: 6
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
     changes: []
   resourcesStarting:
   - name: Water
-    id: 1
+    id: 0
     amount: 100
   color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}
