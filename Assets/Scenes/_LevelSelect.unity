@@ -388,7 +388,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 414403881}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: _LoadLevel1
+        m_MethodName: LoadLevel1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -522,7 +522,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 414403881}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: _LoadLevel2
+        m_MethodName: LoadLevel2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -859,7 +859,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 414403881}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: _LoadLevel3
+        m_MethodName: LoadLevel3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

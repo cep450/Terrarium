@@ -29,10 +29,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("_MainMenu");
     }
 
-    public void _LoadLevel1() { LoadLevel("_Level1"); }
-    public void _LoadLevel2() { LoadLevel("_Level2"); }
-    public void _LoadLevel3() { LoadLevel("_Level3"); }
-    //public void _ReloadLevel() { ReloadLevel(); }
+    public void LoadLevel1() { LoadLevel("_Level1"); }
+    public void LoadLevel2() { LoadLevel("_Level2"); }
+    public void LoadLevel3() { LoadLevel("_Level3"); }
     public void ReloadLevel() {
         LoadLevel(SceneManager.GetActiveScene().name);
     }
@@ -62,13 +61,11 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
 
-        //load the sim.
-        LoadSim();
+        //it will never get here 
     }
 
+/*
     public static void LoadSim() {
-
-        Debug.Log("loading sim in game manager");
 
         //Load the sim in the proper order. 
 
@@ -83,6 +80,6 @@ public class GameManager : MonoBehaviour
         SimGrid.Init(); //needs to happen after HexGrid initializes
         AgentDirector.Init();
 
-    }
+    }*/
     
 }

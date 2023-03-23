@@ -82,7 +82,7 @@ public class Agent : MonoBehaviour
 			}
 		}
 		int leastSatisfiedNecessity = necessities.Min(need => need.value);
-		Debug.Log("my least satisfied necessity is at " + leastSatisfiedNecessity);
+		//Debug.Log("my least satisfied necessity is at " + leastSatisfiedNecessity);
 		int finalSatisfication;
 		if (leastSatisfiedNecessity < weightedSatisfaction)
 		{
@@ -93,7 +93,7 @@ public class Agent : MonoBehaviour
 			finalSatisfication = weightedSatisfaction;
 		}
 
-		Debug.Log("my final satisfaction is " + finalSatisfication);
+		//Debug.Log("my final satisfaction is " + finalSatisfication);
 		return finalSatisfication; // return the lower of the two
 	}
 	public void CreateTaskList()
