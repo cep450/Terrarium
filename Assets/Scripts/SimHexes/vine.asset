@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
+  m_Name: Vine
+  m_EditorClassIdentifier: 
+  name: Vine
+  id: 4
+  passable: 1
+  beauty: 0
+  ugliness: 0
+  deathHexName: Dirt
+  resourcesRequired:
+  - name: Water
+    id: 1
+    amount: 1
+    radius: 1
+    tickMod: 0
+    global: 0
+    isConsumed: 1
+    diesIfNotNet: 1
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+  - name: Nutrient A
+    id: 3
+    amount: 1
+    radius: 1
+    tickMod: 0
+    global: 0
+    isConsumed: 1
+    diesIfNotNet: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+  resourcesProduced:
+  - name: Vine
+    id: -1
+    amount: 1
+    radius: 1
+    limit: 6
+    tickMod: 20
+    global: 0
+    isHex: 1
+    tryAll: 0
+    floodingEnables: 0
+    floodingDisables: 0
+    falloff: 0
+    changes:
+    - dirt
+    - plant
+    - crops
+  resourcesStarting:
+  - name: Nutrient A
+    id: 3
+    amount: 100
+  color: {r: 0.053993106, g: 0.3962264, b: 0.26774034, a: 1}
+  sprite: {fileID: 0}
+  billboardSprite: {fileID: 0}

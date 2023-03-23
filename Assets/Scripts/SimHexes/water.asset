@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
+  m_Name: Water
+  m_EditorClassIdentifier: 
+  name: Water
+  id: 2
+  passable: 1
+  deathHexName: Dirt
+  resourcesRequired: []
+  resourcesProduced:
+  - name: Water
+    id: 1
+    amount: 2
+    radius: 2
+    limit: 0
+    tickMod: 0
+    global: 1
+    isHex: 0
+    tryAll: 0
+    falloff: 0.5
+    changes: []
+  resourcesStarting:
+  - name: Water
+    id: 1
+    amount: 255
+  color: {r: 0.3480875, g: 0.6481256, b: 0.8301887, a: 1}
+  sprite: {fileID: 0}

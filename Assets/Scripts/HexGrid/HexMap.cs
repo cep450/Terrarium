@@ -14,7 +14,7 @@ public class HexMap : MonoBehaviour, IInitialize
 	public GridShape shape = GridShape.Hexagonal;
 
 	// Use this for initialization
-	void Start()
+	void Awake() //changed from Start to Awake -J 
 	{
 		Init();
 	}
@@ -70,14 +70,19 @@ public class HexMap : MonoBehaviour, IInitialize
 					continue;
 				}
 				ScreenCoordinate next = coord + pos;
+				Gizmos.color = Color.black;
 				Gizmos.DrawLine(new Vector3(last.position.x, last.position.y), new Vector3(next.position.x, next.position.y));
 				last = next;
 			}
 
 			Gizmos.DrawLine(new Vector3(last.position.x, last.position.y), new Vector3(first.position.x, first.position.y));
 			//zeru's code
+			/*
 			switch (cube.myLandscape)
 			{
+				case Cube.landscape.water:
+					Gizmos.color = Color.blue;
+					break;
 				case Cube.landscape.concrete:
 					Gizmos.color = Color.gray;
 					break;
@@ -87,12 +92,16 @@ public class HexMap : MonoBehaviour, IInitialize
 				case Cube.landscape.impassable:
 					Gizmos.color = Color.red;
 					break;
+				case Cube.landscape.acquired:
+					Gizmos.color = Color.yellow;
+					break;
 				default:
 					Gizmos.color = Color.white;
 					break;
+			
 
 			}
-			Gizmos.DrawWireSphere(pos.position, 0.2f);
+			Gizmos.DrawWireSphere(pos.position, 0.2f);*/
 		}
 	}
 }

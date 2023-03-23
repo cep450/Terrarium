@@ -11,24 +11,15 @@ public class Cube
 		new Vector3(+1, 0, -1), new Vector3(+1, -1, 0), new Vector3(0, -1, +1), new Vector3(-1, 0, +1), new Vector3(-1, +1, 0), new Vector3(0, +1, -1),
 	};
 
-	public enum landscape
-	{
-		
-		
-		fertile,
-		concrete,
-		water,
-		impassable
+	public SimHex simHex = null;
 
-	}
-	public landscape myLandscape = landscape.concrete;
+
 	public Vector3 position;
 
 
 	public Cube(Vector3 position)
 	{
 		this.position = position;
-		this.myLandscape = landscape.concrete;
 	}
 
 	public Cube(float x, float y, float z)

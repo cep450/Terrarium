@@ -29,7 +29,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 4275709212617185261}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e654ac5fa8f516946a1a4aba792bf025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tickBaseSeconds: 1
+  _tickBaseSeconds: 0.2
 --- !u!114 &1922028117923064797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +59,107 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hexMap: {fileID: 5863320509935107699}
+  _visualHexPrefab: {fileID: 287430325284683242, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
+  _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
+  _gnomesToSpawn: 5
+  hexTypeInfo:
+  - type: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
+    ranjit: 1
+  - type: {fileID: 11400000, guid: a608cfa36cf11f44f8eca6082cc1131f, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: cfba12d3c02146842aedbbeca7b2b7b1, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
+    ranjit: 20
+  - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
+    ranjit: 0
+  - type: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
+    ranjit: 1
+  - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
+    ranjit: 3
+  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
+    ranjit: 10
+  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
+    ranjit: 10
+  resourceInfo:
+  - name: Water
+    initialGlobalAmount: 100
+    globalCap: 0
+  - name: Food
+    initialGlobalAmount: 100
+    globalCap: 0
+  - name: Nutrient A
+    initialGlobalAmount: 10000
+    globalCap: 0
+  - name: Nutrient B
+    initialGlobalAmount: 10000
+    globalCap: 0
+  - name: Nectar
+    initialGlobalAmount: 0
+    globalCap: 0
+  - name: Honey
+    initialGlobalAmount: 0
+    globalCap: 0
+  - name: Housing
+    initialGlobalAmount: 0
+    globalCap: 0
+  - name: Mosquitos
+    initialGlobalAmount: 0
+    globalCap: 0
+  - name: Beauty
+    initialGlobalAmount: 0
+    globalCap: 0
+--- !u!1 &4278522896934547365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4275709212617185261}
+  - component: {fileID: 5863320509935107699}
+  m_Layer: 0
+  m_Name: HexMap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4275709212617185261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278522896934547365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1922028117923064798}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -36.936, y: 0, z: 0}
+--- !u!114 &5863320509935107699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4278522896934547365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid:
+    orientation: 0
+    scale: 1
+  size: 5
+  shape: 2

@@ -192,10 +192,11 @@ public class HexGrid
 				{
 					// zeru's code generating random landscape
 					Cube cube = new Cube(x, y, z);
-					Array values = Enum.GetValues(typeof(Cube.landscape));
-					Random random = new Random();
-					Cube.landscape randomLandscape = (Cube.landscape)values.GetValue(random.Next(values.Length));
-					cube.myLandscape = randomLandscape;
+					//Array values = Enum.GetValues(typeof(Cube.landscape));
+					//Random random = new Random();
+					//int[] landscapeRandom= new int[] { 0, 3, 3,0, 1,0,3, 3 ,0, 0, 0, 2, 0, 0, 0, 3, 0, 0,3, 3, 0, 0,3, 3, 0, 0, 0, 0, 0, 0, 3 };
+					//Cube.landscape randomLandscape = (Cube.landscape)values.GetValue(landscapeRandom[random.Next(landscapeRandom.Length)]);
+					//cube.myLandscape = randomLandscape;
 					hexes.Add(cube);
 				}
 			}
@@ -214,7 +215,6 @@ public class HexGrid
 				{
 					if (c.position == center.GetNeighborFromDirection(i).position)
 					{
-						if (c.myLandscape != Cube.landscape.impassable)
 						neighbors.Add(c);
 						break;
 					}
@@ -222,6 +222,18 @@ public class HexGrid
 			}
 		}
 		return neighbors;
+	}
+	public List<Cube> PassableNeighbors(List<Cube> neighbors)
+	{
+		List<Cube> passableNeighbors = neighbors;
+		foreach (Cube c in passableNeighbors)
+		{
+			if (!c.simHex.type.passable)
+			{
+				passableNeighbors.Remove(c);
+			}
+		}
+		return passableNeighbors;
 	}
 
 	public enum Orientation
