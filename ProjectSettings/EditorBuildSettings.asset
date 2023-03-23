@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/proto copy.unity
     guid: 88f24b6c115509b4e8e9cc52b4b97af1
+  - enabled: 1
+    path: Assets/Scenes/_LevelSelect.unity
+    guid: 3a7db43dfc54d6842a74307920400c10
+  - enabled: 1
+    path: Assets/Scenes/_Level1.unity
+    guid: 3aba97e9ffc85984aab9985b7f600063
+  - enabled: 1
+    path: Assets/Scenes/_Level2.unity
+    guid: 4e8e92f77dbac274a9a37fb21fd04bd8
+  - enabled: 1
+    path: Assets/Scenes/_Level3.unity
+    guid: f88be7b76342d264fadf07a4e5c810d6
   m_configObjects: {}

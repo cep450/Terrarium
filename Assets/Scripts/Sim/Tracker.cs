@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Tracker {
 
-    public static int [] resourcesProduced = new int [Sim.resources.Length];
-    public static int [] resourcesConsumed = new int [Sim.resources.Length];
-    public static int [] resourcesNet = new int [Sim.resources.Length];
+    public static int [] resourcesProduced = new int[0];
+    public static int [] resourcesConsumed = new int[0];
+    public static int [] resourcesNet = new int[0];
 
-    public static int [] hexesAdded = new int [Sim.hexTypes.Length];
-    public static int [] hexesRemoved = new int [Sim.hexTypes.Length];
-    public static int [] hexesNet = new int [Sim.hexTypes.Length];
+    public static int [] hexesAdded = new int[0];
+    public static int [] hexesRemoved = new int[0];
+    public static int [] hexesNet = new int[0];
+
+    public static void Init() {
+        resourcesProduced = new int [Sim.resources.Length];
+        resourcesConsumed = new int [Sim.resources.Length];
+        resourcesNet = new int [Sim.resources.Length];
+
+        hexesAdded = new int [Sim.hexTypes.Length];
+        hexesRemoved = new int [Sim.hexTypes.Length];
+        hexesNet = new int [Sim.hexTypes.Length];
+    }
 
     public static void CalculateEndOfTick() {
 
