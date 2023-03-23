@@ -17,8 +17,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static bool loaded = false;
-
     public void _GoToLevelSelect() { GoToLevelSelect(); }
     public static void GoToLevelSelect() {
         SceneManager.LoadScene("_LevelSelect");
@@ -44,15 +42,11 @@ public class GameManager : MonoBehaviour
         // The Application loads the Scene in the background as the current Scene runs.
         // This is particularly good for creating loading screens.
 
-        loaded = true;
-
         //Hide UI that could cover the loading screen
-        
         FindObjectOfType<Canvas>().gameObject.SetActive(false);
 
         //Display the loading screen 
         Instantiate(Resources.Load("LoadingScreen"));
-
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
 
@@ -60,26 +54,6 @@ public class GameManager : MonoBehaviour
         while (!asyncLoad.isDone) {
             yield return null;
         }
-
         //it will never get here 
     }
-
-/*
-    public static void LoadSim() {
-
-        //Load the sim in the proper order. 
-
-        Sim sim = FindObjectOfType<Sim>();
-        
-        //First, things that were in Awake()
-        sim.Init(); //this was Awake()
-        
-        //Then, things that were in Start()
-        
-        //these were in sim's start 
-        SimGrid.Init(); //needs to happen after HexGrid initializes
-        AgentDirector.Init();
-
-    }*/
-    
 }

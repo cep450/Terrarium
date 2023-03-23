@@ -48,14 +48,6 @@ public class Sim : MonoBehaviour
     public static int[] resourceInitialValues;
     public static int[] resourceGlobalCaps;
 
-/*
-    void Awake() { //for opening a scene without loading from main menu 
-        if(!GameManager.loaded) {
-            Debug.Log("Calling load sim from sim awake");
-            GameManager.LoadSim();
-        }
-    }*/
-
     void Start() {
         Debug.Log("called start on sim");
 
