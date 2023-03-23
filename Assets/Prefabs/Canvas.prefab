@@ -596,7 +596,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1910834691}
   - component: {fileID: 1910834693}
-  - component: {fileID: 1910834692}
   m_Layer: 5
   m_Name: Discontent
   m_TagString: Untagged
@@ -679,21 +678,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1910834692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910834690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9436a1f5d9344f5b237f28249c5f16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  failureThreshold: 20
-  failureCap: 100
-  restart: {fileID: 191091764911940272}
 --- !u!1 &191091764911940272
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,6 +961,7 @@ GameObject:
   - component: {fileID: 4174527325466733154}
   - component: {fileID: 1434747255269566599}
   - component: {fileID: 2510851304581915874}
+  - component: {fileID: 112026848807055376}
   m_Layer: 5
   m_Name: Resource List
   m_TagString: Untagged
@@ -1115,6 +1100,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ResourceListText: 
   SatisfactionText: 
+--- !u!114 &112026848807055376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5956818666607320199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e9436a1f5d9344f5b237f28249c5f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  failureThreshold: 20
+  failureCap: 100
+  failureSlider: {fileID: 191091764911940272}
+  restart: {fileID: 6619665733170403255}
 --- !u!1 &6619665733170403255
 GameObject:
   m_ObjectHideFlags: 0
