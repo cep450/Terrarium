@@ -111,6 +111,9 @@ MonoBehaviour:
   - name: Mosquitos
     initialGlobalAmount: 0
     globalCap: 0
+  - name: Beauty
+    initialGlobalAmount: 0
+    globalCap: 0
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0
