@@ -27,6 +27,9 @@ public class VisualHex : MonoBehaviour {
 
         if(simHex.type.visualHexPrefab != null) {
 
+            spriteRenderer.enabled = false;
+            billboardedSprite.enabled = false;
+
             if(visualHex != null) {
                 Destroy(visualHex);
             }
@@ -34,6 +37,10 @@ public class VisualHex : MonoBehaviour {
             visualHex = Instantiate(simHex.type.visualHexPrefab, this.transform);
 
         } else {
+
+            spriteRenderer.enabled = true;
+            billboardedSprite.enabled = true;
+
             VisualUpdateOld();
         }
     }

@@ -10,7 +10,8 @@ public class FailureState : MonoBehaviour
 	static int myThreshold;
 	[SerializeField] int failureCap;
 	static int myCap;
-	static Slider failureSlider;
+	[SerializeField] GameObject failureSlider;
+	static GameObject mySlider;
 	[SerializeField] GameObject restart;
 	static GameObject myRestart;
 	// Start is called before the first frame update
@@ -19,9 +20,9 @@ public class FailureState : MonoBehaviour
 		failureCounter = 0;
 		myThreshold = failureThreshold;
 		myCap = failureCap;
-		failureSlider = gameObject.GetComponent<Slider>();
-		failureSlider.maxValue = myCap;
-		failureSlider.minValue = 0;
+		mySlider = failureSlider;
+		mySlider.GetComponent<Slider>().maxValue = myCap;
+		mySlider.GetComponent<Slider>().minValue = 0;
 		myRestart = restart;
 	}
 
@@ -34,9 +35,8 @@ public class FailureState : MonoBehaviour
 	{
 		if (AgentDirector.AverageWeightedSatisfaction() < myThreshold)
 		{
-			failureSlider.enabled = true;
+			mySlider.SetActive(true);
 			failureCounter++;
-			failureSlider.value = failureCounter;
 			if (failureCounter >= myCap)
 			{
 				Fail();
@@ -51,6 +51,7 @@ public class FailureState : MonoBehaviour
 				Disappear();
 			}
 		}
+		mySlider.GetComponent<Slider>().value = failureCounter;
 	}
 	static void Fail()
 	{
@@ -60,6 +61,6 @@ public class FailureState : MonoBehaviour
 	static void Disappear()
 	{
 
-		failureSlider.enabled = false;
+		mySlider.SetActive(false);
 	}
 }

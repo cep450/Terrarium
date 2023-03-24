@@ -7,6 +7,7 @@ public class ResourceListUI : MonoBehaviour
 {
 	public string ResourceListText;
 	public string SatisfactionText;
+
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -24,9 +25,14 @@ public class ResourceListUI : MonoBehaviour
 	string ResourceStockpilesAndDeltas()
 	{
 		string text = new string("Resource List: ");
+
+		//if game is still loading, return 
+		if(Tracker.resourcesNet == null || GlobalPool.resources == null) {
+			return text;
+		}
+
 		int[] resourceDeltas = Tracker.resourcesNet;
 		int[] resourceStockpiles = GlobalPool.resources;
-
 
 		for (int i = 0; i < resourceStockpiles.Length; i++)
 		{

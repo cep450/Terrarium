@@ -5,59 +5,73 @@ using UnityEngine;
 public class GlobalProcesses : MonoBehaviour
 {
 
-    static GlobalProcesses instance;
+	static GlobalProcesses instance;
 
-    // Start is called before the first frame update
-    void Start() {
-        instance = this;
-    }
+	// Start is called before the first frame update
+	void Start()
+	{
+		instance = this;
+	}
 
-    [SerializeField] int rainfallPerHex = 0; //15;
-    [SerializeField] int rainfallGlobal = 500;
-    [SerializeField] int rainfallAtmosphereThreshPerHex = 20;
-    [SerializeField] int rainfallTryModulo = 15;
-    [SerializeField] VisualRain visualRain;
-    void Rainfall() {
+	[SerializeField] int rainfallPerHex = 0; //15;
+	[SerializeField] int rainfallGlobal = 500;
+	[SerializeField] int rainfallAtmosphereThreshPerHex = 20;
+	[SerializeField] int rainfallTryModulo = 15;
+	[SerializeField] VisualRain visualRain;
+	void Rainfall()
+	{
 
-        int numHexes = Sim.hexMap.grid.Hexes.Count;
+		int numHexes = Sim.hexMap.grid.Hexes.Count;
 
-        if(rainfallGlobal > 0) {
+		if (rainfallGlobal > 0)
+		{
 
-            GlobalPool.Add("Water", rainfallGlobal);
-            visualRain.DisplayRain();
+			GlobalPool.Add("Water", rainfallGlobal);
+			visualRain.DisplayRain();
 
-        } else if(rainfallAtmosphereThreshPerHex * numHexes <= GlobalPool.Amount("Water")) {
+		}
+		else if (rainfallAtmosphereThreshPerHex * numHexes <= GlobalPool.Amount("Water"))
+		{
 
-            GlobalPool.Consume("Water", rainfallPerHex * numHexes);
-            foreach(Cube cube in Sim.hexMap.grid.Hexes) {
-                cube.simHex.AddResource("Water", rainfallPerHex);
-            }
+			GlobalPool.Consume("Water", rainfallPerHex * numHexes);
+			foreach (Cube cube in Sim.hexMap.grid.Hexes)
+			{
+				cube.simHex.AddResource("Water", rainfallPerHex);
+			}
 
-            visualRain.DisplayRain();
-        } else {
-            Debug.Log("not enough water in the air to rain");
-        }
-    }
+			visualRain.DisplayRain();
+		}
+		else
+		{
+			Debug.Log("not enough water in the air to rain");
+		}
+	}
 
-    static void WaterSpreads() {
-        foreach(SimHex hex in SimGrid.hexes) {
-            //TODO 
-        }
-    }
-  
+	static void WaterSpreads()
+	{
+		foreach (SimHex hex in SimGrid.hexes)
+		{
+			//TODO 
+		}
+	}
 
 
 
-    public static void Tick(int tickNum) {
 
-        Debug.Log("tick is " + tickNum + " and modulo is " + instance.rainfallTryModulo);
+	public static void Tick(int tickNum)
+	{
 
-        if(tickNum % instance.rainfallTryModulo == 0) {
-            instance.Rainfall();
-        } else {
-            //WaterSpreads();
-        }
-       
-    }
+		//Debug.Log("tick is " + tickNum + " and modulo is " + instance.rainfallTryModulo);
+
+		if (tickNum % instance.rainfallTryModulo == 0)
+		{
+			instance.Rainfall();
+		}
+		else
+		{
+			//WaterSpreads();
+		}
+
+	}
 
 }

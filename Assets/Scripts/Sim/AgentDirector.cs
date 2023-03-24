@@ -68,12 +68,14 @@ public class AgentDirector : MonoBehaviour
 	}
 	static List<Need> NeedList()
 	{
-		Need food = new Need("Food", 50, 100, 3);
-		Need honey = new Need("Honey", 50, 100, 1);
-		Need housing = new Need("Housing", 50, 100, 2);
+		Need food = new Need("Food", 50, 100, 3, true);
+		Need honey = new Need("Honey", 50, 100, 1, false);
+		Need housing = new Need("Housing", 50, 100, 2, true);
+		Need water = new Need("Water", 50, 100, 3, true);
 		needs.Add(food);
 		needs.Add(honey);
 		needs.Add(housing);
+		needs.Add(water);
 		return needs;
 	}
 	public static int AverageWeightedSatisfaction()
@@ -85,6 +87,7 @@ public class AgentDirector : MonoBehaviour
 			totalSatisfaction += a.WeightedSatisfaction();
 		}
 		int aws = totalSatisfaction / agents.Count;
+		//Debug.Log("AWS is " + aws);
 		return aws;
 	}
 	public static string SatisfactionsList()

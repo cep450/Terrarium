@@ -24,7 +24,7 @@ MonoBehaviour:
   - name: Housing
     id: 6
     amount: 1
-    overrides: 0
+    overrides: 1
     local: 0
   visualHexPrefab: {fileID: 3138216601741046479, guid: 2ef2307c673d28e468e28f024dadb867, type: 3}
   color: {r: 0.8962264, g: 0.28277162, b: 0.28277162, a: 1}

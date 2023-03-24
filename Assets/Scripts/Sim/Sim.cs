@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public struct ResourceInfo {
@@ -47,7 +48,15 @@ public class Sim : MonoBehaviour
     public static int[] resourceInitialValues;
     public static int[] resourceGlobalCaps;
 
-    void Awake() {
+    void Start() {
+        Debug.Log("called start on sim");
+
+        Init();
+        SimGrid.Init(); //needs to happen after HexGrid initializes
+        AgentDirector.Init();
+    }
+
+    public void Init() {
 
         //fill in information provided in inspector
 
@@ -56,8 +65,6 @@ public class Sim : MonoBehaviour
         } else {
             hexMap = GetComponentInChildren<HexMap>();
         }
-
-        
 
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;
@@ -80,6 +87,7 @@ public class Sim : MonoBehaviour
             resourceGlobalCaps[i] = resourceInfo[i].globalCap;
         }
         GlobalPool.Init();
+        Tracker.Init();
 
         HexTypes.InitializeLookup(hexTypes);
         foreach(SimHexType type in hexTypes) {
@@ -88,18 +96,6 @@ public class Sim : MonoBehaviour
 
         Clock.Tick += HandleTick;
         
-    }
-
-    void Start() {
-
-        SimGrid.Init(); //needs to happen after HexGrid initializes
-        AgentDirector.Init();
-        
-    }
-
-    //Initialize values for a new game. Ex. set initial global values.
-    static void Init() {
-
     }
 
     //Manage the order of sub ticks.

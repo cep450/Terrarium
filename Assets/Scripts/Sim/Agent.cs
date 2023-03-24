@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Agent : MonoBehaviour
@@ -70,7 +71,30 @@ public class Agent : MonoBehaviour
 			weights += n.weight;
 		}
 		int weightedSatisfaction = weightedValueSum / weights;
-		return weightedSatisfaction;
+
+		// cap the satisfaction at the least satisfied necessary need
+		List<Need> necessities = new List<Need>();
+		foreach (Need n in needs)
+		{
+			if (n.isNecessary)
+			{
+				necessities.Add(n);
+			}
+		}
+		int leastSatisfiedNecessity = necessities.Min(need => need.value);
+		//Debug.Log("my least satisfied necessity is at " + leastSatisfiedNecessity);
+		int finalSatisfication;
+		if (leastSatisfiedNecessity < weightedSatisfaction)
+		{
+			finalSatisfication = leastSatisfiedNecessity;
+		}
+		else
+		{
+			finalSatisfication = weightedSatisfaction;
+		}
+
+		//Debug.Log("my final satisfaction is " + finalSatisfication);
+		return finalSatisfication; // return the lower of the two
 	}
 	public void CreateTaskList()
 	{
@@ -122,7 +146,7 @@ public class Agent : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("task sequence begins");
+			//Debug.Log("task sequence begins");
 			currentTask = FindTask();
 			if (currentTask != null)
 			{
@@ -136,7 +160,7 @@ public class Agent : MonoBehaviour
 			}
 			else
 			{
-				Debug.Log("No task");
+				//Debug.Log("No task");
 			}
 
 
@@ -151,7 +175,7 @@ public class Agent : MonoBehaviour
 		{
 			Task task = taskList[0];
 			taskList.Remove(task);
-			Debug.Log("current task is " + task.destinationType.name);
+			//Debug.Log("current task is " + task.destinationType.name);
 			return task;
 		}
 		else
@@ -198,7 +222,7 @@ public class Agent : MonoBehaviour
 
 				// do something!
 				goal = current;
-				Debug.Log("found goal at " + current.position + " and it's a " + current.simHex.type.name);
+				//Debug.Log("found goal at " + current.position + " and it's a " + current.simHex.type.name);
 				lockedTarget = current;
 				goalFound = true;
 				break;
@@ -230,7 +254,7 @@ public class Agent : MonoBehaviour
 		}
 		else
 		{
-			Debug.Log("Goal not found, destination type is " + destinationType.name);
+			//Debug.Log("Goal not found, destination type is " + destinationType.name);
 			List<SimHex> path = new List<SimHex>();
 			isTaskInProgress = false;
 			return path;
