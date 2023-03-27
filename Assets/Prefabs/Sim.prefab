@@ -114,6 +114,9 @@ MonoBehaviour:
   - name: Beauty
     initialGlobalAmount: 0
     globalCap: 0
+  _flipCards:
+  - {fileID: 11400000, guid: d41f2d23b537c1742974e8c2689f33a3, type: 2}
+  - {fileID: 11400000, guid: f5a8d131425d23a4e85af2e0d54a85c3, type: 2}
 --- !u!1 &4278522896934547365
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ public class Sim : MonoBehaviour
     public static int[] resourceInitialValues;
     public static int[] resourceGlobalCaps;
 
+    [SerializeField] public FlipCard [] _flipCards;
     public static FlipCard [] flipCards;
 
     void Start() {
@@ -70,8 +71,8 @@ public class Sim : MonoBehaviour
 
         visualHexPrefab = _visualHexPrefab;
         gnomePrefab = _gnomePrefab;
-
         gnomesToSpawn = _gnomesToSpawn;
+        flipCards = _flipCards;
 
         hexTypes = new SimHexType[hexTypeInfo.Length];
         hexGenRanjit = new float[hexTypeInfo.Length];
