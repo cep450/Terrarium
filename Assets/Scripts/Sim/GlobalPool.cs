@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GlobalPool
 {
-	public static int[] resources = new int[Sim.resources.Length];
+	public static int[] resources = new int[0];
 
 	public static void Init()
 	{ //load initial values
