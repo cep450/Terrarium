@@ -48,6 +48,8 @@ public class Sim : MonoBehaviour
     public static int[] resourceInitialValues;
     public static int[] resourceGlobalCaps;
 
+    public static FlipCard [] flipCards;
+
     void Start() {
         Debug.Log("called start on sim");
 
