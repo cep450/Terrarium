@@ -68,6 +68,7 @@ public class AgentDirector : MonoBehaviour
 	}
 	static List<Need> NeedList()
 	{
+		needs = new List<Need>();
 		Need food = new Need("Food", 50, 100, 3, true);
 		Need honey = new Need("Honey", 50, 100, 1, false);
 		Need housing = new Need("Housing", 50, 100, 2, true);
