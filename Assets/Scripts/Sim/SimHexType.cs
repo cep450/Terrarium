@@ -15,7 +15,8 @@ public class SimHexType : ScriptableObject {
         Follows the flyweight pattern iirc. 
     */
     
-    public string name = "default";         //this will also be the name of the json file it loads from
+    public string name = "default";         //used as an internal id
+    public string displayName = null;  //displayed in the game. defaults to name if none set
     public int id = -1;                     //its calling card for equals and lookup. its index in the array
     public bool passable = true;            //can gnomes pathfind/walk through this hex?
     public int beauty = 0; 
@@ -41,6 +42,10 @@ public class SimHexType : ScriptableObject {
     public void Init() {
 
         id = HexTypes.IdByName(name);
+
+        if(displayName == null) {
+            displayName = name;
+        }
 
         for(int i = 0; i < resourcesRequired.Length; i++) {
             resourcesRequired[i].id = Resource.IdByName(resourcesRequired[i].name);

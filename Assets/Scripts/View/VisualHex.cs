@@ -35,6 +35,7 @@ public class VisualHex : MonoBehaviour {
             }
 
             visualHex = Instantiate(simHex.type.visualHexPrefab, this.transform);
+            visualHex.transform.Rotate(0, 0, Random.Range(0, 6) * 60f);
 
         } else {
 
