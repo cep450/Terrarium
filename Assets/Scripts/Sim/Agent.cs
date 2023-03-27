@@ -106,9 +106,9 @@ public class Agent : MonoBehaviour
 	}
 
 
-	public void AddTask(SimHexType destinationType, SimHexType desiredType)
+	public void AddTask(SimHexType destinationType, SimHexType desiredType, int duration)
 	{
-		Task sampleTask0 = new Task(destinationType, desiredType);
+		Task sampleTask0 = new Task(destinationType, desiredType, duration);
 		taskList.Add(sampleTask0);
 	}
 
@@ -137,10 +137,20 @@ public class Agent : MonoBehaviour
 				}
 				else // upon arrival
 				{
-					simHex.ChangeType(currentTask.desiredType);
-					currentTask.isComplete = true; // doesnt do anything
-					lockedTarget = cube;
-					isTaskInProgress = false;
+					if (currentTask.duration > 0) // decrement duration count
+					{
+						currentTask.duration--;
+						gameObject.GetComponent<VisualGnome>().myRenderer.color = Color.red;
+					}
+					else
+					{
+						gameObject.GetComponent<VisualGnome>().myRenderer.color = Color.white;
+						simHex.ChangeType(currentTask.desiredType);
+						currentTask.isComplete = true; // doesnt do anything
+						lockedTarget = cube;
+						isTaskInProgress = false;
+					}
+
 				}
 			}
 		}

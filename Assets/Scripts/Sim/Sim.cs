@@ -4,22 +4,24 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public struct ResourceInfo {
-    public string name;
-    public int initialGlobalAmount;
-    public int globalCap;
+public struct ResourceInfo
+{
+	public string name;
+	public int initialGlobalAmount;
+	public int globalCap;
 }
 
 [System.Serializable]
-public struct HexTypeInfo {
-    public SimHexType type;
-    public float ranjit;
+public struct HexTypeInfo
+{
+	public SimHexType type;
+	public float ranjit;
 }
 
 public class Sim : MonoBehaviour
 {
 
-    /*
+	/*
         MonoBehavior singleton that controls the internal sim.
 
         Recieves tick events and controls the order of sub-tick events in the sim.
