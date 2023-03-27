@@ -24,7 +24,7 @@ public class ActionUI : MonoBehaviour
 	{
 		if (x != null && y != null && !(x == y))
 		{
-			AgentDirector.XToYByName(x.name, y.name);
+			AgentDirector.XToYByName(x.name, y.name, UnityEngine.Random.Range(10, 30)); // random duration for testing
 		}
 
 	}

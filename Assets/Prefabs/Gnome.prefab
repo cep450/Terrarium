@@ -8,9 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5184885962263014066}
+  - component: {fileID: 1703082735692579768}
   - component: {fileID: 7876913327628692856}
   - component: {fileID: 8141874005623303107}
+  - component: {fileID: 5205123562204661982}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -18,8 +19,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5184885962263014066
-Transform:
+--- !u!224 &1703082735692579768
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35,6 +36,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7876913327628692856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +80,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bc2c231a32eb1f843b78640df1d6a020, type: 3}
   myRenderer: {fileID: 7943895312737996916}
   myRendererShadow: {fileID: 941226823982927517}
+--- !u!222 &5205123562204661982
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389196132420375823}
+  m_CullTransparentMesh: 1
 --- !u!1 &1304254988308868140
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,7 +117,7 @@ Transform:
   m_LocalScale: {x: 0.35, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5184885962263014066}
+  m_Father: {fileID: 1703082735692579768}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!212 &7943895312737996916
@@ -187,7 +201,7 @@ Transform:
   m_LocalScale: {x: 0.375, y: 0.325, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5184885962263014066}
+  m_Father: {fileID: 1703082735692579768}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!212 &941226823982927517

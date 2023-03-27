@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
+  - component: {fileID: 4456842724449646477}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -29,8 +30,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4275709212617185261}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 5863320509935107699}
+  _hexMap: {fileID: 4456842724449646477}
   _visualHexPrefab: {fileID: 287430325284683242, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
@@ -114,45 +114,16 @@ MonoBehaviour:
   - name: Beauty
     initialGlobalAmount: 0
     globalCap: 0
---- !u!1 &4278522896934547365
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4275709212617185261}
-  - component: {fileID: 5863320509935107699}
-  m_Layer: 0
-  m_Name: HexMap
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4275709212617185261
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4278522896934547365}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1922028117923064798}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -36.936, y: 0, z: 0}
---- !u!114 &5863320509935107699
+  _flipCards:
+  - {fileID: 11400000, guid: d41f2d23b537c1742974e8c2689f33a3, type: 2}
+  - {fileID: 11400000, guid: f5a8d131425d23a4e85af2e0d54a85c3, type: 2}
+--- !u!114 &4456842724449646477
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4278522896934547365}
+  m_GameObject: {fileID: 1922028117923064736}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}

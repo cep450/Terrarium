@@ -28,6 +28,8 @@ public class SimHexType : ScriptableObject {
     public ResStarting [] resourcesStarting = new ResStarting[2];
 
     public GameObject visualHexPrefab;
+
+    public Sprite cardSprite;
     
     //visual display- old
     public Color color;
