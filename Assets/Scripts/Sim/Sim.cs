@@ -4,115 +4,133 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public struct ResourceInfo {
-    public string name;
-    public int initialGlobalAmount;
-    public int globalCap;
+public struct ResourceInfo
+{
+	public string name;
+	public int initialGlobalAmount;
+	public int globalCap;
 }
 
 [System.Serializable]
-public struct HexTypeInfo {
-    public SimHexType type;
-    public float ranjit;
+public struct HexTypeInfo
+{
+	public SimHexType type;
+	public float ranjit;
 }
 
 public class Sim : MonoBehaviour
 {
 
-    /*
+	/*
         MonoBehavior singleton that controls the internal sim.
 
         Recieves tick events and controls the order of sub-tick events in the sim.
     */
 
-    [SerializeField] HexMap _hexMap;
-    public static HexMap hexMap;
-    
-    //prefabs
-    [SerializeField] VisualHex _visualHexPrefab;
-    public static VisualHex visualHexPrefab;
-    [SerializeField] GameObject _gnomePrefab; //TODO specify this as a Gnome or Agent 
-    public static GameObject gnomePrefab;
+	[SerializeField] HexMap _hexMap;
+	public static HexMap hexMap;
 
-    //numbers
-    [SerializeField] public int _gnomesToSpawn;
-    public static int gnomesToSpawn;
+	//prefabs
+	[SerializeField] VisualHex _visualHexPrefab;
+	public static VisualHex visualHexPrefab;
+	[SerializeField] GameObject _gnomePrefab; //TODO specify this as a Gnome or Agent 
+	public static GameObject gnomePrefab;
 
-    [SerializeField] public HexTypeInfo [] hexTypeInfo;
-    public static SimHexType [] hexTypes;       //list of hex type scriptable objects
-    public static float [] hexGenRanjit;        //parallel with hexTypes, ranjit range for % generated
+	//numbers
+	[SerializeField] public int _gnomesToSpawn;
+	public static int gnomesToSpawn;
 
-    
-    [SerializeField] public ResourceInfo [] resourceInfo;
-    public static string [] resources;          //list of resource names 
-    public static int[] resourceInitialValues;
-    public static int[] resourceGlobalCaps;
+	[SerializeField] public HexTypeInfo[] hexTypeInfo;
+	public static SimHexType[] hexTypes;       //list of hex type scriptable objects
+	public static float[] hexGenRanjit;        //parallel with hexTypes, ranjit range for % generated
 
-    void Start() {
-        Debug.Log("called start on sim");
 
-        Init();
-        SimGrid.Init(); //needs to happen after HexGrid initializes
-        AgentDirector.Init();
-    }
+	[SerializeField] public ResourceInfo[] resourceInfo;
+	public static string[] resources;          //list of resource names 
+	public static int[] resourceInitialValues;
+	public static int[] resourceGlobalCaps;
 
-    public void Init() {
+	void Start()
+	{
+		Debug.Log("called start on sim");
 
-        //fill in information provided in inspector
+		Init();
+		SimGrid.Init(); //needs to happen after HexGrid initializes
+		AgentDirector.Init();
+	}
 
-        if(_hexMap != null) {
-            hexMap = _hexMap;
-        } else {
-            hexMap = GetComponentInChildren<HexMap>();
-        }
+	public void Init()
+	{
 
-        visualHexPrefab = _visualHexPrefab;
-        gnomePrefab = _gnomePrefab;
+		//fill in information provided in inspector
 
-        gnomesToSpawn = _gnomesToSpawn;
+		if (_hexMap != null)
+		{
+			hexMap = _hexMap;
+		}
+		else
+		{
+			hexMap = GetComponent<HexMap>();
+		}
 
-        hexTypes = new SimHexType[hexTypeInfo.Length];
-        hexGenRanjit = new float[hexTypeInfo.Length];
-        for(int i = 0; i < hexTypeInfo.Length; i++) {
-            hexTypes[i] = hexTypeInfo[i].type;
-            hexGenRanjit[i] = hexTypeInfo[i].ranjit;
-        }
+		visualHexPrefab = _visualHexPrefab;
+		gnomePrefab = _gnomePrefab;
 
-        resources = new string[resourceInfo.Length];
-        resourceInitialValues = new int[resourceInfo.Length];
-        resourceGlobalCaps = new int[resourceInfo.Length];
-        for(int i = 0; i < resourceInfo.Length; i++) {
-            resources[i] = resourceInfo[i].name;
-            resourceInitialValues[i] = resourceInfo[i].initialGlobalAmount;
-            resourceGlobalCaps[i] = resourceInfo[i].globalCap;
-        }
-        GlobalPool.Init();
-        Tracker.Init();
+		gnomesToSpawn = _gnomesToSpawn;
 
-        HexTypes.InitializeLookup(hexTypes);
-        foreach(SimHexType type in hexTypes) {
-            type.Init();
-        }
+		hexTypes = new SimHexType[hexTypeInfo.Length];
+		hexGenRanjit = new float[hexTypeInfo.Length];
+		for (int i = 0; i < hexTypeInfo.Length; i++)
+		{
+			hexTypes[i] = hexTypeInfo[i].type;
+			hexGenRanjit[i] = hexTypeInfo[i].ranjit;
+		}
 
-        Clock.Tick += HandleTick;
-        
-    }
+		resources = new string[resourceInfo.Length];
+		resourceInitialValues = new int[resourceInfo.Length];
+		resourceGlobalCaps = new int[resourceInfo.Length];
+		for (int i = 0; i < resourceInfo.Length; i++)
+		{
+			resources[i] = resourceInfo[i].name;
+			resourceInitialValues[i] = resourceInfo[i].initialGlobalAmount;
+			resourceGlobalCaps[i] = resourceInfo[i].globalCap;
+		}
+		GlobalPool.Init();
+		Tracker.Init();
 
-    //Manage the order of sub ticks.
-    public static void HandleTick(object obj, TickArgs tickArgs) {
+		HexTypes.InitializeLookup(hexTypes);
+		foreach (SimHexType type in hexTypes)
+		{
+			type.Init();
+		}
 
-        int tickOrder = tickArgs.tickNum % 4;
+		Clock.Tick += HandleTick;
 
-        if(tickOrder == 0) {
-            SimGrid.TickInputs(tickArgs.tickNum / 4);
-        } else if(tickOrder == 1) {
-            SimGrid.TickOutputs(tickArgs.tickNum / 4);
-        } else if(tickOrder == 2) {
-            AgentDirector.AgentTick(tickArgs.tickNum / 4);
-        } else if(tickOrder == 3) {
-            GlobalProcesses.Tick(tickArgs.tickNum / 4);
-            Tracker.CalculateEndOfTick();
-        }
-    }
+	}
+
+	//Manage the order of sub ticks.
+	public static void HandleTick(object obj, TickArgs tickArgs)
+	{
+
+		int tickOrder = tickArgs.tickNum % 4;
+
+		if (tickOrder == 0)
+		{
+			SimGrid.TickInputs(tickArgs.tickNum / 4);
+		}
+		else if (tickOrder == 1)
+		{
+			SimGrid.TickOutputs(tickArgs.tickNum / 4);
+		}
+		else if (tickOrder == 2)
+		{
+			AgentDirector.AgentTick(tickArgs.tickNum / 4);
+		}
+		else if (tickOrder == 3)
+		{
+			GlobalProcesses.Tick(tickArgs.tickNum / 4);
+			Tracker.CalculateEndOfTick();
+		}
+	}
 }
 

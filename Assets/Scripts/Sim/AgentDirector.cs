@@ -116,30 +116,33 @@ public class AgentDirector : MonoBehaviour
 		averageSatisfaction = averageSatisfaction / agents.Count;
 		return averageSatisfaction;
 	}
-	public static void AddTask(SimHexType destinationType, SimHexType desiredType)
+	public static void AddTask(SimHexType destinationType, SimHexType desiredType, int duration)
 	{
-		int[] taskListLengths = new int[agents.Count];
+		int[] taskListDurations = new int[agents.Count];
 		for (int i = 0; i < agents.Count; i++)
 		{
-			taskListLengths[i] = agents[i].taskList.Count;
+			for (int j = 0; j < agents[i].taskList.Count; j++)
+			{
+				taskListDurations[i] += agents[i].taskList[j].duration;
+			}
+
 		}
 		int minIndex = 0;
 		try
 		{
-			minIndex = Array.IndexOf(taskListLengths, taskListLengths.Min());
+			minIndex = Array.IndexOf(taskListDurations, taskListDurations.Min());
 		}
 		catch
 		{
 
 		}
-
-		agents[minIndex].AddTask(destinationType, desiredType);
+		agents[minIndex].AddTask(destinationType, desiredType, duration);
 	}
 
-	public static void XToYByName(string xTypeName, string yTypeName)
+	public static void XToYByName(string xTypeName, string yTypeName, int duration)
 	{
 
-		AddTask(HexTypes.TypeByName(xTypeName), HexTypes.TypeByName(yTypeName));
+		AddTask(HexTypes.TypeByName(xTypeName), HexTypes.TypeByName(yTypeName), duration);
 	}
 
 	public static string AllTaskLists()
