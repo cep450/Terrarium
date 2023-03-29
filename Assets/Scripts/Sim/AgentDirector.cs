@@ -18,6 +18,7 @@ public class AgentDirector : MonoBehaviour
 
 	public static void Init()
 	{
+		agents = new List<Agent>();
 		for (int i = 0; i < Sim.gnomesToSpawn; i++)
 		{
 			SpawnAgents();

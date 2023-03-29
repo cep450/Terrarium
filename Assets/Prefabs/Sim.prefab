@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
-  - component: {fileID: 4456842724449646477}
+  - component: {fileID: 5733265871178856545}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 4456842724449646477}
+  _hexMap: {fileID: 0}
   _visualHexPrefab: {fileID: 287430325284683242, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
@@ -117,7 +117,7 @@ MonoBehaviour:
   _flipCards:
   - {fileID: 11400000, guid: d41f2d23b537c1742974e8c2689f33a3, type: 2}
   - {fileID: 11400000, guid: f5a8d131425d23a4e85af2e0d54a85c3, type: 2}
---- !u!114 &4456842724449646477
+--- !u!114 &5733265871178856545
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922028117923064736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid:
