@@ -37,6 +37,8 @@ public class SimHexType : ScriptableObject {
     public Sprite sprite;
     public Sprite billboardSprite;
 
+    public Sprite icon;
+
 
     //Loads associated ids by name 
     public void Init() {
