@@ -131,7 +131,7 @@ public class Sim : MonoBehaviour
 		}
 		else if (tickOrder == 3)
 		{
-			GlobalProcesses.Tick(tickArgs.tickNum / 4);
+			//GlobalProcesses.Tick(tickArgs.tickNum / 4);
 			Tracker.CalculateEndOfTick();
 		}
 	}
