@@ -15,7 +15,7 @@ public class AgentDirector : MonoBehaviour
 
 	static List<Agent> agents = new List<Agent>();
 	static List<Need> needs = new List<Need>();
-
+	public static int[] shallowResources = new int[0];
 	public static void Init()
 	{
 		agents = new List<Agent>();
@@ -29,6 +29,7 @@ public class AgentDirector : MonoBehaviour
 
 	public static void AgentTick(int tickNum)
 	{
+		shallowResources = (int[])GlobalPool.resources.Clone(); // make a shallow copy of resources
 		foreach (Agent a in agents)
 		{
 			a.Tick(tickNum);
@@ -70,10 +71,10 @@ public class AgentDirector : MonoBehaviour
 	static List<Need> NeedList()
 	{
 		needs = new List<Need>();
-		Need food = new Need("Food", 50, 100, 3, true);
-		Need honey = new Need("Honey", 50, 100, 1, false);
-		Need housing = new Need("Housing", 50, 100, 2, true);
-		Need water = new Need("Water", 50, 100, 3, true);
+		Need food = new Need("Food", 50, 100, 3, true, true);
+		Need honey = new Need("Honey", 50, 100, 1, false, true);
+		Need housing = new Need("Housing", 50, 1, 2, true, false);
+		Need water = new Need("Water", 50, 100, 3, true, true);
 		needs.Add(food);
 		needs.Add(honey);
 		needs.Add(housing);
@@ -110,6 +111,7 @@ public class AgentDirector : MonoBehaviour
 		{
 			if (a.needs != null && a.needs.ElementAtOrDefault(needIndex) != null)
 			{
+				//Debug.Log("Agent " + agents.IndexOf(a) + "has satisfaction for " + a.needs.ElementAtOrDefault(needIndex).needName + " at " + a.needs[needIndex].value);
 				averageSatisfaction += a.needs[needIndex].value;
 
 			}

@@ -25,37 +25,72 @@ public class Agent : MonoBehaviour
 	Queue<SimHex> pathQueue;
 	public Cube lockedTarget;
 	public List<Need> needs;
+	int rateOfSatisfactionChange = 10;
 	private void Start()
 	{
 		cube = simHex.cube;
 		map = Sim.hexMap;
 		consumptionRate = 10;
 		lockedTarget = cube;
+		rateOfSatisfactionChange = 10;
 	}
 	public void CreateNeedList(List<Need> needs)
 	{
-		this.needs = new List<Need>(needs); // create a shallow copy 
+		this.needs = new List<Need>();
+		foreach (Need n in needs)
+		{
+			this.needs.Add((Need)n.ShallowCopy());
+		}
+
 	}
+
 	public void Consume()
 	{
 		foreach (Need n in needs)
 		{
-			if (GlobalPool.CanConsume(n.needName, n.consumptionPerTick))
+			if (n.isConsumed)
 			{
-				GlobalPool.Consume(n.needName, n.consumptionPerTick);
-				n.value += 1; // need satisfaction goes up if met, numbers arbitrary
-				if (n.value >= 100)
+				if (GlobalPool.CanConsume(n.needName, n.consumptionPerTick))
 				{
-					n.value = 100; // maximum 100
+					GlobalPool.Consume(n.needName, n.consumptionPerTick);
+					n.value += rateOfSatisfactionChange; // need satisfaction goes up if met, numbers arbitrary
+					if (n.value >= 100)
+					{
+						n.value = 100; // maximum 100
+					}
+				}
+				else
+				{
+					n.value -= rateOfSatisfactionChange; // need satisfaction goes down if not met, numbers arbitrary
+					if (n.value <= 0)
+					{
+						n.value = 0; // minimum 0
+					}
 				}
 			}
 			else
 			{
-				n.value -= 1; // need satisfaction goes down if not met, numbers arbitrary
-				if (n.value <= 0)
+				Debug.Log("I have this many resources" + AgentDirector.shallowResources[Resource.IdByName(n.needName)] + " for " + n.needName);
+				if (AgentDirector.shallowResources[Resource.IdByName(n.needName)] >= n.consumptionPerTick)
 				{
-					n.value = 0; // minimum 0
+					AgentDirector.shallowResources[Resource.IdByName(n.needName)] -= n.consumptionPerTick;
+					Debug.Log("I ate " + n.consumptionPerTick + " and now i have " + AgentDirector.shallowResources[Resource.IdByName(n.needName)]);
+					n.value += rateOfSatisfactionChange; // need satisfaction goes up if met, numbers arbitrary
+					if (n.value >= 100)
+					{
+						n.value = 100; // maximum 100
+					}
 				}
+				else
+				{
+					n.value -= rateOfSatisfactionChange; // need satisfaction goes down if not met, numbers arbitrary
+					if (n.value <= 0)
+					{
+						n.value = 0; // minimum 0
+					}
+				}
+				Debug.Log("my " + n.needName + " need is at " + n.value);
+
 			}
 
 		}
@@ -205,13 +240,6 @@ public class Agent : MonoBehaviour
 
 		ExecuteTask();
 		Consume();
-		// consume a crops tile every X ticks
-
-		//if (tickNum % consumptionRate == 0)
-		//{
-		//AddTask(HexTypes.TypeByName("vine"), HexTypes.TypeByName("dirt")); // convert crops to plants
-
-		//}
 	}
 
 
