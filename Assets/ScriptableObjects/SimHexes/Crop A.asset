@@ -23,7 +23,7 @@ MonoBehaviour:
   - name: Water
     id: 0
     amount: 0
-    radius: 1
+    radius: 0
     tickMod: 0
     local: 0
     isConsumed: 1
@@ -32,7 +32,7 @@ MonoBehaviour:
   - name: Nutrient A
     id: 2
     amount: 5
-    radius: 1
+    radius: 0
     tickMod: 0
     local: 0
     isConsumed: 1
@@ -51,24 +51,7 @@ MonoBehaviour:
     falloff: 0
     changes: []
     cap: 0
-  - name: Water
-    id: 0
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
-  resourcesStarting:
-  - name: Nutrient A
-    id: 2
-    amount: 255
-    overrides: 0
-    local: 0
+  resourcesStarting: []
   visualHexPrefab: {fileID: 0}
   cardSprite: {fileID: 0}
   color: {r: 0.8490566, g: 0.7428721, b: 0.2919188, a: 1}

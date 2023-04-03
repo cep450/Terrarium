@@ -10,6 +10,8 @@ public class VisualHex : MonoBehaviour {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SpriteRenderer billboardedSprite;
 
+    [SerializeField] GameObject popup;
+
     GameObject visualHex;
 
     public void AssignSimHex(SimHex sHex) {
@@ -54,6 +56,27 @@ public class VisualHex : MonoBehaviour {
         if(simHex.type.billboardSprite != null) {
             billboardedSprite.sprite = simHex.type.billboardSprite;
         }
+    }
+
+
+    //mouse enters collider
+    void OnMouseOver() {
+        CustomCursor.SetClickable();
+        popup.SetActive(true);
+        
+    }
+
+    //mouse exits collider 
+    void OnMouseExit() {
+        CustomCursor.SetUnclickable();
+        popup.SetActive(false);
+    }
+
+    //mouse clicks on collider 
+    void OnMouseDown() {
+
+
+
     }
 
 }
