@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Wildflowers
   m_EditorClassIdentifier: 
   name: Wildflowers
+  displayName: 
   id: 10
   passable: 1
   beauty: 1
@@ -22,7 +23,7 @@ MonoBehaviour:
   - name: Water
     id: 0
     amount: 1
-    radius: 1
+    radius: 0
     tickMod: 0
     local: 0
     isConsumed: 1
@@ -31,7 +32,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Nectar
     id: 4
-    amount: 10
+    amount: 1
     radius: 0
     limit: 0
     tickMod: 0
@@ -52,3 +53,4 @@ MonoBehaviour:
   color: {r: 0.8962264, g: 0.15594715, b: 0.492131, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
+  icon: {fileID: 0}

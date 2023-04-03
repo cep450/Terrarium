@@ -75,7 +75,7 @@ public class VisualHex : MonoBehaviour {
     //mouse clicks on collider 
     void OnMouseDown() {
 
-
+        BuildXOnYUI.instance.SelectOn(simHex.type);
 
     }
 

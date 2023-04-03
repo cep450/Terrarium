@@ -81,7 +81,15 @@ public class BuildXOnYUI : MonoBehaviour {
 
     }
     //when we select what to build on, fill the ui 
+    public void SelectOn(SimHexType type) {
+
+        //this gets called when click on tile 
+        //TODO need to convert from type to this internal stuff
+
+    }
     public void SelectOn(int index) {
+
+        //TODO check if BUild not selected or wrong and if so re-filter to match clicked on
 
         onIndex = index;
 

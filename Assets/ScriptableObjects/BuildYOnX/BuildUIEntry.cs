@@ -2,10 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UIElements;
 
 public class BuildUIEntry : MonoBehaviour {
 
+    [SerializeField] TextMeshProUGUI displayName;
+    [SerializeField] Image icon;
+    [SerializeField] Image buttonBackground;
+    [SerializeField] TextMeshProUGUI ticks;
+
     public SimHexType type;
+
+    bool maximized = false; //filling whole window
+    bool minimized = false; //hidden to nothing 
+
+    int maximizeHeight = 200;
+    int normalizeHeight = 50;
+    int minimizeHeight = 0;
+
 
     //Populates itself based on the data in its type.
     //For Build 
@@ -23,16 +37,35 @@ public class BuildUIEntry : MonoBehaviour {
     public void Construct(SimHexType t) {
 
         type = t;
-        
+
         //set color based on type 
+        buttonBackground.tintColor = type.color;
+
         //set icon based on type 
     }
 
-    public void Expand() {
+    public void ClickedOn() {
+
+        if(maximized) {
+            Normalize();
+            
+
+        } else {
+            Maximize();
+
+        }
 
     }
 
-    public void Contract() {
+    public void Maximize() {
+
+    }
+
+    public void Minimize() {
+
+    }
+
+    public void Normalize() {
 
     }
 }

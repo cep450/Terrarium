@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Beehive
   m_EditorClassIdentifier: 
   name: Beehive
+  displayName: 
   id: 10
   passable: 0
   beauty: 0
@@ -21,30 +22,30 @@ MonoBehaviour:
   resourcesRequired:
   - name: Nectar
     id: 6
-    amount: 10
+    amount: 3
     radius: 0
     tickMod: 0
-    global: 1
+    local: 0
     isConsumed: 1
     diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Honey
     id: 7
-    amount: 200
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0
-    global: 1
+    local: 0
     isHex: 0
     tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
     changes: []
+    cap: 0
   resourcesStarting: []
+  visualHexPrefab: {fileID: 0}
+  cardSprite: {fileID: 0}
   color: {r: 0.990566, g: 0.79127884, b: 0.022843244, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 21300000, guid: 0706ecd6093a1d74886f181314fbcd95, type: 3}
+  icon: {fileID: 0}
