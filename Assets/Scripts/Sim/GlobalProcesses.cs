@@ -65,7 +65,7 @@ public class GlobalProcesses : MonoBehaviour
 
 		if (tickNum % instance.rainfallTryModulo == 0)
 		{
-			instance.Rainfall();
+			//instance.Rainfall();
 		}
 		else
 		{
@@ -73,5 +73,7 @@ public class GlobalProcesses : MonoBehaviour
 		}
 
 	}
+
+	
 
 }
