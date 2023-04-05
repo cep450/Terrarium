@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Swamp
   displayName: Wetland
-  id: 7
+  id: 5
   passable: 1
-  beauty: 1
-  ugliness: 1
+  beauty: 0
+  ugliness: 0
   deathHexName: Dirt
   resourcesRequired: []
   resourcesProduced:

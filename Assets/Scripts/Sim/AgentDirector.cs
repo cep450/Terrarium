@@ -16,6 +16,8 @@ public class AgentDirector : MonoBehaviour
 	static List<Agent> agents = new List<Agent>();
 	static List<Need> needs = new List<Need>();
 	public static int[] shallowResources = new int[0];
+	public static int lengthOfContent = 0;
+	public static int satisfactionThreshold;
 	public static void Init()
 	{
 		agents = new List<Agent>();
@@ -35,6 +37,11 @@ public class AgentDirector : MonoBehaviour
 			a.Tick(tickNum);
 		}
 		FailureState.UpdateCounter();
+		if (agents.Count > 0)
+		{
+			ContinuousContentTicking(satisfactionThreshold); // the parameter is for the threshold above which win condition progresses
+
+		}
 	}
 	public static List<Agent> GetAgents()
 	{
@@ -83,14 +90,19 @@ public class AgentDirector : MonoBehaviour
 	}
 	public static int AverageWeightedSatisfaction()
 	{
-
-		int totalSatisfaction = 0;
-		foreach (Agent a in agents)
+		int aws = 0;
+		if (agents.Count > 0)
 		{
-			totalSatisfaction += a.WeightedSatisfaction();
+
+			int totalSatisfaction = 0;
+			foreach (Agent a in agents)
+			{
+				totalSatisfaction += a.WeightedSatisfaction();
+			}
+			aws = totalSatisfaction / agents.Count;
+			//Debug.Log("AWS is " + aws);
 		}
-		int aws = totalSatisfaction / agents.Count;
-		//Debug.Log("AWS is " + aws);
+
 		return aws;
 	}
 	public static string SatisfactionsList()
@@ -180,5 +192,18 @@ public class AgentDirector : MonoBehaviour
 			text += "\n" + "Converting " + t.destinationType.name + " to " + t.desiredType.name;
 		}
 		return text;
+	}
+
+	public static void ContinuousContentTicking(int threshold)
+	{
+		if (AverageWeightedSatisfaction() >= threshold)
+		{
+			lengthOfContent++;
+		}
+		else
+		{
+			lengthOfContent = 0;
+		}
+
 	}
 }

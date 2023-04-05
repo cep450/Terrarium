@@ -16,7 +16,7 @@ MonoBehaviour:
   displayName: Wildflower Field
   id: 8
   passable: 1
-  beauty: 1
+  beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired: []

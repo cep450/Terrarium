@@ -67,7 +67,7 @@ MonoBehaviour:
   - type: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
-    ranjit: 0
+    ranjit: 1
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
     ranjit: 10
   - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
