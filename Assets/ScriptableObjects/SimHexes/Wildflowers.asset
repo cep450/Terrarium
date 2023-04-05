@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wildflowers
   displayName: 
-  id: 10
+  id: 8
   passable: 1
-  beauty: 1
+  beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
@@ -42,12 +42,7 @@ MonoBehaviour:
     falloff: 0
     changes: []
     cap: 0
-  resourcesStarting:
-  - name: Beauty
-    id: 8
-    amount: 1
-    overrides: 1
-    local: 0
+  resourcesStarting: []
   visualHexPrefab: {fileID: 9163193173315049998, guid: 13cdf6d0497043b45a2299804ffa42c7, type: 3}
   cardSprite: {fileID: 0}
   color: {r: 0.8962264, g: 0.15594715, b: 0.492131, a: 1}

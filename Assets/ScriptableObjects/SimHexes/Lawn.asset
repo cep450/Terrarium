@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lawn
   displayName: 
-  id: 9
+  id: 7
   passable: 1
   beauty: 0
   ugliness: 0
@@ -35,11 +35,6 @@ MonoBehaviour:
     id: 0
     amount: 100
     overrides: 0
-    local: 0
-  - name: Beauty
-    id: 0
-    amount: 1
-    overrides: 1
     local: 0
   visualHexPrefab: {fileID: 0}
   cardSprite: {fileID: 0}

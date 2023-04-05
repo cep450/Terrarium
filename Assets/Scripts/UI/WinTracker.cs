@@ -14,7 +14,7 @@ public class WinTracker : MonoBehaviour
 	void Start()
 	{
 		AgentDirector.satisfactionThreshold = satisfactionThreshold;
-		text = "Keep overall satisfaction above " + satisfactionThreshold + " for " + lengthRequired + " ticks. Current score: " + AgentDirector.lengthOfContent;
+
 
 
 	}
@@ -23,6 +23,7 @@ public class WinTracker : MonoBehaviour
 	void Update()
 	{
 		GetComponent<TextMeshProUGUI>().text = text;
+		text = "Keep overall satisfaction above " + satisfactionThreshold + " for " + lengthRequired + " ticks. Current score: " + AgentDirector.lengthOfContent;
 		if (AgentDirector.lengthOfContent >= lengthRequired)
 		{
 			victory.SetActive(true);
