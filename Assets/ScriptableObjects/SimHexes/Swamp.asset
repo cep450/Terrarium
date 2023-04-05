@@ -21,18 +21,6 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired: []
   resourcesProduced:
-  - name: Mosquitos
-    id: 7
-    amount: 1
-    radius: 1
-    limit: 100
-    tickMod: 2
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
   - name: Water
     id: 0
     amount: 10
@@ -80,3 +68,4 @@ MonoBehaviour:
   color: {r: 0.10703691, g: 0.31132078, b: 0.2737555, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
+  icon: {fileID: 0}

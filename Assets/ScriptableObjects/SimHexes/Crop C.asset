@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crop C
   displayName: Peas
-  id: 6
+  id: 4
   passable: 1
   beauty: 0
   ugliness: 0
@@ -30,18 +30,6 @@ MonoBehaviour:
     diesIfNotNet: 1
     falloff: 0
   resourcesProduced:
-  - name: Water
-    id: 0
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
   - name: Nutrient B
     id: 3
     amount: 0
@@ -65,3 +53,4 @@ MonoBehaviour:
   color: {r: 0.9150943, g: 0.46672508, b: 0.28872472, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
+  icon: {fileID: 0}

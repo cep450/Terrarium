@@ -13,12 +13,22 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   name: House
-  id: 8
+  displayName: 
+  id: 6
   passable: 0
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
-  resourcesRequired: []
+  resourcesRequired:
+  - name: Water
+    id: 0
+    amount: 1
+    radius: 0
+    tickMod: 0
+    local: 0
+    isConsumed: 0
+    diesIfNotNet: 0
+    falloff: 0
   resourcesProduced: []
   resourcesStarting:
   - name: Housing
@@ -27,6 +37,8 @@ MonoBehaviour:
     overrides: 1
     local: 0
   visualHexPrefab: {fileID: 3138216601741046479, guid: 2ef2307c673d28e468e28f024dadb867, type: 3}
+  cardSprite: {fileID: 0}
   color: {r: 0.8962264, g: 0.28277162, b: 0.28277162, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 21300000, guid: bd92306fb92edae4d89a91dcf0ff41b1, type: 3}
+  icon: {fileID: 0}

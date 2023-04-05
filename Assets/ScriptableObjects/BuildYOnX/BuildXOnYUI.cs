@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
 public struct BuildInfo {
     public SimHexType type;
     public OnInfo [] canBeBuiltOn;
 }
 
+[System.Serializable]
 public struct OnInfo {
     public SimHexType type;
     public string desc;
@@ -18,9 +20,10 @@ public class BuildXOnYUI : MonoBehaviour {
 
     [SerializeField] GameObject buttonQueue;
     [SerializeField] GameObject buttonBuildClear, buttonOnClear;
+    public TextMeshProUGUI desc;
 
     [SerializeField] GameObject listEntryPrefab;
-    GameObject [] listBuildUIs, listOnUIs; //list build parallel with Sim.buildInfos
+    public BuildUIEntry [] listBuildUIs, listOnUIs; //list build parallel with Sim.buildInfos
 
     //-1 if none 
     int buildIndex = -1;    //parallel with Sim.buildInfos
@@ -70,11 +73,14 @@ public class BuildXOnYUI : MonoBehaviour {
     //where we selected a build, clear it back to the list
     public void ClearBuild() {
 
+        desc.text = "";
+
         buildIndex = -1;
 
         //close that element that was expanded 
 
         ListBuilds();
+
     }
 
     public void ListOns() {
@@ -98,9 +104,9 @@ public class BuildXOnYUI : MonoBehaviour {
     //where we selected an on, clear it back to its list, or nothing if none selected 
     public void ClearOn() {
 
-        onIndex = -1;
+        desc.text = "";
 
-        //close that element that was displayed 
+        onIndex = -1;
 
         ListOns();
     }

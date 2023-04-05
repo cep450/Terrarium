@@ -10,35 +10,62 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ddd7994f3824cb40a3584275ecfa6f3, type: 3}
-  m_Name: Lawn
+  m_Name: Woodland
   m_EditorClassIdentifier: 
-  name: Lawn
-  displayName: 
-  id: 7
+  name: Woodland
+  displayName: Woodland
+  id: -1
   passable: 1
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
-  resourcesRequired:
-  - name: Water
+  resourcesRequired: []
+  resourcesProduced:
+  - name: Nutrient A
     id: 0
     amount: 1
     radius: 0
+    limit: 0
     tickMod: 0
     local: 0
-    isConsumed: 1
-    diesIfNotNet: 1
+    isHex: 0
+    tryAll: 0
     falloff: 0
-  resourcesProduced: []
+    changes: []
+    cap: 0
+  - name: Nutrient B
+    id: 0
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 0
+    local: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+    cap: 0
+  - name: Nectar
+    id: 0
+    amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 0
+    local: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+    cap: 0
   resourcesStarting:
   - name: Leisure Space
-    id: -1
-    amount: 1
-    overrides: 1
+    id: 0
+    amount: 0
+    overrides: 0
     local: 0
   visualHexPrefab: {fileID: 0}
   cardSprite: {fileID: 0}
-  color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
+  color: {r: 0.115231454, g: 0.3207547, b: 0.076994576, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public struct ResourceInfo
 {
 	public string name;
+	public string displayName;
 	public int initialGlobalAmount;
 	public int globalCap;
+	public Sprite icon;
 }
 
 [System.Serializable]
@@ -50,8 +52,8 @@ public class Sim : MonoBehaviour
 	public static int[] resourceInitialValues;
 	public static int[] resourceGlobalCaps;
 
-	[SerializeField] public FlipCard[] _flipCards;
-	public static FlipCard[] flipCards;
+	[SerializeField] public BuildInfo [] _buildRelations;
+	public static BuildInfo [] buildInfos;
 
 	void Start()
 	{
@@ -79,7 +81,7 @@ public class Sim : MonoBehaviour
 		visualHexPrefab = _visualHexPrefab;
 		gnomePrefab = _gnomePrefab;
 		gnomesToSpawn = _gnomesToSpawn;
-		flipCards = _flipCards;
+		buildInfos = _buildRelations;
 
 		hexTypes = new SimHexType[hexTypeInfo.Length];
 		hexGenRanjit = new float[hexTypeInfo.Length];

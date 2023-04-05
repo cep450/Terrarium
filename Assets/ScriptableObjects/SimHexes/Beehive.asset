@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Beehive
   m_EditorClassIdentifier: 
   name: Beehive
-  displayName: 
-  id: 10
+  displayName: Beehives
+  id: 9
   passable: 0
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Nectar
-    id: 6
+    id: 4
     amount: 3
     radius: 0
     tickMod: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: Honey
-    id: 7
+    id: 5
     amount: 5
     radius: 0
     limit: 0
