@@ -21,7 +21,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397480835546579345, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_Name
-      value: VisualHexBase (3)
+      value: Bee Tile
       objectReference: {fileID: 0}
     - target: {fileID: 3044870119742673412, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_RootOrder
@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5216225282592342833, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_FlipY
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5216225282592342833, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_Size.x
@@ -97,7 +97,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499403695959874518, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.017
+      value: -0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782308858130216441}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.158, y: 0.026, z: 0.062}
+  m_LocalPosition: {x: -0.158, y: 0.026, z: -0.076}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 315726192, guid: 63fd6405dfc15bb4589f5d0e1497e15e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.37, y: 1.56}
   m_AdaptiveModeThreshold: 0.5
@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2619891508370508405}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.373, y: 0.026, z: 0.095}
+  m_LocalPosition: {x: -0.373, y: 0.026, z: -0.09400001}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 1258095223, guid: 63fd6405dfc15bb4589f5d0e1497e15e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.37, y: 1.56}
   m_AdaptiveModeThreshold: 0.5
@@ -193,7 +193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4542493182794165585}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.189, y: -0.114, z: 0.062}
+  m_LocalPosition: {x: 0.189, y: -0.114, z: -0.093}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -244,7 +244,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 1592705482, guid: 63fd6405dfc15bb4589f5d0e1497e15e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.37, y: 1.56}
   m_AdaptiveModeThreshold: 0.5
@@ -277,7 +277,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5093831913265459401}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.338, y: -0.263, z: 0.102}
+  m_LocalPosition: {x: -0.338, y: -0.263, z: -0.08700001}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +328,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -274774054, guid: 63fd6405dfc15bb4589f5d0e1497e15e, type: 3}
   m_Color: {r: 0.957456, g: 1, b: 0.5981132, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.37, y: 1.56}
   m_AdaptiveModeThreshold: 0.5
@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5758031217968328930}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.283, y: 0.019, z: 0.102}
+  m_LocalPosition: {x: 0.283, y: 0.019, z: -0.079}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -412,7 +412,7 @@ SpriteRenderer:
   m_Sprite: {fileID: -274774054, guid: 63fd6405dfc15bb4589f5d0e1497e15e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1.37, y: 1.56}
   m_AdaptiveModeThreshold: 0.5
@@ -441,7 +441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1397480835546579345, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_Name
-      value: VisualHexBase (2)
+      value: Lawn Tile
       objectReference: {fileID: 0}
     - target: {fileID: 3044870119742673412, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_RootOrder
@@ -489,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5216225282592342833, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_FlipY
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5216225282592342833, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_Size.x
@@ -521,7 +521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5499403695959874518, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.062
+      value: -0.127
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
