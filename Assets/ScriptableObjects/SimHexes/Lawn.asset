@@ -32,7 +32,7 @@ MonoBehaviour:
   resourcesProduced: []
   resourcesStarting:
   - name: Leisure Space
-    id: -1
+    id: 7
     amount: 1
     overrides: 1
     local: 0
