@@ -860,6 +860,35 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8300754594588255125, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
   m_PrefabInstance: {fileID: 1259823460}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1340451818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5630806033219441989, guid: 24a3ca3544028524d8f53e6b90ffb28c, type: 3}
+  m_PrefabInstance: {fileID: 5630806034675212255}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1340451820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5630806033219441985, guid: 24a3ca3544028524d8f53e6b90ffb28c, type: 3}
+  m_PrefabInstance: {fileID: 5630806034675212255}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340451818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51178ee8df4778247aa8d2fe7668c02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1340451823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340451818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0451ff2b98b2e3c4499fa35dedb21400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tileHover: {fileID: 1340451820}
 --- !u!1001 &1682450047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1310,7 +1339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630806033219441989, guid: 24a3ca3544028524d8f53e6b90ffb28c, type: 3}
       propertyPath: m_Name
-      value: TileResourceInfo
+      value: TileHoverInfo
       objectReference: {fileID: 0}
     - target: {fileID: 5630806033279349277, guid: 24a3ca3544028524d8f53e6b90ffb28c, type: 3}
       propertyPath: m_AnchorMax.y

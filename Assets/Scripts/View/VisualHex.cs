@@ -58,18 +58,24 @@ public class VisualHex : MonoBehaviour {
         }
     }
 
-
     //mouse enters collider
     void OnMouseOver() {
         CustomCursor.SetClickable();
-        popup.SetActive(true);
-        
+        if(simHex == null) {
+            Debug.LogError("moused over visualHex with null simHex");
+            return;
+        }
+        if(simHex.type == null) {
+            Debug.LogError("moused over visual hex with simhex with null type");
+            return;
+        }
+        CustomCursor.tileHover.SetType(simHex.type);
     }
 
     //mouse exits collider 
     void OnMouseExit() {
         CustomCursor.SetUnclickable();
-        popup.SetActive(false);
+        CustomCursor.tileHover.Hide();
     }
 
     //mouse clicks on collider 

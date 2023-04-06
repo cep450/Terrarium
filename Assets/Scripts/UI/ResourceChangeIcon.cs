@@ -15,6 +15,7 @@ public class ResourceChangeIcon : MonoBehaviour
         renderer.enabled = true;
         renderer.sprite = sprite;
 
+        if(amount < 1) amount = 1;
         renderer.transform.localScale = Vector3.one * amount; //for now, showing amount with scale
 
         if(produces) {

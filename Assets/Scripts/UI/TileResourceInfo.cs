@@ -18,8 +18,10 @@ public class TileResourceInfo : MonoBehaviour
 
     public void SetType(SimHexType newType) {
 
+        Show();
+
         //do nothing if same 
-        if(type.Equals(newType)) {
+        if(type != null && type.Equals(newType)) {
             return;
         }
 
@@ -47,6 +49,10 @@ public class TileResourceInfo : MonoBehaviour
             icons[index].Fill(Sim.resourceInfo[r.id].icon, false, false, r.amount);
             index++;
         }
+        while(index < icons.Count) {
+            icons[index].Empty();
+            index++;
+        }
     }
 
     void ReuseOrCreateIcon(int index) {
@@ -54,4 +60,12 @@ public class TileResourceInfo : MonoBehaviour
             icons.Add(Instantiate<ResourceChangeIcon>(icons[0], this.transform));
         }
     }
+
+    public void Show() {
+        this.gameObject.SetActive(true);
+    }
+    public void Hide() {
+        this.gameObject.SetActive(false);
+    }
+
 }
