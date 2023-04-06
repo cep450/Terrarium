@@ -21,7 +21,7 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: -1
+    id: 0
     amount: 1
     radius: 0
     tickMod: 0
@@ -30,9 +30,9 @@ MonoBehaviour:
     diesIfNotNet: 1
     falloff: 0
   resourcesProduced:
-  - name: Nutrient B
-    id: -1
-    amount: 0
+  - name: Nutrient A
+    id: 3
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 0
@@ -42,12 +42,7 @@ MonoBehaviour:
     falloff: 0
     changes: []
     cap: 0
-  resourcesStarting:
-  - name: Water
-    id: -1
-    amount: 100
-    overrides: 0
-    local: 0
+  resourcesStarting: []
   visualHexPrefab: {fileID: 6583206529896956848, guid: 5950b66c6c1d09f4ab849ae5357105bd, type: 3}
   cardSprite: {fileID: 0}
   color: {r: 0.9150943, g: 0.46672508, b: 0.28872472, a: 1}

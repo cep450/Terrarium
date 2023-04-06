@@ -518,6 +518,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[2].ranjit
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[6].ranjit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: hexTypeInfo.Array.data[7].ranjit
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[11].ranjit
       value: 0
       objectReference: {fileID: 0}
@@ -592,6 +604,10 @@ PrefabInstance:
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652367072254098296, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: size
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5733265871178856545, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
@@ -716,6 +732,10 @@ PrefabInstance:
     - target: {fileID: 1434747255269566599, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_margin.y
       value: 245.44531
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434747255269566599, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4201534579364208800, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_AnchorMax.y
@@ -860,6 +880,22 @@ PrefabInstance:
     - target: {fileID: 8300754595773007354, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_margin.y
       value: -4.0797424
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347548646261673008, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347548646261673008, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347548646261673008, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 220
+      objectReference: {fileID: 0}
+    - target: {fileID: 8347548646261673008, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533304216244775137, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_AnchoredPosition.y
