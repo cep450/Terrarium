@@ -29,7 +29,7 @@ public class Sim : MonoBehaviour
         Recieves tick events and controls the order of sub-tick events in the sim.
     */
 
-	[SerializeField] HexMap _hexMap;
+	//[SerializeField] HexMap _hexMap;
 	public static HexMap hexMap;
 
 	//prefabs
@@ -47,7 +47,8 @@ public class Sim : MonoBehaviour
 	public static float[] hexGenRanjit;        //parallel with hexTypes, ranjit range for % generated
 
 
-	[SerializeField] public ResourceInfo[] resourceInfo;
+	[SerializeField] public ResourceInfo[] _resourceInfo;
+	public static ResourceInfo[] resourceInfo;
 	public static string[] resources;          //list of resource names 
 	public static int[] resourceInitialValues;
 	public static int[] resourceGlobalCaps;
@@ -69,15 +70,16 @@ public class Sim : MonoBehaviour
 
 		//fill in information provided in inspector
 
-		if (_hexMap != null)
+		/*if (_hexMap != null)
 		{
 			hexMap = _hexMap;
 		}
 		else
-		{
+		{*/
 			hexMap = GetComponent<HexMap>();
-		}
+		//}
 
+		resourceInfo = _resourceInfo;
 		visualHexPrefab = _visualHexPrefab;
 		gnomePrefab = _gnomePrefab;
 		gnomesToSpawn = _gnomesToSpawn;
