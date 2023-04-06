@@ -29,8 +29,8 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: Nutrient B
-    id: 4
+  - name: Nutrient A
+    id: 3
     amount: 1
     radius: 1
     tickMod: 2
@@ -41,7 +41,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Food
     id: 1
-    amount: 1
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 10
@@ -54,7 +54,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 1160538630537229148, guid: b6ad6e5e48df3e348a7632fe0e236331, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 1, g: 0.7171949, b: 0, a: 1}
+  color: {r: 0.9622642, g: 0.9147028, b: 0.7938175, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

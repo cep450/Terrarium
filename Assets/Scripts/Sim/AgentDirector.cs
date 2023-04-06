@@ -79,13 +79,15 @@ public class AgentDirector : MonoBehaviour
 	{
 		needs = new List<Need>();
 		Need food = new Need("Food", 50, 100, 3, true, true);
-		Need honey = new Need("Honey", 50, 100, 1, false, true);
 		Need housing = new Need("Housing", 50, 1, 2, true, false);
 		Need water = new Need("Water", 50, 100, 3, true, true);
+		Need honey = new Need("Honey", 50, 100, 1, false, true);
+		Need space = new Need("Leisure", 50, 2, 1, false, true);
 		needs.Add(food);
-		needs.Add(honey);
 		needs.Add(housing);
 		needs.Add(water);
+		needs.Add(honey);
+		needs.Add(space);
 		return needs;
 	}
 	public static int AverageWeightedSatisfaction()
@@ -107,13 +109,20 @@ public class AgentDirector : MonoBehaviour
 	}
 	public static string SatisfactionsList()
 	{
-		string satisfactions = "Satisfactions: ";
+		string satisfactions = "Satisfactions:";
+		string satNeeds = "Needs:\n--------";
+		string satWants = "Quality of Life:\n--------";
 
 		for (int i = 0; i < needs.Count; i++)
 		{
-			satisfactions += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
+			if(needs[i].isNecessary) {
+				satNeeds += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
+			} else {
+				satWants += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
+			}
 		}
-		satisfactions += "\n" + "Overall: " + AverageWeightedSatisfaction() + "%";
+		satisfactions += "\n\n" + satNeeds + "\n\n" + satWants;
+		satisfactions += "\n\n" + "Overall Approval Rating: " + AverageWeightedSatisfaction() + "%";
 		return satisfactions;
 	}
 	static int AverageSatisfactionOfOneNeed(int needIndex)

@@ -21,7 +21,7 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: -1
+    id: 0
     amount: 1
     radius: 0
     tickMod: 0
@@ -31,8 +31,8 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced: []
   resourcesStarting:
-  - name: Leisure Space
-    id: -1
+  - name: Leisure
+    id: 7
     amount: 1
     overrides: 1
     local: 0

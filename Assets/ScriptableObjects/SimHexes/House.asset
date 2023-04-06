@@ -32,7 +32,7 @@ MonoBehaviour:
   resourcesProduced: []
   resourcesStarting:
   - name: Housing
-    id: 6
+    id: 2
     amount: 1
     overrides: 1
     local: 0

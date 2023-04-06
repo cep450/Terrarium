@@ -21,8 +21,8 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: -1
-    amount: 0
+    id: 0
+    amount: 1
     radius: 0
     tickMod: 0
     local: 0
@@ -30,8 +30,8 @@ MonoBehaviour:
     diesIfNotNet: 1
     falloff: 0
   - name: Nutrient A
-    id: -1
-    amount: 5
+    id: 3
+    amount: 2
     radius: 0
     tickMod: 0
     local: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: Food
-    id: -1
+    id: 1
     amount: 2
     radius: 0
     limit: 0

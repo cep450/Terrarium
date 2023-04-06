@@ -490,34 +490,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[0].icon
-      value: 
-      objectReference: {fileID: 1995667718, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[1].icon
-      value: 
-      objectReference: {fileID: -911923408, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[2].icon
-      value: 
-      objectReference: {fileID: -1992632578, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[3].icon
-      value: 
-      objectReference: {fileID: -677335336, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[6].icon
-      value: 
-      objectReference: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[7].icon
-      value: 
-      objectReference: {fileID: 1843475510, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: _resourceInfo.Array.data[8].icon
-      value: 
-      objectReference: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: hexTypeInfo.Array.data[2].ranjit
       value: 15
       objectReference: {fileID: 0}

@@ -90,22 +90,22 @@ MonoBehaviour:
     displayName: Clean Water
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: 0}
+    icon: {fileID: 1995667718, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Food
     displayName: Food
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: 0}
+    icon: {fileID: -911923408, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Housing
     displayName: Housing
     initialGlobalAmount: 0
     globalCap: 0
-    icon: {fileID: 0}
+    icon: {fileID: -1992632578, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Nutrient A
     displayName: Nitrogen
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: 0}
+    icon: {fileID: -677335336, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Nutrient B
     displayName: Nutrient B
     initialGlobalAmount: 1000
@@ -120,17 +120,17 @@ MonoBehaviour:
     displayName: Honey
     initialGlobalAmount: 0
     globalCap: 1000
-    icon: {fileID: 0}
-  - name: Leisure Space
+    icon: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
+  - name: Leisure
     displayName: Leisure
     initialGlobalAmount: 0
     globalCap: 0
-    icon: {fileID: 0}
+    icon: {fileID: 1843475510, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Nectar
     displayName: Flowers
     initialGlobalAmount: 0
     globalCap: 0
-    icon: {fileID: 0}
+    icon: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
   _buildRelations:
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
     canBeBuiltOn:

@@ -21,7 +21,7 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Nectar
-    id: -1
+    id: 8
     amount: 3
     radius: 0
     tickMod: 0
@@ -31,7 +31,7 @@ MonoBehaviour:
     falloff: 0
   resourcesProduced:
   - name: Honey
-    id: -1
+    id: 6
     amount: 5
     radius: 0
     limit: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 9092207902892516306, guid: 5deba8f01b680ce489a7a3d2e8e1db63, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.990566, g: 0.79127884, b: 0.022843244, a: 1}
+  color: {r: 0.7924528, g: 0.6199024, b: 0.3098374, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 21300000, guid: 0706ecd6093a1d74886f181314fbcd95, type: 3}
   icon: {fileID: 0}

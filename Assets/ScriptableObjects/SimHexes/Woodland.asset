@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Woodland
   displayName: Woodland
-  id: -1
+  id: 10
   passable: 1
   beauty: 0
   ugliness: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   resourcesRequired: []
   resourcesProduced:
   - name: Nutrient A
-    id: 0
+    id: 3
     amount: 1
     radius: 0
     limit: 0
@@ -34,7 +34,7 @@ MonoBehaviour:
     changes: []
     cap: 0
   - name: Nutrient B
-    id: 0
+    id: 4
     amount: 1
     radius: 0
     limit: 0
@@ -46,7 +46,7 @@ MonoBehaviour:
     changes: []
     cap: 0
   - name: Nectar
-    id: 0
+    id: 8
     amount: 1
     radius: 0
     limit: 0
@@ -58,8 +58,8 @@ MonoBehaviour:
     changes: []
     cap: 0
   resourcesStarting:
-  - name: Leisure Space
-    id: 0
+  - name: Leisure
+    id: 7
     amount: 0
     overrides: 0
     local: 0

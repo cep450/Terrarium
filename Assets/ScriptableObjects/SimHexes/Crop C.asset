@@ -32,7 +32,19 @@ MonoBehaviour:
   resourcesProduced:
   - name: Nutrient A
     id: 3
-    amount: 2
+    amount: 3
+    radius: 0
+    limit: 0
+    tickMod: 0
+    local: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+    cap: 0
+  - name: Food
+    id: 1
+    amount: 1
     radius: 0
     limit: 0
     tickMod: 0
@@ -45,7 +57,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 6583206529896956848, guid: 5950b66c6c1d09f4ab849ae5357105bd, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.9150943, g: 0.46672508, b: 0.28872472, a: 1}
+  color: {r: 0.75438184, g: 0.9137255, b: 0.29019606, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}
