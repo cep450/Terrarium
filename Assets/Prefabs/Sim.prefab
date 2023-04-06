@@ -59,7 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf766d46c485a04a998738bc32254a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hexMap: {fileID: 4652367072254098296}
   _visualHexPrefab: {fileID: 287430325284683242, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
@@ -86,44 +85,49 @@ MonoBehaviour:
     ranjit: 0
   - type: {fileID: 11400000, guid: 63aa6c4dfeda6c14a934f3f2def62707, type: 2}
     ranjit: 3
-  resourceInfo:
+  _resourceInfo:
   - name: Water
     displayName: Clean Water
-    initialGlobalAmount: 100
+    initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 0}
   - name: Food
-    displayName: 
-    initialGlobalAmount: 100
+    displayName: Food
+    initialGlobalAmount: 1000
     globalCap: 1000
+    icon: {fileID: 0}
+  - name: Housing
+    displayName: Housing
+    initialGlobalAmount: 0
+    globalCap: 0
     icon: {fileID: 0}
   - name: Nutrient A
     displayName: Nitrogen
-    initialGlobalAmount: 10000
-    globalCap: 10000
+    initialGlobalAmount: 1000
+    globalCap: 1000
     icon: {fileID: 0}
   - name: Nutrient B
-    displayName: 
-    initialGlobalAmount: 10000
-    globalCap: 10000
+    displayName: Nutrient B
+    initialGlobalAmount: 1000
+    globalCap: 1000
+    icon: {fileID: 0}
+  - name: Nutrient C
+    displayName: Nutrient C
+    initialGlobalAmount: 1000
+    globalCap: 1000
+    icon: {fileID: 0}
+  - name: Honey
+    displayName: Honey
+    initialGlobalAmount: 0
+    globalCap: 1000
+    icon: {fileID: 0}
+  - name: Leisure Space
+    displayName: Leisure
+    initialGlobalAmount: 0
+    globalCap: 0
     icon: {fileID: 0}
   - name: Nectar
     displayName: Flowers
-    initialGlobalAmount: 0
-    globalCap: 0
-    icon: {fileID: 0}
-  - name: Honey
-    displayName: 
-    initialGlobalAmount: 0
-    globalCap: 0
-    icon: {fileID: 0}
-  - name: Housing
-    displayName: 
-    initialGlobalAmount: 0
-    globalCap: 0
-    icon: {fileID: 0}
-  - name: Leisure Space
-    displayName: 
     initialGlobalAmount: 0
     globalCap: 0
     icon: {fileID: 0}

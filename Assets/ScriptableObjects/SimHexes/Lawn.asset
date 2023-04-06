@@ -21,7 +21,7 @@ MonoBehaviour:
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 0
+    id: -1
     amount: 1
     radius: 0
     tickMod: 0
@@ -32,11 +32,11 @@ MonoBehaviour:
   resourcesProduced: []
   resourcesStarting:
   - name: Leisure Space
-    id: 7
+    id: -1
     amount: 1
     overrides: 1
     local: 0
-  visualHexPrefab: {fileID: 0}
+  visualHexPrefab: {fileID: 7446620075933593916, guid: 21567515fe507674a8094101ea6cdf1e, type: 3}
   cardSprite: {fileID: 0}
   color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
   sprite: {fileID: 0}
