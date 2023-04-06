@@ -111,6 +111,8 @@ public class Sim : MonoBehaviour
 			type.Init();
 		}
 
+		UIController.Init();
+
 		Clock.Tick += HandleTick;
 
 	}
