@@ -13,38 +13,39 @@ MonoBehaviour:
   m_Name: Beehive
   m_EditorClassIdentifier: 
   name: Beehive
-  id: 10
+  displayName: Beehives
+  id: 9
   passable: 0
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Nectar
-    id: 6
-    amount: 10
+    id: 8
+    amount: 3
     radius: 0
     tickMod: 0
-    global: 1
+    local: 0
     isConsumed: 1
     diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
   resourcesProduced:
   - name: Honey
-    id: 7
-    amount: 200
+    id: 6
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0
-    global: 1
+    local: 0
     isHex: 0
     tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
     changes: []
+    cap: 0
   resourcesStarting: []
-  color: {r: 0.990566, g: 0.79127884, b: 0.022843244, a: 1}
+  visualHexPrefab: {fileID: 9092207902892516306, guid: 5deba8f01b680ce489a7a3d2e8e1db63, type: 3}
+  cardSprite: {fileID: 0}
+  color: {r: 0.7924528, g: 0.6199024, b: 0.3098374, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 21300000, guid: 0706ecd6093a1d74886f181314fbcd95, type: 3}
+  icon: {fileID: 0}

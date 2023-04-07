@@ -10,6 +10,8 @@ public class VisualHex : MonoBehaviour {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SpriteRenderer billboardedSprite;
 
+    [SerializeField] GameObject popup;
+
     GameObject visualHex;
 
     public void AssignSimHex(SimHex sHex) {
@@ -35,6 +37,7 @@ public class VisualHex : MonoBehaviour {
             }
 
             visualHex = Instantiate(simHex.type.visualHexPrefab, this.transform);
+            visualHex.transform.Rotate(0, 0, Random.Range(0, 6) * 60f);
 
         } else {
 
@@ -53,6 +56,33 @@ public class VisualHex : MonoBehaviour {
         if(simHex.type.billboardSprite != null) {
             billboardedSprite.sprite = simHex.type.billboardSprite;
         }
+    }
+
+    //mouse enters collider
+    void OnMouseOver() {
+        CustomCursor.SetClickable();
+        if(simHex == null) {
+            Debug.LogError("moused over visualHex with null simHex");
+            return;
+        }
+        if(simHex.type == null) {
+            Debug.LogError("moused over visual hex with simhex with null type");
+            return;
+        }
+        CustomCursor.tileHover.SetType(simHex.type);
+    }
+
+    //mouse exits collider 
+    void OnMouseExit() {
+        CustomCursor.SetUnclickable();
+        CustomCursor.tileHover.Hide();
+    }
+
+    //mouse clicks on collider 
+    void OnMouseDown() {
+
+        BuildXOnYUI.instance.SelectOn(simHex.type);
+
     }
 
 }

@@ -13,75 +13,48 @@ MonoBehaviour:
   m_Name: Crop B
   m_EditorClassIdentifier: 
   name: Crop B
-  id: 5
+  displayName: Rice
+  id: 3
   passable: 1
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
   - name: Water
-    id: 1
-    amount: 1
-    radius: 1
-    tickMod: 0
-    global: 1
-    isConsumed: 1
-    diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
-    falloff: 0
-  - name: Nutrient B
-    id: 4
-    amount: 5
-    radius: 1
-    tickMod: 2
-    global: 1
-    isConsumed: 1
-    diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
-    falloff: 0
-  resourcesProduced:
-  - name: Food
-    id: 2
-    amount: 1
+    id: 0
+    amount: 2
     radius: 0
-    limit: 0
-    tickMod: 10
-    global: 1
-    isHex: 0
-    tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
+    tickMod: 0
+    local: 0
+    isConsumed: 1
+    diesIfNotNet: 1
     falloff: 0
-    changes: []
   - name: Nutrient A
     id: 3
     amount: 1
+    radius: 1
+    tickMod: 2
+    local: 0
+    isConsumed: 1
+    diesIfNotNet: 1
+    falloff: 0
+  resourcesProduced:
+  - name: Food
+    id: 1
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 10
-    global: 1
+    local: 0
     isHex: 0
     tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
     changes: []
-  - name: Water
-    id: 1
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    global: 1
-    isHex: 0
-    tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
-    falloff: 0
-    changes: []
+    cap: 0
   resourcesStarting: []
-  color: {r: 1, g: 0.7171949, b: 0, a: 1}
+  visualHexPrefab: {fileID: 1160538630537229148, guid: b6ad6e5e48df3e348a7632fe0e236331, type: 3}
+  cardSprite: {fileID: 0}
+  color: {r: 0.9622642, g: 0.9147028, b: 0.7938175, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
+  icon: {fileID: 0}

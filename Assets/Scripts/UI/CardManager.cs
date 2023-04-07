@@ -10,6 +10,8 @@ public class CardManager : MonoBehaviour {
     */
 
     [SerializeField] FlipCardUI flipCardUIPrefab;
+
+    /*
     
     public void BuildHand() {
         foreach(FlipCard cardData in Sim.flipCards) {
@@ -19,4 +21,5 @@ public class CardManager : MonoBehaviour {
             Instantiate<FlipCardUI>(flipCardUIPrefab).Construct(cardData);
         }
     }
+    */
 }

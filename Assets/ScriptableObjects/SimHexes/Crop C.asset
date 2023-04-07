@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Crop C
   m_EditorClassIdentifier: 
   name: Crop C
-  id: 6
+  displayName: Peas
+  id: 4
   passable: 1
   beauty: 0
   ugliness: 0
@@ -24,43 +25,39 @@ MonoBehaviour:
     amount: 1
     radius: 0
     tickMod: 0
-    global: 1
+    local: 0
     isConsumed: 1
     diesIfNotNet: 1
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
   resourcesProduced:
-  - name: Water
-    id: 0
+  - name: Nutrient A
+    id: 3
+    amount: 3
+    radius: 0
+    limit: 0
+    tickMod: 0
+    local: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+    cap: 0
+  - name: Food
+    id: 1
     amount: 1
     radius: 0
     limit: 0
     tickMod: 0
-    global: 1
+    local: 0
     isHex: 0
     tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
     falloff: 0
     changes: []
-  - name: Nutrient B
-    id: 3
-    amount: 0
-    radius: 0
-    limit: 0
-    tickMod: 0
-    global: 0
-    isHex: 0
-    tryAll: 0
-    floodingEnables: 0
-    floodingDisables: 0
-    falloff: 0
-    changes: []
-  resourcesStarting:
-  - name: Water
-    id: 0
-    amount: 100
-  color: {r: 0.9150943, g: 0.46672508, b: 0.28872472, a: 1}
+    cap: 0
+  resourcesStarting: []
+  visualHexPrefab: {fileID: 6583206529896956848, guid: 5950b66c6c1d09f4ab849ae5357105bd, type: 3}
+  cardSprite: {fileID: 0}
+  color: {r: 0.75438184, g: 0.9137255, b: 0.29019606, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
+  icon: {fileID: 0}
