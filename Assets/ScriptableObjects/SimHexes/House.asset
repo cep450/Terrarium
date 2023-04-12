@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: House
   m_EditorClassIdentifier: 
   name: House
-  displayName: 
+  displayName: Gnome Home
   id: 6
   passable: 0
   beauty: 0

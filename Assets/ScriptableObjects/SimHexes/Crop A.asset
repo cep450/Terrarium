@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crop A
   m_EditorClassIdentifier: 
   name: Crop A
-  displayName: Wheat
+  displayName: Wheat Field
   id: 2
   passable: 1
   beauty: 0

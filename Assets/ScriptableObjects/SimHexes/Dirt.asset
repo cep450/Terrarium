@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: 
   name: Dirt
-  displayName: 
+  displayName: Dirt
   id: 1
   passable: 1
   beauty: 0

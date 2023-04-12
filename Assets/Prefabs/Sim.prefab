@@ -116,21 +116,21 @@ MonoBehaviour:
     initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 0}
+  - name: Nectar
+    displayName: Nectar
+    initialGlobalAmount: 0
+    globalCap: 0
+    icon: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Honey
     displayName: Honey
     initialGlobalAmount: 0
     globalCap: 1000
     icon: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Leisure
-    displayName: Leisure
+    displayName: Recreation
     initialGlobalAmount: 0
     globalCap: 0
     icon: {fileID: 1843475510, guid: a49a83655a216194fb88501c4188b214, type: 3}
-  - name: Nectar
-    displayName: Flowers
-    initialGlobalAmount: 0
-    globalCap: 0
-    icon: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
   _buildRelations:
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
     canBeBuiltOn:
@@ -227,5 +227,5 @@ MonoBehaviour:
   grid:
     orientation: 0
     scale: 1
-  size: 5
+  size: 4
   shape: 2
