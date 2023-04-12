@@ -21,18 +21,21 @@ public class VisualGnome : MonoBehaviour
 
 	public void AnimIdle() {
 		if(animationState != animIdle) {
+			animationState = animIdle;
 			animator.SetInteger("state", animIdle);
 		}
 	}
 
 	public void AnimWalking() {
 		if(animationState != animWalking) {
+			animationState = animWalking;
 			animator.SetInteger("state", animWalking);
 		}
 	}
 
 	public void AnimWorking() {
 		if(animationState != animWorking) {
+			animationState = animWorking;
 			animator.SetInteger("state", animWorking);
 		}
 	}

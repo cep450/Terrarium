@@ -27,6 +27,7 @@ public class Agent : MonoBehaviour
 	public List<Need> needs;
 	int rateOfSatisfactionChange = 20;
 	[SerializeField] VisualGnome visualGnome;
+
 	private void Start()
 	{
 		cube = simHex.cube;
@@ -172,14 +173,14 @@ public class Agent : MonoBehaviour
 				{
 					if (currentTask.duration > 0) // decrement duration count
 					{
-						visualGnome.myRenderer.color = Color.green;
+						//visualGnome.myRenderer.color = Color.green;
 						visualGnome.AnimWorking();
 
 						currentTask.duration--;
 					}
 					else
 					{
-						visualGnome.myRenderer.color = Color.white;
+						//visualGnome.myRenderer.color = Color.white;
 						visualGnome.AnimIdle();
 						
 						simHex.ChangeType(currentTask.desiredType);
@@ -192,7 +193,7 @@ public class Agent : MonoBehaviour
 		}
 		else
 		{
-			//Debug.Log("task sequence begins");
+			//task sequence begins
 			currentTask = FindTask();
 			if (currentTask != null)
 			{
@@ -208,13 +209,10 @@ public class Agent : MonoBehaviour
 			}
 			else
 			{
-				//Debug.Log("No task");
+				visualGnome.AnimIdle();
+				//No task
 			}
-
-
-
 		}
-
 	}
 
 	Task FindTask()
