@@ -22,7 +22,7 @@ MonoBehaviour:
   resourcesRequired:
   - name: Water
     id: 0
-    amount: 1
+    amount: 2
     radius: 0
     tickMod: 0
     local: 0
