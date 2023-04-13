@@ -8,13 +8,8 @@ public class ResourceListUI : MonoBehaviour
 {
 	public string ResourceListText;
 	public string SatisfactionText;
-	[SerializeField] ResourceStockMarket resourceItem;
+	[SerializeField] GameObject resourceItem;
 	List<ResourceStockMarket> resourceItems;
-	// Start is called before the first frame update
-	void Start()
-	{
-		resourceItems = new List<ResourceStockMarket>();
-	}
 
 	// Update is called once per frame
 	void Update()
@@ -53,6 +48,7 @@ public class ResourceListUI : MonoBehaviour
 	}
 	public void PopulateList()
 	{
+		resourceItems = new List<ResourceStockMarket>();
 		for (int i = 0; i < Sim.resourceInfo.Length; i++)
 		{
 			ResourceStockMarket item = Instantiate(resourceItem, gameObject.GetComponentInChildren<VerticalLayoutGroup>().gameObject.transform).GetComponent<ResourceStockMarket>();
