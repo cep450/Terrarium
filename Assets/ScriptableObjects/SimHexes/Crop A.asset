@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Crop A
   m_EditorClassIdentifier: 
   name: Crop A
-  displayName: Wheat
+  displayName: Wheat Field
   id: 2
   passable: 1
   beauty: 0
@@ -41,10 +41,10 @@ MonoBehaviour:
   resourcesProduced:
   - name: Food
     id: 1
-    amount: 2
+    amount: 3
     radius: 0
     limit: 0
-    tickMod: 10
+    tickMod: 0
     local: 0
     isHex: 0
     tryAll: 0

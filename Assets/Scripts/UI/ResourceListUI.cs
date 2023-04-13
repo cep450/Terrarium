@@ -8,12 +8,12 @@ public class ResourceListUI : MonoBehaviour
 {
 	public string ResourceListText;
 	public string SatisfactionText;
-	[SerializeField] GameObject resourceItem;
-	List<GameObject> resourceItems;
+	[SerializeField] ResourceStockMarket resourceItem;
+	List<ResourceStockMarket> resourceItems;
 	// Start is called before the first frame update
 	void Start()
 	{
-		resourceItems = new List<GameObject>();
+		resourceItems = new List<ResourceStockMarket>();
 	}
 
 	// Update is called once per frame
@@ -25,17 +25,24 @@ public class ResourceListUI : MonoBehaviour
 		gameObject.GetComponent<TextMeshProUGUI>().text = SatisfactionText;
 		if (resourceItems.Count > 0)
 		{
-			foreach (GameObject item in resourceItems)
-			{
-				item.GetComponentInChildren<TextMeshProUGUI>().text = Resource.NameById(resourceItems.IndexOf(item)) + ": " + Tracker.resourcesNet[resourceItems.IndexOf(item)].ToString("+0;-#");
-				item.GetComponentInChildren<TextMeshProUGUI>().color = Tracker.resourcesNet[resourceItems.IndexOf(item)] >= 0 ? Color.green : Color.red;
-				if (Sim.resourceGlobalCaps[resourceItems.IndexOf(item)] != 0) // housing-like resources have a 0 cap, and will set slider to max
+
+			//Resource list is parallel with Sim list of resources and ids.
+			for(int i = 0; i < resourceItems.Count; i++) {
+				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#");
+				
+				if(Tracker.resourcesNet[i] == 0) {
+					resourceItems[i].text.color = Globals.colorNeutral;
+				} else {
+					resourceItems[i].text.color = Tracker.resourcesNet[i] >= 0 ? Globals.colorPositive : Globals.colorNegative;
+				}
+
+				if (Sim.resourceGlobalCaps[i] != 0) // housing-like resources have a 0 cap, and will set slider to max
 				{
-					item.GetComponentInChildren<Slider>().value = GlobalPool.resources[resourceItems.IndexOf(item)] / Sim.resourceGlobalCaps[resourceItems.IndexOf(item)];
+					resourceItems[i].slider.value = GlobalPool.resources[i] / Sim.resourceGlobalCaps[i];
 				}
 				else
 				{
-					item.GetComponentInChildren<Slider>().value = 1;
+					resourceItems[i].slider.value = 1;
 				}
 			}
 		}
@@ -46,9 +53,10 @@ public class ResourceListUI : MonoBehaviour
 	}
 	public void PopulateList()
 	{
-		for (int i = 0; i < Sim.resources.Length; i++)
+		for (int i = 0; i < Sim.resourceInfo.Length; i++)
 		{
-			GameObject item = Instantiate(resourceItem, gameObject.GetComponentInChildren<VerticalLayoutGroup>().gameObject.transform);
+			ResourceStockMarket item = Instantiate(resourceItem, gameObject.GetComponentInChildren<VerticalLayoutGroup>().gameObject.transform).GetComponent<ResourceStockMarket>();
+			item.icon.sprite = Sim.resourceInfo[i].icon;
 			resourceItems.Add(item);
 		}
 	}

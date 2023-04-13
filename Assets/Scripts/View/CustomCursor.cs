@@ -8,9 +8,9 @@ public class CustomCursor : MonoBehaviour {
     public static TileResourceInfo tileHover;
 
     void Awake() {
-        cursorClickable = Resources.Load<Texture2D>("pointers_0");  //pointer hand 
-        cursorUnclickable = Resources.Load<Texture2D>("pointers_1"); //open hand
-        cursorClicking = Resources.Load<Texture2D>("pointers_2");   //grabby hand
+        cursorClickable = Resources.Load<Texture2D>("pointers_point");  //pointer hand 
+        cursorUnclickable = Resources.Load<Texture2D>("pointers_open"); //open hand
+        cursorClicking = Resources.Load<Texture2D>("pointers_closed");   //grabby hand
         tileHover = GetComponent<TileResourceInfo>();
     }
 

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class TileResourceInfo : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class TileResourceInfo : MonoBehaviour
 
     SimHexType type;
     [SerializeField] List<ResourceChangeIcon> icons;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] Image background;
 
     public void SetType(SimHexType newType) {
 
@@ -31,6 +35,9 @@ public class TileResourceInfo : MonoBehaviour
     }
 
     void UpdateTypeInfo() {
+
+        text.text = type.displayName;
+        background.color = type.color;
 
         int index = 0;
 

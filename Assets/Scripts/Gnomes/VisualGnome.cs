@@ -6,9 +6,10 @@ public class VisualGnome : MonoBehaviour
 {
 
 	[SerializeField] Sprite[] sprites;
-
 	[SerializeField] public SpriteRenderer myRenderer;
-	[SerializeField] SpriteRenderer myRendererShadow;
+	[SerializeField] Animator animator;
+	int animationState;
+	int animIdle = 0; int animWalking = 1; int animWorking = 2;
 
 	// Start is called before the first frame update
 	void Start()
@@ -16,6 +17,26 @@ public class VisualGnome : MonoBehaviour
 		//become a random gnome
 		int rand = Random.Range(0, sprites.Length);
 		myRenderer.sprite = sprites[rand];
-		myRendererShadow.sprite = sprites[rand];
+	}
+
+	public void AnimIdle() {
+		if(animationState != animIdle) {
+			animationState = animIdle;
+			animator.SetInteger("state", animIdle);
+		}
+	}
+
+	public void AnimWalking() {
+		if(animationState != animWalking) {
+			animationState = animWalking;
+			animator.SetInteger("state", animWalking);
+		}
+	}
+
+	public void AnimWorking() {
+		if(animationState != animWorking) {
+			animationState = animWorking;
+			animator.SetInteger("state", animWorking);
+		}
 	}
 }

@@ -25,14 +25,17 @@ public class Agent : MonoBehaviour
 	Queue<SimHex> pathQueue;
 	public Cube lockedTarget;
 	public List<Need> needs;
-	int rateOfSatisfactionChange = 10;
+	int rateOfSatisfactionChange = 20;
+	[SerializeField] VisualGnome visualGnome;
+
 	private void Start()
 	{
 		cube = simHex.cube;
 		map = Sim.hexMap;
 		consumptionRate = 10;
+		rateOfSatisfactionChange = 20;
 		lockedTarget = cube;
-		rateOfSatisfactionChange = 10;
+		visualGnome.AnimIdle();
 	}
 	public void CreateNeedList(List<Need> needs)
 	{
@@ -133,11 +136,7 @@ public class Agent : MonoBehaviour
 	}
 	public void CreateTaskList()
 	{
-
 		taskList = new List<Task>();
-		//Task sampleTask0 = new Task(simHex.type, simHex.type);
-		//Debug.Log("sampletask0: destinationType is " + sampleTask0.destinationType.name + " and desiredType is " + sampleTask0.desiredType.name);
-		//taskList.Add(sampleTask0);
 	}
 
 
@@ -174,24 +173,27 @@ public class Agent : MonoBehaviour
 				{
 					if (currentTask.duration > 0) // decrement duration count
 					{
+						//visualGnome.myRenderer.color = Color.green;
+						visualGnome.AnimWorking();
+
 						currentTask.duration--;
-						gameObject.GetComponent<VisualGnome>().myRenderer.color = Color.red;
 					}
 					else
 					{
-						gameObject.GetComponent<VisualGnome>().myRenderer.color = Color.white;
+						//visualGnome.myRenderer.color = Color.white;
+						visualGnome.AnimIdle();
+						
 						simHex.ChangeType(currentTask.desiredType);
 						currentTask.isComplete = true; // doesnt do anything
 						lockedTarget = cube;
 						isTaskInProgress = false;
 					}
-
 				}
 			}
 		}
 		else
 		{
-			//Debug.Log("task sequence begins");
+			//task sequence begins
 			currentTask = FindTask();
 			if (currentTask != null)
 			{
@@ -201,17 +203,16 @@ public class Agent : MonoBehaviour
 					currentTask.destination = pathList[pathList.Count - 1];
 					pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
 					isTaskInProgress = true;
+
+					visualGnome.AnimWalking();
 				}
 			}
 			else
 			{
-				//Debug.Log("No task");
+				visualGnome.AnimIdle();
+				//No task
 			}
-
-
-
 		}
-
 	}
 
 	Task FindTask()

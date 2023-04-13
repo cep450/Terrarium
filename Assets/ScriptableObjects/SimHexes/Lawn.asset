@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Lawn
   m_EditorClassIdentifier: 
   name: Lawn
-  displayName: 
+  displayName: Manicured Lawn
   id: 7
   passable: 1
   beauty: 0
@@ -22,7 +22,7 @@ MonoBehaviour:
   resourcesRequired:
   - name: Water
     id: 0
-    amount: 1
+    amount: 2
     radius: 0
     tickMod: 0
     local: 0
@@ -32,13 +32,13 @@ MonoBehaviour:
   resourcesProduced: []
   resourcesStarting:
   - name: Leisure
-    id: 7
+    id: 8
     amount: 1
     overrides: 1
     local: 0
   visualHexPrefab: {fileID: 7446620075933593916, guid: 21567515fe507674a8094101ea6cdf1e, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.5227134, g: 0.8773585, b: 0.3099264, a: 1}
+  color: {r: 0.13783076, g: 0.6509434, b: 0.15529026, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

@@ -78,11 +78,11 @@ public class AgentDirector : MonoBehaviour
 	static List<Need> NeedList()
 	{
 		needs = new List<Need>();
-		Need food = new Need("Food", 50, 100, 3, true, true);
-		Need housing = new Need("Housing", 50, 1, 2, true, false);
-		Need water = new Need("Water", 50, 100, 3, true, true);
-		Need honey = new Need("Honey", 50, 100, 1, false, true);
-		Need space = new Need("Leisure", 50, 2, 1, false, true);
+		Need food = 	new Need("Food", 	50, 5, 3, true, true);
+		Need housing = 	new Need("Housing", 50, 1, 2, true, false);
+		Need water = 	new Need("Water", 	50, 5, 3, true, true);
+		Need honey = 	new Need("Honey", 	50, 3, 1, false, true);
+		Need space = 	new Need("Leisure", 50, 2, 1, false, true);
 		needs.Add(food);
 		needs.Add(housing);
 		needs.Add(water);

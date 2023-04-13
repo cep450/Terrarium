@@ -6,7 +6,6 @@ using TMPro;
 
 public class ActionUI : MonoBehaviour
 {
-	[SerializeField] SimHexType[] types;
 	[SerializeField] TMP_Dropdown convertX;
 	[SerializeField] TMP_Dropdown toY;
 	SimHexType x;
@@ -14,27 +13,39 @@ public class ActionUI : MonoBehaviour
 
 	public void SetX()
 	{
-		x = types[convertX.value];
+		x = Sim.hexTypes[convertX.value];
 	}
 	public void SetY()
 	{
-		y = types[toY.value];
+		y = Sim.hexTypes[toY.value];
 	}
 	public void Convert()
 	{
 		if (x != null && y != null && !(x == y))
 		{
-			AgentDirector.XToYByName(x.name, y.name, UnityEngine.Random.Range(10, 30)); // random duration for testing
+			AgentDirector.XToYByName(x.name, y.name, UnityEngine.Random.Range(5, 15)); // random duration for testing
 		}
 
 	}
+
+	void Start() {
+		StartCoroutine(WaitForSimInit());
+	}
+	IEnumerator WaitForSimInit() {
+
+		while(Sim.hexTypes == null) {
+			yield return null;
+		}
+		Init();
+	}
+
 	// Start is called before the first frame update
-	void Start()
+	void Init()
 	{
-		foreach (SimHexType s in types)
+		foreach (SimHexType s in Sim.hexTypes)
 		{
-			convertX.options.Add(new TMP_Dropdown.OptionData(s.name));
-			toY.options.Add(new TMP_Dropdown.OptionData(s.name));
+			convertX.options.Add(new TMP_Dropdown.OptionData(s.displayName));
+			toY.options.Add(new TMP_Dropdown.OptionData(s.displayName));
 		}
 
 	}
