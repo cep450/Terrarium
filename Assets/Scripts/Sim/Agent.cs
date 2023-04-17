@@ -51,7 +51,7 @@ public class Agent : MonoBehaviour
 	{
 		foreach (Need n in needs)
 		{
-			if (n.isConsumed)
+			if (n.isConsumed) // food water honey
 			{
 				if (GlobalPool.CanConsume(n.needName, n.consumptionPerTick))
 				{
@@ -71,13 +71,13 @@ public class Agent : MonoBehaviour
 					}
 				}
 			}
-			else
+			else // leisure housing
 			{
-				Debug.Log("I have this many resources" + AgentDirector.shallowResources[Resource.IdByName(n.needName)] + " for " + n.needName);
+				//Debug.Log("I have this many resources" + AgentDirector.shallowResources[Resource.IdByName(n.needName)] + " for " + n.needName);
 				if (AgentDirector.shallowResources[Resource.IdByName(n.needName)] >= n.consumptionPerTick)
 				{
 					AgentDirector.shallowResources[Resource.IdByName(n.needName)] -= n.consumptionPerTick;
-					Debug.Log("I ate " + n.consumptionPerTick + " and now i have " + AgentDirector.shallowResources[Resource.IdByName(n.needName)]);
+					//Debug.Log("I ate " + n.consumptionPerTick + " and now i have " + AgentDirector.shallowResources[Resource.IdByName(n.needName)]);
 					n.value += rateOfSatisfactionChange; // need satisfaction goes up if met, numbers arbitrary
 					if (n.value >= 100)
 					{
@@ -182,7 +182,7 @@ public class Agent : MonoBehaviour
 					{
 						//visualGnome.myRenderer.color = Color.white;
 						visualGnome.AnimIdle();
-						
+
 						simHex.ChangeType(currentTask.desiredType);
 						currentTask.isComplete = true; // doesnt do anything
 						lockedTarget = cube;
