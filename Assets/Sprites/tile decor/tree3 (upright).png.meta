@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4b3fd8d10839dfe45af68a532a2a9692
+guid: b4f8e767735fa42448d4f8123ae8ead0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,70 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: rice (upright)_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3
-        width: 70
-        height: 272
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f87c09a4272d604e83bed0fc7fc24d5
-      internalID: 1595405578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rice (upright)_1
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 9
-        width: 127
-        height: 273
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ea1bb820956e5744a0570ada38c04d0
-      internalID: 1414450026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: rice (upright)_2
-      rect:
-        serializedVersion: 2
-        x: 502
-        y: 0
-        width: 96
-        height: 259
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2d691701770fa642a51379c00cd4f7d
-      internalID: -1540838705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -189,10 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      rice (upright)_1: 1414450026
-      rice (upright)_2: -1540838705
-      rice (upright)_0: 1595405578
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
