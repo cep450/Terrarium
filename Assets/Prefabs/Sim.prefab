@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
-  - component: {fileID: 4652367072254098296}
+  - component: {fileID: 9061551796005264470}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -111,19 +111,14 @@ MonoBehaviour:
     initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 0}
-  - name: Nutrient C
-    displayName: Nutrient C
-    initialGlobalAmount: 1000
-    globalCap: 1000
-    icon: {fileID: 0}
   - name: Nectar
     displayName: Nectar
-    initialGlobalAmount: 0
-    globalCap: 0
+    initialGlobalAmount: 100
+    globalCap: 1000
     icon: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Honey
     displayName: Honey
-    initialGlobalAmount: 0
+    initialGlobalAmount: 100
     globalCap: 1000
     icon: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
   - name: Leisure
@@ -212,7 +207,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
       desc: 
       numTicks: 1
---- !u!114 &4652367072254098296
+--- !u!114 &9061551796005264470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,11 +216,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1922028117923064736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
+  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid:
     orientation: 0
     scale: 1
-  size: 4
+  size: 5
   shape: 2

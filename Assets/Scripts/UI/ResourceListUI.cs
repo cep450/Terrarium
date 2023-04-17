@@ -22,18 +22,23 @@ public class ResourceListUI : MonoBehaviour
 		{
 
 			//Resource list is parallel with Sim list of resources and ids.
-			for(int i = 0; i < resourceItems.Count; i++) {
-				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#");
-				
-				if(Tracker.resourcesNet[i] == 0) {
+			for (int i = 0; i < resourceItems.Count; i++)
+			{
+				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + " Stockpile:  " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
+
+
+				if (Tracker.resourcesNet[i] == 0)
+				{
 					resourceItems[i].text.color = Globals.colorNeutral;
-				} else {
+				}
+				else
+				{
 					resourceItems[i].text.color = Tracker.resourcesNet[i] >= 0 ? Globals.colorPositive : Globals.colorNegative;
 				}
 
 				if (Sim.resourceGlobalCaps[i] != 0) // housing-like resources have a 0 cap, and will set slider to max
 				{
-					resourceItems[i].slider.value = GlobalPool.resources[i] / Sim.resourceGlobalCaps[i];
+					resourceItems[i].slider.value = (float)GlobalPool.resources[i] / (float)Sim.resourceGlobalCaps[i];
 				}
 				else
 				{
