@@ -178,11 +178,11 @@ public class SimHex
 
 		foreach (ResRequired rr in type.resourcesRequired)
 		{
-
+			/*
 			if (rr.id == Resource.nullResId)
 			{
 				continue;
-			}
+			}*/
 
 			int sum = 0;
 
@@ -250,7 +250,7 @@ public class SimHex
 					//TODO start i at a random neighbor index?
 					for (int i = 0; amount > 0; i++)
 					{
-						if (i == 0)
+						if (i == 0) 
 						{
 							this.ConsumeResource(rr.id, 1);
 						}

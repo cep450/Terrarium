@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8141874005623303107}
   - component: {fileID: 5205123562204661982}
   - component: {fileID: 3732846519639819557}
+  - component: {fileID: 4029595084007098426}
   m_Layer: 0
   m_Name: Gnome
   m_TagString: Untagged
@@ -141,6 +142,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4029595084007098426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389196132420375823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa4b353f0543fb4cb17cba0aa4a861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardedSprites:
+  - {fileID: 5073294548475537323}
 --- !u!1 &1304254988308868140
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +182,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304254988308868140}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.35, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
