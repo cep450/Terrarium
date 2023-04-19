@@ -359,9 +359,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[0].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: b9b128235b13a664bbb442d6a627ad28, type: 3}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[1].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: ddf3fd20bbcbae04a982f85029287190, type: 3}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[2].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 85a1a5c4591784940adfcdbd537a2129, type: 3}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[3].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: ebab7f36fd78a2f41b89fe47c4ae42ad, type: 3}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[4].icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 19ad497dd4244754e94c3febdc1d1263, type: 3}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[5].icon
       value: 
-      objectReference: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
+      objectReference: {fileID: 21300000, guid: 4ac3b48980108c24bbe01afb8269c00c, type: 3}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[5].name
       value: Nectar
@@ -369,7 +389,7 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[6].icon
       value: 
-      objectReference: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
+      objectReference: {fileID: 21300000, guid: 883fc2fec888a1e49a2fb9d55d5e9bdf, type: 3}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[6].name
       value: Honey
@@ -377,7 +397,7 @@ PrefabInstance:
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[7].icon
       value: 
-      objectReference: {fileID: 1843475510, guid: a49a83655a216194fb88501c4188b214, type: 3}
+      objectReference: {fileID: 21300000, guid: 9d5e31ac3d2063a4da297f97b78eadcc, type: 3}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: _resourceInfo.Array.data[7].name
       value: Leisure
