@@ -128,7 +128,19 @@ public class AgentDirector : MonoBehaviour
 		satisfactions += "\n\n" + "Overall Approval Rating: " + AverageWeightedSatisfaction() + "%";
 		return satisfactions;
 	}
-	static int AverageSatisfactionOfOneNeed(int needIndex)
+	public static List<Need> SatisfactionHorizontalList()
+	{
+		List<Need> satisfactionHorizontalList = new List<Need>();
+		foreach (Need n in needs)
+		{
+			Need temp = (Need)n.ShallowCopy();
+			temp.value = AverageSatisfactionOfOneNeed(needs.IndexOf(n));
+			satisfactionHorizontalList.Add(temp);
+		}
+
+		return satisfactionHorizontalList;
+	}
+	public static int AverageSatisfactionOfOneNeed(int needIndex)
 	{
 		int averageSatisfaction = 0;
 		foreach (Agent a in agents)
