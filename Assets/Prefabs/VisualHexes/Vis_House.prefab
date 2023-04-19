@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6923571426600053843
 Transform:
   m_ObjectHideFlags: 0
@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2492487666867975569}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.0598, y: 0.023, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3138216601741046481}
@@ -912,6 +912,14 @@ PrefabInstance:
       value: Vis_House
       objectReference: {fileID: 0}
     - target: {fileID: 2681184601649942734, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681184601649942734, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681184601649942734, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0779
       objectReference: {fileID: 0}
@@ -927,10 +935,41 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6089868570142199028, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+--- !u!1 &3138216601741046479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2479060019227721137, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+  m_PrefabInstance: {fileID: 714467795226775422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7471010203410561205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3138216601741046479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa4b353f0543fb4cb17cba0aa4a861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardedSprites:
+  - {fileID: 3233364201424904112}
+  - {fileID: 6923571426600053843}
+  billboardAllChildren: 0
+  moves: 0
 --- !u!4 &3138216601741046481 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2479060019227721135, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
+  m_PrefabInstance: {fileID: 714467795226775422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3233364201424904112 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2681184601649942734, guid: 26a7c1ae17460e44e8cce7d8a27ee832, type: 3}
   m_PrefabInstance: {fileID: 714467795226775422}
   m_PrefabAsset: {fileID: 0}
