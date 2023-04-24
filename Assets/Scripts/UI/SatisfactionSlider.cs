@@ -50,6 +50,7 @@ public class SatisfactionSlider : MonoBehaviour
 				{
 					g.GetComponentInChildren<TextMeshProUGUI>().text = satisfactions[satisfactionItems.IndexOf(g)].needName;
 					g.GetComponentInChildren<Slider>().value = satisfactions[satisfactionItems.IndexOf(g)].value;
+					g.GetComponentInChildren<Image>().sprite = Sim.resourceInfo[Resource.IdByName(satisfactions[satisfactionItems.IndexOf(g)].needName)].icon;
 				}
 			}
 
