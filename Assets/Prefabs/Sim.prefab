@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
-  - component: {fileID: 9061551796005264470}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -90,42 +89,50 @@ MonoBehaviour:
     displayName: Clean Water
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: 1995667718, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: b9b128235b13a664bbb442d6a627ad28, type: 3}
+    color: {r: 0.63404334, g: 0.89998406, b: 0.9150943, a: 1}
   - name: Food
     displayName: Food
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: -911923408, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: ddf3fd20bbcbae04a982f85029287190, type: 3}
+    color: {r: 0.92156863, g: 0.8707878, b: 0.5568628, a: 1}
   - name: Housing
     displayName: Housing
     initialGlobalAmount: 0
     globalCap: 0
-    icon: {fileID: -1992632578, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: 85a1a5c4591784940adfcdbd537a2129, type: 3}
+    color: {r: 0.92156863, g: 0.5568628, b: 0.59475154, a: 1}
   - name: Nutrient A
     displayName: Nitrogen
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: -677335336, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: ebab7f36fd78a2f41b89fe47c4ae42ad, type: 3}
+    color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   - name: Nutrient B
     displayName: Nutrient B
     initialGlobalAmount: 1000
     globalCap: 1000
-    icon: {fileID: 0}
+    icon: {fileID: 21300000, guid: 19ad497dd4244754e94c3febdc1d1263, type: 3}
+    color: {r: 1, g: 0.9536129, b: 0.8343815, a: 0}
   - name: Nectar
     displayName: Nectar
     initialGlobalAmount: 100
     globalCap: 1000
-    icon: {fileID: 1004873421, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: 4ac3b48980108c24bbe01afb8269c00c, type: 3}
+    color: {r: 1, g: 0.8060796, b: 0.9817042, a: 1}
   - name: Honey
     displayName: Honey
     initialGlobalAmount: 100
     globalCap: 1000
-    icon: {fileID: -558240434, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: 883fc2fec888a1e49a2fb9d55d5e9bdf, type: 3}
+    color: {r: 0.9811321, g: 0.8031328, b: 0.4669119, a: 1}
   - name: Leisure
     displayName: Recreation
     initialGlobalAmount: 0
     globalCap: 0
-    icon: {fileID: 1843475510, guid: a49a83655a216194fb88501c4188b214, type: 3}
+    icon: {fileID: 21300000, guid: 9d5e31ac3d2063a4da297f97b78eadcc, type: 3}
+    color: {r: 0.62032753, g: 0.8490566, b: 0.6600073, a: 1}
   _buildRelations:
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
     canBeBuiltOn:
@@ -207,20 +214,3 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
       desc: 
       numTicks: 1
---- !u!114 &9061551796005264470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922028117923064736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grid:
-    orientation: 0
-    scale: 1
-  size: 5
-  shape: 2
