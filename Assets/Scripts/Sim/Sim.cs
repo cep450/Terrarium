@@ -11,6 +11,7 @@ public struct ResourceInfo
 	public int initialGlobalAmount;
 	public int globalCap;
 	public Sprite icon;
+	public Color color;
 }
 
 [System.Serializable]

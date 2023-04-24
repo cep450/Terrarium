@@ -13,5 +13,12 @@ public class ResourceStockMarket : MonoBehaviour {
     public TextMeshProUGUI text;
     public Slider slider;
     public Image icon;
+    public Image sliderFillArea;
+
+    public void SetResource(ResourceInfo resource) {
+        icon.sprite = resource.icon;
+        icon.color = resource.color;
+        sliderFillArea.color = resource.color;
+    }
 
 }

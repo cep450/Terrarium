@@ -156,6 +156,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   billboardedSprites:
   - {fileID: 5073294548475537323}
+  billboardAllChildren: 0
+  moves: 1
 --- !u!1 &1304254988308868140
 GameObject:
   m_ObjectHideFlags: 0

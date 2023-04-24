@@ -46,7 +46,7 @@ MonoBehaviour:
     changes: []
     cap: 0
   - name: Nectar
-    id: 8
+    id: 5
     amount: 1
     radius: 0
     limit: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     amount: 0
     overrides: 0
     local: 0
-  visualHexPrefab: {fileID: 0}
+  visualHexPrefab: {fileID: 3619160745674383434, guid: c2d47f6ac09c9224b9bd86fb44c0600d, type: 3}
   cardSprite: {fileID: 0}
   color: {r: 0.115231454, g: 0.3207547, b: 0.076994576, a: 1}
   sprite: {fileID: 0}

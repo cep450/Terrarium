@@ -57,7 +57,7 @@ public class ResourceListUI : MonoBehaviour
 		for (int i = 0; i < Sim.resourceInfo.Length; i++)
 		{
 			ResourceStockMarket item = Instantiate(resourceItem, gameObject.GetComponentInChildren<VerticalLayoutGroup>().gameObject.transform).GetComponent<ResourceStockMarket>();
-			item.icon.sprite = Sim.resourceInfo[i].icon;
+			item.SetResource(Sim.resourceInfo[i]);
 			resourceItems.Add(item);
 		}
 	}
