@@ -32,7 +32,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Nutrient A
     id: 3
-    amount: 3
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0
@@ -45,6 +45,18 @@ MonoBehaviour:
   - name: Food
     id: 1
     amount: 1
+    radius: 0
+    limit: 0
+    tickMod: 0
+    local: 0
+    isHex: 0
+    tryAll: 0
+    falloff: 0
+    changes: []
+    cap: 0
+  - name: Nutrient B
+    id: 4
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0

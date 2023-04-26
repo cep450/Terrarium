@@ -64,6 +64,7 @@ public class Sim : MonoBehaviour
 		Init();
 		SimGrid.Init(); //needs to happen after HexGrid initializes
 		AgentDirector.Init();
+		UIController.Init();
 	}
 
 	public void Init()
@@ -105,7 +106,7 @@ public class Sim : MonoBehaviour
 			type.Init();
 		}
 
-		UIController.Init();
+		
 
 		FindObjectOfType<BuildXOnYUI>().Init();
 
