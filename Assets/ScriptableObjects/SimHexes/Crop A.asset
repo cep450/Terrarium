@@ -31,7 +31,7 @@ MonoBehaviour:
     falloff: 0
   - name: Nutrient A
     id: 3
-    amount: 2
+    amount: 3
     radius: 0
     tickMod: 0
     local: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Food
     id: 1
-    amount: 3
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 0

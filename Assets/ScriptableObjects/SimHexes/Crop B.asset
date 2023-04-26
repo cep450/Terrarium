@@ -22,7 +22,7 @@ MonoBehaviour:
   resourcesRequired:
   - name: Water
     id: 0
-    amount: 2
+    amount: 3
     radius: 0
     tickMod: 0
     local: 0
@@ -32,8 +32,8 @@ MonoBehaviour:
   - name: Nutrient A
     id: 3
     amount: 1
-    radius: 1
-    tickMod: 2
+    radius: 0
+    tickMod: 0
     local: 0
     isConsumed: 1
     diesIfNotNet: 1

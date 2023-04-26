@@ -88,13 +88,13 @@ MonoBehaviour:
   _resourceInfo:
   - name: Water
     displayName: Clean Water
-    initialGlobalAmount: 1000
-    globalCap: 1000
+    initialGlobalAmount: 3000
+    globalCap: 3000
     icon: {fileID: 21300000, guid: b9b128235b13a664bbb442d6a627ad28, type: 3}
     color: {r: 0.63404334, g: 0.89998406, b: 0.9150943, a: 1}
   - name: Food
     displayName: Food
-    initialGlobalAmount: 1000
+    initialGlobalAmount: 300
     globalCap: 1000
     icon: {fileID: 21300000, guid: ddf3fd20bbcbae04a982f85029287190, type: 3}
     color: {r: 0.92156863, g: 0.8707878, b: 0.5568628, a: 1}
@@ -105,16 +105,16 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 85a1a5c4591784940adfcdbd537a2129, type: 3}
     color: {r: 0.92156863, g: 0.5568628, b: 0.59475154, a: 1}
   - name: Nutrient A
-    displayName: Nitrogen
-    initialGlobalAmount: 1000
-    globalCap: 1000
-    icon: {fileID: 21300000, guid: ebab7f36fd78a2f41b89fe47c4ae42ad, type: 3}
-    color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
-  - name: Nutrient B
     displayName: Phosphorus
     initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 21300000, guid: 19ad497dd4244754e94c3febdc1d1263, type: 3}
+    color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+  - name: Nutrient B
+    displayName: Nitrogen
+    initialGlobalAmount: 1000
+    globalCap: 1000
+    icon: {fileID: 21300000, guid: ebab7f36fd78a2f41b89fe47c4ae42ad, type: 3}
     color: {r: 0.88604903, g: 1, b: 0, a: 1}
   - name: Nectar
     displayName: Nectar
@@ -129,7 +129,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 883fc2fec888a1e49a2fb9d55d5e9bdf, type: 3}
     color: {r: 0.8018868, g: 0.56387705, b: 0.34420612, a: 1}
   - name: Leisure
-    displayName: Recreation
+    displayName: Leisure
     initialGlobalAmount: 0
     globalCap: 0
     icon: {fileID: 21300000, guid: 9d5e31ac3d2063a4da297f97b78eadcc, type: 3}

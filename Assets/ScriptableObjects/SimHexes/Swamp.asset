@@ -23,19 +23,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Water
     id: 0
-    amount: 10
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
-  - name: Nutrient A
-    id: 3
-    amount: 0
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0
@@ -47,7 +35,7 @@ MonoBehaviour:
     cap: 0
   - name: Nutrient B
     id: 4
-    amount: 0
+    amount: 3
     radius: 0
     limit: 0
     tickMod: 0
