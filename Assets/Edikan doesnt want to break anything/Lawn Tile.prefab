@@ -538,3 +538,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3044870119742673412, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
   m_PrefabInstance: {fileID: 8373155889799753901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7446620075933593916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1397480835546579345, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
+  m_PrefabInstance: {fileID: 8373155889799753901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4630253224595463166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7446620075933593916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa4b353f0543fb4cb17cba0aa4a861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardedSprites: []
+  billboardAllChildren: 1
+  moves: 0

@@ -8,13 +8,8 @@ public class ResourceListUI : MonoBehaviour
 {
 	public string ResourceListText;
 	public string SatisfactionText;
-	[SerializeField] ResourceStockMarket resourceItem;
+	[SerializeField] GameObject resourceItem;
 	List<ResourceStockMarket> resourceItems;
-	// Start is called before the first frame update
-	void Start()
-	{
-		resourceItems = new List<ResourceStockMarket>();
-	}
 
 	// Update is called once per frame
 	void Update()
@@ -27,18 +22,23 @@ public class ResourceListUI : MonoBehaviour
 		{
 
 			//Resource list is parallel with Sim list of resources and ids.
-			for(int i = 0; i < resourceItems.Count; i++) {
-				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#");
-				
-				if(Tracker.resourcesNet[i] == 0) {
+			for (int i = 0; i < resourceItems.Count; i++)
+			{
+				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + " Stockpile:  " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
+
+
+				if (Tracker.resourcesNet[i] == 0)
+				{
 					resourceItems[i].text.color = Globals.colorNeutral;
-				} else {
+				}
+				else
+				{
 					resourceItems[i].text.color = Tracker.resourcesNet[i] >= 0 ? Globals.colorPositive : Globals.colorNegative;
 				}
 
 				if (Sim.resourceGlobalCaps[i] != 0) // housing-like resources have a 0 cap, and will set slider to max
 				{
-					resourceItems[i].slider.value = GlobalPool.resources[i] / Sim.resourceGlobalCaps[i];
+					resourceItems[i].slider.value = (float)GlobalPool.resources[i] / (float)Sim.resourceGlobalCaps[i];
 				}
 				else
 				{
@@ -53,10 +53,11 @@ public class ResourceListUI : MonoBehaviour
 	}
 	public void PopulateList()
 	{
+		resourceItems = new List<ResourceStockMarket>();
 		for (int i = 0; i < Sim.resourceInfo.Length; i++)
 		{
 			ResourceStockMarket item = Instantiate(resourceItem, gameObject.GetComponentInChildren<VerticalLayoutGroup>().gameObject.transform).GetComponent<ResourceStockMarket>();
-			item.icon.sprite = Sim.resourceInfo[i].icon;
+			item.SetResource(Sim.resourceInfo[i]);
 			resourceItems.Add(item);
 		}
 	}

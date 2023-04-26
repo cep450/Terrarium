@@ -19,51 +19,24 @@ MonoBehaviour:
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
-  resourcesRequired: []
-  resourcesProduced:
-  - name: Nutrient A
-    id: 3
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
+  resourcesRequired:
   - name: Nutrient B
     id: 4
-    amount: 1
+    amount: 3
     radius: 0
-    limit: 0
     tickMod: 0
     local: 0
-    isHex: 0
-    tryAll: 0
+    isConsumed: 1
+    diesIfNotNet: 1
     falloff: 0
-    changes: []
-    cap: 0
-  - name: Nectar
-    id: 8
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
+  resourcesProduced: []
   resourcesStarting:
   - name: Leisure
     id: 7
-    amount: 0
+    amount: 2
     overrides: 0
     local: 0
-  visualHexPrefab: {fileID: 0}
+  visualHexPrefab: {fileID: 3619160745674383434, guid: c2d47f6ac09c9224b9bd86fb44c0600d, type: 3}
   cardSprite: {fileID: 0}
   color: {r: 0.115231454, g: 0.3207547, b: 0.076994576, a: 1}
   sprite: {fileID: 0}

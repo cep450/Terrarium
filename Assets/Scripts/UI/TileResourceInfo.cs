@@ -43,17 +43,17 @@ public class TileResourceInfo : MonoBehaviour
 
         foreach(Resource.ResProduced r in type.resourcesProduced) {
             ReuseOrCreateIcon(index);
-            icons[index].Fill(Sim.resourceInfo[r.id].icon, true, false, r.amount);
+            icons[index].Fill(Sim.resourceInfo[r.id], true, false, r.amount);
             index++;
         } 
         foreach(Resource.ResRequired r in type.resourcesRequired) {
             ReuseOrCreateIcon(index);
-            icons[index].Fill(Sim.resourceInfo[r.id].icon, false, true, r.amount);
+            icons[index].Fill(Sim.resourceInfo[r.id], false, true, r.amount);
             index++;
         }
         foreach(Resource.ResStarting r in type.resourcesStarting) {
             ReuseOrCreateIcon(index);
-            icons[index].Fill(Sim.resourceInfo[r.id].icon, false, false, r.amount);
+            icons[index].Fill(Sim.resourceInfo[r.id], false, false, r.amount);
             index++;
         }
         while(index < icons.Count) {

@@ -11,6 +11,7 @@ public struct ResourceInfo
 	public int initialGlobalAmount;
 	public int globalCap;
 	public Sprite icon;
+	public Color color;
 }
 
 [System.Serializable]
@@ -63,6 +64,7 @@ public class Sim : MonoBehaviour
 		Init();
 		SimGrid.Init(); //needs to happen after HexGrid initializes
 		AgentDirector.Init();
+		UIController.Init();
 	}
 
 	public void Init()
@@ -70,14 +72,7 @@ public class Sim : MonoBehaviour
 
 		//fill in information provided in inspector
 
-		/*if (_hexMap != null)
-		{
-			hexMap = _hexMap;
-		}
-		else
-		{*/
-			hexMap = GetComponent<HexMap>();
-		//}
+		hexMap = GetComponent<HexMap>();
 
 		resourceInfo = _resourceInfo;
 		visualHexPrefab = _visualHexPrefab;
@@ -111,7 +106,9 @@ public class Sim : MonoBehaviour
 			type.Init();
 		}
 
-		UIController.Init();
+		
+
+		FindObjectOfType<BuildXOnYUI>().Init();
 
 		Clock.Tick += HandleTick;
 

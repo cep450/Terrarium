@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class BuildUIEntry : MonoBehaviour {
 
-    [SerializeField] TextMeshProUGUI displayName;
-    [SerializeField] Image icon;
-    [SerializeField] Image buttonBackground;
-    [SerializeField] TextMeshProUGUI ticks;
     [SerializeField] RectTransform rect;
+    [SerializeField] RectTransform rectChild;
+    [SerializeField] TileResourceInfo tileInfo;
+    [SerializeField] TextMeshProUGUI ticks;
 
 
     bool maximized = false; //filling whole window
@@ -22,34 +21,23 @@ public class BuildUIEntry : MonoBehaviour {
     public SimHexType type;
     public OnInfo onInfo;
     bool isOn = false;
+    public int index; //its index/id
 
     void Start() {
-        maximizeHeight = new Vector2(rect.sizeDelta.x, 200);
-        normalizeHeight = new Vector2(rect.sizeDelta.x, 50);
+        maximizeHeight = new Vector2(rect.sizeDelta.x, 300);
+        normalizeHeight = new Vector2(rect.sizeDelta.x, 70);
         minimizeHeight = new Vector2(rect.sizeDelta.x, 0);
     }
 
 
     //Populates itself based on the data in its type.
-    //For Build 
-    public void Construct(OnInfo info) {
-        
-        Construct(info.type);
-
-        isOn = true;
-
-    }  
-    //For On  
-    public void Construct(SimHexType t) {
+    public void Construct(SimHexType t, int i, bool _isOn = false) {
 
         type = t;
+        index = i;
+        isOn = _isOn;
 
-        //set color based on type 
-        buttonBackground.tintColor = type.color;
-
-        //set icon based on type 
-
-        //TODO set list of resources used produced also 
+        tileInfo.SetType(type);
 
     }
 
@@ -67,6 +55,7 @@ public class BuildUIEntry : MonoBehaviour {
     public void Maximize() {
 
         rect.sizeDelta = maximizeHeight;
+        rectChild.sizeDelta = maximizeHeight;
 
         SetActiveInfo(true);
 
@@ -78,8 +67,10 @@ public class BuildUIEntry : MonoBehaviour {
         minimized = false;
 
         if(isOn) {
+            BuildXOnYUI.instance.SelectOn(this.index);
             ToggleOthersMinimized(true, BuildXOnYUI.instance.listOnUIs);
         } else {
+            BuildXOnYUI.instance.SelectBuild(this.index);
             ToggleOthersMinimized(true, BuildXOnYUI.instance.listBuildUIs);
         }
     }
@@ -87,6 +78,7 @@ public class BuildUIEntry : MonoBehaviour {
     public void Minimize() {
 
         rect.sizeDelta = minimizeHeight;
+        rectChild.sizeDelta = minimizeHeight;
 
         SetActiveInfo(false);
 
@@ -98,8 +90,10 @@ public class BuildUIEntry : MonoBehaviour {
     public void UnMaximize() {
 
         if(isOn) {
+            BuildXOnYUI.instance.ClearOn();
             ToggleOthersMinimized(false, BuildXOnYUI.instance.listOnUIs);
         } else {
+            BuildXOnYUI.instance.ClearBuild();
             ToggleOthersMinimized(false, BuildXOnYUI.instance.listBuildUIs);
         }
 
@@ -109,6 +103,7 @@ public class BuildUIEntry : MonoBehaviour {
     public void Normalize() {
 
         rect.sizeDelta = normalizeHeight;
+        rectChild.sizeDelta = normalizeHeight;
 
         SetActiveInfo(true);
 
@@ -117,8 +112,8 @@ public class BuildUIEntry : MonoBehaviour {
 
     }
 
-    void ToggleOthersMinimized(bool minimize, BuildUIEntry [] array) {
-        foreach(BuildUIEntry ui in array) {
+    void ToggleOthersMinimized(bool minimize, List<BuildUIEntry> list) {
+        foreach(BuildUIEntry ui in list) {
             if(ui.type != this.type) {
                 if(minimize) {
                     ui.Minimize();
@@ -132,19 +127,13 @@ public class BuildUIEntry : MonoBehaviour {
     void SetActiveInfo(bool active) {
 
         if(active) {
-            displayName.text = type.displayName;
-        } else {
-            displayName.text = "";
-        }
-
-        if(isOn) {
-
-            if(active) {
-                ticks.text = onInfo.numTicks.ToString();
-            } else {
-                displayName.text = "";
+            tileInfo.Show();
+            if(isOn) {
+                ticks.text = onInfo.numTicks.ToString(); //TODO set this
             }
-
+        } else {
+            tileInfo.Hide();
+            ticks.text = "";
         }
     }
 }

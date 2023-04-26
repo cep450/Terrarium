@@ -10,19 +10,12 @@ public class VisualHex : MonoBehaviour {
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] SpriteRenderer billboardedSprite;
 
-    [SerializeField] GameObject popup;
-
     GameObject visualHex;
 
     public void AssignSimHex(SimHex sHex) {
         simHex = sHex;
         transform.position = Sim.hexMap.grid.HexToCenter(simHex.cube).position;
 
-        //a bit of vertical wiggle 
-        //transform.Translate(new Vector3(0, 0, Random.Range(-verticalWiggle, verticalWiggle)));
-    
-        //elevation 
-        //transform.Translate(new Vector3(0, 0, simHex.elevation * elevationScale));
     }
 
     public void VisualUpdate() {
@@ -55,6 +48,15 @@ public class VisualHex : MonoBehaviour {
         }
         if(simHex.type.billboardSprite != null) {
             billboardedSprite.sprite = simHex.type.billboardSprite;
+        }
+    }
+
+    Color dead = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    public void Die() {
+        SpriteRenderer [] childSprites = visualHex.GetComponentsInChildren<SpriteRenderer>();
+        foreach(SpriteRenderer s in childSprites) {
+            if(s.Equals(this.spriteRenderer)) continue;
+            s.color = dead;
         }
     }
 

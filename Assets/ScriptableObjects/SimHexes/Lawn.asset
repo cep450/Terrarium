@@ -22,17 +22,26 @@ MonoBehaviour:
   resourcesRequired:
   - name: Water
     id: 0
-    amount: 2
+    amount: 10
     radius: 0
     tickMod: 0
     local: 0
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
+  - name: Nutrient B
+    id: 4
+    amount: 3
+    radius: 0
+    tickMod: 0
+    local: 0
+    isConsumed: 1
+    diesIfNotNet: 0
+    falloff: 0
   resourcesProduced: []
   resourcesStarting:
   - name: Leisure
-    id: 8
+    id: 7
     amount: 1
     overrides: 1
     local: 0

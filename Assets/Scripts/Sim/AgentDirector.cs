@@ -78,11 +78,11 @@ public class AgentDirector : MonoBehaviour
 	static List<Need> NeedList()
 	{
 		needs = new List<Need>();
-		Need food = 	new Need("Food", 	50, 5, 3, true, true);
-		Need housing = 	new Need("Housing", 50, 1, 2, true, false);
-		Need water = 	new Need("Water", 	50, 5, 3, true, true);
-		Need honey = 	new Need("Honey", 	50, 3, 1, false, true);
-		Need space = 	new Need("Leisure", 50, 2, 1, false, true);
+		Need food = new Need("Food", 50, 5, 1, true, true);
+		Need housing = new Need("Housing", 50, 1, 1, true, false);
+		Need water = new Need("Water", 50, 10, 1, true, true);
+		Need honey = new Need("Honey", 50, 5, 1, false, true);
+		Need space = new Need("Leisure", 50, 5, 1, false, false);
 		needs.Add(food);
 		needs.Add(housing);
 		needs.Add(water);
@@ -115,9 +115,12 @@ public class AgentDirector : MonoBehaviour
 
 		for (int i = 0; i < needs.Count; i++)
 		{
-			if(needs[i].isNecessary) {
+			if (needs[i].isNecessary)
+			{
 				satNeeds += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
-			} else {
+			}
+			else
+			{
 				satWants += "\n" + needs[i].needName + ": " + AverageSatisfactionOfOneNeed(i) + "%";
 			}
 		}
@@ -125,7 +128,19 @@ public class AgentDirector : MonoBehaviour
 		satisfactions += "\n\n" + "Overall Approval Rating: " + AverageWeightedSatisfaction() + "%";
 		return satisfactions;
 	}
-	static int AverageSatisfactionOfOneNeed(int needIndex)
+	public static List<Need> SatisfactionHorizontalList()
+	{
+		List<Need> satisfactionHorizontalList = new List<Need>();
+		foreach (Need n in needs)
+		{
+			Need temp = (Need)n.ShallowCopy();
+			temp.value = AverageSatisfactionOfOneNeed(needs.IndexOf(n));
+			satisfactionHorizontalList.Add(temp);
+		}
+
+		return satisfactionHorizontalList;
+	}
+	public static int AverageSatisfactionOfOneNeed(int needIndex)
 	{
 		int averageSatisfaction = 0;
 		foreach (Agent a in agents)

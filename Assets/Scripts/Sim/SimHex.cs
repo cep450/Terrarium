@@ -178,11 +178,11 @@ public class SimHex
 
 		foreach (ResRequired rr in type.resourcesRequired)
 		{
-
+			/*
 			if (rr.id == Resource.nullResId)
 			{
 				continue;
-			}
+			}*/
 
 			int sum = 0;
 
@@ -250,7 +250,7 @@ public class SimHex
 					//TODO start i at a random neighbor index?
 					for (int i = 0; amount > 0; i++)
 					{
-						if (i == 0)
+						if (i == 0) 
 						{
 							this.ConsumeResource(rr.id, 1);
 						}
@@ -410,6 +410,8 @@ public class SimHex
 	{
 
 		//todo it could also leave behind resources on death?
+
+		visualHex.Die();
 
 		ChangeType(HexTypes.TypeByName(type.deathHexName));
 	}

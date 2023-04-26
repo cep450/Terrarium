@@ -1117,6 +1117,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
+--- !u!1 &6583206529896956848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1397480835546579345, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
+  m_PrefabInstance: {fileID: 5204162393577472545}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2208456312773509768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6583206529896956848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa4b353f0543fb4cb17cba0aa4a861a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  billboardedSprites: []
+  billboardAllChildren: 1
 --- !u!4 &7095820482021642277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3044870119742673412, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}

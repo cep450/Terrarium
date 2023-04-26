@@ -10,12 +10,13 @@ public class ResourceChangeIcon : MonoBehaviour
 
     static float scaleMult = 0.5f;
 
-    public void Fill(Sprite sprite, bool produces, bool consumes, int amount = 1) {
+    public void Fill(ResourceInfo res, bool produces, bool consumes, int amount = 1) {
 
         Empty();
 
         renderer.enabled = true;
-        renderer.sprite = sprite;
+        renderer.sprite = res.icon;
+        renderer.color = res.color;
 
         if(amount < 1) amount = 1;
         Vector3 amountScale = Vector3.one * (((amount - 1) * scaleMult) + 1);
