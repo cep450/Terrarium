@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
+  - component: {fileID: 4939721466049498803}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -73,17 +74,17 @@ MonoBehaviour:
   - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     ranjit: 1
   - type: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
-    ranjit: 2
+    ranjit: 1
   - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
-    ranjit: 3
+    ranjit: 1
   - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
-    ranjit: 10
+    ranjit: 5
   - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
-    ranjit: 3
+    ranjit: 1
   - type: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: 63aa6c4dfeda6c14a934f3f2def62707, type: 2}
-    ranjit: 2
+    ranjit: 1
   _resourceInfo:
   - name: Water
     displayName: Clean Water
@@ -110,11 +111,11 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: ebab7f36fd78a2f41b89fe47c4ae42ad, type: 3}
     color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   - name: Nutrient B
-    displayName: Nutrient B
+    displayName: Phosphorus
     initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 21300000, guid: 19ad497dd4244754e94c3febdc1d1263, type: 3}
-    color: {r: 1, g: 0.9536129, b: 0.8343815, a: 0}
+    color: {r: 0.88604903, g: 1, b: 0, a: 1}
   - name: Nectar
     displayName: Nectar
     initialGlobalAmount: 100
@@ -126,7 +127,7 @@ MonoBehaviour:
     initialGlobalAmount: 100
     globalCap: 1000
     icon: {fileID: 21300000, guid: 883fc2fec888a1e49a2fb9d55d5e9bdf, type: 3}
-    color: {r: 0.9811321, g: 0.8031328, b: 0.4669119, a: 1}
+    color: {r: 0.8018868, g: 0.56387705, b: 0.34420612, a: 1}
   - name: Leisure
     displayName: Recreation
     initialGlobalAmount: 0
@@ -214,3 +215,20 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
       desc: 
       numTicks: 1
+--- !u!114 &4939721466049498803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922028117923064736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52480d8b84f7e48f8bb67c2e02c9200e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid:
+    orientation: 0
+    scale: 1
+  size: 5
+  shape: 2

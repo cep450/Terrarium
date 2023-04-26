@@ -63,17 +63,17 @@ public class FailureState : MonoBehaviour
 			}
 
 		}
-		else if (approvalCounter > 0)
+		else if (approvalCounter > AgentDirector.AverageWeightedSatisfaction())
 		{
 			approvalCounter--;
 		}
-		else if (approvalCounter < 0)
+		else if (approvalCounter < AgentDirector.AverageWeightedSatisfaction())
 		{
 			approvalCounter++;
 		}
 		else
 		{
-			approvalCounter = 0;
+			approvalCounter = AgentDirector.AverageWeightedSatisfaction();
 		}
 		mySlider.GetComponent<Slider>().value = approvalCounter;
 	}
