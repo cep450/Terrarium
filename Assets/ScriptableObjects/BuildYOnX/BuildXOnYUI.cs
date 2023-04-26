@@ -18,12 +18,14 @@ public struct OnInfo {
 
 public class BuildXOnYUI : MonoBehaviour {
 
-    [SerializeField] GameObject buttonQueue;
-    [SerializeField] GameObject buttonBuildClear, buttonOnClear;
+    [SerializeField] GameObject buildListParent, onListParent;
+
+    [SerializeField] GameObject buttonQueueWorkOrder;
+    //[SerializeField] GameObject buttonBuildClear, buttonOnClear;
     public TextMeshProUGUI desc;
 
     [SerializeField] GameObject listEntryPrefab;
-    public BuildUIEntry [] listBuildUIs, listOnUIs; //list build parallel with Sim.buildInfos
+    public List<BuildUIEntry> listBuildUIs, listOnUIs; //lists parallel with Sim hextypes 
 
     //-1 if none 
     int buildIndex = -1;    //parallel with Sim.buildInfos
@@ -49,7 +51,21 @@ public class BuildXOnYUI : MonoBehaviour {
         //Instantiate gameobjects from list entry prefab
         //fill that prefab with its data 
 
+        foreach(SimHexType type in Sim.hexTypes) {
+            BuildUIEntry build = Instantiate(listEntryPrefab, buildListParent.transform).GetComponent<BuildUIEntry>();
+            BuildUIEntry on = Instantiate(listEntryPrefab, onListParent.transform).GetComponent<BuildUIEntry>();
+            build.Construct(type, false);
+            on.Construct(type, true);
+            listBuildUIs.Add(build);
+            listOnUIs.Add(on);
+        }
+
     }
+
+
+    //TODO!!!!!!! have to update the ones shown with the correct number of ticks. 
+
+
 
     //List all build possibilities. 
     public void ListBuilds() {
