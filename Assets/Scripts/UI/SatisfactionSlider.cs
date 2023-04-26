@@ -37,7 +37,7 @@ public class SatisfactionSlider : MonoBehaviour
 		if (AgentDirector.SatisfactionHorizontalList().Count > 0)
 		{
 			satisfactions = AgentDirector.SatisfactionHorizontalList();
-			Debug.Log("there are " + satisfactions.Count + "satisfactions and " + satisfactionItems.Count + " satisfactionItems.");
+			
 			if (satisfactionItems.Count < satisfactions.Count)
 			{
 				foreach (Need n in satisfactions)

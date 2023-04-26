@@ -72,14 +72,7 @@ public class Sim : MonoBehaviour
 
 		//fill in information provided in inspector
 
-		/*if (_hexMap != null)
-		{
-			hexMap = _hexMap;
-		}
-		else
-		{*/
-			hexMap = GetComponent<HexMap>();
-		//}
+		hexMap = GetComponent<HexMap>();
 
 		resourceInfo = _resourceInfo;
 		visualHexPrefab = _visualHexPrefab;
@@ -114,6 +107,8 @@ public class Sim : MonoBehaviour
 		}
 
 		
+
+		FindObjectOfType<BuildXOnYUI>().Init();
 
 		Clock.Tick += HandleTick;
 
