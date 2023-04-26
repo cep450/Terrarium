@@ -76,10 +76,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d43c2893a01dba5489cf2e468c328637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 21300000, guid: cb7a8bf5eafc9cf4fa1cc98d24dfb28d, type: 3}
-  - {fileID: 21300000, guid: 49a5b410fd84900429ab794f5579832a, type: 3}
-  - {fileID: 21300000, guid: bc2c231a32eb1f843b78640df1d6a020, type: 3}
   myRenderer: {fileID: 7943895312737996916}
   animator: {fileID: 8132503407671753011}
 --- !u!222 &5205123562204661982
@@ -156,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   billboardedSprites:
   - {fileID: 5073294548475537323}
-  billboardAllChildren: 0
+  billboardAllChildren: 1
   moves: 1
 --- !u!1001 &4536294092153128351
 PrefabInstance:
@@ -168,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 3237387129761032627, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
       propertyPath: m_Name
       value: GnomeSprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 3237387129761032627, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8688518945280549428, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
       propertyPath: m_RootOrder
