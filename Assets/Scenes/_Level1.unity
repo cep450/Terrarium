@@ -308,6 +308,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _resourceInfo.Array.data[4].color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: resourceInfo.Array.data[0].globalCap
       value: 1000
       objectReference: {fileID: 0}
@@ -447,6 +451,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 926093419, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1185684601, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -454,6 +462,10 @@ PrefabInstance:
     - target: {fileID: 1348310683, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910834690, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 150430250805626891, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_Elasticity
@@ -507,6 +519,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1434747255269566599, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434747255269566599, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_fontColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1434747255269566599, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     - target: {fileID: 2752565275943795895, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_Size
       value: 1
@@ -541,6 +565,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4201534579364208800, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837287344532655450, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6207209992636193055, guid: 5be863e915b3d5f4cadcda62ee439bef, type: 3}
