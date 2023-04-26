@@ -42,30 +42,6 @@ MonoBehaviour:
     falloff: 0
     changes: []
     cap: 0
-  - name: Food
-    id: 1
-    amount: 1
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
-  - name: Nutrient B
-    id: 4
-    amount: 5
-    radius: 0
-    limit: 0
-    tickMod: 0
-    local: 0
-    isHex: 0
-    tryAll: 0
-    falloff: 0
-    changes: []
-    cap: 0
   resourcesStarting: []
   visualHexPrefab: {fileID: 6583206529896956848, guid: 5950b66c6c1d09f4ab849ae5357105bd, type: 3}
   cardSprite: {fileID: 0}
