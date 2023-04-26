@@ -5,7 +5,7 @@ using UnityEngine;
 public class VisualGnome : MonoBehaviour
 {
 
-	[SerializeField] Sprite[] sprites;
+	static GameObject [] variants = {null, null, null};
 	[SerializeField] public SpriteRenderer myRenderer;
 	[SerializeField] Animator animator;
 	int animationState;
@@ -14,9 +14,16 @@ public class VisualGnome : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+
+		if(variants[0] == null) {
+			variants[0] = Resources.Load("babyGnomeSprite") as GameObject;
+			variants[1] = Resources.Load("ladyGnomeSprite") as GameObject;
+			variants[2] = Resources.Load("lordGnomeSprite") as GameObject;
+		}
+
 		//become a random gnome
-		int rand = Random.Range(0, sprites.Length);
-		myRenderer.sprite = sprites[rand];
+		int rand = Random.Range(0, 3);
+		animator = Instantiate(variants[rand], this.transform).GetComponent<Animator>();
 	}
 
 	public void AnimIdle() {

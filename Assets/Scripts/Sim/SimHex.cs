@@ -411,6 +411,8 @@ public class SimHex
 
 		//todo it could also leave behind resources on death?
 
+		visualHex.Die();
+
 		ChangeType(HexTypes.TypeByName(type.deathHexName));
 	}
 }
