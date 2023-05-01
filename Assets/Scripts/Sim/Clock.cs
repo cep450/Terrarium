@@ -23,8 +23,11 @@ public class Clock : MonoBehaviour
 
     public static event EventHandler<TickArgs> Tick;
 
-    public void Init() {
+    void Awake() {
         tickBaseSeconds = _tickBaseSeconds;
+    }
+
+    public static void Init() {  
         timeElapsed = 0f;
         paused = true;
         tickCounter = 0;
