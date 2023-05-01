@@ -84,6 +84,8 @@ public class FailureState : MonoBehaviour
 	{
 		Debug.Log("You Failed");
 		myRestart.SetActive(true);
+		Clock.Pause();
+		Clock.canPlay = false;
 	}
 	static void Win()
 	{

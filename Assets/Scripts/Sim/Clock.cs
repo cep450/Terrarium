@@ -20,6 +20,7 @@ public class Clock : MonoBehaviour
     public static bool paused {get; private set;}
     static float speedMultMax = 3f;
     static int tickCounter = 0;
+    public static bool canPlay = false; //can you unpause and run the game? set to false when game over 
 
     public static event EventHandler<TickArgs> Tick;
 
@@ -32,6 +33,7 @@ public class Clock : MonoBehaviour
         paused = true;
         tickCounter = 0;
         tickSpeedLevel = 1f;
+        canPlay = true;
     }
 
     // Update is called once per frame
@@ -92,10 +94,14 @@ public class Clock : MonoBehaviour
 
     public static void Pause() {
         paused = true;
+        //TODO display ui
     }
 
     public static void UnPause() {
-        paused = false;
+        if(canPlay) {
+            paused = false;
+        }
+        //TODO undisplay ui
     }
 
 }
