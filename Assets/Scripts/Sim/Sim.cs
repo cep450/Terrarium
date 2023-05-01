@@ -57,10 +57,6 @@ public class Sim : MonoBehaviour
 	[SerializeField] public BuildInfo [] _buildRelations;
 	public static BuildInfo [] buildInfos;
 
-	void Start()
-	{
-		
-	}
 	void OnEnable()
 	{
 		SceneManager.sceneLoaded += OnSceneLoaded;
@@ -74,6 +70,8 @@ public class Sim : MonoBehaviour
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		Debug.Log("called start on sim");
+
+		Clock.Init();
 
 		Init();
 		SimGrid.Init(); //needs to happen after HexGrid initializes
