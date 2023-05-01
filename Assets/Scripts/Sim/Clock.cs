@@ -87,11 +87,11 @@ public class Clock : MonoBehaviour
         }
     }
 
-    static void Pause() {
+    public static void Pause() {
         paused = true;
     }
 
-    static void UnPause() {
+    public static void UnPause() {
         paused = false;
     }
 
