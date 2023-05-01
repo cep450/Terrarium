@@ -148,6 +148,7 @@ public class Sim : MonoBehaviour
 		{
 			//GlobalProcesses.Tick(tickArgs.tickNum / 4);
 			Tracker.CalculateEndOfTick();
+			UIController.UITicking();
 		}
 	}
 }

@@ -12,12 +12,8 @@ public class ResourceListUI : MonoBehaviour
 	List<ResourceStockMarket> resourceItems;
 
 	// Update is called once per frame
-	void Update()
+	public void Tick()
 	{
-		ResourceListText = ResourceStockpilesAndDeltas();
-
-		SatisfactionText = AgentDirector.SatisfactionsList();
-		gameObject.GetComponent<TextMeshProUGUI>().text = SatisfactionText;
 		if (resourceItems.Count > 0)
 		{
 
