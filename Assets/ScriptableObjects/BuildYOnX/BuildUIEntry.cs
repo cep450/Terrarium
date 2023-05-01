@@ -21,6 +21,7 @@ public class BuildUIEntry : MonoBehaviour {
     public SimHexType type;
     public OnInfo onInfo;
     bool isOn = false;
+    public int index; //its index/id
 
     void Start() {
         maximizeHeight = new Vector2(rect.sizeDelta.x, 300);
@@ -30,18 +31,11 @@ public class BuildUIEntry : MonoBehaviour {
 
 
     //Populates itself based on the data in its type.
-    //For Build 
-    public void Construct(SimHexType t, bool _isOn) {
-        
-        Construct(t);
-
-        isOn = _isOn;
-
-    }
-    //For On  
-    public void Construct(SimHexType t) {
+    public void Construct(SimHexType t, int i, bool _isOn = false) {
 
         type = t;
+        index = i;
+        isOn = _isOn;
 
         tileInfo.SetType(type);
 
@@ -73,8 +67,10 @@ public class BuildUIEntry : MonoBehaviour {
         minimized = false;
 
         if(isOn) {
+            BuildXOnYUI.instance.SelectOn(this.index);
             ToggleOthersMinimized(true, BuildXOnYUI.instance.listOnUIs);
         } else {
+            BuildXOnYUI.instance.SelectBuild(this.index);
             ToggleOthersMinimized(true, BuildXOnYUI.instance.listBuildUIs);
         }
     }
@@ -94,8 +90,10 @@ public class BuildUIEntry : MonoBehaviour {
     public void UnMaximize() {
 
         if(isOn) {
+            BuildXOnYUI.instance.ClearOn();
             ToggleOthersMinimized(false, BuildXOnYUI.instance.listOnUIs);
         } else {
+            BuildXOnYUI.instance.ClearBuild();
             ToggleOthersMinimized(false, BuildXOnYUI.instance.listBuildUIs);
         }
 

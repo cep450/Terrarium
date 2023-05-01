@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class FailureState : MonoBehaviour
 {
+	[SerializeField] int rateOfChange;
+	static int myRateOfChange;
 	public static int approvalCounter;
 	[SerializeField] int failureThreshold;
 	static int myFailureThreshold;
@@ -30,6 +32,7 @@ public class FailureState : MonoBehaviour
 		myVictoryThreshold = victoryThreshold;
 		myVictoryCap = victoryCap;
 		mySlider = failureSlider;
+		myRateOfChange = rateOfChange;
 		mySlider.GetComponent<Slider>().maxValue = myVictoryCap;
 		mySlider.GetComponent<Slider>().minValue = myFailureCap;
 		mySlider.GetComponent<Slider>().value = approvalCounter;
@@ -48,7 +51,7 @@ public class FailureState : MonoBehaviour
 		if (AgentDirector.AverageWeightedSatisfaction() < myFailureThreshold)
 		{
 
-			approvalCounter--;
+			approvalCounter -= myRateOfChange;
 			if (approvalCounter <= myFailureCap)
 			{
 				Fail();
@@ -56,24 +59,24 @@ public class FailureState : MonoBehaviour
 		}
 		else if (AgentDirector.AverageWeightedSatisfaction() > myVictoryThreshold)
 		{
-			approvalCounter++;
+			approvalCounter += myRateOfChange;
 			if (approvalCounter >= myVictoryCap)
 			{
 				Win();
 			}
 
 		}
-		else if (approvalCounter > 0)
+		else if (approvalCounter > AgentDirector.AverageWeightedSatisfaction())
 		{
-			approvalCounter--;
+			approvalCounter -= myRateOfChange;
 		}
-		else if (approvalCounter < 0)
+		else if (approvalCounter < AgentDirector.AverageWeightedSatisfaction())
 		{
-			approvalCounter++;
+			approvalCounter += myRateOfChange;
 		}
 		else
 		{
-			approvalCounter = 0;
+			approvalCounter = AgentDirector.AverageWeightedSatisfaction();
 		}
 		mySlider.GetComponent<Slider>().value = approvalCounter;
 	}
