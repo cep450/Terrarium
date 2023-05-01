@@ -23,10 +23,7 @@ public class Clock : MonoBehaviour
 
     public static event EventHandler<TickArgs> Tick;
 
-
-    // Start is called before the first frame update
-    void Awake()
-    {
+    public void Init() {
         tickBaseSeconds = _tickBaseSeconds;
         timeElapsed = 0f;
         paused = true;

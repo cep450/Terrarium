@@ -24,7 +24,7 @@ public class ResourceListUI : MonoBehaviour
 			//Resource list is parallel with Sim list of resources and ids.
 			for (int i = 0; i < resourceItems.Count; i++)
 			{
-				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + " Stockpile:  " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
+				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + "\n " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
 
 
 				if (Tracker.resourcesNet[i] == 0)
