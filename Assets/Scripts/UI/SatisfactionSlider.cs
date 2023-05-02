@@ -16,10 +16,9 @@ public class SatisfactionSlider : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	public void Tick()
 	{
-		//if (satisfactionItems!=null && satisfactionItems.Count == satisfactions.Count)
-		//{
+		
 		satisfactions = AgentDirector.SatisfactionHorizontalList();
 		foreach (GameObject g in satisfactionItems)
 		{
@@ -27,9 +26,6 @@ public class SatisfactionSlider : MonoBehaviour
 			g.GetComponentInChildren<Slider>().value = satisfactions[satisfactionItems.IndexOf(g)].value;
 
 		}
-		//}	
-
-		//PopulateList();
 	}
 	public void PopulateList()
 	{

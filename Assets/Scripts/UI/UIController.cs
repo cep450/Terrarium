@@ -25,6 +25,13 @@ public class UIController : MonoBehaviour
 	{
 		resourceListUI.PopulateList();
 		satisfactionUI.PopulateList();
-		
+		resourceListUI.Tick();
+		satisfactionUI.Tick();
+
+	}
+	public static void UITicking()
+	{
+		resourceListUI.Tick();
+		satisfactionUI.Tick();
 	}
 }
