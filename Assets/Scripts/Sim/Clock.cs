@@ -25,6 +25,7 @@ public class Clock : MonoBehaviour
     public static event EventHandler<TickArgs> Tick;
 
     static GameObject pauseObject;
+    static SpeedUI speedUI;
 
     void Awake() {
         tickBaseSeconds = _tickBaseSeconds;
@@ -32,6 +33,7 @@ public class Clock : MonoBehaviour
 
     public static void Init() { 
         pauseObject = GameObject.FindGameObjectWithTag("Pause"); 
+        speedUI = FindObjectOfType<SpeedUI>();
         Pause();
         timeElapsed = 0f;
         tickCounter = 0;
@@ -98,12 +100,14 @@ public class Clock : MonoBehaviour
     public static void Pause() {
         paused = true;
         pauseObject.SetActive(true);
+        speedUI.UIPause();
     }
 
     public static void UnPause() {
         if(canPlay) {
             paused = false;
             pauseObject.SetActive(false);
+            speedUI.UIPlay();
         }
     }
 
