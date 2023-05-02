@@ -24,13 +24,16 @@ public class Clock : MonoBehaviour
 
     public static event EventHandler<TickArgs> Tick;
 
+    static GameObject pauseObject;
+
     void Awake() {
         tickBaseSeconds = _tickBaseSeconds;
     }
 
-    public static void Init() {  
+    public static void Init() { 
+        pauseObject = GameObject.FindGameObjectWithTag("Pause"); 
+        Pause();
         timeElapsed = 0f;
-        paused = true;
         tickCounter = 0;
         tickSpeedLevel = 1f;
         canPlay = true;
@@ -94,14 +97,14 @@ public class Clock : MonoBehaviour
 
     public static void Pause() {
         paused = true;
-        //TODO display ui
+        pauseObject.SetActive(true);
     }
 
     public static void UnPause() {
         if(canPlay) {
             paused = false;
+            pauseObject.SetActive(false);
         }
-        //TODO undisplay ui
     }
 
 }
