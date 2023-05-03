@@ -39,6 +39,9 @@ public class BuildXOnYUI : MonoBehaviour {
 
         instance = this; 
         
+        buildIndex = -1;
+        onIndex = -1;
+
         //use Sim.BuildInfos[]
 
         //TODO. how are the indexes determined 
@@ -135,6 +138,10 @@ public class BuildXOnYUI : MonoBehaviour {
 
         if(onIndex == -1 || buildIndex == -1) {
             Debug.Log("type not selected");
+
+            //TODO indicate in ui or something 
+
+            return;
         }
 
         SimHexType typeOn = listOnUIs[onIndex].type;
