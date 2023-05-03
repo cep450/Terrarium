@@ -17,8 +17,12 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Escape))
 		{
-            Application.Quit();
+            CloseGame();
 		}
+    }
+
+    public static void CloseGame() {
+        Application.Quit();
     }
 
     public void _GoToLevelSelect() { GoToLevelSelect(); }
@@ -60,4 +64,6 @@ public class GameManager : MonoBehaviour
         }
         //it will never get here 
     }
+
+
 }
