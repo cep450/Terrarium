@@ -15,6 +15,10 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.R)) {
             ReloadLevel();
         }
+        if (Input.GetKey(KeyCode.Escape))
+		{
+            Application.Quit();
+		}
     }
 
     public void _GoToLevelSelect() { GoToLevelSelect(); }
