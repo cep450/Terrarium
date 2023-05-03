@@ -122,6 +122,7 @@ public class Sim : MonoBehaviour
 
 		FindObjectOfType<BuildXOnYUI>().Init();
 
+		Clock.Tick -= HandleTick;
 		Clock.Tick += HandleTick;
 
 	}
