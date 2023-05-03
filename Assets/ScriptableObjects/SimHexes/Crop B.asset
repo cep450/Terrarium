@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crop B
   displayName: Rice Paddy
-  id: 3
+  id: 2
   passable: 1
   beauty: 0
   ugliness: 0
@@ -29,19 +29,10 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: Nutrient A
-    id: 3
-    amount: 1
-    radius: 0
-    tickMod: 0
-    local: 0
-    isConsumed: 1
-    diesIfNotNet: 1
-    falloff: 0
   resourcesProduced:
   - name: Food
     id: 1
-    amount: 3
+    amount: 1
     radius: 0
     limit: 0
     tickMod: 0

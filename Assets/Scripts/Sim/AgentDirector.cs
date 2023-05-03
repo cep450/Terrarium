@@ -220,7 +220,7 @@ public class AgentDirector : MonoBehaviour
 		}
 		foreach (Task t in list)
 		{
-			text += "\n" + "Converting " + t.destinationType.name + " to " + t.desiredType.name;
+			text += "\n" + "Converting " + t.destinationType.displayName + " to " + t.desiredType.displayName;
 		}
 		return text;
 	}

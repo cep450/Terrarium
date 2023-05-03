@@ -168,6 +168,7 @@ public class Agent : MonoBehaviour
 						simHex = pathQueue.Dequeue();
 						cube = simHex.cube;
 					}
+			
 				}
 				else // upon arrival
 				{
@@ -186,6 +187,7 @@ public class Agent : MonoBehaviour
 						simHex.ChangeType(currentTask.desiredType);
 						currentTask.isComplete = true; // doesnt do anything
 						lockedTarget = cube;
+						taskList.Remove(currentTask);
 						isTaskInProgress = false;
 					}
 				}
@@ -206,6 +208,10 @@ public class Agent : MonoBehaviour
 
 					visualGnome.AnimWalking();
 				}
+				else
+				{
+					taskList.Remove(currentTask);
+				}
 			}
 			else
 			{
@@ -220,7 +226,7 @@ public class Agent : MonoBehaviour
 		if (taskList.Count > 0)
 		{
 			Task task = taskList[0];
-			taskList.Remove(task);
+			
 			//Debug.Log("current task is " + task.destinationType.name);
 			return task;
 		}
