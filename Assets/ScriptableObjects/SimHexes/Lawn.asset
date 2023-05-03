@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lawn
   displayName: Manicured Lawn
-  id: 7
+  id: 4
   passable: 1
   beauty: 0
   ugliness: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     tickMod: 0
     local: 0
     isConsumed: 1
-    diesIfNotNet: 1
+    diesIfNotNet: 0
     falloff: 0
   - name: Nutrient B
     id: 4

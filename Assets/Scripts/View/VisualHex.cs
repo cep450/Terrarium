@@ -64,11 +64,11 @@ public class VisualHex : MonoBehaviour {
     void OnMouseOver() {
         CustomCursor.SetClickable();
         if(simHex == null) {
-            Debug.LogError("moused over visualHex with null simHex");
+            Debug.Log("moused over visualHex with null simHex");
             return;
         }
         if(simHex.type == null) {
-            Debug.LogError("moused over visual hex with simhex with null type");
+            Debug.Log("moused over visual hex with simhex with null type");
             return;
         }
         CustomCursor.tileHover.SetType(simHex.type);

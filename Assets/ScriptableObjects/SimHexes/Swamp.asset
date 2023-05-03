@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Swamp
   displayName: Wetland
-  id: 5
+  id: 6
   passable: 1
   beauty: 0
   ugliness: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Water
     id: 0
-    amount: 5
+    amount: 10
     radius: 0
     limit: 0
     tickMod: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     cap: 0
   - name: Nutrient B
     id: 4
-    amount: 3
+    amount: 5
     radius: 0
     limit: 0
     tickMod: 0
