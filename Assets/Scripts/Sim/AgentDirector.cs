@@ -14,7 +14,7 @@ public class AgentDirector : MonoBehaviour
     */
 
 	static List<Agent> agents = new List<Agent>();
-	static List<Need> needs = new List<Need>();
+	public static List<Need> needs = new List<Need>();
 	public static int[] shallowResources = new int[0];
 	public static int lengthOfContent = 0;
 	public static int satisfactionThreshold;
@@ -147,14 +147,21 @@ public class AgentDirector : MonoBehaviour
 		{
 			if (a.needs != null && a.needs.ElementAtOrDefault(needIndex) != null)
 			{
-				//Debug.Log("Agent " + agents.IndexOf(a) + "has satisfaction for " + a.needs.ElementAtOrDefault(needIndex).needName + " at " + a.needs[needIndex].value);
 				averageSatisfaction += a.needs[needIndex].value;
-
 			}
-
 		}
 		averageSatisfaction = averageSatisfaction / agents.Count;
 		return averageSatisfaction;
+	}
+	public static float AverageSatisfactionNeedFloat(int needIndex) {
+		float avg = 0f;
+		for(int i = 0; i < agents.Count; i++) {
+			if (agents[i].needs != null && agents[i].needs.ElementAtOrDefault(needIndex) != null)
+			{
+				avg += agents[i].needs[needIndex].value;
+			}
+		}
+		return avg / ((float)agents.Count);
 	}
 	public static void AddTask(SimHexType destinationType, SimHexType desiredType, int duration)
 	{

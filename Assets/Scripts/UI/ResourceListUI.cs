@@ -40,6 +40,12 @@ public class ResourceListUI : MonoBehaviour
 				{
 					resourceItems[i].slider.value = 1;
 				}
+
+
+				//update satisfaction bar if applicable 
+				if(resourceItems[i].needIndex > -1) {
+					resourceItems[i].satisfactionSlider.value = AgentDirector.AverageSatisfactionNeedFloat(resourceItems[i].needIndex);
+				}
 			}
 		}
 	}
