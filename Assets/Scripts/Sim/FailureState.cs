@@ -23,6 +23,10 @@ public class FailureState : MonoBehaviour
 	static GameObject myRestart;
 	[SerializeField] GameObject victory;
 	static GameObject myVictory;
+	[SerializeField] GameObject arrowRight;
+	static GameObject myArrowRight;
+	[SerializeField] GameObject arrowLeft;
+	static GameObject myArrowLeft;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -38,6 +42,8 @@ public class FailureState : MonoBehaviour
 		mySlider.GetComponent<Slider>().value = approvalCounter;
 		myRestart = restart;
 		myVictory = victory;
+		myArrowLeft = arrowLeft;
+		myArrowRight = arrowRight;
 		mySlider.SetActive(true);
 	}
 
@@ -52,6 +58,8 @@ public class FailureState : MonoBehaviour
 		{
 
 			approvalCounter -= myRateOfChange;
+			myArrowLeft.SetActive(true);
+			myArrowRight.SetActive(false);
 			if (approvalCounter <= myFailureCap)
 			{
 				Fail();
@@ -60,6 +68,8 @@ public class FailureState : MonoBehaviour
 		else if (AgentDirector.AverageWeightedSatisfaction() > myVictoryThreshold)
 		{
 			approvalCounter += myRateOfChange;
+			myArrowRight.SetActive(true);
+			myArrowLeft.SetActive(false);
 			if (approvalCounter >= myVictoryCap)
 			{
 				Win();
@@ -69,14 +79,21 @@ public class FailureState : MonoBehaviour
 		else if (approvalCounter > AgentDirector.AverageWeightedSatisfaction())
 		{
 			approvalCounter -= myRateOfChange;
+			myArrowLeft.SetActive(true);
+			myArrowRight.SetActive(false);
+
 		}
 		else if (approvalCounter < AgentDirector.AverageWeightedSatisfaction())
 		{
 			approvalCounter += myRateOfChange;
+			myArrowRight.SetActive(true);
+			myArrowLeft.SetActive(false);
 		}
 		else
 		{
 			approvalCounter = AgentDirector.AverageWeightedSatisfaction();
+			myArrowLeft.SetActive(false);
+			myArrowRight.SetActive(false);
 		}
 		mySlider.GetComponent<Slider>().value = approvalCounter;
 	}
