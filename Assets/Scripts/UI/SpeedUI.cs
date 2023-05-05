@@ -11,11 +11,11 @@ public class SpeedUI : MonoBehaviour
     [SerializeField] Sprite play;
 
     public void UIPause() {
-        toggle.sprite = pause;
+        toggle.sprite = play;
     }   
 
     public void UIPlay() {
-        toggle.sprite = play;
+        toggle.sprite = pause;
     }
 
     public void TogglePause() {

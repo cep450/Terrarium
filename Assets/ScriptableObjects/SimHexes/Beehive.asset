@@ -32,7 +32,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Honey
     id: 6
-    amount: 1
+    amount: 3
     radius: 0
     limit: 0
     tickMod: 0
