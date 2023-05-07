@@ -45,7 +45,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 9092207902892516306, guid: 5deba8f01b680ce489a7a3d2e8e1db63, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.7924528, g: 0.6199024, b: 0.3098374, a: 1}
+  color: {r: 0.69803923, g: 0.43529415, b: 0.06666667, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 21300000, guid: 0706ecd6093a1d74886f181314fbcd95, type: 3}
   icon: {fileID: 0}

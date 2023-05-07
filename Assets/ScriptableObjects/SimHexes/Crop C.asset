@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crop C
   displayName: Pea Garden
-  id: 4
+  id: 3
   passable: 1
   beauty: 0
   ugliness: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 6583206529896956848, guid: 5950b66c6c1d09f4ab849ae5357105bd, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.57699543, g: 0.7264151, b: 0.1469582, a: 1}
+  color: {r: 0.46274513, g: 0.6, b: 0.058823533, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Wildflowers
   displayName: Wildflower Field
-  id: 8
+  id: 5
   passable: 1
   beauty: 0
   ugliness: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
     local: 0
   visualHexPrefab: {fileID: 9163193173315049998, guid: 13cdf6d0497043b45a2299804ffa42c7, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.9811321, g: 0.55021554, b: 0.74401385, a: 1}
+  color: {r: 0.8867924, g: 0.48057827, b: 0.6674368, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}
