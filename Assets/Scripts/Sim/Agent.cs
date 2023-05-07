@@ -144,6 +144,7 @@ public class Agent : MonoBehaviour
 	{
 		Task sampleTask0 = new Task(destinationType, desiredType, duration);
 		taskList.Add(sampleTask0);
+		WorkOrderUIController.AddWorkOrderUI(sampleTask0);
 	}
 
 	public Agent(SimHex simHex)

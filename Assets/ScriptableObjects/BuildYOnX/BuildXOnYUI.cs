@@ -148,7 +148,7 @@ public class BuildXOnYUI : MonoBehaviour {
         SimHexType typeBuild = listBuildUIs[buildIndex].type;
 
         //TODO get ticks from build info 
-        int numTicks = 1;
+        int numTicks = 3;
 
         //TODO check validity
         //TODO check if tile exists on board 
