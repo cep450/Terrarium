@@ -729,7 +729,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5157899645699803060}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -836,7 +836,7 @@ MonoBehaviour:
   satisfactionBackground: {fileID: 782103367666405742}
   needIndex: -1
   basic: {r: 0.6698113, g: 0.0028084044, b: 0.031808365, a: 1}
-  amenity: {r: 0.745283, g: 0.745283, b: 0.745283, a: 1}
+  amenity: {r: 0.8584906, g: 0.53003246, b: 0.53003246, a: 1}
 --- !u!222 &3480914572617011559
 CanvasRenderer:
   m_ObjectHideFlags: 0

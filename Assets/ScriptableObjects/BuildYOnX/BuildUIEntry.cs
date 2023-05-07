@@ -25,7 +25,7 @@ public class BuildUIEntry : MonoBehaviour {
 
     void Start() {
         maximizeHeight = new Vector2(rect.sizeDelta.x, 250);
-        normalizeHeight = new Vector2(rect.sizeDelta.x, 70);
+        normalizeHeight = new Vector2(rect.sizeDelta.x, rect.sizeDelta.y);
         minimizeHeight = new Vector2(rect.sizeDelta.x, 0);
     }
 
