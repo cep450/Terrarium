@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class SatisfactionSlider : MonoBehaviour
 {
+	/*
 	[SerializeField] GameObject satisfactionItem;
 	List<GameObject> satisfactionItems;
 	List<Need> satisfactions;
@@ -53,4 +54,5 @@ public class SatisfactionSlider : MonoBehaviour
 		}
 
 	}
+	*/
 }
