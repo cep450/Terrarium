@@ -51,7 +51,7 @@ public class VisualHex : MonoBehaviour {
         }
     }
 
-    Color dead = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    Color dead = new Color(0.5f, 0.5f, 0.5f, 0.15f);
     public void Die() {
         SpriteRenderer [] childSprites = visualHex.GetComponentsInChildren<SpriteRenderer>();
         foreach(SpriteRenderer s in childSprites) {
