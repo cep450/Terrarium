@@ -136,23 +136,23 @@ public class BuildXOnYUI : MonoBehaviour {
 
     public void QueueWorkOrder() {
 
-        if(onIndex == -1 || buildIndex == -1) {
-            Debug.Log("type not selected");
+        if(onIndex >= 0 && buildIndex >= 0) {
+            //Debug.Log("type not selected");
 
             //TODO indicate in ui or something 
+            SimHexType typeOn = listOnUIs[onIndex].type;
+            SimHexType typeBuild = listBuildUIs[buildIndex].type;
 
-            return;
+            //TODO get ticks from build info 
+            int numTicks = 3;
+
+            //TODO check validity
+            //TODO check if tile exists on board 
+
+            AgentDirector.AddTask(typeOn, typeBuild, numTicks);
+            //return;
         }
 
-        SimHexType typeOn = listOnUIs[onIndex].type;
-        SimHexType typeBuild = listBuildUIs[buildIndex].type;
-
-        //TODO get ticks from build info 
-        int numTicks = 3;
-
-        //TODO check validity
-        //TODO check if tile exists on board 
-
-        AgentDirector.AddTask(typeOn, typeBuild, numTicks);
+      
     }
 }

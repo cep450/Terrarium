@@ -191,30 +191,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sim
       objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[1].ranjit
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[2].ranjit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[3].ranjit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[4].ranjit
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[6].ranjit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
-      propertyPath: hexTypeInfo.Array.data[9].ranjit
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
       value: 5
