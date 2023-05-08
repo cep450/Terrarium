@@ -18,7 +18,7 @@ public class FailureState : MonoBehaviour
 	[SerializeField] int victoryCap;
 	static int myVictoryCap;
 	[SerializeField] GameObject failureSlider;
-	static GameObject mySlider;
+	static Slider mySlider;
 	[SerializeField] GameObject restart;
 	static GameObject myRestart;
 	[SerializeField] GameObject victory;
@@ -27,15 +27,23 @@ public class FailureState : MonoBehaviour
 	static GameObject myArrowRight;
 	[SerializeField] GameObject arrowLeft;
 	static GameObject myArrowLeft;
+
+	[SerializeField] Sprite gnomeSad, gnomeNeutral, gnomeHappy;
+	[SerializeField] float sadNeutralPercent, neutralHappyPercent;
+	[SerializeField] Image face;
+
+	static FailureState instance;
+
 	// Start is called before the first frame update
 	void Start()
 	{
+		instance = this;
 		approvalCounter = 0;
 		myFailureThreshold = failureThreshold;
 		myFailureCap = failureCap;
 		myVictoryThreshold = victoryThreshold;
 		myVictoryCap = victoryCap;
-		mySlider = failureSlider;
+		mySlider = failureSlider.GetComponent<Slider>();
 		myRateOfChange = rateOfChange;
 		mySlider.GetComponent<Slider>().maxValue = myVictoryCap;
 		mySlider.GetComponent<Slider>().minValue = myFailureCap;
@@ -44,14 +52,9 @@ public class FailureState : MonoBehaviour
 		myVictory = victory;
 		myArrowLeft = arrowLeft;
 		myArrowRight = arrowRight;
-		mySlider.SetActive(true);
+		mySlider.gameObject.SetActive(true);
 	}
 
-	// Update is called once per frame
-	void Update()
-	{
-
-	}
 	public static void UpdateCounter()
 	{
 		if (AgentDirector.AverageWeightedSatisfaction() < myFailureThreshold)
@@ -95,23 +98,35 @@ public class FailureState : MonoBehaviour
 			myArrowLeft.SetActive(false);
 			myArrowRight.SetActive(false);
 		}
-		mySlider.GetComponent<Slider>().value = approvalCounter;
+		mySlider.value = approvalCounter;
+
+		instance.SetFace();
+
 	}
+
+	void SetFace() {
+		float percent = (mySlider.value - mySlider.minValue) / (mySlider.maxValue - mySlider.minValue);
+		if(percent < sadNeutralPercent) {
+			face.sprite = gnomeSad;
+		} else if(percent < neutralHappyPercent) {
+			face.sprite = gnomeNeutral;
+		} else {
+			face.sprite = gnomeHappy;
+		}
+	}
+
 	static void Fail()
 	{
-		Debug.Log("You Failed");
 		myRestart.SetActive(true);
 		Clock.Pause();
 		Clock.canPlay = false;
 	}
 	static void Win()
 	{
-		Debug.Log("You Win");
 		myVictory.SetActive(true);
 	}
 	static void Disappear()
 	{
-
-		mySlider.SetActive(false);
+		mySlider.gameObject.SetActive(false);
 	}
 }

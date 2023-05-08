@@ -663,7 +663,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 73, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1185684603
 CanvasRenderer:
@@ -687,15 +687,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 1881430883, guid: d5808de6a27686544969890a2da36b84, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1074,7 +1074,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4200,7 +4200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8007247907877647870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4219,7 +4219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 30, y: 0}
+  m_AnchoredPosition: {x: 55, y: 0}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4170281470672475920
@@ -4665,8 +4665,14 @@ MonoBehaviour:
   failureSlider: {fileID: 1910834690}
   restart: {fileID: 191091764911940272}
   victory: {fileID: 1233205802}
-  arrowRight: {fileID: 0}
-  arrowLeft: {fileID: 0}
+  arrowRight: {fileID: 5221671026669446433}
+  arrowLeft: {fileID: 6467932026936920460}
+  gnomeSad: {fileID: -1168999601, guid: d5808de6a27686544969890a2da36b84, type: 3}
+  gnomeNeutral: {fileID: 1881430883, guid: d5808de6a27686544969890a2da36b84, type: 3}
+  gnomeHappy: {fileID: 2074458434, guid: d5808de6a27686544969890a2da36b84, type: 3}
+  sadNeutralPercent: 0.33
+  neutralHappyPercent: 0.66
+  face: {fileID: 1185684602}
 --- !u!1 &6200753037243872514
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,7 +4859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2437695785712489922
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4872,7 +4878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30, y: 0}
+  m_AnchoredPosition: {x: -55, y: 0}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2161050405896180542
