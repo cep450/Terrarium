@@ -8,6 +8,7 @@ public class WorkOrderUIController : MonoBehaviour
     List<WorkOrderUI> list;
     [SerializeField] GameObject workOrderUIPrefab;
     static WorkOrderUIController instance;
+    public static int index = 0;
 
     void Start() {
         instance = this;

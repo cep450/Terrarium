@@ -30,7 +30,8 @@ public class WorkOrderUI : MonoBehaviour
         gnomeIcon.sprite = agent.visualGnome.icon;
 
         inUse = true;
-        this.transform.SetAsFirstSibling();
+        this.transform.SetSiblingIndex(WorkOrderUIController.index);
+        WorkOrderUIController.index++;
         this.gameObject.SetActive(true);
     }
 
@@ -60,6 +61,7 @@ public class WorkOrderUI : MonoBehaviour
 
         this.transform.SetAsLastSibling();
         inUse = false;
+        WorkOrderUIController.index--;
         this.gameObject.SetActive(false);
         dismissing = false;
     }
