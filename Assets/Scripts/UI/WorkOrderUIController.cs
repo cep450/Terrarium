@@ -15,22 +15,22 @@ public class WorkOrderUIController : MonoBehaviour
     }
 
     //reuse one if available, if not, make a new one 
-    public void CreateWorkOrderUI(Task task) {
+    public void CreateWorkOrderUI(Task task, Agent agent) {
         bool found = false;
         foreach(WorkOrderUI wo in list) {
             if(!wo.inUse) {
                 found = true;
-                wo.LoadInfo(task);
+                wo.LoadInfo(task, agent);
                 break;
             }
         }
         if(!found) {
             WorkOrderUI newWO = Instantiate(workOrderUIPrefab, this.transform).GetComponent<WorkOrderUI>();
-            newWO.LoadInfo(task);
+            newWO.LoadInfo(task, agent);
         }
     }
 
-    public static void AddWorkOrderUI(Task task) {
-        instance.CreateWorkOrderUI(task);
+    public static void AddWorkOrderUI(Task task, Agent agent) {
+        instance.CreateWorkOrderUI(task, agent);
     }
 }

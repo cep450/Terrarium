@@ -26,7 +26,7 @@ public class Agent : MonoBehaviour
 	public Cube lockedTarget;
 	public List<Need> needs;
 	int rateOfSatisfactionChange = 20;
-	[SerializeField] VisualGnome visualGnome;
+	[SerializeField] public VisualGnome visualGnome;
 
 	private void Start()
 	{
@@ -144,7 +144,7 @@ public class Agent : MonoBehaviour
 	{
 		Task sampleTask0 = new Task(destinationType, desiredType, duration);
 		taskList.Add(sampleTask0);
-		WorkOrderUIController.AddWorkOrderUI(sampleTask0);
+		WorkOrderUIController.AddWorkOrderUI(sampleTask0, this);
 	}
 
 	public Agent(SimHex simHex)

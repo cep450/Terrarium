@@ -10,11 +10,12 @@ public class WorkOrderUI : MonoBehaviour
     [SerializeField] Slider slider;
     [SerializeField] TextMeshProUGUI tileOldText, tileNewText;
     [SerializeField] Image tileOldBackground, tileNewBackground;
+    [SerializeField] Image gnomeIcon;
     Task task = null;
     public bool inUse = false;
     bool dismissing = false;
     
-    public void LoadInfo(Task t) {
+    public void LoadInfo(Task t, Agent agent) {
 
         task = t;
 
@@ -25,6 +26,8 @@ public class WorkOrderUI : MonoBehaviour
         tileNewBackground.color = task.desiredType.color;
 
         slider.maxValue = task.duration;
+
+        gnomeIcon.sprite = agent.visualGnome.icon;
 
         inUse = true;
         this.transform.SetAsFirstSibling();

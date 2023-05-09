@@ -8,6 +8,8 @@ public class VisualGnome : MonoBehaviour
 	static GameObject [] variants = {null, null, null};
 	[SerializeField] public SpriteRenderer myRenderer;
 	[SerializeField] Animator animator;
+	[SerializeField] Sprite [] icons;
+	public Sprite icon;
 	int animationState;
 	int animIdle = 0; int animWalking = 1; int animWorking = 2;
 
@@ -24,6 +26,7 @@ public class VisualGnome : MonoBehaviour
 		//become a random gnome
 		int rand = Random.Range(0, 3);
 		animator = Instantiate(variants[rand], this.transform).GetComponent<Animator>();
+		icon = icons[rand];
 	}
 
 	public void AnimIdle() {
