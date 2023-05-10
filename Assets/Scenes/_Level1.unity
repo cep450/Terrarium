@@ -191,6 +191,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sim
       objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _buildRelations.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _buildRelations.Array.data[10].type
+      value: 
+      objectReference: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _buildRelations.Array.data[10].canBeBuiltOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _buildRelations.Array.data[10].canBeBuiltOn.Array.data[0].type
+      value: 
+      objectReference: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
+    - target: {fileID: 1922028117923064797, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
+      propertyPath: _buildRelations.Array.data[10].canBeBuiltOn.Array.data[0].numTicks
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1922028117923064798, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1304,7 +1324,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1922028117923064736, guid: 0c31175f4a5ab7940993fab471e54689, type: 3}
   m_PrefabInstance: {fileID: 449201037}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1447284391
+--- !u!114 &1447284395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1313,7 +1333,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1447284386}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 752c2e36bfce50c4eb7a5ba9dc93e965, type: 3}
+  m_Script: {fileID: 11500000, guid: 559106013d61ff1418df3cb0cfecee93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   grid:
