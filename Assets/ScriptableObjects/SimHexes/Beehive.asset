@@ -22,7 +22,7 @@ MonoBehaviour:
   resourcesRequired:
   - name: Nectar
     id: 5
-    amount: 5
+    amount: 2
     radius: 0
     tickMod: 0
     local: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
   resourcesProduced:
   - name: Honey
     id: 6
-    amount: 3
+    amount: 2
     radius: 0
     limit: 0
     tickMod: 0
