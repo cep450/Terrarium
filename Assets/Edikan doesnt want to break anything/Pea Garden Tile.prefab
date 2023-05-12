@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 40565689}
   - component: {fileID: 40565690}
+  - component: {fileID: 2475062857628217612}
   m_Layer: 0
   m_Name: Billboard (10)
   m_TagString: Untagged
@@ -84,6 +85,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &2475062857628217612
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40565688}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fe79c23a7ec6b844b9b85799272e4785, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &147870779
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,6 +619,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1496916929}
   - component: {fileID: 1496916930}
+  - component: {fileID: 3308640753235295853}
   m_Layer: 0
   m_Name: Billboard (11)
   m_TagString: Untagged
@@ -672,6 +694,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3308640753235295853
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496916928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 801f752049cacc1459e6ac08eb2ddb58, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1563609506
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1757439332}
   - component: {fileID: 1757439333}
+  - component: {fileID: 3867566639258387736}
   m_Layer: 0
   m_Name: Billboard (5)
   m_TagString: Untagged
@@ -924,6 +967,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &3867566639258387736
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1757439331}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7137403358364ae4d8d2c9611af2acf0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1991781758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1136,6 +1199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   billboardedSprites: []
   billboardAllChildren: 1
+  moves: 0
 --- !u!4 &7095820482021642277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3044870119742673412, guid: 63d9ab02116b9d04c8d6630826acf37f, type: 3}
