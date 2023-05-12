@@ -211,6 +211,7 @@ public class Agent : MonoBehaviour
 				}
 				else
 				{
+					currentTask.isComplete = true;
 					taskList.Remove(currentTask);
 				}
 			}
@@ -302,6 +303,7 @@ public class Agent : MonoBehaviour
 		{
 			//Debug.Log("Goal not found, destination type is " + destinationType.name);
 			List<SimHex> path = new List<SimHex>();
+			//taskList.Remove(currentTask);
 			isTaskInProgress = false;
 			return path;
 		}
