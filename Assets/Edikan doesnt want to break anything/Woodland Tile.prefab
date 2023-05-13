@@ -2714,6 +2714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aa4b353f0543fb4cb17cba0aa4a861a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  billboardedSprites: []
+  billboardedSprites:
+  - {fileID: 1091599061}
   billboardAllChildren: 1
-  moves: 0
+  moves: 1
