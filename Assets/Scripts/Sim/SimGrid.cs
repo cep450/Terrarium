@@ -23,6 +23,16 @@ public class SimGrid
 
 	}
 
+	public static int NumberOfType(SimHexType type) {
+		int counter = 0;
+		foreach(SimHex hex in hexes) {
+			if(hex.type.Equals(type)) {
+				counter++;
+			}
+		}
+		return counter;
+	}
+
 	//returns CUMULATIVE percent thresholds so the last one should be 100%
 	//cumulative probability spread 
 	static float[] RanjitToPercent(float[] ranjit)

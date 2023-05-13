@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct BuildInfo {
@@ -19,11 +20,11 @@ public struct OnInfo {
 public class BuildXOnYUI : MonoBehaviour {
 
     [SerializeField] GameObject buildListParent, onListParent;
-
     [SerializeField] GameObject buttonQueueWorkOrder;
-    //[SerializeField] GameObject buttonBuildClear, buttonOnClear;
+    Image queueButtonBackground;
+    [SerializeField] Image fromUIBorder, toUIBorder;
+    [SerializeField] Color invalid;
     public TextMeshProUGUI desc;
-
     [SerializeField] GameObject listEntryPrefab;
     public List<BuildUIEntry> listBuildUIs, listOnUIs; //lists parallel with Sim hextypes 
 
@@ -38,6 +39,8 @@ public class BuildXOnYUI : MonoBehaviour {
     public void Init() {
 
         instance = this; 
+
+        queueButtonBackground = buttonQueueWorkOrder.GetComponent<Image>();
         
         buildIndex = -1;
         onIndex = -1;
@@ -136,23 +139,54 @@ public class BuildXOnYUI : MonoBehaviour {
 
     public void QueueWorkOrder() {
 
-        if(onIndex >= 0 && buildIndex >= 0) {
-            //Debug.Log("type not selected");
+        //are 2 hexes selected in the ui?
+        if(onIndex < 0 || buildIndex < 0) {
+            if(onIndex < 0) {
+                InvalidFeedback(fromUIBorder);
+            }
+            if(buildIndex < 0) {
+                InvalidFeedback(toUIBorder);
+            }
+            InvalidFeedback(queueButtonBackground);
+            return;
+        }
 
-            //TODO indicate in ui or something 
+        //todo check validity of conversion 
+        
             SimHexType typeOn = listOnUIs[onIndex].type;
             SimHexType typeBuild = listBuildUIs[buildIndex].type;
+
+            //is there a hex to build this on?
+            if(SimGrid.NumberOfType(typeOn) <= 0) {
+                InvalidFeedback(queueButtonBackground);
+                InvalidFeedback(fromUIBorder);
+                return;
+            }
 
             //TODO get ticks from build info 
             int numTicks = 3;
 
-            //TODO check validity
-            //TODO check if tile exists on board 
-
             AgentDirector.AddTask(typeOn, typeBuild, numTicks);
-            //return;
+
+    }
+
+    void InvalidFeedback(Image img) {
+        StartCoroutine(FlashRed(img));
+    }
+
+    float flashTime = 0.2f;
+    IEnumerator FlashRed(Image img) {
+
+        Color oldColor = img.color;
+        img.color = invalid;
+
+        float tracker = 0; 
+        while(tracker < flashTime) {
+            tracker += Time.deltaTime;
+            yield return null;
         }
 
-      
+        img.color = oldColor;
+        
     }
 }
