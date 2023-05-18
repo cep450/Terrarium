@@ -163,6 +163,8 @@ public class BuildXOnYUI : MonoBehaviour {
 
         AgentDirector.AddTask(typeOn, typeBuild, numTicks);
 
+        SoundManager.AddWorkOrderSoundPlayer();
+
     }
 
 }

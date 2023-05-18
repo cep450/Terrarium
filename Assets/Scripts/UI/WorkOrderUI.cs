@@ -46,6 +46,7 @@ public class WorkOrderUI : MonoBehaviour
     }
 
     public void Dismiss() {
+        SoundManager.WorkCompleteSoundPlayer();
         StartCoroutine(DismissCoroutine());
     }
 

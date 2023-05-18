@@ -33,6 +33,7 @@ public class FailureState : MonoBehaviour
 	[SerializeField] Image face;
 
 	static FailureState instance;
+	static string lastState = "none";
 
 	// Start is called before the first frame update
 	void Start()
@@ -108,10 +109,19 @@ public class FailureState : MonoBehaviour
 		float percent = (mySlider.value - mySlider.minValue) / (mySlider.maxValue - mySlider.minValue);
 		if(percent < sadNeutralPercent) {
 			face.sprite = gnomeSad;
+			if(lastState.Equals("neutral")) {
+				SoundManager.EnterRedZoneSoundPlayer();
+			}
+			lastState = "sad";
 		} else if(percent < neutralHappyPercent) {
 			face.sprite = gnomeNeutral;
+			lastState = "neutral";
 		} else {
 			face.sprite = gnomeHappy;
+			if(lastState.Equals("neutral")) {
+				SoundManager.EnterGreenZoneSoundPlayer();
+			}
+			lastState = "happy";
 		}
 	}
 
@@ -120,9 +130,11 @@ public class FailureState : MonoBehaviour
 		myRestart.SetActive(true);
 		Clock.Pause();
 		Clock.canPlay = false;
+		SoundManager.LoseSoundPlayer();
 	}
 	static void Win()
 	{
+		SoundManager.WinSoundPlayer();
 		myVictory.SetActive(true);
 	}
 	static void Disappear()

@@ -20,7 +20,11 @@ public class SoundManager : MonoBehaviour
                                selectTickSound;
     static SoundManager instance;
 
-    private void Start()
+    void Awake() {
+        instance = this;
+    }
+
+    void Start()
     {
         instance = this;
     }
