@@ -49,6 +49,7 @@ public class BuildUIEntry : MonoBehaviour {
         } else {
             Maximize();
         }
+        SoundManager.SelectTickSoundPlayer();
     }
 
     public void Maximize() {

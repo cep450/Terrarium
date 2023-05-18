@@ -71,6 +71,7 @@ public class Clock : MonoBehaviour
         }
 
         SetSpeed(++tickSpeedLevel);
+        SoundManager.SpeedUpSoundPlayer();
 
     }
 
@@ -82,6 +83,7 @@ public class Clock : MonoBehaviour
         }
 
         SetSpeed(--tickSpeedLevel);
+        SoundManager.SlowDownSoundPlayer();
 
     }
 
@@ -101,6 +103,7 @@ public class Clock : MonoBehaviour
         paused = true;
         pauseObject.SetActive(true);
         speedUI.UIPause();
+        SoundManager.PauseSimSoundPlayer();
     }
 
     public static void UnPause() {
