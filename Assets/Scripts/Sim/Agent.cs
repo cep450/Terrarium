@@ -145,6 +145,7 @@ public class Agent : MonoBehaviour
 		Task sampleTask0 = new Task(destinationType, desiredType, duration);
 		taskList.Add(sampleTask0);
 		WorkOrderUIController.AddWorkOrderUI(sampleTask0, this);
+		SimGrid.DecrementAvailable(destinationType);
 	}
 
 	public Agent(SimHex simHex)
@@ -203,7 +204,7 @@ public class Agent : MonoBehaviour
 				List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
 				if (pathList.Count > 0)
 				{
-					currentTask.destination = pathList[pathList.Count - 1];
+					currentTask.destination = pathList[pathList.Count - 1]; //this is where destination gets decided 
 					pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
 					isTaskInProgress = true;
 
@@ -236,8 +237,6 @@ public class Agent : MonoBehaviour
 		{
 			return null;
 		}
-
-
 	}
 
 	public void Tick(int tickNum)
@@ -307,7 +306,6 @@ public class Agent : MonoBehaviour
 			isTaskInProgress = false;
 			return path;
 		}
-
 
 	}
 
