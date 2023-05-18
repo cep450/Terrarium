@@ -18,6 +18,7 @@ public class Controls : MonoBehaviour
     KeyCode togglePause = KeyCode.Space;
     KeyCode [] incrementSimSpeed = { KeyCode.RightArrow, KeyCode.UpArrow };
     KeyCode [] decrementSimSpeed = { KeyCode.LeftArrow, KeyCode.DownArrow };
+    KeyCode escMenu = KeyCode.Escape;
     
 
 
@@ -47,6 +48,10 @@ public class Controls : MonoBehaviour
 
         if(Input.GetKeyDown(togglePause)) {
             Clock.TogglePause();
+        }
+
+        if(Input.GetKeyDown(escMenu)) {
+            UIController.ToggleEscMenu();
         }
         
     }

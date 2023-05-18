@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct BuildInfo {
@@ -19,11 +20,9 @@ public struct OnInfo {
 public class BuildXOnYUI : MonoBehaviour {
 
     [SerializeField] GameObject buildListParent, onListParent;
-
     [SerializeField] GameObject buttonQueueWorkOrder;
-    //[SerializeField] GameObject buttonBuildClear, buttonOnClear;
+    [SerializeField] FlashFeedback fromUIBorder, toUIBorder, queueButtonBackground;
     public TextMeshProUGUI desc;
-
     [SerializeField] GameObject listEntryPrefab;
     public List<BuildUIEntry> listBuildUIs, listOnUIs; //lists parallel with Sim hextypes 
 
@@ -38,7 +37,7 @@ public class BuildXOnYUI : MonoBehaviour {
     public void Init() {
 
         instance = this; 
-        
+
         buildIndex = -1;
         onIndex = -1;
 
@@ -108,13 +107,11 @@ public class BuildXOnYUI : MonoBehaviour {
 
     }
     //when we select what to build on, fill the ui 
-    public void SelectOn(SimHexType type) {
-
-        //this gets called when click on tile 
-        //TODO need to convert from type to this internal stuff
-
-
+    //this gets called when click on tile 
+    public void SelectOnFromElsewhere(SimHexType type) {
+        listOnUIs.Find(entry => entry.type.Equals(type)).Maximize();
     }
+
     public void SelectOn(int index) {
 
         //TODO check if BUild not selected or wrong and if so re-filter to match clicked on
@@ -136,23 +133,36 @@ public class BuildXOnYUI : MonoBehaviour {
 
     public void QueueWorkOrder() {
 
-        if(onIndex >= 0 && buildIndex >= 0) {
-            //Debug.Log("type not selected");
-
-            //TODO indicate in ui or something 
-            SimHexType typeOn = listOnUIs[onIndex].type;
-            SimHexType typeBuild = listBuildUIs[buildIndex].type;
-
-            //TODO get ticks from build info 
-            int numTicks = 3;
-
-            //TODO check validity
-            //TODO check if tile exists on board 
-
-            AgentDirector.AddTask(typeOn, typeBuild, numTicks);
-            //return;
+        //are 2 hexes selected in the ui?
+        if(onIndex < 0 || buildIndex < 0) {
+            if(onIndex < 0) {
+                fromUIBorder.Flash();
+            }
+            if(buildIndex < 0) {
+                toUIBorder.Flash();
+            }
+            queueButtonBackground.Flash();
+            return;
         }
 
-      
+        //todo check validity of conversion 
+        
+        SimHexType typeOn = listOnUIs[onIndex].type;
+        SimHexType typeBuild = listBuildUIs[buildIndex].type;
+
+        //is there a hex to build this on?
+        //if(SimGrid.NumberOfType(typeOn) <= 0) {
+        if(!SimGrid.TypeAvailable(typeOn)) {
+            queueButtonBackground.Flash();
+            fromUIBorder.Flash();
+            return;
+        }
+
+        //TODO get ticks from build info 
+        int numTicks = 3;
+
+        AgentDirector.AddTask(typeOn, typeBuild, numTicks);
+
     }
+
 }
