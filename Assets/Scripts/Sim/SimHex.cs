@@ -33,6 +33,7 @@ public class SimHex
 	//for tracking if stuff was satisfied the last tick 
 	int currentTick = -1;
 	bool inputsSatisfied = false;
+	public bool workTarget {get; private set;}
 
 	public SimHex(SimHexType t, Cube c)
 	{
@@ -100,6 +101,8 @@ public class SimHex
 		}
 
 		type = newType;
+
+		SimGrid.IncrementAvailable(type);
 
 		visualHex.VisualUpdate();
 
@@ -414,5 +417,22 @@ public class SimHex
 		visualHex.Die();
 
 		ChangeType(HexTypes.TypeByName(type.deathHexName));
+	}
+
+	public void MarkForWork() {
+		if(!workTarget) {
+			visualHex.MarkForWork();
+			workTarget = true;
+		} else {
+			Debug.LogError("this simhex was already marked for work");
+		}
+	}
+	public void UnmarkForWork() {
+		if(workTarget) {
+			workTarget = false;
+			visualHex.UnmarkForWork();
+		} else {
+			Debug.LogError("this simhex was not marked for work, but was unmarked for work");
+		}
 	}
 }

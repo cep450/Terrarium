@@ -48,7 +48,6 @@ public class BuildUIEntry : MonoBehaviour {
 
         } else {
             Maximize();
-
         }
     }
 

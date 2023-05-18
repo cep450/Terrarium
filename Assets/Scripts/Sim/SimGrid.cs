@@ -13,9 +13,12 @@ public class SimGrid
 
 	//Parallel list with the list of Cubes in the HexGrid in the HexMap. 
 	public static SimHex[] hexes;
+	public static int[] typeCountsAvailable {get; private set;} //band aid- parallel with Sim.hexTypes, updated by work orders
 
 	public static void Init()
 	{
+
+		typeCountsAvailable = new int[Sim.hexTypes.Length];
 
 		hexes = new SimHex[Sim.hexMap.grid.Hexes.Count];
 
@@ -23,6 +26,7 @@ public class SimGrid
 
 	}
 
+	//number of hexes of this type on the board.
 	public static int NumberOfType(SimHexType type) {
 		int counter = 0;
 		foreach(SimHex hex in hexes) {
@@ -32,6 +36,41 @@ public class SimGrid
 		}
 		return counter;
 	}
+
+	//number of hexes of this type on the board that aren't marked for work.
+	//right now, hexes are marked for work when the gnome starts doing the work order, not when it recieves it
+	//so currently using the typeCounts for checking if can add work order instead. 
+	public static int NumberOfTypeAvailable(SimHexType type) {
+		int counter = 0;
+		foreach(SimHex hex in hexes) {
+			if(hex.type.Equals(type) && !hex.workTarget) {
+				counter++;
+			}
+		}
+		return counter;
+	}
+
+	public static void IncrementAvailable(SimHexType type) {
+		typeCountsAvailable[type.id]++;
+	}
+	public static void DecrementAvailable(SimHexType type) {
+		typeCountsAvailable[type.id]--;
+	}
+	//is there a hex on the board of this type that doesn't have a pending work order?
+	public static bool TypeAvailable(SimHexType type) {
+		return (typeCountsAvailable[type.id] > 0 );
+	}
+
+	//pick a random hex on the board that's not marked for work.
+	//public static SimHex ChooseAvailableHex(SimHexType type) {
+		//TODO 
+		//TODO: where does a task choose its destination? the destination hex now needs to know it's marked for work.
+		//ok it chooses line 206 of Agent 
+		//the nearest simhex 
+		//but we really need to update the counts beforehand so you can't queue work orders beforehand 
+		//and what about the whole turning to dirt thing? 
+		//test this out 
+	//}
 
 	//returns CUMULATIVE percent thresholds so the last one should be 100%
 	//cumulative probability spread 

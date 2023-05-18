@@ -60,6 +60,16 @@ public class VisualHex : MonoBehaviour {
         }
     }
 
+    //tile is queued to be built on 
+    public void MarkForWork() {
+
+    }
+
+    //tile has been built on 
+    public void UnmarkForWork() {
+
+    }
+
     //mouse enters collider
     void OnMouseOver() {
         CustomCursor.SetClickable();
@@ -82,9 +92,7 @@ public class VisualHex : MonoBehaviour {
 
     //mouse clicks on collider 
     void OnMouseDown() {
-
-        BuildXOnYUI.instance.SelectOn(simHex.type);
-
+        BuildXOnYUI.instance.SelectOnFromElsewhere(simHex.type);
     }
 
 }

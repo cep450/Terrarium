@@ -1175,8 +1175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 3
+    m_Right: 3
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
@@ -1611,6 +1611,7 @@ GameObject:
   - component: {fileID: 9037751273256066331}
   - component: {fileID: 5148019342573082658}
   - component: {fileID: 849521317687063684}
+  - component: {fileID: 8529262555904538343}
   m_Layer: 5
   m_Name: On This
   m_TagString: Untagged
@@ -1708,6 +1709,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8529262555904538343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858452189481379896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704004d25ed7d874da06cf2bc23b568a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0.79607844, g: 0.3254902, b: 0.3254902, a: 1}
+  flashTime: 0.2
 --- !u!1 &966869274961107445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1735,7 @@ GameObject:
   - component: {fileID: 4461027806266794782}
   - component: {fileID: 4214894970748561531}
   - component: {fileID: 150430250805626891}
+  - component: {fileID: 749209041665114045}
   m_Layer: 5
   m_Name: Build THis
   m_TagString: Untagged
@@ -1818,6 +1834,20 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &749209041665114045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966869274961107445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704004d25ed7d874da06cf2bc23b568a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0.79607844, g: 0.3254902, b: 0.3254902, a: 1}
+  flashTime: 0.2
 --- !u!1 &1010780259542841159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3888,6 +3918,7 @@ GameObject:
   - component: {fileID: 3047793380200871617}
   - component: {fileID: 5371776996181629179}
   - component: {fileID: 7189118614408137997}
+  - component: {fileID: 1774508534960351870}
   m_Layer: 5
   m_Name: add work order button
   m_TagString: Untagged
@@ -4010,6 +4041,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1774508534960351870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3303911990844738124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 704004d25ed7d874da06cf2bc23b568a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 0.7924528, g: 0.32478935, b: 0.32478935, a: 1}
+  flashTime: 0.2
 --- !u!1 &3614817282617169058
 GameObject:
   m_ObjectHideFlags: 0
@@ -4149,9 +4194,9 @@ MonoBehaviour:
   buildListParent: {fileID: 6207209992636193055}
   onListParent: {fileID: 330604232107251693}
   buttonQueueWorkOrder: {fileID: 3303911990844738124}
-  fromUIBorder: {fileID: 5148019342573082658}
-  toUIBorder: {fileID: 4214894970748561531}
-  invalid: {r: 0.8018868, g: 0.3286559, b: 0.3286559, a: 1}
+  fromUIBorder: {fileID: 8529262555904538343}
+  toUIBorder: {fileID: 749209041665114045}
+  queueButtonBackground: {fileID: 1774508534960351870}
   desc: {fileID: 7512157707574528666}
   listEntryPrefab: {fileID: 889218103973612180, guid: e3b6671a3c30c694ca11f5e3c0de6972, type: 3}
   listBuildUIs: []
@@ -5768,8 +5813,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 0
-    m_Right: 0
+    m_Left: 3
+    m_Right: 3
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
