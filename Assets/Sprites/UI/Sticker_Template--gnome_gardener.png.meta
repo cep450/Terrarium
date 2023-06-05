@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: ef0278c128a94af48b413af3b0fc860b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: icon_gnome_lady
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2639
+        width: 459
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ae73cb13a1b8d4287a67abb862ced7
+      internalID: -721903599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_gnome_lord
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2152
+        width: 459
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2907fe679276d4d4d80c93d1adbc5029
+      internalID: 873240504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: icon_gnome_baby
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1664
+        width: 459
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92aee17ba60430841bf70fc12318758c
+      internalID: 1551369960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sticker_Template--gnome_gardener_25: -104386570
+      Sticker_Template--gnome_gardener_30: 167569966
+      Sticker_Template--gnome_gardener_1: 857186982
+      Sticker_Template--gnome_gardener_11: -718146591
+      Sticker_Template--gnome_gardener_22: -231133972
+      Sticker_Template--gnome_gardener_14: -1280787639
+      Sticker_Template--gnome_gardener_4: 711066841
+      Sticker_Template--gnome_gardener_24: 657266200
+      Sticker_Template--gnome_gardener_28: -821921986
+      Sticker_Template--gnome_gardener_12: -686514824
+      Sticker_Template--gnome_gardener_13: -2048603533
+      Sticker_Template--gnome_gardener_7: 1948844693
+      Sticker_Template--gnome_gardener_19: -1648699353
+      Sticker_Template--gnome_gardener_15: 1701878226
+      Sticker_Template--gnome_gardener_26: -1664621124
+      Sticker_Template--gnome_gardener_2: -127092428
+      Sticker_Template--gnome_gardener_27: 1522932874
+      icon_gnome_lady: -721903599
+      Sticker_Template--gnome_gardener_29: 795248660
+      Sticker_Template--gnome_gardener_9: 1605531402
+      Sticker_Template--gnome_gardener_16: 113978868
+      Sticker_Template--gnome_gardener_6: 1736065435
+      Sticker_Template--gnome_gardener_3: 327474859
+      Sticker_Template--gnome_gardener_8: -2004009211
+      Sticker_Template--gnome_gardener_20: -569613431
+      Sticker_Template--gnome_gardener_17: 668685849
+      Sticker_Template--gnome_gardener_18: 1499264056
+      icon_gnome_baby: 1551369960
+      Sticker_Template--gnome_gardener_21: 336117470
+      icon_gnome_lord: 873240504
+      Sticker_Template--gnome_gardener_23: 52879235
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -51,7 +51,7 @@ public class VisualHex : MonoBehaviour {
         }
     }
 
-    Color dead = new Color(0.5f, 0.5f, 0.5f, 0.5f);
+    Color dead = new Color(0.5f, 0.5f, 0.5f, 0.15f);
     public void Die() {
         SpriteRenderer [] childSprites = visualHex.GetComponentsInChildren<SpriteRenderer>();
         foreach(SpriteRenderer s in childSprites) {
@@ -60,15 +60,25 @@ public class VisualHex : MonoBehaviour {
         }
     }
 
+    //tile is queued to be built on 
+    public void MarkForWork() {
+
+    }
+
+    //tile has been built on 
+    public void UnmarkForWork() {
+
+    }
+
     //mouse enters collider
     void OnMouseOver() {
         CustomCursor.SetClickable();
         if(simHex == null) {
-            Debug.LogError("moused over visualHex with null simHex");
+            Debug.Log("moused over visualHex with null simHex");
             return;
         }
         if(simHex.type == null) {
-            Debug.LogError("moused over visual hex with simhex with null type");
+            Debug.Log("moused over visual hex with simhex with null type");
             return;
         }
         CustomCursor.tileHover.SetType(simHex.type);
@@ -82,9 +92,7 @@ public class VisualHex : MonoBehaviour {
 
     //mouse clicks on collider 
     void OnMouseDown() {
-
-        BuildXOnYUI.instance.SelectOn(simHex.type);
-
+        BuildXOnYUI.instance.SelectOnFromElsewhere(simHex.type);
     }
 
 }

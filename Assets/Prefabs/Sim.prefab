@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1922028117923064798}
   - component: {fileID: 1922028117923064799}
   - component: {fileID: 1922028117923064797}
-  - component: {fileID: 4939721466049498803}
+  - component: {fileID: 6195395484949863214}
   m_Layer: 0
   m_Name: Sim
   m_TagString: Untagged
@@ -63,27 +63,25 @@ MonoBehaviour:
   _gnomePrefab: {fileID: 389196132420375823, guid: 720462dc2a8c56a46beae1da8a76de62, type: 3}
   _gnomesToSpawn: 5
   hexTypeInfo:
-  - type: {fileID: 11400000, guid: b3a4575a33f17344094145aa759a0f50, type: 2}
-    ranjit: 0
   - type: {fileID: 11400000, guid: d61b3d1871c52de43a29f0050f18f299, type: 2}
     ranjit: 0
   - type: {fileID: 11400000, guid: 657c9fe2b0805874085fa9fe15fae642, type: 2}
-    ranjit: 10
+    ranjit: 15
   - type: {fileID: 11400000, guid: 69afabb277936f44681bffb5d046189b, type: 2}
-    ranjit: 1
+    ranjit: 10
   - type: {fileID: 11400000, guid: 61ef88ef1b626bf47b597c13df5dd0d0, type: 2}
     ranjit: 1
+  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
+    ranjit: 10
+  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
+    ranjit: 1
   - type: {fileID: 11400000, guid: 0d8b224a3fedcb4429568a1a19173302, type: 2}
+    ranjit: 5
+  - type: {fileID: 11400000, guid: 63aa6c4dfeda6c14a934f3f2def62707, type: 2}
     ranjit: 1
   - type: {fileID: 11400000, guid: 5ad458e9a265f4f48a13999c2b3f480b, type: 2}
     ranjit: 1
-  - type: {fileID: 11400000, guid: 705250dda48cb3a4a9d3ccf848a5d444, type: 2}
-    ranjit: 5
-  - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
-    ranjit: 1
   - type: {fileID: 11400000, guid: 7faf0c25ff801354f94c6581dcf941c5, type: 2}
-    ranjit: 0
-  - type: {fileID: 11400000, guid: 63aa6c4dfeda6c14a934f3f2def62707, type: 2}
     ranjit: 1
   _resourceInfo:
   - name: Water
@@ -94,7 +92,7 @@ MonoBehaviour:
     color: {r: 0.63404334, g: 0.89998406, b: 0.9150943, a: 1}
   - name: Food
     displayName: Food
-    initialGlobalAmount: 300
+    initialGlobalAmount: 1000
     globalCap: 1000
     icon: {fileID: 21300000, guid: ddf3fd20bbcbae04a982f85029287190, type: 3}
     color: {r: 0.92156863, g: 0.8707878, b: 0.5568628, a: 1}
@@ -129,7 +127,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 883fc2fec888a1e49a2fb9d55d5e9bdf, type: 3}
     color: {r: 0.8018868, g: 0.56387705, b: 0.34420612, a: 1}
   - name: Leisure
-    displayName: Leisure
+    displayName: Recreation
     initialGlobalAmount: 0
     globalCap: 0
     icon: {fileID: 21300000, guid: 9d5e31ac3d2063a4da297f97b78eadcc, type: 3}
@@ -215,7 +213,7 @@ MonoBehaviour:
     - type: {fileID: 11400000, guid: ba6423be3ab5ac04bae1fa980188d50c, type: 2}
       desc: 
       numTicks: 1
---- !u!114 &4939721466049498803
+--- !u!114 &6195395484949863214
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

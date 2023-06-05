@@ -12,19 +12,15 @@ public class ResourceListUI : MonoBehaviour
 	List<ResourceStockMarket> resourceItems;
 
 	// Update is called once per frame
-	void Update()
+	public void Tick()
 	{
-		ResourceListText = ResourceStockpilesAndDeltas();
-
-		SatisfactionText = AgentDirector.SatisfactionsList();
-		gameObject.GetComponent<TextMeshProUGUI>().text = SatisfactionText;
 		if (resourceItems.Count > 0)
 		{
 
 			//Resource list is parallel with Sim list of resources and ids.
 			for (int i = 0; i < resourceItems.Count; i++)
 			{
-				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + " Stockpile:  " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
+				resourceItems[i].text.text = Sim.resourceInfo[i].displayName + ": " + Tracker.resourcesNet[i].ToString("+0;-#") + "\n " + GlobalPool.resources[i] + "/" + Sim.resourceGlobalCaps[i]; //showing stockpile numbers for debug purposes feel free to delete
 
 
 				if (Tracker.resourcesNet[i] == 0)
@@ -43,6 +39,12 @@ public class ResourceListUI : MonoBehaviour
 				else
 				{
 					resourceItems[i].slider.value = 1;
+				}
+
+
+				//update satisfaction bar if applicable 
+				if(resourceItems[i].needIndex > -1) {
+					resourceItems[i].satisfactionSlider.value = AgentDirector.AverageSatisfactionNeedFloat(resourceItems[i].needIndex);
 				}
 			}
 		}

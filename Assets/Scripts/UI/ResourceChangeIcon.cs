@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+struct ResourceArrow {
+    public GameObject obj;
+    public int threshold;
+}
+
 public class ResourceChangeIcon : MonoBehaviour
 {
-    [SerializeField] Image renderer; //TODO numbers or counts of resource or size? size could be useful
-    [SerializeField] Image upArrow, downArrow;
-
-    static float scaleMult = 0.5f;
+    [SerializeField] Image renderer; 
+    [SerializeField] ResourceArrow[] upArrows, downArrows;
 
     public void Fill(ResourceInfo res, bool produces, bool consumes, int amount = 1) {
 
@@ -18,24 +22,29 @@ public class ResourceChangeIcon : MonoBehaviour
         renderer.sprite = res.icon;
         renderer.color = res.color;
 
-        if(amount < 1) amount = 1;
-        Vector3 amountScale = Vector3.one * (((amount - 1) * scaleMult) + 1);
-
-        //TODO this could also be like, a triple arrow instead of a single arrow
+        //arrows
         if(produces) {
-            upArrow.enabled = true;
-            upArrow.transform.localScale = amountScale;
+            foreach(ResourceArrow arrow in upArrows) {
+                if(arrow.threshold <= amount) {
+                    arrow.obj.SetActive(true);
+                }
+            }
         } else if(consumes) {
-            downArrow.enabled = true;
-            downArrow.transform.localScale = amountScale;
+            foreach(ResourceArrow arrow in downArrows) {
+                if(arrow.threshold <= amount) {
+                    arrow.obj.SetActive(true);
+                }
+            }
         }
     }
 
     public void Empty() {
-        upArrow.transform.localScale = Vector3.one;
-        downArrow.transform.localScale = Vector3.one;
+        
         renderer.enabled = false;
-        upArrow.enabled = false;
-        downArrow.enabled = false;
+
+        for(int i = 0; i < upArrows.Length; i++) {
+            upArrows[i].obj.SetActive(false);
+            downArrows[i].obj.SetActive(false);
+        }
     }
 }

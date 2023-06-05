@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crop B
   displayName: Rice Paddy
-  id: 3
+  id: 2
   passable: 1
   beauty: 0
   ugliness: 0
@@ -29,19 +29,10 @@ MonoBehaviour:
     isConsumed: 1
     diesIfNotNet: 1
     falloff: 0
-  - name: Nutrient A
-    id: 3
-    amount: 1
-    radius: 0
-    tickMod: 0
-    local: 0
-    isConsumed: 1
-    diesIfNotNet: 1
-    falloff: 0
   resourcesProduced:
   - name: Food
     id: 1
-    amount: 3
+    amount: 1
     radius: 0
     limit: 0
     tickMod: 0
@@ -54,7 +45,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 1160538630537229148, guid: b6ad6e5e48df3e348a7632fe0e236331, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.7264151, g: 0.6853509, b: 0.50331277, a: 1}
+  color: {r: 0.5019608, g: 0.45882356, b: 0.37254903, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Lawn
   displayName: Manicured Lawn
-  id: 7
+  id: 4
   passable: 1
   beauty: 0
   ugliness: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     tickMod: 0
     local: 0
     isConsumed: 1
-    diesIfNotNet: 1
+    diesIfNotNet: 0
     falloff: 0
   - name: Nutrient B
     id: 4
@@ -47,7 +47,7 @@ MonoBehaviour:
     local: 0
   visualHexPrefab: {fileID: 7446620075933593916, guid: 21567515fe507674a8094101ea6cdf1e, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.13783076, g: 0.6509434, b: 0.15529026, a: 1}
+  color: {r: 0, g: 0.49803925, b: 0, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

@@ -20,18 +20,25 @@ public class Clock : MonoBehaviour
     public static bool paused {get; private set;}
     static float speedMultMax = 3f;
     static int tickCounter = 0;
+    public static bool canPlay = false; //can you unpause and run the game? set to false when game over 
 
     public static event EventHandler<TickArgs> Tick;
 
+    static GameObject pauseObject;
+    static SpeedUI speedUI;
 
-    // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake() {
         tickBaseSeconds = _tickBaseSeconds;
+    }
+
+    public static void Init() { 
+        pauseObject = GameObject.FindGameObjectWithTag("Pause"); 
+        speedUI = FindObjectOfType<SpeedUI>();
+        Pause();
         timeElapsed = 0f;
-        paused = true;
         tickCounter = 0;
         tickSpeedLevel = 1f;
+        canPlay = true;
     }
 
     // Update is called once per frame
@@ -64,6 +71,7 @@ public class Clock : MonoBehaviour
         }
 
         SetSpeed(++tickSpeedLevel);
+        SoundManager.SpeedUpSoundPlayer();
 
     }
 
@@ -75,6 +83,7 @@ public class Clock : MonoBehaviour
         }
 
         SetSpeed(--tickSpeedLevel);
+        SoundManager.SlowDownSoundPlayer();
 
     }
 
@@ -90,12 +99,19 @@ public class Clock : MonoBehaviour
         }
     }
 
-    static void Pause() {
+    public static void Pause() {
         paused = true;
+        pauseObject.SetActive(true);
+        speedUI.UIPause();
+        SoundManager.PauseSimSoundPlayer();
     }
 
-    static void UnPause() {
-        paused = false;
+    public static void UnPause() {
+        if(canPlay) {
+            paused = false;
+            pauseObject.SetActive(false);
+            speedUI.UIPlay();
+        }
     }
 
 }

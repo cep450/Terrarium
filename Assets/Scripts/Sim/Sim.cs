@@ -57,9 +57,21 @@ public class Sim : MonoBehaviour
 	[SerializeField] public BuildInfo [] _buildRelations;
 	public static BuildInfo [] buildInfos;
 
-	void Start()
+	void OnEnable()
+	{
+		SceneManager.sceneLoaded += OnSceneLoaded;
+	}
+
+	void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnSceneLoaded;
+	}
+
+	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 		Debug.Log("called start on sim");
+
+		Clock.Init();
 
 		Init();
 		SimGrid.Init(); //needs to happen after HexGrid initializes
@@ -110,6 +122,7 @@ public class Sim : MonoBehaviour
 
 		FindObjectOfType<BuildXOnYUI>().Init();
 
+		Clock.Tick -= HandleTick;
 		Clock.Tick += HandleTick;
 
 	}
@@ -136,6 +149,7 @@ public class Sim : MonoBehaviour
 		{
 			//GlobalProcesses.Tick(tickArgs.tickNum / 4);
 			Tracker.CalculateEndOfTick();
+			UIController.UITicking();
 		}
 	}
 }

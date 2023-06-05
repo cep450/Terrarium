@@ -14,24 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Crop A
   displayName: Wheat Field
-  id: 2
+  id: 1
   passable: 1
   beauty: 0
   ugliness: 0
   deathHexName: Dirt
   resourcesRequired:
-  - name: Water
-    id: 0
-    amount: 1
-    radius: 0
-    tickMod: 0
-    local: 0
-    isConsumed: 1
-    diesIfNotNet: 1
-    falloff: 0
   - name: Nutrient A
     id: 3
-    amount: 3
+    amount: 1
     radius: 0
     tickMod: 0
     local: 0
@@ -54,7 +45,7 @@ MonoBehaviour:
   resourcesStarting: []
   visualHexPrefab: {fileID: 4026145722512885540, guid: f18824e637bb2e74d92306861df22ce7, type: 3}
   cardSprite: {fileID: 0}
-  color: {r: 0.8490566, g: 0.7428721, b: 0.2919188, a: 1}
+  color: {r: 0.69803923, g: 0.5921569, b: 0.06666667, a: 1}
   sprite: {fileID: 0}
   billboardSprite: {fileID: 0}
   icon: {fileID: 0}

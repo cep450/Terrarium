@@ -9,8 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3237387129761032627, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
       propertyPath: m_Name
-      value: GnomeSprite
+      value: ladyGnomeSprite
       objectReference: {fileID: 0}
+    - target: {fileID: 5631843365169413292, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5766dc5c411305b489bec8dd6b5f0cda, type: 2}
     - target: {fileID: 5821542174564423147, guid: a2903ac708ef2d849ae22f77d4ae009e, type: 3}
       propertyPath: m_Sprite
       value: 

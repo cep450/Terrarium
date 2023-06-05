@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public static void CloseGame() {
+        Application.Quit();
+    }
+
     public void _GoToLevelSelect() { GoToLevelSelect(); }
     public static void GoToLevelSelect() {
         SceneManager.LoadScene("_LevelSelect");
@@ -56,4 +60,6 @@ public class GameManager : MonoBehaviour
         }
         //it will never get here 
     }
+
+
 }

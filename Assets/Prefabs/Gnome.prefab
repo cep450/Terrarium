@@ -78,6 +78,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRenderer: {fileID: 7943895312737996916}
   animator: {fileID: 8132503407671753011}
+  icons:
+  - {fileID: 1551369960, guid: ef0278c128a94af48b413af3b0fc860b, type: 3}
+  - {fileID: -721903599, guid: ef0278c128a94af48b413af3b0fc860b, type: 3}
+  - {fileID: 873240504, guid: ef0278c128a94af48b413af3b0fc860b, type: 3}
+  icon: {fileID: 0}
 --- !u!222 &5205123562204661982
 CanvasRenderer:
   m_ObjectHideFlags: 0

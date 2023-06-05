@@ -26,7 +26,7 @@ public class Agent : MonoBehaviour
 	public Cube lockedTarget;
 	public List<Need> needs;
 	int rateOfSatisfactionChange = 20;
-	[SerializeField] VisualGnome visualGnome;
+	[SerializeField] public VisualGnome visualGnome;
 
 	private void Start()
 	{
@@ -144,6 +144,8 @@ public class Agent : MonoBehaviour
 	{
 		Task sampleTask0 = new Task(destinationType, desiredType, duration);
 		taskList.Add(sampleTask0);
+		WorkOrderUIController.AddWorkOrderUI(sampleTask0, this);
+		SimGrid.DecrementAvailable(destinationType);
 	}
 
 	public Agent(SimHex simHex)
@@ -168,6 +170,7 @@ public class Agent : MonoBehaviour
 						simHex = pathQueue.Dequeue();
 						cube = simHex.cube;
 					}
+			
 				}
 				else // upon arrival
 				{
@@ -186,6 +189,7 @@ public class Agent : MonoBehaviour
 						simHex.ChangeType(currentTask.desiredType);
 						currentTask.isComplete = true; // doesnt do anything
 						lockedTarget = cube;
+						taskList.Remove(currentTask);
 						isTaskInProgress = false;
 					}
 				}
@@ -200,11 +204,15 @@ public class Agent : MonoBehaviour
 				List<SimHex> pathList = FindPathToType(simHex, currentTask.destinationType);
 				if (pathList.Count > 0)
 				{
-					currentTask.destination = pathList[pathList.Count - 1];
+					currentTask.destination = pathList[pathList.Count - 1]; //this is where destination gets decided 
 					pathQueue = new Queue<SimHex>(FindPathToType(simHex, currentTask.destinationType));
 					isTaskInProgress = true;
 
 					visualGnome.AnimWalking();
+				}
+				else
+				{
+					taskList.Remove(currentTask);
 				}
 			}
 			else
@@ -220,7 +228,7 @@ public class Agent : MonoBehaviour
 		if (taskList.Count > 0)
 		{
 			Task task = taskList[0];
-			taskList.Remove(task);
+			
 			//Debug.Log("current task is " + task.destinationType.name);
 			return task;
 		}
@@ -228,8 +236,6 @@ public class Agent : MonoBehaviour
 		{
 			return null;
 		}
-
-
 	}
 
 	public void Tick(int tickNum)
@@ -298,7 +304,6 @@ public class Agent : MonoBehaviour
 			isTaskInProgress = false;
 			return path;
 		}
-
 
 	}
 
